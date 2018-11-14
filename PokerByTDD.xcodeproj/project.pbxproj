@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
+		F2D79B59219CE57000962D26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B58219CE57000962D26 /* ViewController.swift */; };
+		F2D79B5C219CE57000962D26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5A219CE57000962D26 /* Main.storyboard */; };
+		F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5D219CE57200962D26 /* Assets.xcassets */; };
+		F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */; };
+		F2D79B6C219CE57200962D26 /* PokerByTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2D79B68219CE57200962D26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2D79B52219CE57000962D26;
+			remoteInfo = PokerByTDD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2D79B56219CE57000962D26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2D79B58219CE57000962D26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2D79B5B219CE57000962D26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2D79B5D219CE57200962D26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2D79B60219CE57200962D26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2D79B62219CE57200962D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerByTDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerByTDDTests.swift; sourceTree = "<group>"; };
+		F2D79B6D219CE57200962D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2D79B50219CE57000962D26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D79B64219CE57200962D26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2D79B4A219CE57000962D26 = {
+			isa = PBXGroup;
+			children = (
+				F2D79B55219CE57000962D26 /* PokerByTDD */,
+				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
+				F2D79B54219CE57000962D26 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2D79B54219CE57000962D26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
+				F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
+			isa = PBXGroup;
+			children = (
+				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
+				F2D79B58219CE57000962D26 /* ViewController.swift */,
+				F2D79B5A219CE57000962D26 /* Main.storyboard */,
+				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
+				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
+				F2D79B62219CE57200962D26 /* Info.plist */,
+			);
+			path = PokerByTDD;
+			sourceTree = "<group>";
+		};
+		F2D79B6A219CE57200962D26 /* PokerByTDDTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */,
+				F2D79B6D219CE57200962D26 /* Info.plist */,
+			);
+			path = PokerByTDDTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2D79B52219CE57000962D26 /* PokerByTDD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2D79B70219CE57200962D26 /* Build configuration list for PBXNativeTarget "PokerByTDD" */;
+			buildPhases = (
+				F2D79B4F219CE57000962D26 /* Sources */,
+				F2D79B50219CE57000962D26 /* Frameworks */,
+				F2D79B51219CE57000962D26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PokerByTDD;
+			productName = PokerByTDD;
+			productReference = F2D79B53219CE57000962D26 /* PokerByTDD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2D79B66219CE57200962D26 /* PokerByTDDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2D79B73219CE57200962D26 /* Build configuration list for PBXNativeTarget "PokerByTDDTests" */;
+			buildPhases = (
+				F2D79B63219CE57200962D26 /* Sources */,
+				F2D79B64219CE57200962D26 /* Frameworks */,
+				F2D79B65219CE57200962D26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2D79B69219CE57200962D26 /* PBXTargetDependency */,
+			);
+			name = PokerByTDDTests;
+			productName = PokerByTDDTests;
+			productReference = F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2D79B4B219CE57000962D26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = sena.kanda;
+				TargetAttributes = {
+					F2D79B52219CE57000962D26 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F2D79B66219CE57200962D26 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F2D79B52219CE57000962D26;
+					};
+				};
+			};
+			buildConfigurationList = F2D79B4E219CE57000962D26 /* Build configuration list for PBXProject "PokerByTDD" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2D79B4A219CE57000962D26;
+			productRefGroup = F2D79B54219CE57000962D26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2D79B52219CE57000962D26 /* PokerByTDD */,
+				F2D79B66219CE57200962D26 /* PokerByTDDTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2D79B51219CE57000962D26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
+				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
+				F2D79B5C219CE57000962D26 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D79B65219CE57200962D26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2D79B4F219CE57000962D26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2D79B59219CE57000962D26 /* ViewController.swift in Sources */,
+				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D79B63219CE57200962D26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2D79B6C219CE57200962D26 /* PokerByTDDTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2D79B69219CE57200962D26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2D79B52219CE57000962D26 /* PokerByTDD */;
+			targetProxy = F2D79B68219CE57200962D26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F2D79B5A219CE57000962D26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2D79B5B219CE57000962D26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2D79B60219CE57200962D26 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2D79B6E219CE57200962D26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2D79B6F219CE57200962D26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2D79B71219CE57200962D26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = PokerByTDD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.PokerByTDD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2D79B72219CE57200962D26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = PokerByTDD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.PokerByTDD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F2D79B74219CE57200962D26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = PokerByTDDTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.PokerByTDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerByTDD.app/PokerByTDD";
+			};
+			name = Debug;
+		};
+		F2D79B75219CE57200962D26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = PokerByTDDTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.PokerByTDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerByTDD.app/PokerByTDD";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2D79B4E219CE57000962D26 /* Build configuration list for PBXProject "PokerByTDD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D79B6E219CE57200962D26 /* Debug */,
+				F2D79B6F219CE57200962D26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2D79B70219CE57200962D26 /* Build configuration list for PBXNativeTarget "PokerByTDD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D79B71219CE57200962D26 /* Debug */,
+				F2D79B72219CE57200962D26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2D79B73219CE57200962D26 /* Build configuration list for PBXNativeTarget "PokerByTDDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D79B74219CE57200962D26 /* Debug */,
+				F2D79B75219CE57200962D26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2D79B4B219CE57000962D26 /* Project object */;
+}
