@@ -19,4 +19,11 @@ class PokerByTDDTests: XCTestCase {
         let card2 = Card(rank: .king, suit: .diamond)
         XCTAssertEqual(card2.notation, "K♦︎")
     }
+    
+    func testSameRank() {
+        
+        let card1 = Card(rank: .three, suit: .heart)
+        let card2 = Card(rank: .three, suit: .club)
+        XCTAssertTrue(card1.hasSameRank(card2))
+    }
 }
