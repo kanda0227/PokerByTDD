@@ -11,6 +11,8 @@ import XCTest
 
 class PokerByTDDTests: XCTestCase {
     
+    // MARK: - Card
+    
     func testCardNotation() {
         
         let card1 = Card(rank: .three, suit: .heart)

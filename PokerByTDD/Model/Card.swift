@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - Card
+
 /// トランプのカード
 struct Card {
     
@@ -72,6 +74,8 @@ struct Card {
         return suit == card.suit
     }
 }
+
+// MARK: - Equatable
 
 extension Card: Equatable {
     
