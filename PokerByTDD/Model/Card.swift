@@ -64,6 +64,6 @@ struct Card {
     }
     
     func hasSameSuit(_ card: Card) -> Bool {
-        return true
+        return suit == card.suit
     }
 }
