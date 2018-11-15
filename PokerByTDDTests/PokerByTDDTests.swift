@@ -12,8 +12,13 @@ import XCTest
 class PokerByTDDTests: XCTestCase {
 
     func testInitializeCard() {
-        let card = Card(suit: .heart, rank: .three)
-        XCTAssertEqual(card.suit, .heart)
-        XCTAssertEqual(card.rank, .three)
+        
+        let card1 = Card(suit: .heart, rank: .three)
+        XCTAssertEqual(card1.suit, .heart)
+        XCTAssertEqual(card1.rank, .three)
+        
+        let card2 = Card(suit: .diamond, rank: .king)
+        XCTAssertEqual(card2.suit, .diamond)
+        XCTAssertEqual(card2.rank, .king)
     }
 }
