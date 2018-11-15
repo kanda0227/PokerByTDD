@@ -47,5 +47,9 @@ class PokerByTDDTests: XCTestCase {
         let card1 = Card(rank: .three, suit: .heart)
         let card2 = Card(rank: .three, suit: .heart)
         XCTAssertEqual(card1, card2)
+        
+        let card3 = Card(rank: .three, suit: .heart)
+        let card4 = Card(rank: .ace, suit: .club)
+        XCTAssertNotEqual(card3, card4)
     }
 }
