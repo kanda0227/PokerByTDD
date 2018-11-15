@@ -67,3 +67,10 @@ struct Card {
         return suit == card.suit
     }
 }
+
+extension Card: Equatable {
+    
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return true
+    }
+}
