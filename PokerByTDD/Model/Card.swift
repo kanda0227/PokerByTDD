@@ -11,17 +11,6 @@ import Foundation
 /// トランプのカード
 struct Card {
     
-    enum Suit: String {
-        /// ハート
-        case heart = "♥"
-        /// スペード
-        case spade = "♠︎"
-        /// クラブ
-        case club = "♣︎"
-        /// ダイヤ
-        case diamond = "♦︎"
-    }
-    
     enum Rank: String {
         /// エース
         case ace = "A"
@@ -51,8 +40,19 @@ struct Card {
         case king = "K"
     }
     
-    let suit: Suit
+    enum Suit: String {
+        /// ハート
+        case heart = "♥"
+        /// スペード
+        case spade = "♠︎"
+        /// クラブ
+        case club = "♣︎"
+        /// ダイヤ
+        case diamond = "♦︎"
+    }
+    
     let rank: Rank
+    let suit: Suit
     
     var notation: String {
         return rank.rawValue + suit.rawValue
