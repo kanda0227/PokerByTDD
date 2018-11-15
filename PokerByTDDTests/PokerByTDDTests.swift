@@ -13,21 +13,21 @@ class PokerByTDDTests: XCTestCase {
 
     func testInitializeCard() {
         
-        let card1 = Card(suit: .heart, rank: .three)
+        let card1 = Card(rank: .three, suit: .heart)
         XCTAssertEqual(card1.suit, .heart)
         XCTAssertEqual(card1.rank, .three)
         
-        let card2 = Card(suit: .diamond, rank: .king)
+        let card2 = Card(rank: .king, suit: .diamond)
         XCTAssertEqual(card2.suit, .diamond)
         XCTAssertEqual(card2.rank, .king)
     }
     
     func testCardNotation() {
         
-        let card1 = Card(suit: .heart, rank: .three)
+        let card1 = Card(rank: .three, suit: .heart)
         XCTAssertEqual(card1.notation, "3♥")
         
-        let card2 = Card(suit: .diamond, rank: .king)
+        let card2 = Card(rank: .king, suit: .diamond)
         XCTAssertEqual(card2.notation, "K♦︎")
     }
 }
