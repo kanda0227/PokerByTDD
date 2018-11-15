@@ -25,5 +25,9 @@ class PokerByTDDTests: XCTestCase {
         let card1 = Card(rank: .three, suit: .heart)
         let card2 = Card(rank: .three, suit: .club)
         XCTAssertTrue(card1.hasSameRank(card2))
+        
+        let card3 = Card(rank: .three, suit: .heart)
+        let card4 = Card(rank: .ace, suit: .club)
+        XCTAssertFalse(card3.hasSameRank(card4))
     }
 }
