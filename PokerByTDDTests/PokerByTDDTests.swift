@@ -26,5 +26,8 @@ class PokerByTDDTests: XCTestCase {
         
         let card1 = Card(suit: .heart, rank: .three)
         XCTAssertEqual(card1.notation, "3♥")
+        
+        let card2 = Card(suit: .diamond, rank: .king)
+        XCTAssertEqual(card2.notation, "K♦︎")
     }
 }
