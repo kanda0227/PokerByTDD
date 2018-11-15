@@ -60,6 +60,6 @@ struct Card {
     }
     
     func hasSameRank(_ card: Card) -> Bool {
-        return true
+        return rank == card.rank
     }
 }
