@@ -51,8 +51,13 @@ struct Card {
         case diamond = "♦︎"
     }
     
-    let rank: Rank
-    let suit: Suit
+    private let rank: Rank
+    private let suit: Suit
+    
+    init(rank: Rank, suit: Suit) {
+        self.rank = rank
+        self.suit = suit
+    }
     
     /// 文字列表記
     var notation: String {

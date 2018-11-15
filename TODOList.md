@@ -8,4 +8,4 @@ TODOリスト
 * [x] Card の比較
     * [x] suit が同じか
     * [x] rank が同じか
-* [ ] rank と suit のアクセスレベルを private にする
+* [x] rank と suit のアクセスレベルを private にする
