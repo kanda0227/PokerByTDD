@@ -71,6 +71,7 @@ struct Card {
 extension Card: Equatable {
     
     static func ==(lhs: Card, rhs: Card) -> Bool {
-        return true
+        return lhs.hasSameRank(rhs)
+            && lhs.hasSameSuit(rhs)
     }
 }
