@@ -54,6 +54,7 @@ struct Card {
     let rank: Rank
     let suit: Suit
     
+    /// 文字列表記
     var notation: String {
         return rank.rawValue + suit.rawValue
     }
