@@ -58,4 +58,8 @@ struct Card {
     var notation: String {
         return rank.rawValue + suit.rawValue
     }
+    
+    func hasSameRank(_ card: Card) -> Bool {
+        return true
+    }
 }
