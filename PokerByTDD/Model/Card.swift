@@ -11,50 +11,50 @@ import Foundation
 /// トランプのカード
 struct Card {
     
-    enum Suit {
+    enum Suit: String {
         /// ハート
-        case heart
+        case heart = "♥"
         /// スペード
-        case spade
+        case spade = "♠︎"
         /// クラブ
-        case club
+        case club = "♣︎"
         /// ダイヤ
-        case diamond
+        case diamond = "♦︎"
     }
     
-    enum Rank {
+    enum Rank: String {
         /// エース
-        case ace
+        case ace = "A"
         /// 2
-        case two
+        case two = "2"
         /// 3
-        case three
+        case three = "3"
         /// 4
-        case four
+        case four = "4"
         /// 5
-        case five
+        case five = "5"
         /// 6
-        case six
+        case six = "6"
         /// 7
-        case seven
+        case seven = "7"
         /// 8
-        case eight
+        case eight = "8"
         /// 9
-        case nine
+        case nine = "9"
         /// 10
-        case ten
+        case ten = "10"
         /// ジャック
-        case jack
+        case jack = "J"
         /// クイーン
-        case queen
+        case queen = "Q"
         /// キング
-        case king
+        case king = "K"
     }
     
     let suit: Suit
     let rank: Rank
     
     var notation: String {
-        return "3♥"
+        return rank.rawValue + suit.rawValue
     }
 }
