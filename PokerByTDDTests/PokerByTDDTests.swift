@@ -61,6 +61,15 @@ class PokerByTDDTests: XCTestCase {
         // rank: 等しくない suit: 等しい
         XCTAssertNotEqual(Card(rank: .three, suit: .heart),
                           Card(rank: .ace, suit: .heart))
-
+    }
+    
+    // MARK: - Hand
+    
+    func testIsPair() {
+        
+        let card1 = Card(rank: .three, suit: .heart)
+        let card2 = Card(rank: .three, suit: .club)
+        let hand = Hand(cards: [card1, card2])
+        XCTAssertTrue(hand.isPair)
     }
 }
