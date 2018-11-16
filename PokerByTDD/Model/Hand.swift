@@ -17,6 +17,9 @@ struct Hand {
     }
     
     var isPair: Bool {
-        return true
+        let maxSameSuitCount = cards.enumerated().map { index, card in
+            cards.filter { card.hasSameRank($0) }.count
+            }.max()
+        return maxSameSuitCount == 2
     }
 }
