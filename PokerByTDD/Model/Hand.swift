@@ -24,6 +24,9 @@ struct Hand {
     }
     
     var isFlash: Bool {
-        return true
+        // カードが1枚もないときはフラッシュではないとする
+        guard let card = cards.first else { return false }
+        // 1枚だと常にフラッシュ！
+        return cards.filter { card.hasSameSuit($0) }.count == cards.count
     }
 }
