@@ -66,28 +66,29 @@ class PokerByTDDTests: XCTestCase {
     // MARK: - Hand
     
     func testIsPair() {
-        
-        let card1 = Card(rank: .three, suit: .heart)
-        let card2 = Card(rank: .three, suit: .club)
-        let hand_A = Hand(cards: [card1, card2])
+
+        // 2枚・ペア
+        let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .three, suit: .club)])
         XCTAssertTrue(hand_A.isPair)
         
-        let card3 = Card(rank: .three, suit: .heart)
-        let card4 = Card(rank: .ace, suit: .club)
-        let hand_B = Hand(cards: [card3, card4])
+        // 2枚・ペアではない
+        let hand_B = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .ace, suit: .club)])
         XCTAssertFalse(hand_B.isPair)
         
+        // 0枚
         let hand_C = Hand(cards: [])
         XCTAssertFalse(hand_C.isPair)
         
-        let card5 = Card(rank: .ace, suit: .spade)
-        let hand_D = Hand(cards: [card5])
+        // 1枚
+        let hand_D = Hand(cards: [Card(rank: .ace, suit: .spade)])
         XCTAssertFalse(hand_D.isPair)
         
-        let card6 = Card(rank: .three, suit: .heart)
-        let card7 = Card(rank: .three, suit: .club)
-        let card8 = Card(rank: .three, suit: .diamond)
-        let hand_E = Hand(cards: [card6, card7, card8])
+        // 3枚・スリーカード
+        let hand_E = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .three, suit: .club),
+                                  Card(rank: .three, suit: .diamond)])
         XCTAssertFalse(hand_E.isPair)
     }
 }
