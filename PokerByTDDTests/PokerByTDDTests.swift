@@ -76,5 +76,18 @@ class PokerByTDDTests: XCTestCase {
         let card4 = Card(rank: .ace, suit: .club)
         let hand_B = Hand(cards: [card3, card4])
         XCTAssertFalse(hand_B.isPair)
+        
+        let hand_C = Hand(cards: [])
+        XCTAssertFalse(hand_C.isPair)
+        
+        let card5 = Card(rank: .ace, suit: .spade)
+        let hand_D = Hand(cards: [card5])
+        XCTAssertFalse(hand_D.isPair)
+        
+        let card6 = Card(rank: .three, suit: .heart)
+        let card7 = Card(rank: .three, suit: .club)
+        let card8 = Card(rank: .three, suit: .diamond)
+        let hand_E = Hand(cards: [card6, card7, card8])
+        XCTAssertFalse(hand_E.isPair)
     }
 }
