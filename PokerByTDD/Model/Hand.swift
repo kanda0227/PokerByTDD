@@ -22,4 +22,8 @@ struct Hand {
             }.max()
         return maxSameSuitCount == 2
     }
+    
+    var isFlash: Bool {
+        return true
+    }
 }
