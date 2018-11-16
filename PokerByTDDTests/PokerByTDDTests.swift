@@ -91,4 +91,11 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .three, suit: .diamond)])
         XCTAssertFalse(hand_E.isPair)
     }
+    
+    func testIsFlash() {
+        
+        let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .ace, suit: .heart)])
+        XCTAssertTrue(hand_A.isFlash)
+    }
 }
