@@ -40,6 +40,37 @@ struct Card {
         case queen = "Q"
         /// キング
         case king = "K"
+        
+        var stlength: Int {
+            switch self {
+            case .ace:
+                return 1000
+            case .two:
+                return 20
+            case .three:
+                return 30
+            case .four:
+                return 40
+            case .five:
+                return 50
+            case .six:
+                return 60
+            case .seven:
+                return 70
+            case .eight:
+                return 80
+            case .nine:
+                return 90
+            case .ten:
+                return 100
+            case .jack:
+                return 110
+            case .queen:
+                return 120
+            case .king:
+                return 130
+            }
+        }
     }
     
     enum Suit: String {
@@ -89,6 +120,6 @@ extension Card: Equatable {
 extension Card: Comparable {
     
     static func <(lhs: Card, rhs: Card) -> Bool {
-        return true
+        return lhs.rank.stlength < rhs.rank.stlength
     }
 }
