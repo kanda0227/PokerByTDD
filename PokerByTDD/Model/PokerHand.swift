@@ -19,7 +19,7 @@ enum PokerHand: CaseIterable {
         case .onePair:
             return hasPairs(cards, pairsCount: 1)
         case .flash:
-            return isFlash(cards)
+            return hasFlash(cards)
         case .highCard:
             // ハイカード以外の，どの役にも当てはまらない場合に true を返します
             return PokerHand.allCases
@@ -36,7 +36,7 @@ enum PokerHand: CaseIterable {
         return hasPairsCount == pairsCount
     }
     
-    private func isFlash(_ cards: [Card]) -> Bool {
+    private func hasFlash(_ cards: [Card]) -> Bool {
         // カードが1枚もないときはフラッシュではないとする
         guard let card = cards.first else { return false }
         // 1枚だと常にフラッシュ！
