@@ -59,6 +59,9 @@ class PokerByTDDTests: XCTestCase {
         
         XCTAssertLessThan(Card(rank: .three, suit: .heart),
                           Card(rank: .ace, suit: .club))
+        
+        XCTAssertGreaterThan(Card(rank: .ace, suit: .heart),
+                          Card(rank: .three, suit: .club))
     }
     
     // MARK: - Hand
