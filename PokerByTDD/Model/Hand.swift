@@ -20,6 +20,10 @@ struct Hand {
         return PokerHand.onePair.isPockerHand(cards: cards)
     }
     
+    var isTwoPair: Bool {
+        return PokerHand.twoPair.isPockerHand(cards: cards)
+    }
+    
     var isFlash: Bool {
         return PokerHand.flash.isPockerHand(cards: cards)
     }

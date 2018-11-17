@@ -11,6 +11,7 @@ import Foundation
 /// ポーカーの役一覧
 enum PokerHand: CaseIterable {
     case onePair
+    case twoPair
     case flash
     case highCard
     
@@ -18,6 +19,8 @@ enum PokerHand: CaseIterable {
         switch self {
         case .onePair:
             return hasPairs(cards, pairsCount: 1)
+        case .twoPair:
+            return hasPairs(cards, pairsCount: 2)
         case .flash:
             return hasFlash(cards)
         case .highCard:
