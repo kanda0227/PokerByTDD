@@ -81,6 +81,5 @@ extension Card: Equatable {
     
     static func ==(lhs: Card, rhs: Card) -> Bool {
         return lhs.hasSameRank(rhs)
-            && lhs.hasSameSuit(rhs)
     }
 }
