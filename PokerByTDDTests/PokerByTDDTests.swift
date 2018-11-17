@@ -45,22 +45,14 @@ class PokerByTDDTests: XCTestCase {
     }
     
     func testCardEqual() {
-        
-        // rank: 等しい suit: 等しい
-        XCTAssertEqual(Card(rank: .three, suit: .heart),
-                       Card(rank: .three, suit: .heart))
-        
+
         // rank: 等しくない suit: 等しくない
         XCTAssertNotEqual(Card(rank: .three, suit: .heart),
                           Card(rank: .ace, suit: .club))
         
         // rank: 等しい suit: 等しくない
-        XCTAssertNotEqual(Card(rank: .three, suit: .heart),
+        XCTAssertEqual(Card(rank: .three, suit: .heart),
                           Card(rank: .three, suit: .club))
-
-        // rank: 等しくない suit: 等しい
-        XCTAssertNotEqual(Card(rank: .three, suit: .heart),
-                          Card(rank: .ace, suit: .heart))
     }
     
     // MARK: - Hand
