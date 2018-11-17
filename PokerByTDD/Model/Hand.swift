@@ -29,4 +29,8 @@ struct Hand {
         // 1枚だと常にフラッシュ！
         return cards.filter { card.hasSameSuit($0) }.count == cards.count
     }
+    
+    var isHighCard: Bool {
+        return true
+    }
 }
