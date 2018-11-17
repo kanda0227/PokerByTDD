@@ -104,6 +104,16 @@ class PokerByTDDTests: XCTestCase {
         XCTAssertTrue(hand_F.isOnePair)
     }
     
+    func testIsTwoPair() {
+        
+        let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .three, suit: .club),
+                                  Card(rank: .jack, suit: .diamond),
+                                  Card(rank: .ace, suit: .club),
+                                  Card(rank: .ace, suit: .spade)])
+        XCTAssertTrue(hand_A.isTwoPair)
+    }
+    
     func testIsFlash() {
         
         // 2枚・フラッシュ
