@@ -83,3 +83,12 @@ extension Card: Equatable {
         return lhs.hasSameRank(rhs)
     }
 }
+
+// MARK: - Comparable
+
+extension Card: Comparable {
+    
+    static func <(lhs: Card, rhs: Card) -> Bool {
+        return true
+    }
+}
