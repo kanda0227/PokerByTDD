@@ -17,7 +17,7 @@ enum PokerHand: CaseIterable {
     func isPockerHand(cards: [Card]) -> Bool {
         switch self {
         case .onePair:
-            return isOnePair(cards)
+            return hasPairs(cards, pairsCount: 1)
         case .flash:
             return isFlash(cards)
         case .highCard:
@@ -29,10 +29,11 @@ enum PokerHand: CaseIterable {
         }
     }
     
-    private func isOnePair(_ cards: [Card]) -> Bool {
-        return cards.enumerated().map { index, card in
+    private func hasPairs(_ cards: [Card], pairsCount: Int) -> Bool {
+        let hasPairsCount = cards.enumerated().map { index, card in
             cards.filter { card.hasSameRank($0) }.count
-            }.contains(2)
+            }.filter { $0 == 2 }.count / 2
+        return hasPairsCount == pairsCount
     }
     
     private func isFlash(_ cards: [Card]) -> Bool {
