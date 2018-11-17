@@ -101,7 +101,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .three, suit: .diamond),
                                   Card(rank: .ace, suit: .club),
                                   Card(rank: .ace, suit: .spade)])
-        XCTAssertTrue(hand_F.isOnePair)
+        XCTAssertFalse(hand_F.isOnePair)
     }
     
     func testIsTwoPair() {
