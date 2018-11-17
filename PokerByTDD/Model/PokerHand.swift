@@ -20,11 +20,12 @@ enum PokerHand: CaseIterable {
         switch self {
         case .onePair:
             return hasPairs(cards, pairsCount: 1)
+                && !hasThreeCard(cards)
         case .twoPair:
             return hasPairs(cards, pairsCount: 2)
         case .threeCard:
             return hasThreeCard(cards)
-                && !hasOtherHands(cards: cards)
+                && !hasPairs(cards, pairsCount: 1)
         case .flash:
             return hasFlash(cards)
         case .highCard:
