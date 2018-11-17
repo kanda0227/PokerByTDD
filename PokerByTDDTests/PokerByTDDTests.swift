@@ -55,6 +55,12 @@ class PokerByTDDTests: XCTestCase {
                           Card(rank: .three, suit: .club))
     }
     
+    func testCardCompare() {
+        
+        XCTAssertLessThan(Card(rank: .three, suit: .heart),
+                          Card(rank: .ace, suit: .club))
+    }
+    
     // MARK: - Hand
     
     func testIsPair() {
