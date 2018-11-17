@@ -10,14 +10,14 @@ import Foundation
 
 /// ポーカーの役一覧
 enum PokerHand: CaseIterable {
-    case pair
+    case onePair
     case flash
     case highCard
     
     func isPockerHand(cards: [Card]) -> Bool {
         switch self {
-        case .pair:
-            return isPair(cards)
+        case .onePair:
+            return isOnePair(cards)
         case .flash:
             return isFlash(cards)
         case .highCard:
@@ -29,7 +29,7 @@ enum PokerHand: CaseIterable {
         }
     }
     
-    private func isPair(_ cards: [Card]) -> Bool {
+    private func isOnePair(_ cards: [Card]) -> Bool {
         let maxSameSuitCount = cards.enumerated().map { index, card in
             cards.filter { card.hasSameRank($0) }.count
             }.max()

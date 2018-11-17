@@ -16,8 +16,8 @@ struct Hand {
         self.cards = cards
     }
     
-    var isPair: Bool {
-        return PokerHand.pair.isPockerHand(cards: cards)
+    var isOnePair: Bool {
+        return PokerHand.onePair.isPockerHand(cards: cards)
     }
     
     var isFlash: Bool {
