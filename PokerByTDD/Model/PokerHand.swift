@@ -12,6 +12,7 @@ import Foundation
 enum PokerHand: CaseIterable {
     case onePair
     case twoPair
+    case threeCard
     case flash
     case highCard
     
@@ -21,6 +22,8 @@ enum PokerHand: CaseIterable {
             return hasPairs(cards, pairsCount: 1)
         case .twoPair:
             return hasPairs(cards, pairsCount: 2)
+        case .threeCard:
+            return hasThreeCard(cards)
         case .flash:
             return hasFlash(cards)
         case .highCard:
@@ -37,6 +40,12 @@ enum PokerHand: CaseIterable {
             cards.filter { card.hasSameRank($0) }.count
             }.filter { $0 == 2 }.count / 2
         return hasPairsCount == pairsCount
+    }
+    
+    private func hasThreeCard(_ cards: [Card]) -> Bool {
+        return cards.enumerated().map { index, card in
+            cards.filter { card.hasSameRank($0) }.count
+            }.contains(3)
     }
     
     private func hasFlash(_ cards: [Card]) -> Bool {
