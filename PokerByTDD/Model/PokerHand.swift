@@ -24,6 +24,7 @@ enum PokerHand: CaseIterable {
             return hasPairs(cards, pairsCount: 2)
         case .threeCard:
             return hasThreeCard(cards)
+                && !hasOtherHands(cards: cards)
         case .flash:
             return hasFlash(cards)
         case .highCard:
@@ -53,5 +54,15 @@ enum PokerHand: CaseIterable {
         guard let card = cards.first else { return false }
         // 1枚だと常にフラッシュ！
         return cards.filter { card.hasSameSuit($0) }.count == cards.count
+    }
+    
+    /// 指定の役以外の役を持つかどうかを判定
+    /// ただしハイカードを持つかどうかは判定しません
+    private func hasOtherHands(cards: [Card]) -> Bool {
+        let hasNot = PokerHand.allCases
+            .filter { $0 != .highCard && $0 != self }
+            .filter { $0.isPockerHand(cards: cards) }
+            .isEmpty
+        return !hasNot
     }
 }
