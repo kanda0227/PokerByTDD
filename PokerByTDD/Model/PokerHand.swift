@@ -28,11 +28,7 @@ enum PokerHand: CaseIterable {
         case .flash:
             return hasFlash(cards)
         case .highCard:
-            // ハイカード以外の，どの役にも当てはまらない場合に true を返します
-            return PokerHand.allCases
-                .filter { $0 != .highCard }
-                .filter { $0.isPockerHand(cards: cards) }
-                .isEmpty
+            return !hasOtherHands(cards: cards)
         }
     }
     
