@@ -129,5 +129,9 @@ class PokerByTDDTests: XCTestCase {
         let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
                                   Card(rank: .ace, suit: .spade)])
         XCTAssertTrue(hand_A.isHighCard)
+        
+        let hand_B = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .three, suit: .spade)])
+        XCTAssertFalse(hand_B.isHighCard)
     }
 }
