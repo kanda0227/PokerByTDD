@@ -28,6 +28,10 @@ struct Hand {
         return PokerHand.threeCard.isPockerHand(cards: cards)
     }
     
+    var isFourCard: Bool {
+        return true
+    }
+    
     var isFlash: Bool {
         return PokerHand.flash.isPockerHand(cards: cards)
     }
