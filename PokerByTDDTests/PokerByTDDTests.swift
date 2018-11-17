@@ -94,12 +94,33 @@ class PokerByTDDTests: XCTestCase {
     
     func testIsFlash() {
         
+        // 2枚・フラッシュ
         let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
                                   Card(rank: .ace, suit: .heart)])
         XCTAssertTrue(hand_A.isFlash)
         
+        // 2枚・フラッシュじゃない
         let hand_B = Hand(cards: [Card(rank: .three, suit: .heart),
                                   Card(rank: .three, suit: .club)])
         XCTAssertFalse(hand_B.isFlash)
+        
+        // 0枚
+        let hand_C = Hand(cards: [])
+        XCTAssertFalse(hand_C.isFlash)
+        
+        // 1枚についてはこれで仕様として正しいのか微妙なのでテストは記述しない
+        // 一応 hand_D は欠番にしておきますね
+        
+        // 3枚・フラッシュじゃない
+        let hand_E = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .ace, suit: .heart),
+                                  Card(rank: .jack, suit: .diamond)])
+        XCTAssertFalse(hand_E.isFlash)
+        
+        // 3枚・フラッシュ
+        let hand_F = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .ace, suit: .heart),
+                                  Card(rank: .jack, suit: .heart)])
+        XCTAssertTrue(hand_F.isFlash)
     }
 }
