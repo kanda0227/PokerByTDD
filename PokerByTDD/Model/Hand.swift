@@ -31,6 +31,7 @@ struct Hand {
     }
     
     var isHighCard: Bool {
-        return true
+        // この実装はペアとフラッシュしかない前提になっているのでよくない
+        return !(isPair || isFlash)
     }
 }
