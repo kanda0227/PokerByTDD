@@ -30,10 +30,9 @@ enum PokerHand: CaseIterable {
     }
     
     private func isOnePair(_ cards: [Card]) -> Bool {
-        let maxSameSuitCount = cards.enumerated().map { index, card in
+        return cards.enumerated().map { index, card in
             cards.filter { card.hasSameRank($0) }.count
-            }.max()
-        return maxSameSuitCount == 2
+            }.contains(2)
     }
     
     private func isFlash(_ cards: [Card]) -> Bool {
