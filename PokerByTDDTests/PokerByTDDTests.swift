@@ -345,5 +345,13 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .ten, suit: .spade),
                                   Card(rank: .jack, suit: .spade)])
         XCTAssertEqual(hand_A.hand(), .royalStraightFlash)
+        
+        // スリーカード
+        let hand_B = Hand(cards: [Card(rank: .ace, suit: .spade),
+                                  Card(rank: .ace, suit: .heart),
+                                  Card(rank: .ace, suit: .club),
+                                  Card(rank: .ten, suit: .spade),
+                                  Card(rank: .jack, suit: .spade)])
+        XCTAssertEqual(hand_B.hand(), .threeCard)
     }
 }
