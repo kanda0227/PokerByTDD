@@ -17,6 +17,7 @@ enum PokerHand: CaseIterable {
     case straight
     case fullHouse
     case flash
+    case straightFlash
     case highCard
     
     func isPockerHand(cards: [Card]) -> Bool {
@@ -38,6 +39,9 @@ enum PokerHand: CaseIterable {
                 && hasPairs(cards, pairsCount: 1)
         case .flash:
             return hasFlash(cards)
+        case .straightFlash:
+            return hasStraight(cards)
+                && hasFlash(cards)
         case .highCard:
             return !hasOtherHands(cards: cards)
         }

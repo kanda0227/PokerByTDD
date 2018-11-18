@@ -45,7 +45,7 @@ struct Hand {
     }
     
     var isStraightFlash: Bool {
-        return true
+        return PokerHand.straightFlash.isPockerHand(cards: cards)
     }
     
     var isHighCard: Bool {
