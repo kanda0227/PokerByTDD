@@ -368,5 +368,9 @@ class PokerByTDDTests: XCTestCase {
     func testPokerHandCompare() {
         
         XCTAssertLessThan(PokerHand.highCard, PokerHand.onePair)
+        
+        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.royalStraightFlash)
+        
+        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.threeCard)
     }
 }
