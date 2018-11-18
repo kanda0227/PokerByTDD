@@ -255,6 +255,17 @@ class PokerByTDDTests: XCTestCase {
         XCTAssertTrue(hand_F.isFlash)
     }
     
+    func testIsStraightFlash() {
+        
+        // ストレートフラッシュ
+        let hand_A = Hand(cards: [Card(rank: .ace, suit: .spade),
+                                  Card(rank: .three, suit: .spade),
+                                  Card(rank: .five, suit: .spade),
+                                  Card(rank: .four, suit: .spade),
+                                  Card(rank: .two, suit: .spade)])
+        XCTAssertTrue(hand_A.isStraightFlash)
+    }
+    
     func testIsHighCard() {
         
         let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
