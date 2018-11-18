@@ -48,6 +48,10 @@ struct Hand {
         return PokerHand.straightFlash.isPockerHand(cards: cards)
     }
     
+    var isRoyalStraightFlash: Bool {
+        return true
+    }
+    
     var isHighCard: Bool {
         return PokerHand.highCard.isPockerHand(cards: cards)
     }
