@@ -91,6 +91,37 @@ extension PokerHand {
 extension PokerHand: Comparable {
     
     static func < (lhs: PokerHand, rhs: PokerHand) -> Bool {
-        return lhs.stlength < rhs.stlength
+        guard lhs.sameHand(rhs) else { return lhs.stlength < rhs.stlength }
+        switch (lhs, rhs) {
+        case (.highCard, _):
+            return false
+        case (.onePair(let lPair), .onePair(pair: let rPair)):
+            return lPair.stlength < rPair.stlength
+        case (.twoPair(let lMax, let lMin), .twoPair(let rMax, let rMin)):
+            let equalMax = lMax.stlength == rMax.stlength
+            return equalMax
+                ? lMax.stlength < rMax.stlength
+                : lMin.stlength < rMin.stlength
+        case (.threeCard(let lThree), .threeCard(let rThree)):
+            return lThree.stlength < rThree.stlength
+        case (.straight, _):
+            return false
+        case (.flash, _):
+            return false
+        case (.fullHouse(let lThree, let lPair), .fullHouse(let rThree, let rPair)):
+            let equalThreeCard = lThree.stlength == rThree.stlength
+            return equalThreeCard
+                ? lThree.stlength < rThree.stlength
+                : lPair.stlength < rPair.stlength
+        case (.fourCard(let lFour), .fourCard(let rFour)):
+            return lFour.stlength < rFour.stlength
+        case (.straightFlash, _):
+            return false
+        case (.royalStraightFlash, _):
+            return false
+        default:
+            // ここには来ないはず
+            return false
+        }
     }
 }
