@@ -9,17 +9,24 @@
 import Foundation
 
 /// ポーカーの役一覧
+/// 弱い順に並べくださいね
 enum PokerHand: CaseIterable {
+    case highCard
     case onePair
     case twoPair
     case threeCard
-    case fourCard
     case straight
-    case fullHouse
     case flash
+    case fullHouse
+    case fourCard
     case straightFlash
     case royalStraightFlash
-    case highCard
+    
+    private var stlength: Int {
+        // 定義順に依存させる
+        // allCases は定義順に取得できる
+        return PokerHand.allCases.firstIndex(of: self)!
+    }
     
     func isPockerHand(cards: [Card]) -> Bool {
         switch self {
@@ -107,7 +114,7 @@ enum PokerHand: CaseIterable {
 extension PokerHand: Comparable {
     
     static func < (lhs: PokerHand, rhs: PokerHand) -> Bool {
-        return true
+        return lhs.stlength < rhs.stlength
     }
 }
 
