@@ -37,7 +37,7 @@ struct Hand {
     }
     
     var isFullHouseCard: Bool {
-        return true
+        return PokerHand.fullHouse.isPockerHand(cards: cards)
     }
     
     var isFlash: Bool {

@@ -15,6 +15,7 @@ enum PokerHand: CaseIterable {
     case threeCard
     case fourCard
     case straight
+    case fullHouse
     case flash
     case highCard
     
@@ -32,6 +33,9 @@ enum PokerHand: CaseIterable {
             return hasFourCard(cards)
         case .straight:
             return hasStraight(cards)
+        case .fullHouse:
+            return hasThreeCard(cards)
+                && hasPairs(cards, pairsCount: 1)
         case .flash:
             return hasFlash(cards)
         case .highCard:
