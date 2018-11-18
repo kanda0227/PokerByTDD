@@ -17,48 +17,52 @@ struct Hand {
     }
     
     var isOnePair: Bool {
-        return PokerHand.onePair.isPockerHand(cards: cards)
+        return isPokerHand(.defaultOnePair)
     }
     
     var isTwoPair: Bool {
-        return PokerHand.twoPair.isPockerHand(cards: cards)
+        return isPokerHand(.defaultTwoPair)
     }
     
     var isThreeCard: Bool {
-        return PokerHand.threeCard.isPockerHand(cards: cards)
+        return isPokerHand(.defaultThreeCard)
     }
     
     var isFourCard: Bool {
-        return PokerHand.fourCard.isPockerHand(cards: cards)
+        return isPokerHand(.defaultFourCard)
     }
     
     var isStraight: Bool {
-        return PokerHand.straight.isPockerHand(cards: cards)
+        return isPokerHand(.straight)
     }
     
     var isFullHouse: Bool {
-        return PokerHand.fullHouse.isPockerHand(cards: cards)
+        return isPokerHand(.defaultFullHouse)
     }
     
     var isFlash: Bool {
-        return PokerHand.flash.isPockerHand(cards: cards)
+        return isPokerHand(.flash)
     }
     
     var isStraightFlash: Bool {
-        return PokerHand.straightFlash.isPockerHand(cards: cards)
+        return isPokerHand(.straightFlash)
     }
     
     var isRoyalStraightFlash: Bool {
-        return PokerHand.royalStraightFlash.isPockerHand(cards: cards)
+        return isPokerHand(.royalStraightFlash)
     }
     
     var isHighCard: Bool {
-        return PokerHand.highCard.isPockerHand(cards: cards)
+        return isPokerHand(.highCard)
     }
     
     /// カードの役を返します
     func hand() -> PokerHand {
         // 必ず何かしらに該当するはず
-        return PokerHand.allCases.filter { $0.isPockerHand(cards: cards) }.first!
+        return PokerHandDecisionHelper.pockerHand(cards: cards)
+    }
+    
+    private func isPokerHand(_ pokerHand: PokerHand) -> Bool {
+        return hand().sameHand(pokerHand)
     }
 }
