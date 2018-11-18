@@ -169,7 +169,7 @@ class PokerByTDDTests: XCTestCase {
         XCTAssertFalse(hand_B.isFourCard)
     }
     
-    func testStraightFlush() {
+    func testStraight() {
         
         // 5枚・ストレート
         let hand_A = Hand(cards: [Card(rank: .three, suit: .heart),
