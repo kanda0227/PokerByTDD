@@ -213,6 +213,14 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .ace, suit: .club),
                                   Card(rank: .ace, suit: .spade)])
         XCTAssertTrue(hand_A.isFullHouseCard)
+        
+        // フルハウスではない
+        let hand_B = Hand(cards: [Card(rank: .three, suit: .heart),
+                                  Card(rank: .three, suit: .club),
+                                  Card(rank: .three, suit: .diamond),
+                                  Card(rank: .ace, suit: .club),
+                                  Card(rank: .jack, suit: .spade)])
+        XCTAssertFalse(hand_B.isFullHouseCard)
     }
     
     func testIsFlash() {
