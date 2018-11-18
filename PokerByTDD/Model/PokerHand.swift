@@ -61,14 +61,7 @@ enum PokerHand: CaseIterable {
     private func hasStraight(_ cards: [Card]) -> Bool {
         var ranks = Card.Rank.allCases
         ranks.insert(.ace, at: 0)
-        guard let strongestCard = cards.max(),
-            let lastIndex = ranks.lastIndex(of: strongestCard.rank),
-            lastIndex >= cards.count - 1
-            else { return false }
-        let firstIndex = lastIndex - (cards.count - 1)
-        let sortedCards = cards.sorted()
-        // ソートしたカードのランク配列が ranks の部分配列になっていればストレート
-        return ranks[firstIndex...lastIndex].enumerated().filter { $0.element == sortedCards[$0.offset].rank }.count == cards.count
+        return ranks.enumerated().filter { cards.map { $0.rank }.contains($0.element) }.map { $0.offset }.hasContinuous(cards.count)
     }
     
     private func hasFlash(_ cards: [Card]) -> Bool {
@@ -86,5 +79,22 @@ enum PokerHand: CaseIterable {
             .filter { $0.isPockerHand(cards: cards) }
             .isEmpty
         return !hasNot
+    }
+}
+
+private extension Array where Element==Int {
+    /// n連続した数値を持つかどうかを判定
+    func hasContinuous(_ n: Int) -> Bool {
+        var counter = 1
+        var latestElem = 0
+        let sortedElems = sorted()
+        for i in 0..<count {
+            let elem = sortedElems[i]
+            let isContinuous = ((latestElem + 1) == elem)
+            counter = isContinuous ? counter + 1 : 1
+            latestElem = elem
+            guard counter < n else { break }
+        }
+        return counter >= n
     }
 }
