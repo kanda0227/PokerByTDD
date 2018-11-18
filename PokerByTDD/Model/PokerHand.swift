@@ -14,6 +14,7 @@ enum PokerHand: CaseIterable {
     case twoPair
     case threeCard
     case fourCard
+    case straight
     case flash
     case highCard
     
@@ -29,6 +30,8 @@ enum PokerHand: CaseIterable {
                 && !hasPairs(cards, pairsCount: 1)
         case .fourCard:
             return hasFourCard(cards)
+        case .straight:
+            return hasStraight(cards)
         case .flash:
             return hasFlash(cards)
         case .highCard:
@@ -53,6 +56,19 @@ enum PokerHand: CaseIterable {
         return cards.enumerated().map { index, card in
             cards.filter { card.hasSameRank($0) }.count
             }.contains(4)
+    }
+    
+    private func hasStraight(_ cards: [Card]) -> Bool {
+        var ranks = Card.Rank.allCases
+        ranks.insert(.ace, at: 0)
+        guard let strongestCard = cards.max(),
+            let lastIndex = ranks.lastIndex(of: strongestCard.rank),
+            lastIndex >= cards.count - 1
+            else { return false }
+        let firstIndex = lastIndex - (cards.count - 1)
+        let sortedCards = cards.sorted()
+        // ソートしたカードのランク配列が ranks の部分配列になっていればストレート
+        return ranks[firstIndex...lastIndex].enumerated().filter { $0.element == sortedCards[$0.offset].rank }.count == cards.count
     }
     
     private func hasFlash(_ cards: [Card]) -> Bool {

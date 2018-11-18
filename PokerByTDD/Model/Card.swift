@@ -13,9 +13,8 @@ import Foundation
 /// トランプのカード
 struct Card {
     
-    enum Rank: String {
-        /// エース
-        case ace = "A"
+    enum Rank: String, CaseIterable {
+        
         /// 2
         case two = "2"
         /// 3
@@ -40,6 +39,8 @@ struct Card {
         case queen = "Q"
         /// キング
         case king = "K"
+        /// エース
+        case ace = "A"
         
         var stlength: Int {
             switch self {
@@ -84,13 +85,8 @@ struct Card {
         case diamond = "♦︎"
     }
     
-    private let rank: Rank
-    private let suit: Suit
-    
-    init(rank: Rank, suit: Suit) {
-        self.rank = rank
-        self.suit = suit
-    }
+    let rank: Rank
+    let suit: Suit
     
     /// 文字列表記
     var notation: String {
