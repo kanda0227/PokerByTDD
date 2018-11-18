@@ -362,4 +362,11 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .jack, suit: .spade)])
         XCTAssertEqual(hand_C.hand(), .highCard)
     }
+    
+    // MARK: - PokerHand
+    
+    func testPokerHandCompare() {
+        
+        XCTAssertLessThan(PokerHand.highCard, PokerHand.onePair)
+    }
 }
