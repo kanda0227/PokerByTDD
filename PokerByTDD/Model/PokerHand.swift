@@ -53,8 +53,9 @@ enum PokerHand {
     
     private var stlength: Int {
         // 定義順に依存させる
-        // allCases は定義順に取得できる
-        return PokerHand.allCases.firstIndex(of: self)!
+        // allCases は定義順に取得させること
+        // 必ず何かしらに該当するはずなので強制アンラップ
+        return PokerHand.allCases.enumerated().filter { $0.element.sameHand(self) }.map { $0.offset }.first!
     }
 }
 
