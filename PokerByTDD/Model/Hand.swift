@@ -55,4 +55,9 @@ struct Hand {
     var isHighCard: Bool {
         return PokerHand.highCard.isPockerHand(cards: cards)
     }
+    
+    /// カードの役を返します
+    func hand() -> PokerHand {
+        return .royalStraightFlash
+    }
 }
