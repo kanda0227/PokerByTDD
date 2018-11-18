@@ -372,5 +372,7 @@ class PokerByTDDTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.royalStraightFlash)
         
         XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.threeCard(three: .ace))
+        
+        XCTAssertLessThan(PokerHand.onePair(pair: .three), PokerHand.onePair(pair: .ace))
     }
 }
