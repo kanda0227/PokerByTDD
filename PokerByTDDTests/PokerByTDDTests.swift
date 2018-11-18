@@ -352,7 +352,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .ace, suit: .club),
                                   Card(rank: .ten, suit: .spade),
                                   Card(rank: .jack, suit: .spade)])
-        XCTAssertEqual(hand_B.hand(), .threeCard)
+        XCTAssertEqual(hand_B.hand(), .threeCard(three: .ace))
         
         // ハイカード
         let hand_C = Hand(cards: [Card(rank: .two, suit: .spade),
@@ -367,10 +367,10 @@ class PokerByTDDTests: XCTestCase {
     
     func testPokerHandCompare() {
         
-        XCTAssertLessThan(PokerHand.highCard, PokerHand.onePair)
+        XCTAssertLessThan(PokerHand.highCard, PokerHand.onePair(pair: .ace))
         
         XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.royalStraightFlash)
         
-        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.threeCard)
+        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.threeCard(three: .ace))
     }
 }

@@ -11,14 +11,17 @@ import Foundation
 /// ポーカーの役一覧
 /// 弱い順に並べくださいね
 enum PokerHand: CaseIterable {
+    
+    typealias Rank = Card.Rank
+    
     case highCard
-    case onePair
-    case twoPair
-    case threeCard
+    case onePair(pair: Rank)
+    case twoPair(pairMax: Rank, pairMin: Rank)
+    case threeCard(three: Rank)
     case straight
     case flash
-    case fullHouse
-    case fourCard
+    case fullHouse(three: Rank, two: Rank)
+    case fourCard(four: Rank)
     case straightFlash
     case royalStraightFlash
     
