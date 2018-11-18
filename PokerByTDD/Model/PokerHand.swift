@@ -104,6 +104,13 @@ enum PokerHand: CaseIterable {
     }
 }
 
+extension PokerHand: Comparable {
+    
+    static func < (lhs: PokerHand, rhs: PokerHand) -> Bool {
+        return true
+    }
+}
+
 private extension Array where Element==Int {
     /// n連続した数値を持つかどうかを判定
     func hasContinuous(_ n: Int) -> Bool {
