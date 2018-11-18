@@ -353,5 +353,13 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .ten, suit: .spade),
                                   Card(rank: .jack, suit: .spade)])
         XCTAssertEqual(hand_B.hand(), .threeCard)
+        
+        // ハイカード
+        let hand_C = Hand(cards: [Card(rank: .two, suit: .spade),
+                                  Card(rank: .ace, suit: .heart),
+                                  Card(rank: .seven, suit: .club),
+                                  Card(rank: .ten, suit: .spade),
+                                  Card(rank: .jack, suit: .spade)])
+        XCTAssertEqual(hand_C.hand(), .highCard)
     }
 }
