@@ -18,6 +18,7 @@ enum PokerHand: CaseIterable {
     case fullHouse
     case flash
     case straightFlash
+    case royalStraightFlash
     case highCard
     
     func isPockerHand(cards: [Card]) -> Bool {
@@ -42,6 +43,8 @@ enum PokerHand: CaseIterable {
         case .straightFlash:
             return hasStraight(cards)
                 && hasFlash(cards)
+        case .royalStraightFlash:
+            return isRoyalStraightFlash(cards)
         case .highCard:
             return !hasOtherHands(cards: cards)
         }
@@ -77,6 +80,14 @@ enum PokerHand: CaseIterable {
         guard let card = cards.first else { return false }
         // 1枚だと常にフラッシュ！
         return cards.filter { card.hasSameSuit($0) }.count == cards.count
+    }
+    
+    private func isRoyalStraightFlash(_ cards: [Card]) -> Bool {
+        let cardsRank = cards.map { $0.rank }
+        // ここでロイヤル要素を絞り込み
+        guard cardsRank.contains(.ace) && cardsRank.contains(.king) else { return false }
+        return hasStraight(cards)
+            && hasFlash(cards)
     }
     
     /// 指定の役以外の役を持つかどうかを判定
