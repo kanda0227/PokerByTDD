@@ -22,7 +22,7 @@ TODOリスト
 	* [x] ストレートフラッシュ
 	* [x] ロイヤルストレートフラッシュ
 	* [ ] has_N_Card の N を引数で渡して共通化
-	* [ ] isStraight，isFllHouse のリネーム
+	* [x] isStraight，isFllHouse のリネーム
 	* [ ] ストレート・フラッシュのテスト修正
 * [ ] 役を返すメソッド追加
 * [ ] 役判定にコメント追加 (isPockerHand(cards:)で使用しているロジックに一応説明コメントをつけておく)
