@@ -177,7 +177,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .five, suit: .diamond),
                                   Card(rank: .six, suit: .spade),
                                   Card(rank: .seven, suit: .spade)])
-        XCTAssertTrue(hand_A.isStraightCard)
+        XCTAssertTrue(hand_A.isStraight)
         
         // 5枚・ストレートではない
         let hand_B = Hand(cards: [Card(rank: .three, suit: .heart),
@@ -185,7 +185,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .five, suit: .diamond),
                                   Card(rank: .queen, suit: .spade),
                                   Card(rank: .seven, suit: .spade)])
-        XCTAssertFalse(hand_B.isStraightCard)
+        XCTAssertFalse(hand_B.isStraight)
         
         // 5枚・ストレート
         let hand_C = Hand(cards: [Card(rank: .ace, suit: .spade),
@@ -193,7 +193,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .king, suit: .spade),
                                   Card(rank: .ten, suit: .heart),
                                   Card(rank: .jack, suit: .club)])
-        XCTAssertTrue(hand_C.isStraightCard)
+        XCTAssertTrue(hand_C.isStraight)
         
         // 5枚・ストレート
         let hand_D = Hand(cards: [Card(rank: .ace, suit: .spade),
@@ -201,7 +201,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .five, suit: .spade),
                                   Card(rank: .four, suit: .heart),
                                   Card(rank: .two, suit: .club)])
-        XCTAssertTrue(hand_D.isStraightCard)
+        XCTAssertTrue(hand_D.isStraight)
     }
     
     func testIsFullHouse() {
@@ -212,7 +212,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .three, suit: .diamond),
                                   Card(rank: .ace, suit: .club),
                                   Card(rank: .ace, suit: .spade)])
-        XCTAssertTrue(hand_A.isFullHouseCard)
+        XCTAssertTrue(hand_A.isFullHouse)
         
         // フルハウスではない
         let hand_B = Hand(cards: [Card(rank: .three, suit: .heart),
@@ -220,7 +220,7 @@ class PokerByTDDTests: XCTestCase {
                                   Card(rank: .three, suit: .diamond),
                                   Card(rank: .ace, suit: .club),
                                   Card(rank: .jack, suit: .spade)])
-        XCTAssertFalse(hand_B.isFullHouseCard)
+        XCTAssertFalse(hand_B.isFullHouse)
     }
     
     func testIsFlash() {

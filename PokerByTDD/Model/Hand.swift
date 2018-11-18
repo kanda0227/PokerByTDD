@@ -32,11 +32,11 @@ struct Hand {
         return PokerHand.fourCard.isPockerHand(cards: cards)
     }
     
-    var isStraightCard: Bool {
+    var isStraight: Bool {
         return PokerHand.straight.isPockerHand(cards: cards)
     }
     
-    var isFullHouseCard: Bool {
+    var isFullHouse: Bool {
         return PokerHand.fullHouse.isPockerHand(cards: cards)
     }
     
