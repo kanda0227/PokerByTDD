@@ -58,6 +58,7 @@ struct Hand {
     
     /// カードの役を返します
     func hand() -> PokerHand {
-        return .royalStraightFlash
+        // 必ず何かしらに該当するはず
+        return PokerHand.allCases.filter { $0.isPockerHand(cards: cards) }.first!
     }
 }

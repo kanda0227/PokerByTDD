@@ -45,6 +45,7 @@ enum PokerHand: CaseIterable {
         case .straightFlash:
             return hasStraight(cards)
                 && hasFlash(cards)
+                && !isRoyalStraightFlash(cards)
         case .royalStraightFlash:
             return isRoyalStraightFlash(cards)
         case .highCard:
