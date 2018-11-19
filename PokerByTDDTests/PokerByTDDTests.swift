@@ -496,6 +496,6 @@ class PokerByTDDTests: XCTestCase {
                        Card(rank: .jack, suit: .spade)]
         let hand_Carol = Hand(cards: cards_C, name: "Carol")
         let table = Table(hands: [hand_Alice, hand_Bob, hand_Carol])
-        XCTAssertEqual(table.ranking, ["Alice", "Carol", "Bob"])
+        XCTAssertEqual(table.ranking, [["Alice"], ["Carol"], ["Bob"]])
     }
 }
