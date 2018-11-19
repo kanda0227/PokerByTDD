@@ -33,7 +33,7 @@ struct Hand {
     }
     
     var isStraight: Bool {
-        return isPokerHand(.straight)
+        return isPokerHand(.defaultStraight)
     }
     
     var isFullHouse: Bool {
@@ -41,19 +41,19 @@ struct Hand {
     }
     
     var isFlash: Bool {
-        return isPokerHand(.flash)
+        return isPokerHand(.defaultFlash)
     }
     
     var isStraightFlash: Bool {
-        return isPokerHand(.straightFlash)
+        return isPokerHand(.defaultStraightFlash)
     }
     
     var isRoyalStraightFlash: Bool {
-        return isPokerHand(.royalStraightFlash)
+        return isPokerHand(.defaultRoyalStraightFlash)
     }
     
     var isHighCard: Bool {
-        return isPokerHand(.highCard)
+        return isPokerHand(.defaultHighCard)
     }
     
     /// カードの役を返します

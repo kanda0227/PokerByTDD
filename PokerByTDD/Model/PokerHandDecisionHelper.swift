@@ -13,55 +13,56 @@ import Foundation
 /// インスタンス化を防ぐため enum で定義
 enum PokerHandDecisionHelper {
     
-    typealias Rank = PokerHand.Rank
-    
     /// カードから役を判定します
     static func pockerHand(cards: [Card]) -> PokerHand {
         if isRoyalStraightFlash(cards) {
-            return .royalStraightFlash
+            return .royalStraightFlash(cards: cards)
         } else if hasFlash(cards) && hasStraight(cards) {
-            return .straightFlash
+            return .straightFlash(cards: cards)
         } else if hasFlash(cards) {
-            return .flash
+            return .flash(cards: cards)
         } else if hasStraight(cards) {
-            return .straight
+            return .straight(cards: cards)
         } else if let fourRank = fourCard(cards) {
-            return .fourCard(four: fourRank)
+            return .fourCard(cards: cards, four: fourRank)
         } else if let threeRank = threeCard(cards),
             let pairRank = pairs(cards, pairsCount: 1)?.first {
-            return .fullHouse(three: threeRank, two: pairRank)
+            return .fullHouse(cards: cards, three: threeRank, two: pairRank)
         } else if let threeRank = threeCard(cards) {
-            return .threeCard(three: threeRank)
+            return .threeCard(cards: cards, three: threeRank)
         } else if let pairsRank = pairs(cards, pairsCount: 2),
             pairsRank.count == 2 {
-            return .twoPair(pairMax: pairsRank[0], pairMin: pairsRank[1])
+            return .twoPair(cards: cards, pairMax: pairsRank[0], pairMin: pairsRank[1])
         } else if let pairRank = pairs(cards, pairsCount: 1)?.first {
-            return .onePair(pair: pairRank)
+            return .onePair(cards: cards, pair: pairRank)
         }
         
-        return .highCard
+        return .highCard(cards: cards)
     }
     
     /// カードにペアがあればペアの Rank を強い順にソートした配列で返します
-    static private func pairs(_ cards: [Card], pairsCount: Int) -> [Rank]? {
+    static private func pairs(_ cards: [Card], pairsCount: Int) -> [Card]? {
         let pairs = cards.enumerated().map { index, card in
-            (cards.filter { card.hasSameRank($0) }.count, card.rank)
+            (cards.filter { card.hasSameRank($0) }.count, card)
             }.filter { $0.0 == 2 }.map { $0.1 }
-        let pairRanks = Array(Set(pairs)).sorted { $0.stlength > $1.stlength }
+        let pairRanks = pairs.sorted().enumerated()
+            // 同じランクが2個ずつ並ぶはずなので奇数の方だけピック
+            .filter { $0.offset % 2 == 1 }
+            .map { $0.element }
         return pairRanks.isEmpty ? nil : pairRanks
     }
     
     /// カードに3枚組があれば Rank を返します
-    static private func threeCard(_ cards: [Card]) -> Rank? {
+    static private func threeCard(_ cards: [Card]) -> Card? {
         return cards.enumerated().map { index, card in
-            (cards.filter { card.hasSameRank($0) }.count, card.rank)
+            (cards.filter { card.hasSameRank($0) }.count, card)
             }.filter { $0.0 == 3 }.first?.1
     }
     
     /// カードに4枚組があれば Rank を返します
-    static private func fourCard(_ cards: [Card]) -> Rank? {
+    static private func fourCard(_ cards: [Card]) -> Card? {
         return cards.enumerated().map { index, card in
-            (cards.filter { card.hasSameRank($0) }.count, card.rank)
+            (cards.filter { card.hasSameRank($0) }.count, card)
             }.filter { $0.0 == 4 }.first?.1
     }
     

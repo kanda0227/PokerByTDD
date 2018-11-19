@@ -27,29 +27,41 @@ enum PokerHand {
     
     // 一部の引数が必要な case について，
     // 役だけを見たい場合に使用するためのデフォルト値入り case を用意
+    // 同じカードを使用したり，カードが空だったりしますが
+    // あくまで役の列挙に使用しているため許容します
+    /// デフォルト値入りのハイカード定数
+    static let defaultHighCard = PokerHand.highCard(cards: [])
     /// デフォルト値入りのワンペア定数
-    static let defaultOnePair = PokerHand.onePair(pair: .ace)
+    static let defaultOnePair = PokerHand.onePair(cards: [], pair: .defaultCard)
     /// デフォルト値入りのツーペア定数
-    static let defaultTwoPair = PokerHand.twoPair(pairMax: .ace, pairMin: .two)
+    static let defaultTwoPair = PokerHand.twoPair(cards: [], pairMax: .defaultCard, pairMin: .defaultCard)
     /// デフォルト値入りのスリーカード定数
-    static let defaultThreeCard = PokerHand.threeCard(three: .ace)
+    static let defaultThreeCard = PokerHand.threeCard(cards: [], three: .defaultCard)
+    /// デフォルト値入りのストレート定数
+    static let defaultStraight = PokerHand.straight(cards: [])
+    /// デフォルト値入りのフラッシュ定数
+    static let defaultFlash = PokerHand.flash(cards: [])
     /// デフォルト値入りのフルハウス定数
-    static let defaultFullHouse = PokerHand.fullHouse(three: .ace, two: .two)
+    static let defaultFullHouse = PokerHand.fullHouse(cards: [], three: .defaultCard, two: .defaultCard)
     /// デフォルト値入りのフォーカード定数
-    static let defaultFourCard = PokerHand.fourCard(four: .four)
+    static let defaultFourCard = PokerHand.fourCard(cards: [], four: .defaultCard)
+    /// デフォルト値入りのストレートフラッシュ定数
+    static let defaultStraightFlash = PokerHand.straightFlash(cards: [])
+    /// デフォルト値入りのロイヤルストレートフラッシュ定数
+    static let defaultRoyalStraightFlash = PokerHand.royalStraightFlash(cards: [])
     
     /// 一部引数が必要になってしまうものはデフォルト値を入れたものを使用
     static var allCases: [PokerHand]
-        = [.highCard,
+        = [.defaultHighCard,
            .defaultOnePair,
            .defaultTwoPair,
            .defaultThreeCard,
-           .straight,
-           .flash,
+           .defaultStraight,
+           .defaultFlash,
            .defaultFullHouse,
            .defaultFourCard,
-           .straightFlash,
-           .royalStraightFlash]
+           .defaultStraightFlash,
+           .defaultRoyalStraightFlash]
     
     private var stlength: Int {
         // 定義順に依存させる
@@ -91,37 +103,75 @@ extension PokerHand {
 extension PokerHand: Comparable {
     
     static func < (lhs: PokerHand, rhs: PokerHand) -> Bool {
-        guard lhs.sameHand(rhs) else { return lhs.stlength < rhs.stlength }
         switch (lhs, rhs) {
-        case (.highCard, _):
-            return false
-        case (.onePair(let lPair), .onePair(pair: let rPair)):
-            return lPair.stlength < rPair.stlength
-        case (.twoPair(let lMax, let lMin), .twoPair(let rMax, let rMin)):
-            let equalMax = lMax.stlength == rMax.stlength
+            
+        case (_, _) where !lhs.sameHand(rhs):
+            return lhs.stlength < rhs.stlength
+            
+        case (.highCard(let lCards), .highCard(let rCards)):
+            return lKickerLessThanRKicker(lCards, rCards)
+            
+        case (.onePair(let lCards, let lPair), .onePair(let rCards, pair: let rPair)):
+            let equalPair = lPair == rPair
+            return equalPair
+                ? lKickerLessThanRKicker(lCards, rCards)
+                : lPair < rPair
+            
+        case (.twoPair(let lCards, let lMax, let lMin), .twoPair(let rCards, let rMax, let rMin)):
+            let equalMax = lMax == rMax
+            let equalMin = lMin == rMin
             return equalMax
-                ? lMax.stlength < rMax.stlength
-                : lMin.stlength < rMin.stlength
-        case (.threeCard(let lThree), .threeCard(let rThree)):
-            return lThree.stlength < rThree.stlength
-        case (.straight, _):
-            return false
-        case (.flash, _):
-            return false
-        case (.fullHouse(let lThree, let lPair), .fullHouse(let rThree, let rPair)):
-            let equalThreeCard = lThree.stlength == rThree.stlength
+                ? equalMin
+                    ? lKickerLessThanRKicker(lCards, rCards)
+                    : lMin < rMin
+                : lMax < rMax
+            
+        case (.threeCard(let lCards, let lThree), .threeCard(let rCards, let rThree)):
+            let equalThree = lThree == rThree
+            return equalThree
+                ? lKickerLessThanRKicker(lCards, rCards)
+                : lThree < rThree
+            
+        case (.straight(let lCards), .straight(let rCards)):
+            return lKickerLessThanRKicker(lCards, rCards)
+            
+        case (.flash(let lCards), .flash(let rCards)):
+            return lKickerLessThanRKicker(lCards, rCards)
+            
+        case (.fullHouse(let lCards, let lThree, let lPair), .fullHouse(let rCards, let rThree, let rPair)):
+            let equalThreeCard = lThree == rThree
+            let equalPair = lPair == rPair
             return equalThreeCard
-                ? lThree.stlength < rThree.stlength
-                : lPair.stlength < rPair.stlength
-        case (.fourCard(let lFour), .fourCard(let rFour)):
-            return lFour.stlength < rFour.stlength
-        case (.straightFlash, _):
-            return false
+                ? equalPair
+                    ? lKickerLessThanRKicker(lCards, rCards)
+                    : lPair < rPair
+                : lThree < rThree
+            
+        case (.fourCard(let lCards, let lFour), .fourCard(let rCards, let rFour)):
+            let equalFour = lFour == rFour
+            return equalFour
+                ? lKickerLessThanRKicker(lCards, rCards)
+                : lFour < rFour
+            
+        case (.straightFlash(let lCards), .straightFlash(let rCards)):
+            return lKickerLessThanRKicker(lCards, rCards)
+            
         case (.royalStraightFlash, _):
+            // ここはどうあがいても同じなので省略
             return false
+            
         default:
             // ここには来ないはず
             return false
         }
+    }
+    
+    private static func lKickerLessThanRKicker(_ lCards: [Card], _ rCards: [Card]) -> Bool {
+        guard let index = differentIndex(lCards.sorted(), rCards.sorted()) else { return false }
+        return lCards[index] < rCards[index]
+    }
+    
+    private static func differentIndex(_ lCards: [Card], _ rCards: [Card]) -> Int? {
+        return lCards.enumerated().filter { !($0.element == rCards[$0.offset]) }.first?.offset
     }
 }

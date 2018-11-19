@@ -75,6 +75,9 @@ struct Card {
     func hasSameSuit(_ card: Card) -> Bool {
         return suit == card.suit
     }
+    
+    /// デフォルトでとりあえずカードが欲しい時に渡す用の定数
+    static let defaultCard = Card(rank: .ace, suit: .club)
 }
 
 // MARK: - Equatable
