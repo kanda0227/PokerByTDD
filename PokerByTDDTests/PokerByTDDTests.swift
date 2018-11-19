@@ -449,5 +449,24 @@ class PokerByTDDTests: XCTestCase {
                         Card(rank: .jack, suit: .spade)]
         XCTAssertGreaterThan(PokerHand.highCard(cards: cards_E1),
                              PokerHand.highCard(cards: cards_E2))
+        
+        // ツーペア
+        let cards_F1 = [Card(rank: .three, suit: .spade),
+                        Card(rank: .jack, suit: .heart),
+                        Card(rank: .three, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        let max_F1 = cards_F1[1]
+        let min_F1 = cards_F1[0]
+        // ツーペア
+        let cards_F2 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .queen, suit: .heart),
+                        Card(rank: .queen, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .ten, suit: .heart)]
+        let max_F2 = cards_F2[1]
+        let min_F2 = cards_F2[4]
+        XCTAssertLessThan(PokerHand.twoPair(cards: cards_F1, pairMax: max_F1, pairMin: min_F1),
+                          PokerHand.twoPair(cards: cards_F2, pairMax: max_F2, pairMin: min_F2))
     }
 }
