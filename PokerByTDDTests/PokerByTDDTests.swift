@@ -480,22 +480,22 @@ class PokerByTDDTests: XCTestCase {
                        Card(rank: .king, suit: .spade),
                        Card(rank: .ten, suit: .spade),
                        Card(rank: .jack, suit: .spade)]
-        let hand_Alice = Hand(cards: cards_A)
+        let hand_Alice = Hand(cards: cards_A, name: "Alice")
         // ハイカード
         let cards_B = [Card(rank: .two, suit: .spade),
                        Card(rank: .ace, suit: .heart),
                        Card(rank: .seven, suit: .club),
                        Card(rank: .ten, suit: .spade),
                        Card(rank: .jack, suit: .spade)]
-        let hand_Bob = Hand(cards: cards_B)
+        let hand_Bob = Hand(cards: cards_B, name: "Bob")
         // スリーカード
         let cards_C = [Card(rank: .ace, suit: .spade),
                        Card(rank: .ace, suit: .heart),
                        Card(rank: .ace, suit: .club),
                        Card(rank: .ten, suit: .spade),
                        Card(rank: .jack, suit: .spade)]
-        let hand_Carol = Hand(cards: cards_C)
+        let hand_Carol = Hand(cards: cards_C, name: "Carol")
         let table = Table(hands: [hand_Alice, hand_Bob, hand_Carol])
-        XCTAssertEqual(table.ranking, [0, 2, 1])
+        XCTAssertEqual(table.ranking, ["Alice", "Carol", "Bob"])
     }
 }
