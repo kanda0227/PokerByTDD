@@ -16,7 +16,7 @@ struct Table {
         self.hands = hands
     }
     
-    var ranking: [Int] {
-        return hands.enumerated().sorted { $0.element.hand() > $1.element.hand() }.map { $0.offset }
+    var ranking: [String] {
+        return hands.enumerated().sorted { $0.element.hand() > $1.element.hand() }.map { $0.element.name }
     }
 }

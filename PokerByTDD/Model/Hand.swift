@@ -12,8 +12,11 @@ struct Hand {
     
     private let cards: [Card]
     
-    init(cards: [Card]) {
+    let name: String
+    
+    init(cards: [Card], name: String = "no_name") {
         self.cards = cards
+        self.name = name
     }
     
     var isOnePair: Bool {
