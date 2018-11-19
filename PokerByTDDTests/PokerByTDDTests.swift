@@ -495,7 +495,24 @@ class PokerByTDDTests: XCTestCase {
                        Card(rank: .ten, suit: .spade),
                        Card(rank: .jack, suit: .spade)]
         let hand_Carol = Hand(cards: cards_C, name: "Carol")
-        let table = Table(hands: [hand_Alice, hand_Bob, hand_Carol])
-        XCTAssertEqual(table.ranking, [["Alice"], ["Carol"], ["Bob"]])
+        let table1 = Table(hands: [hand_Alice, hand_Bob, hand_Carol])
+        XCTAssertEqual(table1.ranking, [["Alice"], ["Carol"], ["Bob"]])
+        
+        // ワンペア
+        let cards_D = [Card(rank: .ace, suit: .spade),
+                       Card(rank: .ace, suit: .heart),
+                       Card(rank: .king, suit: .spade),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let hand_Dave = Hand(cards: cards_D, name: "Dave")
+        // ワンペア
+        let cards_E = [Card(rank: .ace, suit: .diamond),
+                       Card(rank: .ten, suit: .club),
+                       Card(rank: .king, suit: .heart),
+                       Card(rank: .ace, suit: .club),
+                       Card(rank: .jack, suit: .diamond)]
+        let hand_Ellen = Hand(cards: cards_E, name: "Ellen")
+        let table2 = Table(hands: [hand_Dave, hand_Ellen])
+        XCTAssertEqual(table2.ranking, [["Dave", "Ellen"]])
     }
 }
