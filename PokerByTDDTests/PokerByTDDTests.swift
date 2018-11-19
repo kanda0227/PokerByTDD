@@ -469,4 +469,33 @@ class PokerByTDDTests: XCTestCase {
         XCTAssertLessThan(PokerHand.twoPair(cards: cards_F1, pairMax: max_F1, pairMin: min_F1),
                           PokerHand.twoPair(cards: cards_F2, pairMax: max_F2, pairMin: min_F2))
     }
+    
+    // MARK: - Table
+    
+    func testRanking() {
+        
+        // ロイヤルストレートフラッシュ
+        let cards_A = [Card(rank: .ace, suit: .spade),
+                       Card(rank: .queen, suit: .spade),
+                       Card(rank: .king, suit: .spade),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let hand_Alice = Hand(cards: cards_A)
+        // ハイカード
+        let cards_B = [Card(rank: .two, suit: .spade),
+                       Card(rank: .ace, suit: .heart),
+                       Card(rank: .seven, suit: .club),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let hand_Bob = Hand(cards: cards_B)
+        // スリーカード
+        let cards_C = [Card(rank: .ace, suit: .spade),
+                       Card(rank: .ace, suit: .heart),
+                       Card(rank: .ace, suit: .club),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let hand_Carol = Hand(cards: cards_C)
+        let table = Table(hands: [hand_Alice, hand_Bob, hand_Carol])
+        XCTAssertEqual(table.ranking, [0, 2, 1])
+    }
 }
