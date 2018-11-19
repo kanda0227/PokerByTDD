@@ -339,40 +339,100 @@ class PokerByTDDTests: XCTestCase {
     func testHand() {
         
         // ロイヤルストレートフラッシュ
-        let hand_A = Hand(cards: [Card(rank: .ace, suit: .spade),
-                                  Card(rank: .queen, suit: .spade),
-                                  Card(rank: .king, suit: .spade),
-                                  Card(rank: .ten, suit: .spade),
-                                  Card(rank: .jack, suit: .spade)])
-        XCTAssertEqual(hand_A.hand(), .royalStraightFlash)
+        let cards_A = [Card(rank: .ace, suit: .spade),
+                       Card(rank: .queen, suit: .spade),
+                       Card(rank: .king, suit: .spade),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let hand_A = Hand(cards: cards_A)
+        XCTAssertEqual(hand_A.hand(), .royalStraightFlash(cards: cards_A))
         
         // スリーカード
-        let hand_B = Hand(cards: [Card(rank: .ace, suit: .spade),
-                                  Card(rank: .ace, suit: .heart),
-                                  Card(rank: .ace, suit: .club),
-                                  Card(rank: .ten, suit: .spade),
-                                  Card(rank: .jack, suit: .spade)])
-        XCTAssertEqual(hand_B.hand(), .threeCard(three: .ace))
+        let cards_B = [Card(rank: .ace, suit: .spade),
+                       Card(rank: .ace, suit: .heart),
+                       Card(rank: .ace, suit: .club),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let three_B = cards_B[0]
+        let hand_B = Hand(cards: cards_B)
+        XCTAssertEqual(hand_B.hand(), .threeCard(cards: cards_B, three: three_B))
         
         // ハイカード
-        let hand_C = Hand(cards: [Card(rank: .two, suit: .spade),
-                                  Card(rank: .ace, suit: .heart),
-                                  Card(rank: .seven, suit: .club),
-                                  Card(rank: .ten, suit: .spade),
-                                  Card(rank: .jack, suit: .spade)])
-        XCTAssertEqual(hand_C.hand(), .highCard)
+        let cards_C = [Card(rank: .two, suit: .spade),
+                       Card(rank: .ace, suit: .heart),
+                       Card(rank: .seven, suit: .club),
+                       Card(rank: .ten, suit: .spade),
+                       Card(rank: .jack, suit: .spade)]
+        let hand_C = Hand(cards: cards_C)
+        XCTAssertEqual(hand_C.hand(), .highCard(cards: cards_C))
     }
     
     // MARK: - PokerHand
     
     func testPokerHandCompare() {
         
-        XCTAssertLessThan(PokerHand.highCard, PokerHand.onePair(pair: .ace))
+        // ハイカード
+        let cards_A1 = [Card(rank: .two, suit: .spade),
+                        Card(rank: .ace, suit: .heart),
+                        Card(rank: .seven, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        // ワンペア
+        let cards_A2 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .ace, suit: .heart),
+                        Card(rank: .queen, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        let pair_A2 = cards_A2[0]
+        XCTAssertLessThan(PokerHand.highCard(cards: cards_A1),
+                          PokerHand.onePair(cards: cards_A2, pair: pair_A2))
         
-        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.royalStraightFlash)
+        // ロイヤルストレートフラッシュ
+        let cards_B1 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .queen, suit: .spade),
+                        Card(rank: .king, suit: .spade),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        // ロイヤルストレートフラッシュ
+        let cards_B2 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .queen, suit: .spade),
+                        Card(rank: .king, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash(cards: cards_B1),
+                                    PokerHand.royalStraightFlash(cards: cards_B2))
         
-        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash, PokerHand.threeCard(three: .ace))
+        // ロイヤルストレートフラッシュ
+        let cards_C1 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .queen, suit: .spade),
+                        Card(rank: .king, suit: .spade),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        // スリーカード
+        let cards_C2 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .ace, suit: .heart),
+                        Card(rank: .ace, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        let three_C2 = cards_C2[0]
+        XCTAssertGreaterThanOrEqual(PokerHand.royalStraightFlash(cards: cards_C1),
+                                    PokerHand.threeCard(cards: cards_C2, three: three_C2))
         
-        XCTAssertLessThan(PokerHand.onePair(pair: .three), PokerHand.onePair(pair: .ace))
+        // ワンペア
+        let cards_D1 = [Card(rank: .three, suit: .spade),
+                        Card(rank: .three, suit: .heart),
+                        Card(rank: .queen, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        let pair_D1 = cards_D1[0]
+        // ワンペア
+        let cards_D2 = [Card(rank: .ace, suit: .spade),
+                        Card(rank: .ace, suit: .heart),
+                        Card(rank: .queen, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .jack, suit: .spade)]
+        let pair_D2 = cards_D2[0]
+        XCTAssertLessThan(PokerHand.onePair(cards: cards_D1, pair: pair_D1),
+                          PokerHand.onePair(cards: cards_D2, pair: pair_D2))
     }
 }

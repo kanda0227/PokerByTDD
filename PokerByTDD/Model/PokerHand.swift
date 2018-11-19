@@ -14,16 +14,16 @@ enum PokerHand {
     
     typealias Rank = Card.Rank
     
-    case highCard
-    case onePair(pair: Rank)
-    case twoPair(pairMax: Rank, pairMin: Rank)
-    case threeCard(three: Rank)
-    case straight
-    case flash
-    case fullHouse(three: Rank, two: Rank)
-    case fourCard(four: Rank)
-    case straightFlash
-    case royalStraightFlash
+    case highCard(cards: [Card])
+    case onePair(cards: [Card], pair: Card)
+    case twoPair(cards: [Card], pairMax: Card, pairMin: Card)
+    case threeCard(cards: [Card], three: Card)
+    case straight(cards: [Card])
+    case flash(cards: [Card])
+    case fullHouse(cards: [Card], three: Card, two: Card)
+    case fourCard(cards: [Card], four: Card)
+    case straightFlash(cards: [Card])
+    case royalStraightFlash(cards: [Card]) // ぶっちゃけカードいらないんだけど統一性と， suit で優先度をつける仕様変更を考慮して追加しておく
     
     // 一部の引数が必要な case について，
     // 役だけを見たい場合に使用するためのデフォルト値入り case を用意
