@@ -167,7 +167,7 @@ extension PokerHand: Comparable {
     }
     
     private static func lKickerLessThanRKicker(_ lCards: [Card], _ rCards: [Card]) -> Bool {
-        guard let index = differentIndex(lCards.sorted(), rCards.sorted()) else { return false }
+        guard let index = differentIndex(lCards.sorted { $0 > $1 }, rCards.sorted { $0 > $1 }) else { return false }
         return lCards[index] < rCards[index]
     }
     
