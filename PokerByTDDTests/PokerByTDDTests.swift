@@ -537,4 +537,13 @@ class PokerByTDDTests: XCTestCase {
         // 同じカードを複数枚配布していない
         XCTAssertEqual(Set(cards).count, 2)
     }
+    
+    func testTradeCards() {
+        
+        let dealer = Dealer()
+        let cards = dealer.dealCards(5)
+        let newCards = dealer.tradeCards(cards)
+        XCTAssertNotEqual(cards, newCards)
+        XCTAssertEqual(cards.count, newCards.count)
+    }
 }
