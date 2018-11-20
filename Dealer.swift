@@ -33,4 +33,11 @@ final class Dealer {
         }
         return cards
     }
+    
+    func tradeCards(_ cards: [Card]) -> [Card] {
+        let returnCards = dealCards(cards.count)
+        // 交換に出したカードは返してあげない
+        trumpCase.append(contentsOf: cards)
+        return returnCards
+    }
 }
