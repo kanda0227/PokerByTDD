@@ -51,7 +51,7 @@ class PokerByTDDTests: XCTestCase {
                           Card(rank: .ace, suit: .club))
         
         // rank: 等しい suit: 等しくない
-        XCTAssertEqual(Card(rank: .three, suit: .heart),
+        XCTAssertNotEqual(Card(rank: .three, suit: .heart),
                           Card(rank: .three, suit: .club))
     }
     
