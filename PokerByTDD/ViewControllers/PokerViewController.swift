@@ -17,6 +17,15 @@ class PokerViewController: UIViewController {
     
     
     @IBAction func tapStartButton(_ sender: UIButton) {
+        sender.isEnabled = false
+        // 一旦カードを集める
+        dealer.gatherCards(cardViews.map { $0.card }.filter { $0 != nil }.map { $0! })
+        let cards = dealer.dealCards(useCardNum)
+        cards.enumerated().forEach {
+            cardViews[$0.offset].card = $0.element
+        }
+        handLabel.text = Hand(cards: cards).hand().text
+        sender.isEnabled = true
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
