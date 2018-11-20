@@ -69,6 +69,31 @@ enum PokerHand {
         // 必ず何かしらに該当するはずなので強制アンラップ
         return PokerHand.allCases.enumerated().filter { $0.element.sameHand(self) }.map { $0.offset }.first!
     }
+    
+    var text: String {
+        switch self {
+        case .highCard:
+            return "ハイカード"
+        case .onePair:
+            return "ワンペア"
+        case .twoPair:
+            return "ツーペア"
+        case .threeCard:
+            return "スリーカード"
+        case .straight:
+            return "ストレート"
+        case .flash:
+            return "フラッシュ"
+        case .fullHouse:
+            return "フルハウス"
+        case .fourCard:
+            return "フォーカード"
+        case .straightFlash:
+            return "ストレートフラッシュ"
+        case .royalStraightFlash:
+            return "ロイヤルストレートフラッシュ"
+        }
+    }
 }
 
 extension PokerHand {
