@@ -13,32 +13,30 @@ import UIKit
     private var contentSize: CGSize!
     @IBOutlet private weak var rankLabel: UILabel! {
         didSet {
-            setRank(rank)
+            setCard(card)
         }
     }
     @IBOutlet private weak var suitLabel: UILabel! {
         didSet {
-            setSuit(suit)
+            setCard(card)
         }
     }
     
-    var rank: Card.Rank = .ace {
+    var card: Card? {
         didSet {
-            setRank(rank)
-        }
-    }
-    var suit: Card.Suit = .heart {
-        didSet {
-            setSuit(suit)
+            setCard(card)
         }
     }
     
-    private func setRank(_ rank: Card.Rank) {
+    private func setCard(_ card: Card?) {
+        let shouldHiddenLabels = card == nil
+        rankLabel?.isHidden = shouldHiddenLabels
+        suitLabel?.isHidden = shouldHiddenLabels
+        guard let card = card else { return }
+        let rank = card.rank
+        let suit = card.suit
         rankLabel.text = rank.rawValue
         rankLabel.textColor = suit.color()
-    }
-    
-    private func setSuit(_ suit: Card.Suit) {
         suitLabel.text = suit.rawValue
         suitLabel.textColor = suit.color()
     }
