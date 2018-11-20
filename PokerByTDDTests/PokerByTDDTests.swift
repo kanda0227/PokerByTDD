@@ -521,10 +521,20 @@ class PokerByTDDTests: XCTestCase {
     func testDealCards() {
         
         let dealer = Dealer()
+        
+        // 10 人にカードを配る
+        for _ in 0..<10 {
+            let cards = dealer.dealCards(5)
+            // 頼んだ枚数を配布している
+            XCTAssertEqual(cards.count, 5)
+            // 同じカードを複数枚配布していない
+            XCTAssertEqual(Set(cards).count, 5)
+        }
+        
         let cards = dealer.dealCards(5)
-        // 頼んだ枚数を配布している
-        XCTAssertEqual(cards.count, 5)
+        // 50 枚配布してしまったので残りは 2 枚しか持っていないはず
+        XCTAssertEqual(cards.count, 2)
         // 同じカードを複数枚配布していない
-        XCTAssertEqual(Set(cards).count, 5)
+        XCTAssertEqual(Set(cards).count, 2)
     }
 }
