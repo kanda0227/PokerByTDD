@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Card
 
 /// トランプのカード
-struct Card {
+struct Card: Hashable {
     
     // 定義順は弱い順においてね
     enum Rank: String, CaseIterable {
@@ -49,7 +49,7 @@ struct Card {
         }
     }
     
-    enum Suit: String {
+    enum Suit: String, CaseIterable {
         /// ハート
         case heart = "♥"
         /// スペード
