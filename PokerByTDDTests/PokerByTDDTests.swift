@@ -515,4 +515,15 @@ class PokerByTDDTests: XCTestCase {
         let table2 = Table(hands: [hand_Dave, hand_Ellen])
         XCTAssertEqual(table2.ranking, [["Dave", "Ellen"]])
     }
+    
+    // MARK: - Dealer
+    
+    func testDealCards() {
+        
+        let dealer = Dealer()
+        // 頼んだ枚数を配布している
+        XCTAssertEqual(dealer.dealCards(5).count, 5)
+        // 同じカードがない
+        XCTAssertEqual(Set(dealer.dealCards(5)).count, 5)
+    }
 }
