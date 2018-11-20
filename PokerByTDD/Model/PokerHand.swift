@@ -98,6 +98,49 @@ extension PokerHand {
             return false
         }
     }
+    
+    private var cards: [Card] {
+        switch self {
+        case .highCard(let cards):
+            return cards
+        case .onePair(let cards, _):
+            return cards
+        case .twoPair(let cards, _, _):
+            return cards
+        case .threeCard(let cards, _):
+            return cards
+        case .straight(let cards):
+            return cards
+        case .flash(let cards):
+            return cards
+        case .fullHouse(let cards, _, _):
+            return cards
+        case .fourCard(let cards, _):
+            return cards
+        case .straightFlash(let cards):
+            return cards
+        case .royalStraightFlash(let cards):
+            return cards
+        }
+    }
+}
+
+extension PokerHand: Equatable {
+    static func == (lhs: PokerHand, rhs: PokerHand) -> Bool {
+        switch (lhs, rhs) {
+        case (_, _) where !lhs.sameHand(rhs):
+            return false
+        case (_, _):
+            return isSameRanksCards(lhs.cards, rhs.cards)
+        }
+    }
+    
+    private static func isSameRanksCards(_ lCards: [Card], _ rCards: [Card]) -> Bool {
+        let rCards = rCards.sorted()
+        return lCards.sorted().enumerated().map { index, card in
+            rCards[index].hasSameRank(card)
+            }.filter { !$0 }.isEmpty
+    }
 }
 
 extension PokerHand: Comparable {
