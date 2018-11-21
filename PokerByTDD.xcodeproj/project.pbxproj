@@ -93,7 +93,6 @@
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
-				F26A01F321A389CF008897A1 /* Dealer.swift */,
 				F2D79B55219CE57000962D26 /* PokerByTDD */,
 				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
 				F2D79B54219CE57000962D26 /* Products */,
@@ -135,6 +134,7 @@
 		F2D79B76219CEC7300962D26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F26A01F321A389CF008897A1 /* Dealer.swift */,
 				F2D79B77219CEC8200962D26 /* Card.swift */,
 				F236197821A1286500C91A8C /* Table.swift */,
 				F2361974219F85F100C91A8C /* Hand.swift */,
