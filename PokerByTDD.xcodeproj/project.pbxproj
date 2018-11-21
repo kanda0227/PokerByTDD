@@ -23,8 +23,8 @@
 		F2D79B78219CEC8200962D26 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B77219CEC8200962D26 /* Card.swift */; };
 		F2F940C321A61E9800387AA5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940BF21A61E9700387AA5 /* RealmSwift.framework */; };
 		F2F940C421A61E9800387AA5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C021A61E9800387AA5 /* RxCocoa.framework */; };
-		F2F940C521A61E9800387AA5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C121A61E9800387AA5 /* RxSwift.framework */; };
 		F2F940C621A61E9800387AA5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C221A61E9800387AA5 /* Realm.framework */; };
+		F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +60,7 @@
 		F2F940C021A61E9800387AA5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		F2F940C121A61E9800387AA5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		F2F940C221A61E9800387AA5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +70,6 @@
 			files = (
 				F2F940C321A61E9800387AA5 /* RealmSwift.framework in Frameworks */,
 				F2F940C421A61E9800387AA5 /* RxCocoa.framework in Frameworks */,
-				F2F940C521A61E9800387AA5 /* RxSwift.framework in Frameworks */,
 				F2F940C621A61E9800387AA5 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +124,7 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
+				F2F940C821A6206000387AA5 /* Presenters */,
 				F26A01F621A43DA7008897A1 /* Design */,
 				F26A01F521A43D6D008897A1 /* ViewControllers */,
 				F2D79B76219CEC7300962D26 /* Model */,
@@ -166,6 +167,14 @@
 				F2F940C121A61E9800387AA5 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2F940C821A6206000387AA5 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +284,10 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -302,6 +311,7 @@
 				F2361975219F85F200C91A8C /* Hand.swift in Sources */,
 				F26A01F421A389CF008897A1 /* Dealer.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
+				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
 				F2D79B78219CEC8200962D26 /* Card.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
 			);
