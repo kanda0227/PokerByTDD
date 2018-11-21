@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♦︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-Tn-4if">
-                    <rect key="frame" x="8" y="32" width="16.5" height="29"/>
+                    <rect key="frame" x="6" y="32" width="16.5" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <color key="highlightedColor" red="0.98823529409999999" green="0.69803921570000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -47,7 +47,7 @@
                 <constraint firstItem="Wot-QI-Yjh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-5" id="3e4-Js-JoJ"/>
                 <constraint firstItem="Wot-QI-Yjh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-5" id="3hw-mp-rIS"/>
                 <constraint firstItem="NWq-ER-cPy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="43W-rg-lbb"/>
-                <constraint firstItem="Iax-Tn-4if" firstAttribute="leading" secondItem="NWq-ER-cPy" secondAttribute="leading" id="uny-rw-nyQ"/>
+                <constraint firstItem="Iax-Tn-4if" firstAttribute="leading" secondItem="NWq-ER-cPy" secondAttribute="leading" constant="-2" id="uny-rw-nyQ"/>
                 <constraint firstItem="Iax-Tn-4if" firstAttribute="top" secondItem="NWq-ER-cPy" secondAttribute="bottom" id="yjT-L2-gFL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
