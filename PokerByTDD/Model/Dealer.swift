@@ -25,13 +25,19 @@ final class Dealer {
             // 配るカードが足りないのでとりあえず手持ちを全部渡す
             return trumpCase
         }
-        // TODO：ランダム性を持たせるためのロジックを追加
         var cards: [Card] = []
         for _ in 0..<n {
-            // とりあえず頭から n 枚取り出して渡す
-            cards.append(trumpCase.removeFirst())
+            if let card = trumpCase.randomElement(),
+                let index = trumpCase.firstIndex(of: card) {
+                cards.append(card)
+                trumpCase.remove(at: index)
+            }
         }
         return cards
+    }
+    
+    func gatherCards(_ cards: [Card]) {
+        trumpCase.append(contentsOf: cards)
     }
     
     func tradeCards(_ cards: [Card]) -> [Card] {
