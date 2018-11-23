@@ -34,7 +34,9 @@ final class PokerViewController: UIViewController {
     private var updateCards: Binder<[Card]> {
         return Binder(self) { _self, cards in
             cards.enumerated().forEach {
-                _self.cardViews[$0.offset].card = $0.element
+                let cardView = _self.cardViews[$0.offset]
+                cardView.card = $0.element
+                cardView.isSelected = false // 選択状態を解除
             }
         }
     }
@@ -50,13 +52,19 @@ final class PokerViewController: UIViewController {
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {
+        setSelectable(true)
         presenter.postStart(gatherCards: cards)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
-        
+        setSelectable(false)
         presenter.postTrade(selected: cardViews.selectedCards(), notSelected: cardViews.notSelectedCards())
     }
+    
+    func setSelectable(_ selectable: Bool) {
+        cardViews.forEach { $0.isUserInteractionEnabled = selectable }
+    }
+}
 
 private extension Array where Element==CardView {
     
