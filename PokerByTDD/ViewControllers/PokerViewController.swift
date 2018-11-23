@@ -19,7 +19,7 @@ final class PokerViewController: UIViewController {
     private var presenter: PokerViewPresenter!
     
     private var cards: [Card] {
-        return cardViews.map { $0.card }.filter { $0 != nil }.map { $0! }
+        return cardViews.cards()
     }
     
     override func viewDidLoad() {
