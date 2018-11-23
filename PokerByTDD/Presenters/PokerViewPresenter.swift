@@ -16,10 +16,10 @@ final class PokerViewPresenter {
     private let useCardNum = 5
     
     private let updateCards: Binder<[Card]>
-    private let handText: Binder<String>
+    private let handText: Binder<String?>
     
     init(updateCards: Binder<[Card]>,
-         handText: Binder<String>) {
+         handText: Binder<String?>) {
         self.updateCards = updateCards
         self.handText = handText
     }
@@ -28,7 +28,7 @@ final class PokerViewPresenter {
         dealer.gatherCards(gatherCards)
         let cards = dealer.dealCards(useCardNum).sorted()
         updateCards.onNext(cards)
-        handText.onNext(Hand(cards: cards).hand().text)
+        handText.onNext(nil)
     }
     
     func postTrade(selected: [Card], notSelected: [Card]) {

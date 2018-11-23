@@ -42,7 +42,7 @@ final class PokerViewController: UIViewController {
         }
     }
     
-    private var handText: Binder<String> {
+    private var handText: Binder<String?> {
         return Binder(self) { _self, text in
             _self.handLabel.text = text
         }
