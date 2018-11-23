@@ -26,7 +26,7 @@ final class PokerViewPresenter {
     
     func postStart(gatherCards: [Card]) {
         dealer.gatherCards(gatherCards)
-        let cards = dealer.dealCards(useCardNum)
+        let cards = dealer.dealCards(useCardNum).sorted()
         updateCards.onNext(cards)
         handText.onNext(Hand(cards: cards).hand().text)
     }
