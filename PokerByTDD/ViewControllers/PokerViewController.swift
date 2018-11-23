@@ -27,6 +27,8 @@ final class PokerViewController: UIViewController {
         
         presenter = PokerViewPresenter(updateCards: updateCards,
                                        handText: handText)
+        cardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
+        setSelectable(false)
     }
     
     private var updateCards: Binder<[Card]> {
@@ -41,6 +43,10 @@ final class PokerViewController: UIViewController {
         return Binder(self) { _self, text in
             _self.handLabel.text = text
         }
+    }
+    
+    @objc private func selectCard(_ sender: UITapGestureRecognizer) {
+        cardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {
