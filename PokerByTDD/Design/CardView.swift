@@ -28,6 +28,12 @@ import UIKit
         }
     }
     
+    var isSelected: Bool = false {
+        didSet {
+            switchCardBorderColor()
+        }
+    }
+    
     private func setCard(_ card: Card?) {
         let shouldHiddenLabels = card == nil
         rankLabel?.isHidden = shouldHiddenLabels
@@ -61,13 +67,20 @@ import UIKit
         view.frame = bounds
         self.addSubview(view)
         contentSize = bounds.size
-        self.layer.borderColor = UIColor(named: "pink")?.cgColor
-        self.layer.borderWidth = 2
-        self.layer.cornerRadius = 5
+        switchCardBorderColor()
     }
     
     override var intrinsicContentSize: CGSize {
         return contentSize
+    }
+    
+    private func switchCardBorderColor() {
+        let colorName = isSelected ? "green" : "pink"
+        let borderWidth: CGFloat = isSelected ? 3 : 2
+        
+        self.layer.borderColor = UIColor(named: colorName)?.cgColor
+        self.layer.borderWidth = borderWidth
+        self.layer.cornerRadius = 5
     }
 }
 
