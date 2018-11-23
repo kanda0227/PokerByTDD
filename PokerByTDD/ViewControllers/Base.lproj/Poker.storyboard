@@ -42,7 +42,7 @@
                                 <rect key="frame" x="294.5" y="269.5" width="64.5" height="128"/>
                                 <color key="backgroundColor" name="pink"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-pH-mjw">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-pH-mjw">
                                 <rect key="frame" x="156.5" y="517" width="62" height="30"/>
                                 <state key="normal" title="交換する"/>
                                 <connections>
@@ -96,6 +96,7 @@
                     <connections>
                         <outlet property="handLabel" destination="AhS-xQ-tiW" id="cSl-JW-cOU"/>
                         <outlet property="startButton" destination="TPp-sh-mYw" id="pwB-yQ-3Fz"/>
+                        <outlet property="tradeButton" destination="fsr-pH-mjw" id="Ogo-cx-Uel"/>
                         <outletCollection property="cardViews" destination="4H6-H2-8Ck" collectionClass="NSMutableArray" id="quk-ty-ee7"/>
                         <outletCollection property="cardViews" destination="t3s-mb-YPX" collectionClass="NSMutableArray" id="0sl-sc-Cga"/>
                         <outletCollection property="cardViews" destination="kmz-Cm-bJT" collectionClass="NSMutableArray" id="xOB-Ng-HtD"/>

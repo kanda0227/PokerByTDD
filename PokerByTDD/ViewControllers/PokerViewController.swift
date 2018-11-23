@@ -15,6 +15,7 @@ final class PokerViewController: UIViewController {
     @IBOutlet private var cardViews: [CardView]!
     @IBOutlet private weak var handLabel: UILabel!
     @IBOutlet private weak var startButton: UIButton!
+    @IBOutlet private weak var tradeButton: UIButton!
     
     private var presenter: PokerViewPresenter!
     
@@ -52,11 +53,15 @@ final class PokerViewController: UIViewController {
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {
+        tradeButton.isEnabled = true
+        sender.isEnabled = false
         setSelectable(true)
         presenter.postStart(gatherCards: cards)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
+        startButton.isEnabled = true
+        sender.isEnabled = false
         setSelectable(false)
         presenter.postTrade(selected: cardViews.selectedCards(), notSelected: cardViews.notSelectedCards())
     }
