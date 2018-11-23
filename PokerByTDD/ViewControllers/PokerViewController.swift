@@ -55,5 +55,20 @@ final class PokerViewController: UIViewController {
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
         
+        presenter.postTrade(selected: cardViews.selectedCards(), notSelected: cardViews.notSelectedCards())
+    }
+
+private extension Array where Element==CardView {
+    
+    func selectedCards() -> [Card] {
+        return filter { $0.isSelected }.cards()
+    }
+    
+    func notSelectedCards() -> [Card] {
+        return filter { !$0.isSelected }.cards()
+    }
+    
+    func cards() -> [Card] {
+        return map { $0.card }.filter { $0 != nil }.map { $0! }
     }
 }

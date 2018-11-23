@@ -30,4 +30,10 @@ final class PokerViewPresenter {
         updateCards.onNext(cards)
         handText.onNext(Hand(cards: cards).hand().text)
     }
+    
+    func postTrade(selected: [Card], notSelected: [Card]) {
+        let cards = (dealer.tradeCards(selected) + notSelected).sorted()
+        updateCards.onNext(cards)
+        handText.onNext(Hand(cards: cards).hand().text)
+    }
 }
