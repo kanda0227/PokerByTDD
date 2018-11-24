@@ -468,6 +468,28 @@ class PokerByTDDTests: XCTestCase {
         let min_F2 = cards_F2[4]
         XCTAssertLessThan(PokerHand.twoPair(cards: cards_F1, pairMax: max_F1, pairMin: min_F1),
                           PokerHand.twoPair(cards: cards_F2, pairMax: max_F2, pairMin: min_F2))
+        
+        // ツーペア
+        let cards_G1 = [Card(rank: .ten, suit: .spade),
+                        Card(rank: .queen, suit: .heart),
+                        Card(rank: .three, suit: .club),
+                        Card(rank: .ten, suit: .club),
+                        Card(rank: .queen, suit: .spade)]
+        let max_G1 = cards_F1[1]
+        let min_G1 = cards_F1[0]
+        // ツーペア
+        let cards_G2 = [Card(rank: .queen, suit: .heart),
+                        Card(rank: .queen, suit: .club),
+                        Card(rank: .ten, suit: .spade),
+                        Card(rank: .ten, suit: .heart)]
+        let max_G2 = cards_G2[0]
+        let min_G2 = cards_G2[3]
+        // カードの枚数が異なる場合は比較するべきではないので，
+        // このテストの期待値については怪しいところがありますが
+        // 少なくともクラッシュしないことを保証したいので追加しました
+        // FIXME: 適宜修正なり削除なりなんなりしてください
+        XCTAssertLessThan(PokerHand.twoPair(cards: cards_G1, pairMax: max_G1, pairMin: min_G1),
+                          PokerHand.twoPair(cards: cards_G2, pairMax: max_G2, pairMin: min_G2))
     }
     
     // MARK: - Table
