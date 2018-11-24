@@ -21,10 +21,17 @@ import UIKit
             setCard(card)
         }
     }
+    @IBOutlet private weak var backView: UIImageView!
     
     var card: Card? {
         didSet {
             setCard(card)
+        }
+    }
+    
+    @IBInspectable var isBack: Bool = true {
+        didSet {
+            backView.isHidden = !isBack
         }
     }
     
@@ -68,6 +75,7 @@ import UIKit
         self.addSubview(view)
         contentSize = bounds.size
         switchCardBorderColor()
+        backView.clipsToBounds = true
     }
     
     override var intrinsicContentSize: CGSize {
@@ -77,10 +85,12 @@ import UIKit
     private func switchCardBorderColor() {
         let colorName = isSelected ? "green" : "pink"
         let borderWidth: CGFloat = isSelected ? 3 : 2
+        let cornerRadius: CGFloat = 5
         
         self.layer.borderColor = UIColor(named: colorName)?.cgColor
         self.layer.borderWidth = borderWidth
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = cornerRadius
+        self.backView.layer.cornerRadius = cornerRadius
     }
 }
 
