@@ -240,6 +240,7 @@ extension PokerHand: Comparable {
     }
     
     private static func differentIndex(_ lCards: [Card], _ rCards: [Card]) -> Int? {
+        guard lCards.count == rCards.count else { return nil }
         return lCards.enumerated().filter { !($0.element == rCards[$0.offset]) }.first?.offset
     }
 }
