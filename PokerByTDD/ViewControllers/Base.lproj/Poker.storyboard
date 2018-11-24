@@ -19,74 +19,162 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfB-eo-ymX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
-                                <rect key="frame" x="16" y="269" width="64.5" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfB-eo-ymX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="16" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="w0O-QV-Uz7"/>
+                                    <constraint firstAttribute="width" secondItem="pfB-eo-ymX" secondAttribute="height" multiplier="2:3" id="3Cm-Ug-j7S"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-H2-8Ck" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
-                                <rect key="frame" x="85.5" y="269.5" width="64.5" height="128"/>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-H2-8Ck" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="85.5" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-mb-YPX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
-                                <rect key="frame" x="155" y="269.5" width="65" height="128"/>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-mb-YPX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="155" y="385" width="65" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-Cm-bJT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
-                                <rect key="frame" x="225" y="269.5" width="64.5" height="128"/>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-Cm-bJT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="225" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-Lv-rgw" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
-                                <rect key="frame" x="294.5" y="269.5" width="64.5" height="128"/>
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-Lv-rgw" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="294.5" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-pH-mjw">
-                                <rect key="frame" x="156.5" y="517" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="537" width="62" height="30"/>
                                 <state key="normal" title="交換する"/>
                                 <connections>
                                     <action selector="tapTradeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9am-fo-T5v"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ここにポーカーの役が出ますよ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-xQ-tiW">
-                                <rect key="frame" x="66" y="200" width="243" height="21"/>
+                                <rect key="frame" x="66" y="344" width="243" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPp-sh-mYw">
-                                <rect key="frame" x="156.5" y="479" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="499" width="62" height="30"/>
                                 <state key="normal" title="はじめる"/>
                                 <connections>
                                     <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QIB-8F-yoY"/>
                                 </connections>
                             </button>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eq8-B1-gER" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="50" y="180" width="51" height="76.5"/>
+                                <color key="backgroundColor" name="pink"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eq8-B1-gER" secondAttribute="height" multiplier="2:3" id="Rhf-0z-IFt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idB-Zm-PRQ" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="106" y="180" width="51" height="76.5"/>
+                                <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWS-J3-yhB" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="162" y="180" width="51" height="76.5"/>
+                                <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-mQ-GMV" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="218" y="180" width="51" height="76.5"/>
+                                <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrw-pU-QIT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                                <rect key="frame" x="274" y="180" width="51" height="76.5"/>
+                                <color key="backgroundColor" name="pink"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相手の役がここに出ますよ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGp-tT-zyc">
+                                <rect key="frame" x="83.5" y="139" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勝負結果がここに出ますよ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPQ-Dc-gkg">
+                                <rect key="frame" x="83.5" y="60" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="height" secondItem="JNM-Lv-rgw" secondAttribute="height" id="1aU-vG-Q51"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="width" secondItem="zrw-pU-QIT" secondAttribute="width" id="3i1-Uk-lfF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zrw-pU-QIT" secondAttribute="trailing" constant="50" id="5oL-sq-AVM"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="height" secondItem="t3s-mb-YPX" secondAttribute="height" id="7rN-Gx-ONJ"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="height" secondItem="kmz-Cm-bJT" secondAttribute="height" id="8gh-qm-KdD"/>
                             <constraint firstItem="kmz-Cm-bJT" firstAttribute="leading" secondItem="t3s-mb-YPX" secondAttribute="trailing" constant="5" id="9tp-Sd-WO0"/>
+                            <constraint firstItem="pfB-eo-ymX" firstAttribute="top" secondItem="AhS-xQ-tiW" secondAttribute="bottom" constant="20" id="CEK-yQ-AHN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JNM-Lv-rgw" secondAttribute="trailing" constant="16" id="CGO-pm-zWh"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="width" secondItem="idB-Zm-PRQ" secondAttribute="width" id="EJd-YN-wkb"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="width" secondItem="kmz-Cm-bJT" secondAttribute="width" id="FWu-zI-pu5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fsr-pH-mjw" secondAttribute="bottom" constant="120" id="LUw-IE-PQT"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HWK-ZS-b9f"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="height" secondItem="idB-Zm-PRQ" secondAttribute="height" id="Hzm-YW-Klt"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="height" secondItem="OWS-J3-yhB" secondAttribute="height" id="LAZ-qN-gf7"/>
+                            <constraint firstItem="sPQ-Dc-gkg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LTz-yc-pAf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fsr-pH-mjw" secondAttribute="bottom" constant="100" id="LUw-IE-PQT"/>
+                            <constraint firstItem="zrw-pU-QIT" firstAttribute="top" secondItem="eq8-B1-gER" secondAttribute="top" id="MRg-wY-Plw"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="width" secondItem="4H6-H2-8Ck" secondAttribute="width" id="Mjb-Qi-OLl"/>
                             <constraint firstItem="TPp-sh-mYw" firstAttribute="centerX" secondItem="AhS-xQ-tiW" secondAttribute="centerX" id="QEb-VU-ANd"/>
                             <constraint firstItem="t3s-mb-YPX" firstAttribute="leading" secondItem="4H6-H2-8Ck" secondAttribute="trailing" constant="5" id="QFd-2L-tKf"/>
-                            <constraint firstItem="AhS-xQ-tiW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="S1v-za-ocy"/>
+                            <constraint firstItem="6Rr-mQ-GMV" firstAttribute="top" secondItem="eq8-B1-gER" secondAttribute="top" id="QVS-VZ-eiS"/>
                             <constraint firstItem="JNM-Lv-rgw" firstAttribute="leading" secondItem="kmz-Cm-bJT" secondAttribute="trailing" constant="5" id="U3W-zp-YmA"/>
+                            <constraint firstItem="OWS-J3-yhB" firstAttribute="top" secondItem="eq8-B1-gER" secondAttribute="top" id="UlE-Qt-hmh"/>
                             <constraint firstItem="fsr-pH-mjw" firstAttribute="top" secondItem="TPp-sh-mYw" secondAttribute="bottom" constant="8" id="VAi-dt-Cfn"/>
+                            <constraint firstItem="sPQ-Dc-gkg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="YCb-5R-okc"/>
                             <constraint firstItem="JNM-Lv-rgw" firstAttribute="top" secondItem="pfB-eo-ymX" secondAttribute="top" id="Yk3-8u-BDL"/>
+                            <constraint firstItem="PGp-tT-zyc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bJD-gx-Qe7"/>
                             <constraint firstItem="t3s-mb-YPX" firstAttribute="top" secondItem="pfB-eo-ymX" secondAttribute="top" id="bqs-Ix-Ymd"/>
-                            <constraint firstItem="pfB-eo-ymX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="c2A-Ee-RdS"/>
+                            <constraint firstItem="pfB-eo-ymX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="c2A-Ee-RdS"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="width" secondItem="6Rr-mQ-GMV" secondAttribute="width" id="dgy-kB-w5X"/>
                             <constraint firstItem="fsr-pH-mjw" firstAttribute="centerX" secondItem="AhS-xQ-tiW" secondAttribute="centerX" id="ekK-Be-ggX"/>
                             <constraint firstItem="4H6-H2-8Ck" firstAttribute="leading" secondItem="pfB-eo-ymX" secondAttribute="trailing" constant="5" id="iDy-Fj-kkS"/>
+                            <constraint firstItem="6Rr-mQ-GMV" firstAttribute="leading" secondItem="OWS-J3-yhB" secondAttribute="trailing" constant="5" id="j9e-LM-DrU"/>
                             <constraint firstItem="4H6-H2-8Ck" firstAttribute="top" secondItem="pfB-eo-ymX" secondAttribute="top" id="jEU-Ai-wn9"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="width" secondItem="OWS-J3-yhB" secondAttribute="width" id="ji1-dO-aYj"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="height" secondItem="zrw-pU-QIT" secondAttribute="height" id="jzv-hy-eNk"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="height" secondItem="6Rr-mQ-GMV" secondAttribute="height" id="n5X-SV-sPe"/>
                             <constraint firstItem="kmz-Cm-bJT" firstAttribute="top" secondItem="pfB-eo-ymX" secondAttribute="top" id="nW5-3Z-dVZ"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="width" secondItem="t3s-mb-YPX" secondAttribute="width" id="pB1-vX-2wL"/>
+                            <constraint firstItem="eq8-B1-gER" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="pa1-oK-i31"/>
+                            <constraint firstItem="idB-Zm-PRQ" firstAttribute="leading" secondItem="eq8-B1-gER" secondAttribute="trailing" constant="5" id="q4m-2i-oOS"/>
+                            <constraint firstItem="zrw-pU-QIT" firstAttribute="leading" secondItem="6Rr-mQ-GMV" secondAttribute="trailing" constant="5" id="qmZ-jB-MCZ"/>
+                            <constraint firstItem="OWS-J3-yhB" firstAttribute="top" secondItem="PGp-tT-zyc" secondAttribute="bottom" constant="20" id="qxU-vv-qnb"/>
+                            <constraint firstItem="OWS-J3-yhB" firstAttribute="leading" secondItem="idB-Zm-PRQ" secondAttribute="trailing" constant="5" id="rVP-Fx-I07"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="height" secondItem="4H6-H2-8Ck" secondAttribute="height" id="uMr-9K-d27"/>
+                            <constraint firstItem="idB-Zm-PRQ" firstAttribute="top" secondItem="eq8-B1-gER" secondAttribute="top" id="w3k-KB-uN7"/>
                             <constraint firstItem="AhS-xQ-tiW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wbl-sP-Q0e"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="width" secondItem="JNM-Lv-rgw" secondAttribute="width" id="wla-v7-jrg"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xbK-SV-U0f"/>
@@ -95,6 +183,8 @@
                     </view>
                     <connections>
                         <outlet property="handLabel" destination="AhS-xQ-tiW" id="cSl-JW-cOU"/>
+                        <outlet property="opponentHandLabel" destination="PGp-tT-zyc" id="BwP-YK-Ojh"/>
+                        <outlet property="resultLabel" destination="sPQ-Dc-gkg" id="RtD-gq-Ysk"/>
                         <outlet property="startButton" destination="TPp-sh-mYw" id="pwB-yQ-3Fz"/>
                         <outlet property="tradeButton" destination="fsr-pH-mjw" id="Ogo-cx-Uel"/>
                         <outletCollection property="cardViews" destination="4H6-H2-8Ck" collectionClass="NSMutableArray" id="quk-ty-ee7"/>
@@ -102,6 +192,11 @@
                         <outletCollection property="cardViews" destination="kmz-Cm-bJT" collectionClass="NSMutableArray" id="xOB-Ng-HtD"/>
                         <outletCollection property="cardViews" destination="JNM-Lv-rgw" collectionClass="NSMutableArray" id="hwX-au-aoR"/>
                         <outletCollection property="cardViews" destination="pfB-eo-ymX" collectionClass="NSMutableArray" id="0OG-Cx-Xbp"/>
+                        <outletCollection property="opponentCardsViews" destination="eq8-B1-gER" collectionClass="NSMutableArray" id="ZPJ-0x-Ki4"/>
+                        <outletCollection property="opponentCardsViews" destination="idB-Zm-PRQ" collectionClass="NSMutableArray" id="y9O-5i-oHa"/>
+                        <outletCollection property="opponentCardsViews" destination="OWS-J3-yhB" collectionClass="NSMutableArray" id="Axn-fy-1ee"/>
+                        <outletCollection property="opponentCardsViews" destination="6Rr-mQ-GMV" collectionClass="NSMutableArray" id="FyW-Kw-Vvz"/>
+                        <outletCollection property="opponentCardsViews" destination="zrw-pU-QIT" collectionClass="NSMutableArray" id="jcE-TQ-VIs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
