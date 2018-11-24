@@ -26,6 +26,10 @@ final class PokerViewController: UIViewController {
         return cardViews.cards()
     }
     
+    private var opponentCards: [Card] {
+        return opponentCardsViews.cards()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,19 +39,27 @@ final class PokerViewController: UIViewController {
         setSelectable(false)
     }
     
-    private var updateCards: Binder<[Card]> {
-        return Binder(self) { _self, cards in
+    private var updateCards: Binder<(cards: [Card], opponentCards: [Card])> {
+        return Binder(self) { _self, params in
+            let (cards, opponentCards) = params
             cards.enumerated().forEach {
                 let cardView = _self.cardViews[$0.offset]
                 cardView.card = $0.element
                 cardView.isSelected = false // 選択状態を解除
             }
+            opponentCards.enumerated().forEach {
+                let cardView = _self.opponentCardsViews[$0.offset]
+                cardView.card = $0.element
+            }
         }
     }
     
-    private var handText: Binder<String?> {
-        return Binder(self) { _self, text in
-            _self.handLabel.text = text
+    private var handText: Binder<(hand: String?, opponentHand: String?, result: String?)> {
+        return Binder(self) { _self, params in
+            let (hand, opponentHand, result) = params
+            _self.handLabel.text = hand
+            _self.opponentHandLabel.text = opponentHand
+            _self.resultLabel.text = result
         }
     }
     
@@ -59,9 +71,9 @@ final class PokerViewController: UIViewController {
         tradeButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(true)
-        presenter.postStart(gatherCards: cards)
         turnOverCards(isBack: false)
         turnOverOpponentCards(isBack: true)
+        presenter.postStart(gatherCards: cards, opponentCards: opponentCards)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
