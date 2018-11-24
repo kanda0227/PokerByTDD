@@ -15,25 +15,52 @@ final class PokerViewPresenter {
     private let dealer = Dealer()
     private let useCardNum = 5
     
-    private let updateCards: Binder<[Card]>
-    private let handText: Binder<String?>
+    private let updateCards: Binder<(cards: [Card], opponentCards: [Card])>
+    private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
     
-    init(updateCards: Binder<[Card]>,
-         handText: Binder<String?>) {
+    init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
+         handText: Binder<(hand: String?, opponentHand: String?, result: String?)>) {
         self.updateCards = updateCards
         self.handText = handText
     }
     
-    func postStart(gatherCards: [Card]) {
-        dealer.gatherCards(gatherCards)
+    func postStart(gatherCards: [Card], opponentCards: [Card]) {
+        dealer.gatherCards(gatherCards + opponentCards)
         let cards = dealer.dealCards(useCardNum).sorted()
-        updateCards.onNext(cards)
-        handText.onNext(nil)
+        updateCards.onNext((cards: cards, opponentCards: []))
+        handText.onNext((hand: nil, opponentHand: nil, result: nil))
     }
     
     func postTrade(selected: [Card], notSelected: [Card]) {
         let cards = (dealer.tradeCards(selected) + notSelected).sorted()
-        updateCards.onNext(cards)
-        handText.onNext(Hand(cards: cards).hand().text)
+        let opponentCards = dealer.dealCards(useCardNum).sorted()
+        let hand = Hand(cards: cards, name: userName)
+        let opponentHand = Hand(cards: opponentCards, name: opponentName)
+        let result = Result.result(hand: hand, opponentHand: opponentHand)
+        updateCards.onNext((cards: cards, opponentCards: opponentCards))
+        handText.onNext((hand: hand.hand().text,
+                         opponentHand: opponentHand.hand().text,
+                         result: result.rawValue))
     }
+    
+    private enum Result: String {
+        case win = "勝ち(`･ω･´)"
+        case lose = "負け(´･ω･`)"
+        case draw = "引き分け(･_･)"
+        
+        static func result(hand: Hand, opponentHand: Hand) -> Result {
+            let table = Table(hands: [hand, opponentHand])
+            let ranking = table.ranking
+            if ranking.first?.count == 2 {
+                return .draw
+            } else if ranking.first?.first != hand.name {
+                return .lose
+            } else {
+                return .win
+            }
+        }
+    }
+    
+    private let userName = "user"
+    private let opponentName = "opponent"
 }
