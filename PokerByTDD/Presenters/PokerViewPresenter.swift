@@ -36,4 +36,25 @@ final class PokerViewPresenter {
         updateCards.onNext(cards)
         handText.onNext(Hand(cards: cards).hand().text)
     }
+    
+    private enum Result: String {
+        case win = "勝ち(`･ω･´)"
+        case lose = "負け(´･ω･`)"
+        case draw = "引き分け(･_･)"
+        
+        static func result(hand: Hand, opponentHand: Hand) -> Result {
+            let table = Table(hands: [hand, opponentHand])
+            let ranking = table.ranking
+            if ranking.first?.count == 2 {
+                return .draw
+            } else if ranking.first?.first != hand.name {
+                return .lose
+            } else {
+                return .win
+            }
+        }
+    }
+    
+    private let userName = "user"
+    private let opponentName = "opponent"
 }
