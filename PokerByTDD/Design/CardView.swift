@@ -84,7 +84,7 @@ import UIKit
     
     private func switchCardBorderColor() {
         let colorName = isSelected ? "green" : "pink"
-        let borderWidth: CGFloat = isSelected ? 3 : 2
+        let borderWidth: CGFloat = isSelected ? 4 : 2
         let cornerRadius: CGFloat = 5
         
         self.layer.borderColor = UIColor(named: colorName)?.cgColor
