@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfB-eo-ymX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfB-eo-ymX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="16" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <constraints>
@@ -29,28 +29,28 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-H2-8Ck" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-H2-8Ck" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="85.5" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-mb-YPX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-mb-YPX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="155" y="385" width="65" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-Cm-bJT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-Cm-bJT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="225" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-Lv-rgw" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-Lv-rgw" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="294.5" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
@@ -87,28 +87,28 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idB-Zm-PRQ" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idB-Zm-PRQ" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="106" y="180" width="51" height="76.5"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWS-J3-yhB" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWS-J3-yhB" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="162" y="180" width="51" height="76.5"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-mQ-GMV" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-mQ-GMV" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="218" y="180" width="51" height="76.5"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrw-pU-QIT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrw-pU-QIT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="274" y="180" width="51" height="76.5"/>
                                 <color key="backgroundColor" name="pink"/>
                                 <userDefinedRuntimeAttributes>
@@ -122,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="勝負結果がここに出ますよ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPQ-Dc-gkg">
-                                <rect key="frame" x="170" y="60" width="208" height="21"/>
+                                <rect key="frame" x="83.5" y="60" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
