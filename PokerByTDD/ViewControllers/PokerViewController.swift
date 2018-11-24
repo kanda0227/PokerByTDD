@@ -60,17 +60,28 @@ final class PokerViewController: UIViewController {
         sender.isEnabled = false
         setSelectable(true)
         presenter.postStart(gatherCards: cards)
+        turnOverCards(isBack: false)
+        turnOverOpponentCards(isBack: true)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
         startButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(false)
+        turnOverOpponentCards(isBack: false)
         presenter.postTrade(selected: cardViews.selectedCards(), notSelected: cardViews.notSelectedCards())
     }
     
     func setSelectable(_ selectable: Bool) {
         cardViews.forEach { $0.isUserInteractionEnabled = selectable }
+    }
+    
+    func turnOverCards(isBack: Bool) {
+        cardViews.forEach { $0.isBack = isBack }
+    }
+    
+    func turnOverOpponentCards(isBack: Bool) {
+        opponentCardsViews.forEach { $0.isBack = isBack }
     }
 }
 
