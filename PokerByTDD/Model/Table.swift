@@ -8,13 +8,11 @@
 
 import Foundation
 
-struct Table {
+class Table {
     
-    private let hands: [Hand]
+    private var hands: [Hand] = []
     
-    init(hands: [Hand]) {
-        self.hands = hands
-    }
+    init() {}
     
     var ranking: [[String]] {
         let sortedHands = hands.sorted { $0.hand() > $1.hand() }
