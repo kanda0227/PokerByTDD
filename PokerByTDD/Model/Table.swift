@@ -11,6 +11,7 @@ import Foundation
 class Table {
     
     private var hands: [Hand] = []
+    private var betCollection: [Hand : Int] = [:]
     
     init() {}
     
@@ -28,6 +29,11 @@ class Table {
             lastHand = hand
         }
         return rankingArray
+    }
+    
+    func bet(hand: Hand, _ bet: Int) {
+        betCollection[hand] = bet
+        hands.append(hand)
     }
     
     func ranking(hand: Hand) -> Int {
