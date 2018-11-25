@@ -524,6 +524,9 @@ class PokerByTDDTests: XCTestCase {
         XCTAssertEqual(table1.ranking(hand: hand_Alice), 1)
         XCTAssertEqual(table1.ranking(hand: hand_Bob), 3)
         XCTAssertEqual(table1.ranking(hand: hand_Carol), 2)
+        XCTAssertEqual(table1.receive(hand: hand_Alice), 500)
+        XCTAssertEqual(table1.receive(hand: hand_Bob), 0)
+        XCTAssertEqual(table1.receive(hand: hand_Carol), 0)
         
         // ワンペア
         let cards_D = [Card(rank: .ace, suit: .spade),
@@ -544,6 +547,8 @@ class PokerByTDDTests: XCTestCase {
         table2.bet(hand: hand_Ellen, 20)
         XCTAssertEqual(table2.ranking(hand: hand_Dave), 1)
         XCTAssertEqual(table2.ranking(hand: hand_Ellen), 1)
+        XCTAssertEqual(table2.receive(hand: hand_Dave), 10)
+        XCTAssertEqual(table2.receive(hand: hand_Ellen), 20)
     }
     
     // MARK: - Dealer
