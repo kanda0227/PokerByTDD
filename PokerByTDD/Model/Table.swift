@@ -14,19 +14,24 @@ class Table {
     
     init() {}
     
-    var ranking: [[String]] {
+    private var rankingArray: [[Hand]] {
         let sortedHands = hands.sorted { $0.hand() > $1.hand() }
-        var rankingArray: [[String]] = [
+        var rankingArray: [[Hand]] = [
         ]
         var lastHand: Hand?
         sortedHands.forEach { hand in
             if let lastHand = lastHand, lastHand.hand() == hand.hand() {
-                rankingArray[rankingArray.count - 1].append(hand.name)
+                rankingArray[rankingArray.count - 1].append(hand)
             } else {
-                rankingArray.append([hand.name])
+                rankingArray.append([hand])
             }
             lastHand = hand
         }
         return rankingArray
+    }
+    
+    func ranking(hand: Hand) -> Int {
+        return rankingArray.enumerated().flatMap { index, hands in
+            hands.map { (rank: index, hand: $0) } }.filter { $0.hand == hand }.first!.rank + 1
     }
 }
