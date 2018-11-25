@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Hand {
+struct Hand: Hashable {
     
     private let cards: [Card]
     

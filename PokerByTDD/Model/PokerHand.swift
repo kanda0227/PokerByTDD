@@ -63,11 +63,29 @@ enum PokerHand {
            .defaultStraightFlash,
            .defaultRoyalStraightFlash]
     
-    private var stlength: Int {
-        // 定義順に依存させる
-        // allCases は定義順に取得させること
-        // 必ず何かしらに該当するはずなので強制アンラップ
-        return PokerHand.allCases.enumerated().filter { $0.element.sameHand(self) }.map { $0.offset }.first!
+    var stlength: Int {
+        switch self {
+        case .highCard:
+            return 0
+        case .onePair:
+            return 1
+        case .twoPair:
+            return 2
+        case .threeCard:
+            return 5
+        case .straight:
+            return 10
+        case .flash:
+            return 15
+        case .fullHouse:
+            return 20
+        case .fourCard:
+            return 30
+        case .straightFlash:
+            return 40
+        case .royalStraightFlash:
+            return 50
+        }
     }
     
     var text: String {
