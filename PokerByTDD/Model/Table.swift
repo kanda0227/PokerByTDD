@@ -40,4 +40,9 @@ class Table {
         return rankingArray.enumerated().flatMap { index, hands in
             hands.map { (rank: index, hand: $0) } }.filter { $0.hand == hand }.first!.rank + 1
     }
+    
+    func resetGame() {
+        hands.removeAll()
+        betCollection.removeAll()
+    }
 }
