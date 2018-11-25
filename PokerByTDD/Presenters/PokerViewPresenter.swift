@@ -49,14 +49,17 @@ final class PokerViewPresenter {
         case draw = "引き分け(･_･)"
         
         static func result(hand: Hand, opponentHand: Hand) -> Result {
-            let table = Table(hands: [hand, opponentHand])
-            let ranking = table.ranking
-            if ranking.first?.count == 2 {
+            let table = Table()
+            table.bet(hand: hand, 0)
+            table.bet(hand: opponentHand, 0)
+            let ranking = table.ranking(hand: hand)
+            let opponentRanking = table.ranking(hand: opponentHand)
+            if ranking == opponentRanking {
                 return .draw
-            } else if ranking.first?.first != hand.name {
-                return .lose
-            } else {
+            } else if ranking == 1 {
                 return .win
+            } else {
+                return .lose
             }
         }
     }
