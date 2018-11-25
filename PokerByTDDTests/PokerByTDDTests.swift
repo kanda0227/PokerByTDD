@@ -535,7 +535,11 @@ class PokerByTDDTests: XCTestCase {
                        Card(rank: .jack, suit: .diamond)]
         let hand_Ellen = Hand(cards: cards_E, name: "Ellen")
         let table2 = Table(hands: [hand_Dave, hand_Ellen])
+        table2.bet(hand: hand_Dave.name, 10)
+        table2.bet(hand: hand_Ellen.name, 20)
         XCTAssertEqual(table2.ranking, [["Dave", "Ellen"]])
+        XCTAssertEqual(table2.receive[hand_Dave.name], 20)
+        XCTAssertEqual(table2.receive[hand_Ellen.name], 0)
     }
     
     // MARK: - Dealer
