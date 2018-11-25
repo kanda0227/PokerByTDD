@@ -36,6 +36,12 @@ class Table {
         hands.append(hand)
     }
     
+    func receive(hand: Hand) -> Int {
+        guard let bet = betCollection[hand],
+            ranking(hand: hand) == 1 else { return 0 }
+        return bet * hand.hand().stlength
+    }
+    
     func ranking(hand: Hand) -> Int {
         return rankingArray.enumerated().flatMap { index, hands in
             hands.map { (rank: index, hand: $0) } }.filter { $0.hand == hand }.first!.rank + 1
