@@ -11,6 +11,8 @@
 		F2361977219FFCF700C91A8C /* PokerHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2361976219FFCF700C91A8C /* PokerHand.swift */; };
 		F236197921A1286500C91A8C /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236197821A1286500C91A8C /* Table.swift */; };
 		F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */; };
+		F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */; };
+		F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4621AB61F700A77302 /* BetPickerViewController.swift */; };
 		F26A01F421A389CF008897A1 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
@@ -43,6 +45,8 @@
 		F2361976219FFCF700C91A8C /* PokerHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerHand.swift; sourceTree = "<group>"; };
 		F236197821A1286500C91A8C /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerHandDecisionHelper.swift; sourceTree = "<group>"; };
+		F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BetPickerView.storyboard; sourceTree = "<group>"; };
+		F254FB4621AB61F700A77302 /* BetPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetPickerViewController.swift; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			children = (
 				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
 				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
+				F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */,
+				F254FB4621AB61F700A77302 /* BetPickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
+				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
 				F26A01F821A43DBD008897A1 /* CardView.xib in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
@@ -309,6 +316,7 @@
 				F236197921A1286500C91A8C /* Table.swift in Sources */,
 				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2361977219FFCF700C91A8C /* PokerHand.swift in Sources */,
+				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */,
 				F2361975219F85F200C91A8C /* Hand.swift in Sources */,
 				F26A01F421A389CF008897A1 /* Dealer.swift in Sources */,
