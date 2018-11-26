@@ -73,7 +73,8 @@ final class PokerViewController: UIViewController {
         setSelectable(true)
         turnOverCards(isBack: false)
         turnOverOpponentCards(isBack: true)
-        presenter.postStart(gatherCards: cards, opponentCards: opponentCards)
+        let bet = 0
+        presenter.postStart(gatherCards: cards, opponentCards: opponentCards, bet: bet)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
