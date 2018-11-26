@@ -15,6 +15,8 @@ final class PokerViewPresenter {
     private let dealer = Dealer()
     private let useCardNum = 5
     
+    private var bet = 0
+    
     private let updateCards: Binder<(cards: [Card], opponentCards: [Card])>
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
     
@@ -24,7 +26,8 @@ final class PokerViewPresenter {
         self.handText = handText
     }
     
-    func postStart(gatherCards: [Card], opponentCards: [Card]) {
+    func postStart(gatherCards: [Card], opponentCards: [Card], bet: Int) {
+        self.bet = bet
         dealer.gatherCards(gatherCards + opponentCards)
         let cards = dealer.dealCards(useCardNum).sorted()
         updateCards.onNext((cards: cards, opponentCards: []))
@@ -36,11 +39,11 @@ final class PokerViewPresenter {
         let opponentCards = dealer.dealCards(useCardNum).sorted()
         let hand = Hand(cards: cards, name: userName)
         let opponentHand = Hand(cards: opponentCards, name: opponentName)
-        let result = Result.result(hand: hand, opponentHand: opponentHand)
+        let result = Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)
         updateCards.onNext((cards: cards, opponentCards: opponentCards))
         handText.onNext((hand: hand.hand().text,
                          opponentHand: opponentHand.hand().text,
-                         result: result.rawValue))
+                         result: result))
     }
     
     private enum Result: String {
@@ -48,19 +51,24 @@ final class PokerViewPresenter {
         case lose = "負け(´･ω･`)"
         case draw = "引き分け(･_･)"
         
-        static func result(hand: Hand, opponentHand: Hand) -> Result {
+        static func resultText(hand: Hand, opponentHand: Hand, bet: Int) -> String {
             let table = Table()
-            table.bet(hand: hand, 0)
+            table.bet(hand: hand, bet)
             table.bet(hand: opponentHand, 0)
             let ranking = table.ranking(hand: hand)
             let opponentRanking = table.ranking(hand: opponentHand)
+            let receive = table.receive(hand: hand)
             if ranking == opponentRanking {
-                return .draw
+                return Result.draw.text(bet: receive)
             } else if ranking == 1 {
-                return .win
+                return Result.win.text(bet: receive)
             } else {
-                return .lose
+                return Result.lose.text(bet: receive)
             }
+        }
+        
+        func text(bet: Int) -> String {
+            return rawValue + " + \(bet)"
         }
     }
     
