@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B12-ud-f5U">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bet Picker View Controller-->
+        <scene sceneID="Usg-c1-hSv">
+            <objects>
+                <viewController id="B12-ud-f5U" customClass="BetPickerViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.0" contentMode="scaleToFill" id="UJo-TD-BIm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INm-Yz-agJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gms-lH-4vY">
+                                <rect key="frame" x="47.5" y="183.5" width="280" height="320"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AT4-CY-CgA">
+                                        <rect key="frame" x="40" y="104" width="200" height="216"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYs-AP-yKO">
+                                        <rect key="frame" x="134.5" y="56" width="11" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おいくら賭けます？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFU-Tj-b3s">
+                                        <rect key="frame" x="62" y="20" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-rI-AMy">
+                                        <rect key="frame" x="124.5" y="87" width="31" height="30"/>
+                                        <state key="normal" title="決定"/>
+                                        <connections>
+                                            <action selector="doneButton:" destination="B12-ud-f5U" eventType="touchUpInside" id="gQI-WY-wHz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="ZFU-Tj-b3s" firstAttribute="centerX" secondItem="gms-lH-4vY" secondAttribute="centerX" id="4zS-kF-m5k"/>
+                                    <constraint firstAttribute="bottom" secondItem="AT4-CY-CgA" secondAttribute="bottom" id="6DG-r7-9OC"/>
+                                    <constraint firstItem="ZFU-Tj-b3s" firstAttribute="top" secondItem="gms-lH-4vY" secondAttribute="top" constant="20" id="6Vb-hj-1Oa"/>
+                                    <constraint firstItem="8Yy-rI-AMy" firstAttribute="top" secondItem="qYs-AP-yKO" secondAttribute="bottom" constant="10" id="DFj-3l-cwz"/>
+                                    <constraint firstAttribute="width" constant="280" id="SK8-1i-PsX"/>
+                                    <constraint firstAttribute="height" constant="320" id="Wk5-kK-QLB"/>
+                                    <constraint firstItem="qYs-AP-yKO" firstAttribute="top" secondItem="ZFU-Tj-b3s" secondAttribute="bottom" constant="15" id="Xz4-Qx-nW6"/>
+                                    <constraint firstItem="AT4-CY-CgA" firstAttribute="leading" secondItem="gms-lH-4vY" secondAttribute="leading" constant="40" id="bSN-VK-NfD"/>
+                                    <constraint firstItem="qYs-AP-yKO" firstAttribute="centerX" secondItem="gms-lH-4vY" secondAttribute="centerX" id="csE-xD-eiJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="AT4-CY-CgA" secondAttribute="trailing" constant="40" id="dkD-8p-iIj"/>
+                                    <constraint firstItem="8Yy-rI-AMy" firstAttribute="centerX" secondItem="gms-lH-4vY" secondAttribute="centerX" id="pLF-19-P0s"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gms-lH-4vY" firstAttribute="centerY" secondItem="PA9-YA-UEy" secondAttribute="centerY" id="2bR-5i-i8U"/>
+                            <constraint firstAttribute="bottom" secondItem="INm-Yz-agJ" secondAttribute="bottom" id="34V-85-lZd"/>
+                            <constraint firstItem="INm-Yz-agJ" firstAttribute="top" secondItem="UJo-TD-BIm" secondAttribute="top" id="8xa-Tf-aIN"/>
+                            <constraint firstItem="PA9-YA-UEy" firstAttribute="trailing" secondItem="INm-Yz-agJ" secondAttribute="trailing" id="Ql0-5X-cXr"/>
+                            <constraint firstItem="INm-Yz-agJ" firstAttribute="leading" secondItem="PA9-YA-UEy" secondAttribute="leading" id="Vyv-4M-naq"/>
+                            <constraint firstItem="gms-lH-4vY" firstAttribute="centerX" secondItem="PA9-YA-UEy" secondAttribute="centerX" id="cVr-CI-3f6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PA9-YA-UEy"/>
+                    </view>
+                    <connections>
+                        <outlet property="betLabel" destination="qYs-AP-yKO" id="5rn-gM-7lh"/>
+                        <outlet property="mainView" destination="gms-lH-4vY" id="cEi-ZY-sdq"/>
+                        <outlet property="picker" destination="AT4-CY-CgA" id="0Bn-kF-omw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPn-hx-ZOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.19999999999999" y="109.74512743628186"/>
+        </scene>
+    </scenes>
+</document>
