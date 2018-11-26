@@ -74,6 +74,13 @@ final class PokerViewController: UIViewController {
         turnOverCards(isBack: false)
         turnOverOpponentCards(isBack: true)
         let bet = 0
+        let betPickerVC = BetPickerViewController.instantiate(possessionMoney: bet) { [weak self] bet in
+            self?.start(bet: bet)
+        }
+        present(betPickerVC, animated: true)
+    }
+    
+    func start(bet: Int) {
         presenter.postStart(gatherCards: cards, opponentCards: opponentCards, bet: bet)
     }
     
