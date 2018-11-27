@@ -36,6 +36,7 @@ final class BetPickerViewController: UIViewController {
             picker.delegate = self
         }
     }
+    @IBOutlet private weak var doneButton: UIButton!
     
     @IBAction private func doneButton(_ sender: Any) {
         let bet = betLabel.text.flatMap(Int.init) ?? 0
@@ -68,6 +69,7 @@ extension BetPickerViewController: UIPickerViewDelegate {
             selectedNum += (rowNum * placeNum(component: i))
         }
         betLabel.text = "\(selectedNum)"
+        doneButton.isEnabled = selectedNum <= possessionMoney
     }
     
     private func placeNum(component: Int) -> Int {

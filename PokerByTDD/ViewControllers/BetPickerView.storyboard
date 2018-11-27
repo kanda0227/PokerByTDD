@@ -77,6 +77,7 @@
                     </view>
                     <connections>
                         <outlet property="betLabel" destination="qYs-AP-yKO" id="5rn-gM-7lh"/>
+                        <outlet property="doneButton" destination="8Yy-rI-AMy" id="bzj-Wf-FwK"/>
                         <outlet property="mainView" destination="gms-lH-4vY" id="cEi-ZY-sdq"/>
                         <outlet property="picker" destination="AT4-CY-CgA" id="0Bn-kF-omw"/>
                     </connections>
