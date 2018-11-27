@@ -8,9 +8,14 @@
 
 import UIKit
 
+// MARK: - BetPickerViewController
+
+/// 賭け金選択画面
 final class BetPickerViewController: UIViewController {
     
+    /// この画面を閉じる際に実行するクロージャ
     private var completion: ((_ bet: Int) -> ())?
+    /// 所持金
     private var possessionMoney: Int!
     
     private lazy var presenter = BetPickerPresenter()
@@ -22,19 +27,30 @@ final class BetPickerViewController: UIViewController {
             mainView.layer.cornerRadius = 7
         }
     }
+    /// 賭けたい金額を表示するためのラベル
     @IBOutlet private weak var betLabel: UILabel!
+    /// 賭け金選択用のピッカー
     @IBOutlet private weak var picker: UIPickerView! {
         didSet {
             picker.dataSource = self
             picker.delegate = self
         }
     }
+    /// 完了ボタン
     @IBOutlet private weak var doneButton: UIButton!
     
+    /// ファクトリーメソッド
+    ///
+    /// - Parameters:
+    ///     - possessionMoney: 所持金を渡してください．
+    ///     - post: 画面を閉じる際に呼ばれるクロージャです．賭ける金額を引数にしてください．
     static func instantiate(possessionMoney: Int, post: @escaping (_ bet: Int) -> ()) -> BetPickerViewController {
+        
         let vc = UIStoryboard(name: "BetPickerView", bundle: nil).instantiateInitialViewController() as! BetPickerViewController
+        
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        
         vc.completion = post
         vc.possessionMoney = possessionMoney
         return vc
@@ -47,6 +63,8 @@ final class BetPickerViewController: UIViewController {
     }
 }
 
+// MARK: - UIPickerViewDataSource
+
 extension BetPickerViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -57,6 +75,8 @@ extension BetPickerViewController: UIPickerViewDataSource {
         return presenter.numberOfRowsInComponent(component)
     }
 }
+
+// MARK: - UIPickerViewDelegate
 
 extension BetPickerViewController: UIPickerViewDelegate {
     
