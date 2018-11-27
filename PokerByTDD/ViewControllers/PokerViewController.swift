@@ -81,7 +81,7 @@ final class PokerViewController: UIViewController {
         setSelectable(true)
         turnOverCards(isBack: true)
         turnOverOpponentCards(isBack: true)
-        let bet = 0
+        let bet = presenter.walletContent()
         let betPickerVC = BetPickerViewController.instantiate(possessionMoney: bet) { [weak self] bet in
             self?.start(bet: bet)
         }

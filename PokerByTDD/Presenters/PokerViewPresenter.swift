@@ -34,6 +34,9 @@ final class PokerViewPresenter {
         self.walletText = walletText
         self.walletText.onNext("\(wallet)")
     }
+    
+    func walletContent() -> Int {
+        return wallet
     }
     
     func postStart(gatherCards: [Card], opponentCards: [Card], bet: Int) {
