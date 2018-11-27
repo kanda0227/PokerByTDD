@@ -15,10 +15,13 @@ final class BetPickerViewController: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         vc.completion = post
+        vc.possessionMoney = possessionMoney
         return vc
     }
     
     private var completion: ((_ bet: Int) -> ())?
+    private var possessionMoney: Int!
+    
     @IBOutlet private weak var mainView: UIView! {
         didSet {
             mainView.layer.borderColor = UIColor(named: "pink")?.cgColor
@@ -33,6 +36,7 @@ final class BetPickerViewController: UIViewController {
             picker.delegate = self
         }
     }
+    @IBOutlet private weak var doneButton: UIButton!
     
     @IBAction private func doneButton(_ sender: Any) {
         let bet = betLabel.text.flatMap(Int.init) ?? 0
@@ -64,7 +68,9 @@ extension BetPickerViewController: UIPickerViewDelegate {
             let rowNum = component == i ? row : pickerView.selectedRow(inComponent: i)
             selectedNum += (rowNum * placeNum(component: i))
         }
-        betLabel.text = "\(selectedNum)"
+        
+        doneButton.isEnabled = selectedNum <= possessionMoney
+        betLabel.text = doneButton.isEnabled ? "\(selectedNum)" : "所持金を超えているようです"
     }
     
     private func placeNum(component: Int) -> Int {

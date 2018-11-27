@@ -19,6 +19,7 @@ final class PokerViewController: UIViewController {
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var tradeButton: UIButton!
+    @IBOutlet private weak var walletLabel: UILabel!
     
     private var presenter: PokerViewPresenter!
     
@@ -34,7 +35,8 @@ final class PokerViewController: UIViewController {
         super.viewDidLoad()
         
         presenter = PokerViewPresenter(updateCards: updateCards,
-                                       handText: handText)
+                                       handText: handText,
+                                       walletText: walletText)
         cardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
     }
@@ -63,6 +65,12 @@ final class PokerViewController: UIViewController {
         }
     }
     
+    private var walletText: Binder<String> {
+        return Binder(walletLabel) { walletLabel, text in
+            walletLabel.text = text
+        }
+    }
+    
     @objc private func selectCard(_ sender: UITapGestureRecognizer) {
         cardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
     }
@@ -73,7 +81,7 @@ final class PokerViewController: UIViewController {
         setSelectable(true)
         turnOverCards(isBack: true)
         turnOverOpponentCards(isBack: true)
-        let bet = 0
+        let bet = presenter.walletContent()
         let betPickerVC = BetPickerViewController.instantiate(possessionMoney: bet) { [weak self] bet in
             self?.start(bet: bet)
         }

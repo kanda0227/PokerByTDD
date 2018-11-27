@@ -30,7 +30,7 @@
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYs-AP-yKO">
                                         <rect key="frame" x="134.5" y="56" width="11" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -77,6 +77,7 @@
                     </view>
                     <connections>
                         <outlet property="betLabel" destination="qYs-AP-yKO" id="5rn-gM-7lh"/>
+                        <outlet property="doneButton" destination="8Yy-rI-AMy" id="bzj-Wf-FwK"/>
                         <outlet property="mainView" destination="gms-lH-4vY" id="cEi-ZY-sdq"/>
                         <outlet property="picker" destination="AT4-CY-CgA" id="0Bn-kF-omw"/>
                     </connections>

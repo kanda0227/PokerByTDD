@@ -16,18 +16,32 @@ final class PokerViewPresenter {
     private let useCardNum = 5
     
     private var bet = 0
+    private var wallet = 100 {
+        didSet {
+            walletText.onNext("\(wallet)")
+        }
+    }
     
     private let updateCards: Binder<(cards: [Card], opponentCards: [Card])>
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
+    private let walletText: Binder<String>
     
     init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
-         handText: Binder<(hand: String?, opponentHand: String?, result: String?)>) {
+         handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
+         walletText: Binder<String>) {
         self.updateCards = updateCards
         self.handText = handText
+        self.walletText = walletText
+        self.walletText.onNext("\(wallet)")
+    }
+    
+    func walletContent() -> Int {
+        return wallet
     }
     
     func postStart(gatherCards: [Card], opponentCards: [Card], bet: Int) {
         self.bet = bet
+        self.wallet -= bet
         dealer.gatherCards(gatherCards + opponentCards)
         let cards = dealer.dealCards(useCardNum).sorted()
         updateCards.onNext((cards: cards, opponentCards: []))
@@ -39,11 +53,12 @@ final class PokerViewPresenter {
         let opponentCards = dealer.dealCards(useCardNum).sorted()
         let hand = Hand(cards: cards, name: userName)
         let opponentHand = Hand(cards: opponentCards, name: opponentName)
-        let result = Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)
+        let resultText = Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)
+        wallet += Result.results(hand: hand, opponentHand: opponentHand, bet: bet).1
         updateCards.onNext((cards: cards, opponentCards: opponentCards))
         handText.onNext((hand: hand.hand().text,
                          opponentHand: opponentHand.hand().text,
-                         result: result))
+                         result: resultText))
     }
     
     private enum Result: String {
@@ -52,6 +67,15 @@ final class PokerViewPresenter {
         case draw = "引き分け(･_･)"
         
         static func resultText(hand: Hand, opponentHand: Hand, bet: Int) -> String {
+            let (result, receive) = results(hand: hand, opponentHand: opponentHand, bet: bet)
+            return result.text(receive: receive)
+        }
+        
+        func text(receive: Int) -> String {
+            return rawValue + " + \(receive)"
+        }
+        
+        static fileprivate func results(hand: Hand, opponentHand: Hand, bet: Int) -> (Result, Int) {
             let table = Table()
             table.bet(hand: hand, bet)
             table.bet(hand: opponentHand, 0)
@@ -59,16 +83,12 @@ final class PokerViewPresenter {
             let opponentRanking = table.ranking(hand: opponentHand)
             let receive = table.receive(hand: hand)
             if ranking == opponentRanking {
-                return Result.draw.text(bet: receive)
+                return (.draw, receive)
             } else if ranking == 1 {
-                return Result.win.text(bet: receive)
+                return (.win, receive)
             } else {
-                return Result.lose.text(bet: receive)
+                return (.lose, receive)
             }
-        }
-        
-        func text(bet: Int) -> String {
-            return rawValue + " + \(bet)"
         }
     }
     
