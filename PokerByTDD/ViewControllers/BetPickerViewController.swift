@@ -15,10 +15,13 @@ final class BetPickerViewController: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         vc.completion = post
+        vc.possessionMoney = possessionMoney
         return vc
     }
     
     private var completion: ((_ bet: Int) -> ())?
+    private var possessionMoney: Int!
+    
     @IBOutlet private weak var mainView: UIView! {
         didSet {
             mainView.layer.borderColor = UIColor(named: "pink")?.cgColor
