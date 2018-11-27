@@ -68,8 +68,9 @@ extension BetPickerViewController: UIPickerViewDelegate {
             let rowNum = component == i ? row : pickerView.selectedRow(inComponent: i)
             selectedNum += (rowNum * placeNum(component: i))
         }
-        betLabel.text = "\(selectedNum)"
+        
         doneButton.isEnabled = selectedNum <= possessionMoney
+        betLabel.text = doneButton.isEnabled ? "\(selectedNum)" : "所持金を超えているようです"
     }
     
     private func placeNum(component: Int) -> Int {
