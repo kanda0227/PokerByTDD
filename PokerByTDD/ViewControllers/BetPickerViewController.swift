@@ -56,7 +56,7 @@ final class BetPickerViewController: UIViewController {
         return vc
     }
     
-    @IBAction private func doneButton(_ sender: Any) {
+    @IBAction private func tapDoneButton(_ sender: Any) {
         let bet = betLabel.text.flatMap(Int.init) ?? 0
         completion?(bet)
         dismiss(animated: true, completion: nil)
