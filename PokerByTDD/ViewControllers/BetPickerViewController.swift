@@ -13,6 +13,8 @@ final class BetPickerViewController: UIViewController {
     private var completion: ((_ bet: Int) -> ())?
     private var possessionMoney: Int!
     
+    private lazy var presenter = BetPickerPresenter()
+    
     @IBOutlet private weak var mainView: UIView! {
         didSet {
             mainView.layer.borderColor = UIColor(named: "pink")?.cgColor
@@ -48,11 +50,11 @@ final class BetPickerViewController: UIViewController {
 extension BetPickerViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        return presenter.numberOfComponents()
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return presenter.numberOfRowsInComponent(component)
     }
 }
 
