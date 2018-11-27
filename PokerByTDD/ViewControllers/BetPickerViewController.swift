@@ -10,15 +10,6 @@ import UIKit
 
 final class BetPickerViewController: UIViewController {
     
-    static func instantiate(possessionMoney: Int, post: @escaping (_ bet: Int) -> ()) -> BetPickerViewController {
-        let vc = UIStoryboard(name: "BetPickerView", bundle: nil).instantiateInitialViewController() as! BetPickerViewController
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        vc.completion = post
-        vc.possessionMoney = possessionMoney
-        return vc
-    }
-    
     private var completion: ((_ bet: Int) -> ())?
     private var possessionMoney: Int!
     
@@ -37,6 +28,15 @@ final class BetPickerViewController: UIViewController {
         }
     }
     @IBOutlet private weak var doneButton: UIButton!
+    
+    static func instantiate(possessionMoney: Int, post: @escaping (_ bet: Int) -> ()) -> BetPickerViewController {
+        let vc = UIStoryboard(name: "BetPickerView", bundle: nil).instantiateInitialViewController() as! BetPickerViewController
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.completion = post
+        vc.possessionMoney = possessionMoney
+        return vc
+    }
     
     @IBAction private func doneButton(_ sender: Any) {
         let bet = betLabel.text.flatMap(Int.init) ?? 0
