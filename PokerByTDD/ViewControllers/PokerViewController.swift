@@ -35,7 +35,8 @@ final class PokerViewController: UIViewController {
         super.viewDidLoad()
         
         presenter = PokerViewPresenter(updateCards: updateCards,
-                                       handText: handText)
+                                       handText: handText,
+                                       walletText: walletText)
         cardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
     }
@@ -61,6 +62,12 @@ final class PokerViewController: UIViewController {
             _self.handLabel.text = hand
             _self.opponentHandLabel.text = opponentHand
             _self.resultLabel.text = result
+        }
+    }
+    
+    private var walletText: Binder<String> {
+        return Binder(walletLabel) { walletLabel, text in
+            walletLabel.text = text
         }
     }
     

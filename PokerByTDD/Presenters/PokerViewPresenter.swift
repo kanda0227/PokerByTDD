@@ -16,18 +16,29 @@ final class PokerViewPresenter {
     private let useCardNum = 5
     
     private var bet = 0
+    private var wallet = 100 {
+        didSet {
+            walletText.onNext("\(wallet)")
+        }
+    }
     
     private let updateCards: Binder<(cards: [Card], opponentCards: [Card])>
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
+    private let walletText: Binder<String>
     
     init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
-         handText: Binder<(hand: String?, opponentHand: String?, result: String?)>) {
+         handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
+         walletText: Binder<String>) {
         self.updateCards = updateCards
         self.handText = handText
+        self.walletText = walletText
+        self.walletText.onNext("\(wallet)")
+    }
     }
     
     func postStart(gatherCards: [Card], opponentCards: [Card], bet: Int) {
         self.bet = bet
+        self.wallet -= bet
         dealer.gatherCards(gatherCards + opponentCards)
         let cards = dealer.dealCards(useCardNum).sorted()
         updateCards.onNext((cards: cards, opponentCards: []))
@@ -40,6 +51,7 @@ final class PokerViewPresenter {
         let hand = Hand(cards: cards, name: userName)
         let opponentHand = Hand(cards: opponentCards, name: opponentName)
         let resultText = Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)
+        wallet += Result.results(hand: hand, opponentHand: opponentHand, bet: bet).1
         updateCards.onNext((cards: cards, opponentCards: opponentCards))
         handText.onNext((hand: hand.hand().text,
                          opponentHand: opponentHand.hand().text,
