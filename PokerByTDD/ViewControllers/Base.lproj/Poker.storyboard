@@ -127,10 +127,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgb-Aq-xGg">
+                                <rect key="frame" x="320" y="28" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所持金 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TI-Fh-GJK">
+                                <rect key="frame" x="263" y="28" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="height" secondItem="JNM-Lv-rgw" secondAttribute="height" id="1aU-vG-Q51"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zgb-Aq-xGg" secondAttribute="trailing" constant="16" id="3dp-6g-dcW"/>
                             <constraint firstItem="eq8-B1-gER" firstAttribute="width" secondItem="zrw-pU-QIT" secondAttribute="width" id="3i1-Uk-lfF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zrw-pU-QIT" secondAttribute="trailing" constant="50" id="5oL-sq-AVM"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="height" secondItem="t3s-mb-YPX" secondAttribute="height" id="7rN-Gx-ONJ"/>
@@ -142,6 +155,7 @@
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="width" secondItem="kmz-Cm-bJT" secondAttribute="width" id="FWu-zI-pu5"/>
                             <constraint firstItem="eq8-B1-gER" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HWK-ZS-b9f"/>
                             <constraint firstItem="eq8-B1-gER" firstAttribute="height" secondItem="idB-Zm-PRQ" secondAttribute="height" id="Hzm-YW-Klt"/>
+                            <constraint firstItem="Zgb-Aq-xGg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="I1h-zs-GUk"/>
                             <constraint firstItem="eq8-B1-gER" firstAttribute="height" secondItem="OWS-J3-yhB" secondAttribute="height" id="LAZ-qN-gf7"/>
                             <constraint firstItem="sPQ-Dc-gkg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LTz-yc-pAf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fsr-pH-mjw" secondAttribute="bottom" constant="100" id="LUw-IE-PQT"/>
@@ -154,11 +168,13 @@
                             <constraint firstItem="OWS-J3-yhB" firstAttribute="top" secondItem="eq8-B1-gER" secondAttribute="top" id="UlE-Qt-hmh"/>
                             <constraint firstItem="fsr-pH-mjw" firstAttribute="top" secondItem="TPp-sh-mYw" secondAttribute="bottom" constant="8" id="VAi-dt-Cfn"/>
                             <constraint firstItem="sPQ-Dc-gkg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="YCb-5R-okc"/>
+                            <constraint firstItem="Zgb-Aq-xGg" firstAttribute="top" secondItem="4TI-Fh-GJK" secondAttribute="top" id="YNy-xS-Hdv"/>
                             <constraint firstItem="JNM-Lv-rgw" firstAttribute="top" secondItem="pfB-eo-ymX" secondAttribute="top" id="Yk3-8u-BDL"/>
                             <constraint firstItem="PGp-tT-zyc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bJD-gx-Qe7"/>
                             <constraint firstItem="t3s-mb-YPX" firstAttribute="top" secondItem="pfB-eo-ymX" secondAttribute="top" id="bqs-Ix-Ymd"/>
                             <constraint firstItem="pfB-eo-ymX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="c2A-Ee-RdS"/>
                             <constraint firstItem="eq8-B1-gER" firstAttribute="width" secondItem="6Rr-mQ-GMV" secondAttribute="width" id="dgy-kB-w5X"/>
+                            <constraint firstItem="Zgb-Aq-xGg" firstAttribute="leading" secondItem="4TI-Fh-GJK" secondAttribute="trailing" id="eQr-rM-SI3"/>
                             <constraint firstItem="fsr-pH-mjw" firstAttribute="centerX" secondItem="AhS-xQ-tiW" secondAttribute="centerX" id="ekK-Be-ggX"/>
                             <constraint firstItem="4H6-H2-8Ck" firstAttribute="leading" secondItem="pfB-eo-ymX" secondAttribute="trailing" constant="5" id="iDy-Fj-kkS"/>
                             <constraint firstItem="6Rr-mQ-GMV" firstAttribute="leading" secondItem="OWS-J3-yhB" secondAttribute="trailing" constant="5" id="j9e-LM-DrU"/>
@@ -187,6 +203,7 @@
                         <outlet property="resultLabel" destination="sPQ-Dc-gkg" id="RtD-gq-Ysk"/>
                         <outlet property="startButton" destination="TPp-sh-mYw" id="pwB-yQ-3Fz"/>
                         <outlet property="tradeButton" destination="fsr-pH-mjw" id="Ogo-cx-Uel"/>
+                        <outlet property="walletLabel" destination="Zgb-Aq-xGg" id="Joj-Wd-zKD"/>
                         <outletCollection property="cardViews" destination="4H6-H2-8Ck" collectionClass="NSMutableArray" id="quk-ty-ee7"/>
                         <outletCollection property="cardViews" destination="t3s-mb-YPX" collectionClass="NSMutableArray" id="0sl-sc-Cga"/>
                         <outletCollection property="cardViews" destination="kmz-Cm-bJT" collectionClass="NSMutableArray" id="xOB-Ng-HtD"/>

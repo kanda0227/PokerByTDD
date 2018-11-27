@@ -19,6 +19,7 @@ final class PokerViewController: UIViewController {
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var tradeButton: UIButton!
+    @IBOutlet private weak var walletLabel: UILabel!
     
     private var presenter: PokerViewPresenter!
     
