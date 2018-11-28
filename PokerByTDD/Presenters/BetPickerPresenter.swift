@@ -72,6 +72,7 @@ final class BetPickerPresenter {
         switchIsDoneButtonEnabled.onNext(isInRangeValue())
     }
     
+    /// n 桁目の位を計算します
     private func placeNum(_ n: Int) -> Int {
         return Int(pow(10, Double(n)))
     }
