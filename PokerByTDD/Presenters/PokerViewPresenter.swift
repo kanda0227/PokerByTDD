@@ -56,8 +56,9 @@ final class PokerViewPresenter {
         self.wallet -= bet
         dealer.gatherCards(userCards.map { $0.card } + opponentCards)
         userCards = dealer.dealCards(useCardNum).sorted().map { ($0, false) }
+        opponentCards = dealer.dealCards(useCardNum).sorted()
         updateCards.onNext((cards: userCards.map { $0.card },
-                            opponentCards: []))
+                            opponentCards: opponentCards))
         handText.onNext((hand: nil, opponentHand: nil, result: nil))
     }
     
@@ -71,7 +72,6 @@ final class PokerViewPresenter {
         let selected = userCards.filter { $0.isSelected }.map { $0.card }
         let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
         userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }
-        opponentCards = dealer.dealCards(useCardNum).sorted()
         let hand = Hand(cards: userCards.map { $0.card }, name: userName)
         let opponentHand = Hand(cards: opponentCards, name: opponentName)
         let resultText = Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)
