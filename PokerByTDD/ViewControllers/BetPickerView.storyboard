@@ -44,7 +44,7 @@
                                         <rect key="frame" x="124.5" y="87" width="31" height="30"/>
                                         <state key="normal" title="決定"/>
                                         <connections>
-                                            <action selector="doneButton:" destination="B12-ud-f5U" eventType="touchUpInside" id="gQI-WY-wHz"/>
+                                            <action selector="tapDoneButton:" destination="B12-ud-f5U" eventType="touchUpInside" id="Sgl-SU-sKA"/>
                                         </connections>
                                     </button>
                                 </subviews>

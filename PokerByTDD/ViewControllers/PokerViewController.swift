@@ -10,15 +10,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+/// ポーカー画面
 final class PokerViewController: UIViewController {
     
+    /// ユーザーのカードのビュー
     @IBOutlet private var cardViews: [CardView]!
+    /// ユーザーの役を表示するラベル
     @IBOutlet private weak var handLabel: UILabel!
+    /// 対戦相手のカードのビュー
     @IBOutlet private var opponentCardsViews: [CardView]!
+    /// 対戦相手の役を表示するラベル
     @IBOutlet private weak var opponentHandLabel: UILabel!
+    /// 対戦結果を表示するラベル
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var tradeButton: UIButton!
+    /// 所持金を表示するラベル
     @IBOutlet private weak var walletLabel: UILabel!
     
     private var presenter: PokerViewPresenter!
