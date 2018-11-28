@@ -12,18 +12,24 @@ import RxCocoa
 
 final class PokerViewPresenter {
     
+    /// カードの配布や交換をしてくれるディーラーさん
     private let dealer = Dealer()
+    /// 今回は手札が5枚ずつのポーカーを想定
     private let useCardNum = 5
     
     private var bet = 0
-    private var wallet = 100 {
+    /// 所持金
+    private var wallet = 100 { // TODO: 初期値を考えて所持金は永続化したものを使いたい
         didSet {
             walletText.onNext("\(wallet)")
         }
     }
     
+    /// ユーザーと対戦相手のカードのビューを更新します
     private let updateCards: Binder<(cards: [Card], opponentCards: [Card])>
+    /// ユーザーと対戦相手の役のテキストを表示します
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
+    /// 所持金の表示を更新します
     private let walletText: Binder<String>
     
     init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
@@ -39,6 +45,7 @@ final class PokerViewPresenter {
         return wallet
     }
     
+    /// ゲームスタート時に呼んでください
     func postStart(gatherCards: [Card], opponentCards: [Card], bet: Int) {
         self.bet = bet
         self.wallet -= bet
@@ -48,6 +55,7 @@ final class PokerViewPresenter {
         handText.onNext((hand: nil, opponentHand: nil, result: nil))
     }
     
+    /// カード交換ボタンのタップ時に呼んでください
     func postTrade(selected: [Card], notSelected: [Card]) {
         let cards = (dealer.tradeCards(selected) + notSelected).sorted()
         let opponentCards = dealer.dealCards(useCardNum).sorted()
