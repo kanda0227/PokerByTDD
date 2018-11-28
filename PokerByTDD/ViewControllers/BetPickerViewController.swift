@@ -15,10 +15,8 @@ final class BetPickerViewController: UIViewController {
     
     /// この画面を閉じる際に実行するクロージャ
     private var completion: ((_ bet: Int) -> ())?
-    /// 所持金
-    private var possessionMoney: Int!
     
-    private lazy var presenter = BetPickerPresenter()
+    private var presenter: BetPickerPresenter!
     
     @IBOutlet private weak var mainView: UIView! {
         didSet {
@@ -52,13 +50,12 @@ final class BetPickerViewController: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
         
         vc.completion = post
-        vc.possessionMoney = possessionMoney
+        vc.presenter = BetPickerPresenter(possessionMoney: possessionMoney)
         return vc
     }
     
     @IBAction private func tapDoneButton(_ sender: Any) {
-        let bet = betLabel.text.flatMap(Int.init) ?? 0
-        completion?(bet)
+        completion?(presenter.betValue())
         dismiss(animated: true, completion: nil)
     }
 }
@@ -81,22 +78,12 @@ extension BetPickerViewController: UIPickerViewDataSource {
 extension BetPickerViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(row)"
+        return presenter.titleForRow(row, component: component)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var selectedNum = 0
-        for i in 0..<numberOfComponents(in: pickerView) {
-            let rowNum = component == i ? row : pickerView.selectedRow(inComponent: i)
-            selectedNum += (rowNum * placeNum(component: i))
-        }
-        
-        doneButton.isEnabled = selectedNum <= possessionMoney
-        betLabel.text = doneButton.isEnabled ? "\(selectedNum)" : "所持金を超えているようです"
-    }
-    
-    private func placeNum(component: Int) -> Int {
-        let componentCount = numberOfComponents(in: picker)
-        return Int(pow(10, Double(componentCount - component - 1)))
+        presenter.didSelectRow(row, component: component)
+        doneButton.isEnabled = presenter.isDoneButtonEnabled()
+        betLabel.text = presenter.betText()
     }
 }
