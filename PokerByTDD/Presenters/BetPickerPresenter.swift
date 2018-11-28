@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class BetPickerPresenter {
     
@@ -24,16 +26,19 @@ final class BetPickerPresenter {
     /// 所持金
     private var possessionMoney: Int
     
-    init(possessionMoney: Int) {
+    private let betLabelText: Binder<String?>
+    private let switchIsDoneButtonEnabled: Binder<Bool>
+    
+    init(possessionMoney: Int,
+         betLabelText: Binder<String?>,
+         switchIsDoneButtonEnabled: Binder<Bool>) {
         self.possessionMoney = possessionMoney
+        self.betLabelText = betLabelText
+        self.switchIsDoneButtonEnabled = switchIsDoneButtonEnabled
         pickerValue = [Int](repeating: 0, count: componentsNum)
     }
-
-    func isDoneButtonEnabled() -> Bool {
-        return isInRangeValue()
-    }
     
-    func betText() -> String {
+    private func betText() -> String {
         return isInRangeValue() ? "\(selectedValue)" : "所持金を超えているようです"
     }
     
@@ -63,6 +68,8 @@ final class BetPickerPresenter {
     
     func didSelectRow(_ row: Int, component: Int) {
         pickerValue[component] = row
+        betLabelText.onNext(betText())
+        switchIsDoneButtonEnabled.onNext(isInRangeValue())
     }
     
     private func placeNum(_ n: Int) -> Int {

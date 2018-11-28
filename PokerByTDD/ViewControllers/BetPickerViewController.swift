@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 // MARK: - BetPickerViewController
 
@@ -50,13 +52,28 @@ final class BetPickerViewController: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
         
         vc.completion = post
-        vc.presenter = BetPickerPresenter(possessionMoney: possessionMoney)
+        vc.presenter = BetPickerPresenter(
+            possessionMoney: possessionMoney,
+            betLabelText: vc.betLabelText,
+            switchIsDoneButtonEnabled: vc.switchIsDoneButtonEnabled)
         return vc
     }
     
     @IBAction private func tapDoneButton(_ sender: Any) {
         completion?(presenter.betValue())
         dismiss(animated: true, completion: nil)
+    }
+    
+    private var betLabelText: Binder<String?> {
+        return Binder(self) { _self, text in
+            _self.betLabel?.text = text
+        }
+    }
+    
+    private var switchIsDoneButtonEnabled: Binder<Bool> {
+        return Binder(self) { _self, isEnabled in
+            _self.doneButton?.isEnabled = isEnabled
+        }
     }
 }
 
@@ -83,7 +100,5 @@ extension BetPickerViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         presenter.didSelectRow(row, component: component)
-        doneButton.isEnabled = presenter.isDoneButtonEnabled()
-        betLabel.text = presenter.betText()
     }
 }
