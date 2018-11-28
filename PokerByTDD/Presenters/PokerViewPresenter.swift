@@ -25,6 +25,11 @@ final class PokerViewPresenter {
         }
     }
     
+    /// ユーザーの手札
+    private var userCards: [(card: Card, isSelected: Bool)] = []
+    /// 対戦相手の手札
+    private var opponentCards: [Card] = []
+    
     /// ユーザーと対戦相手のカードのビューを更新します
     private let updateCards: Binder<(cards: [Card], opponentCards: [Card])>
     /// ユーザーと対戦相手の役のテキストを表示します
@@ -46,24 +51,32 @@ final class PokerViewPresenter {
     }
     
     /// ゲームスタート時に呼んでください
-    func postStart(gatherCards: [Card], opponentCards: [Card], bet: Int) {
+    func postStart(bet: Int) {
         self.bet = bet
         self.wallet -= bet
-        dealer.gatherCards(gatherCards + opponentCards)
-        let cards = dealer.dealCards(useCardNum).sorted()
-        updateCards.onNext((cards: cards, opponentCards: []))
+        dealer.gatherCards(userCards.map { $0.card } + opponentCards)
+        userCards = dealer.dealCards(useCardNum).sorted().map { ($0, false) }
+        updateCards.onNext((cards: userCards.map { $0.card },
+                            opponentCards: []))
         handText.onNext((hand: nil, opponentHand: nil, result: nil))
     }
     
+    /// カードの選択状態が変わるときに呼んでください
+    func switchIsSelectCard(tag: Int, isSelected: Bool) {
+        userCards[tag].isSelected = isSelected
+    }
+    
     /// カード交換ボタンのタップ時に呼んでください
-    func postTrade(selected: [Card], notSelected: [Card]) {
-        let cards = (dealer.tradeCards(selected) + notSelected).sorted()
-        let opponentCards = dealer.dealCards(useCardNum).sorted()
-        let hand = Hand(cards: cards, name: userName)
+    func postTrade() {
+        let selected = userCards.filter { $0.isSelected }.map { $0.card }
+        let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
+        userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }
+        opponentCards = dealer.dealCards(useCardNum).sorted()
+        let hand = Hand(cards: userCards.map { $0.card }, name: userName)
         let opponentHand = Hand(cards: opponentCards, name: opponentName)
         let resultText = Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)
         wallet += Result.results(hand: hand, opponentHand: opponentHand, bet: bet).1
-        updateCards.onNext((cards: cards, opponentCards: opponentCards))
+        updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
         handText.onNext((hand: hand.hand().text,
                          opponentHand: opponentHand.hand().text,
                          result: resultText))

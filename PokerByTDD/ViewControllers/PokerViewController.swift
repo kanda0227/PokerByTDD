@@ -30,14 +30,6 @@ final class PokerViewController: UIViewController {
     
     private var presenter: PokerViewPresenter!
     
-    private var cards: [Card] {
-        return cardViews.cards()
-    }
-    
-    private var opponentCards: [Card] {
-        return opponentCardsViews.cards()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,6 +72,8 @@ final class PokerViewController: UIViewController {
     
     @objc private func selectCard(_ sender: UITapGestureRecognizer) {
         cardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
+        guard let cardView = sender.view as? CardView else { return }
+        presenter.switchIsSelectCard(tag: cardView.tag, isSelected: cardView.isSelected)
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {
@@ -97,7 +91,7 @@ final class PokerViewController: UIViewController {
     
     func start(bet: Int) {
         turnOverCards(isBack: false)
-        presenter.postStart(gatherCards: cards, opponentCards: opponentCards, bet: bet)
+        presenter.postStart(bet: bet)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
@@ -105,7 +99,7 @@ final class PokerViewController: UIViewController {
         sender.isEnabled = false
         setSelectable(false)
         turnOverOpponentCards(isBack: false)
-        presenter.postTrade(selected: cardViews.selectedCards(), notSelected: cardViews.notSelectedCards())
+        presenter.postTrade()
     }
     
     func setSelectable(_ selectable: Bool) {
@@ -118,20 +112,5 @@ final class PokerViewController: UIViewController {
     
     func turnOverOpponentCards(isBack: Bool) {
         opponentCardsViews.forEach { $0.isBack = isBack }
-    }
-}
-
-private extension Array where Element==CardView {
-    
-    func selectedCards() -> [Card] {
-        return filter { $0.isSelected }.cards()
-    }
-    
-    func notSelectedCards() -> [Card] {
-        return filter { !$0.isSelected }.cards()
-    }
-    
-    func cards() -> [Card] {
-        return map { $0.card }.filter { $0 != nil }.map { $0! }
     }
 }
