@@ -42,19 +42,27 @@ final class PokerViewPresenter {
     private let turnOverOpponentCards: Binder<Bool>
     /// カードの選択可否を切り替えます
     private let switchSelectableCards: Binder<Bool>
+    /// スタートボタンの有効・無効を切り替えます
+    private let switchIsStartButtonEnabled: Binder<Bool>
+    /// トレードボタンの有効・無効を切り替えます
+    private let switchIsTradeButtonEnabled: Binder<Bool>
     
     init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
          handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
          walletText: Binder<String>,
          turnOverUserCards: Binder<Bool>,
          turnOverOpponentCards: Binder<Bool>,
-         switchSelectableCards: Binder<Bool>) {
+         switchSelectableCards: Binder<Bool>,
+         switchIsStartButtonEnabled: Binder<Bool>,
+         switchIsTradeButtonEnabled: Binder<Bool>) {
         self.updateCards = updateCards
         self.handText = handText
         self.walletText = walletText
         self.turnOverUserCards = turnOverUserCards
         self.turnOverOpponentCards = turnOverOpponentCards
         self.switchSelectableCards = switchSelectableCards
+        self.switchIsStartButtonEnabled = switchIsStartButtonEnabled
+        self.switchIsTradeButtonEnabled = switchIsTradeButtonEnabled
         
         self.walletText.onNext("\(wallet)")
     }
@@ -67,6 +75,8 @@ final class PokerViewPresenter {
     func postTapStartButton() {
         turnOverUserCards.onNext(true)
         turnOverOpponentCards.onNext(true)
+        switchIsStartButtonEnabled.onNext(false)
+        switchIsTradeButtonEnabled.onNext(true)
     }
     
     /// ゲームスタート時に呼んでください
@@ -99,6 +109,8 @@ final class PokerViewPresenter {
         handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
         turnOverOpponentCards.onNext(false)
         switchSelectableCards.onNext(false)
+        switchIsStartButtonEnabled.onNext(true)
+        switchIsTradeButtonEnabled.onNext(false)
     }
     
     private enum Result: String {

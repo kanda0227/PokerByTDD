@@ -37,7 +37,9 @@ final class PokerViewController: UIViewController {
                                        handText: handText,
                                        walletText: walletText, turnOverUserCards: turnOverUserCards,
                                        turnOverOpponentCards: turnOverOpponentCards,
-                                       switchSelectableCards: switchSelectableCards)
+                                       switchSelectableCards: switchSelectableCards,
+                                       switchIsStartButtonEnabled: switchIsStartButtonEnabled,
+                                       switchIsTradeButtonEnabled: switchIsTradeButtonEnabled)
         userCardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
     }
@@ -83,6 +85,18 @@ final class PokerViewController: UIViewController {
         }
     }
     
+    private var switchIsStartButtonEnabled: Binder<Bool> {
+        return Binder(self) { _self, isEnabled in
+            _self.startButton.isEnabled = isEnabled
+        }
+    }
+    
+    private var switchIsTradeButtonEnabled: Binder<Bool> {
+        return Binder(self) { _self, isEnabled in
+            _self.tradeButton.isEnabled = isEnabled
+        }
+    }
+    
     @objc private func selectCard(_ sender: UITapGestureRecognizer) {
         userCardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
         guard let cardView = sender.view as? CardView else { return }
@@ -90,8 +104,6 @@ final class PokerViewController: UIViewController {
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {
-        tradeButton.isEnabled = true
-        sender.isEnabled = false
         presenter.postTapStartButton()
         let betPickerVC = BetPickerViewController
             .instantiate(possessionMoney: presenter.walletContent()) { [weak self] bet in
@@ -101,8 +113,6 @@ final class PokerViewController: UIViewController {
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
-        startButton.isEnabled = true
-        sender.isEnabled = false
         presenter.postTrade()
     }
     
