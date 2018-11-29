@@ -44,15 +44,8 @@ final class PokerViewController: UIViewController {
     private var updateCards: Binder<(cards: [Card], opponentCards: [Card])> {
         return Binder(self) { _self, params in
             let (cards, opponentCards) = params
-            cards.enumerated().forEach { index, card in
-                let cardView = _self.userCardViews.filter { $0.tag == index }.first
-                cardView?.card = card
-                cardView?.isSelected = false // 選択状態を解除
-            }
-            opponentCards.enumerated().forEach { index, card in
-                let cardView = _self.opponentCardsViews.filter { $0.tag == index }.first
-                cardView?.card = card
-            }
+            _self.userCardViews.configure(cards: cards)
+            _self.opponentCardsViews.configure(cards: opponentCards)
         }
     }
     
@@ -110,5 +103,16 @@ final class PokerViewController: UIViewController {
     
     func setSelectable(_ selectable: Bool) {
         userCardViews.forEach { $0.isUserInteractionEnabled = selectable }
+    }
+}
+
+private extension Array where Element==CardView {
+    
+    func configure(cards: [Card]) {
+        cards.enumerated().forEach { index, card in
+            let cardView = filter { $0.tag == index }.first
+            cardView?.card = card
+            cardView?.isSelected = false
+        }
     }
 }
