@@ -66,13 +66,13 @@ final class PokerViewController: UIViewController {
     
     private var turnOverUserCards: Binder<Bool> {
         return Binder(self) { _self, isBack in
-            _self.userCardViews.forEach { $0.isBack = isBack }
+            _self.userCardViews.turnOver(isBack: isBack)
         }
     }
     
     private var turnOverOpponentCards: Binder<Bool> {
         return Binder(self) { _self, isBack in
-            _self.opponentCardsViews.forEach { $0.isBack = isBack }
+            _self.opponentCardsViews.turnOver(isBack: isBack)
         }
     }
     
@@ -114,5 +114,9 @@ private extension Array where Element==CardView {
             cardView?.card = card
             cardView?.isSelected = false
         }
+    }
+    
+    func turnOver(isBack: Bool) {
+        forEach { $0.isBack = isBack }
     }
 }
