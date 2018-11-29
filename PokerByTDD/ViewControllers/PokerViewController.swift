@@ -93,6 +93,7 @@ final class PokerViewController: UIViewController {
         tradeButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(true)
+        presenter.postTapStartButton()
         let bet = presenter.walletContent()
         let betPickerVC = BetPickerViewController.instantiate(possessionMoney: bet) { [weak self] bet in
             self?.start(bet: bet)
