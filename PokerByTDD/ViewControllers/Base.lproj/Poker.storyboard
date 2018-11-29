@@ -198,22 +198,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="handLabel" destination="AhS-xQ-tiW" id="cSl-JW-cOU"/>
                         <outlet property="opponentHandLabel" destination="PGp-tT-zyc" id="BwP-YK-Ojh"/>
                         <outlet property="resultLabel" destination="sPQ-Dc-gkg" id="RtD-gq-Ysk"/>
                         <outlet property="startButton" destination="TPp-sh-mYw" id="pwB-yQ-3Fz"/>
                         <outlet property="tradeButton" destination="fsr-pH-mjw" id="Ogo-cx-Uel"/>
+                        <outlet property="userHandLabel" destination="AhS-xQ-tiW" id="DS5-yW-ZcB"/>
                         <outlet property="walletLabel" destination="Zgb-Aq-xGg" id="Joj-Wd-zKD"/>
-                        <outletCollection property="cardViews" destination="4H6-H2-8Ck" collectionClass="NSMutableArray" id="quk-ty-ee7"/>
-                        <outletCollection property="cardViews" destination="t3s-mb-YPX" collectionClass="NSMutableArray" id="0sl-sc-Cga"/>
-                        <outletCollection property="cardViews" destination="kmz-Cm-bJT" collectionClass="NSMutableArray" id="xOB-Ng-HtD"/>
-                        <outletCollection property="cardViews" destination="JNM-Lv-rgw" collectionClass="NSMutableArray" id="hwX-au-aoR"/>
-                        <outletCollection property="cardViews" destination="pfB-eo-ymX" collectionClass="NSMutableArray" id="0OG-Cx-Xbp"/>
                         <outletCollection property="opponentCardsViews" destination="eq8-B1-gER" collectionClass="NSMutableArray" id="ZPJ-0x-Ki4"/>
                         <outletCollection property="opponentCardsViews" destination="idB-Zm-PRQ" collectionClass="NSMutableArray" id="y9O-5i-oHa"/>
                         <outletCollection property="opponentCardsViews" destination="OWS-J3-yhB" collectionClass="NSMutableArray" id="Axn-fy-1ee"/>
                         <outletCollection property="opponentCardsViews" destination="6Rr-mQ-GMV" collectionClass="NSMutableArray" id="FyW-Kw-Vvz"/>
                         <outletCollection property="opponentCardsViews" destination="zrw-pU-QIT" collectionClass="NSMutableArray" id="jcE-TQ-VIs"/>
+                        <outletCollection property="userCardViews" destination="pfB-eo-ymX" collectionClass="NSMutableArray" id="v7x-pn-yBG"/>
+                        <outletCollection property="userCardViews" destination="4H6-H2-8Ck" collectionClass="NSMutableArray" id="8yy-X0-WiH"/>
+                        <outletCollection property="userCardViews" destination="t3s-mb-YPX" collectionClass="NSMutableArray" id="uBi-is-jmR"/>
+                        <outletCollection property="userCardViews" destination="kmz-Cm-bJT" collectionClass="NSMutableArray" id="Lzt-mQ-qF4"/>
+                        <outletCollection property="userCardViews" destination="JNM-Lv-rgw" collectionClass="NSMutableArray" id="nCp-ll-qjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
