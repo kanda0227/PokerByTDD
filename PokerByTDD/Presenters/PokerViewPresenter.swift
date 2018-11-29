@@ -94,7 +94,7 @@ final class PokerViewPresenter {
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
         handText.onNext((hand: hand.hand().text,
                          opponentHand: opponentHand.hand().text,
-                         result: Result.resultText(hand: hand, opponentHand: opponentHand)))
+                         result: Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)))
         turnOverOpponentCards.onNext(false)
     }
     
@@ -103,8 +103,8 @@ final class PokerViewPresenter {
         case lose = "負け(´･ω･`)"
         case draw = "引き分け(･_･)"
         
-        static fileprivate func resultText(hand: Hand, opponentHand: Hand) -> String {
-            let (result, receive) = results(hand: hand, opponentHand: opponentHand)
+        static fileprivate func resultText(hand: Hand, opponentHand: Hand, bet: Int) -> String {
+            let (result, receive) = results(hand: hand, opponentHand: opponentHand, bet: bet)
             return result.text(receive: receive)
         }
         
@@ -116,7 +116,7 @@ final class PokerViewPresenter {
             return rawValue + " + \(receive)"
         }
         
-        static private func results(hand: Hand, opponentHand: Hand, bet: Int = 0) -> (result: Result, receive: Int) {
+        static private func results(hand: Hand, opponentHand: Hand, bet: Int) -> (result: Result, receive: Int) {
             let table = Table()
             table.bet(hand: hand, bet)
             table.bet(hand: opponentHand, 0)
