@@ -14,9 +14,9 @@ import RxCocoa
 final class PokerViewController: UIViewController {
     
     /// ユーザーのカードのビュー
-    @IBOutlet private var cardViews: [CardView]!
+    @IBOutlet private var userCardViews: [CardView]!
     /// ユーザーの役を表示するラベル
-    @IBOutlet private weak var handLabel: UILabel!
+    @IBOutlet private weak var userHandLabel: UILabel!
     /// 対戦相手のカードのビュー
     @IBOutlet private var opponentCardsViews: [CardView]!
     /// 対戦相手の役を表示するラベル
@@ -36,7 +36,7 @@ final class PokerViewController: UIViewController {
         presenter = PokerViewPresenter(updateCards: updateCards,
                                        handText: handText,
                                        walletText: walletText)
-        cardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
+        userCardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
     }
     
@@ -44,7 +44,7 @@ final class PokerViewController: UIViewController {
         return Binder(self) { _self, params in
             let (cards, opponentCards) = params
             cards.enumerated().forEach { index, card in
-                let cardView = _self.cardViews.filter { $0.tag == index }.first
+                let cardView = _self.userCardViews.filter { $0.tag == index }.first
                 cardView?.card = card
                 cardView?.isSelected = false // 選択状態を解除
             }
@@ -58,7 +58,7 @@ final class PokerViewController: UIViewController {
     private var handText: Binder<(hand: String?, opponentHand: String?, result: String?)> {
         return Binder(self) { _self, params in
             let (hand, opponentHand, result) = params
-            _self.handLabel.text = hand
+            _self.userHandLabel.text = hand
             _self.opponentHandLabel.text = opponentHand
             _self.resultLabel.text = result
         }
@@ -71,7 +71,7 @@ final class PokerViewController: UIViewController {
     }
     
     @objc private func selectCard(_ sender: UITapGestureRecognizer) {
-        cardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
+        userCardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
         guard let cardView = sender.view as? CardView else { return }
         presenter.switchIsSelectCard(tag: cardView.tag, isSelected: cardView.isSelected)
     }
@@ -103,11 +103,11 @@ final class PokerViewController: UIViewController {
     }
     
     func setSelectable(_ selectable: Bool) {
-        cardViews.forEach { $0.isUserInteractionEnabled = selectable }
+        userCardViews.forEach { $0.isUserInteractionEnabled = selectable }
     }
     
     func turnOverCards(isBack: Bool) {
-        cardViews.forEach { $0.isBack = isBack }
+        userCardViews.forEach { $0.isBack = isBack }
     }
     
     func turnOverOpponentCards(isBack: Bool) {
