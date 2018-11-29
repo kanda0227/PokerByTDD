@@ -22,6 +22,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfB-eo-ymX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="16" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pfB-eo-ymX" secondAttribute="height" multiplier="2:3" id="3Cm-Ug-j7S"/>
                                 </constraints>
@@ -32,6 +35,9 @@
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-H2-8Ck" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="85.5" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -39,6 +45,9 @@
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-mb-YPX" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="155" y="385" width="65" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -46,6 +55,9 @@
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-Cm-bJT" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="225" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -53,6 +65,9 @@
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-Lv-rgw" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
                                 <rect key="frame" x="294.5" y="385" width="64.5" height="97"/>
                                 <color key="backgroundColor" name="pink"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
