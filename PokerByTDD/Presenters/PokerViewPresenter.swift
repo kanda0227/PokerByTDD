@@ -88,13 +88,10 @@ final class PokerViewPresenter {
         let selected = userCards.filter { $0.isSelected }.map { $0.card }
         let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
         userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }
-        let hand = Hand(cards: userCards.map { $0.card }, name: userName)
-        let opponentHand = Hand(cards: opponentCards, name: opponentName)
-        wallet += Result.receive(hand: hand, opponentHand: opponentHand, bet: bet)
+        let cards = userCards.map { $0.card }
+        wallet += Result.receive(user: cards, opponent: opponentCards, bet: bet)
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
-        handText.onNext((hand: hand.hand().text,
-                         opponentHand: opponentHand.hand().text,
-                         result: Result.resultText(hand: hand, opponentHand: opponentHand, bet: bet)))
+        handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
         turnOverOpponentCards.onNext(false)
     }
     
@@ -103,36 +100,36 @@ final class PokerViewPresenter {
         case lose = "負け(´･ω･`)"
         case draw = "引き分け(･_･)"
         
-        static fileprivate func resultText(hand: Hand, opponentHand: Hand, bet: Int) -> String {
-            let (result, receive) = results(hand: hand, opponentHand: opponentHand, bet: bet)
-            return result.text(receive: receive)
+        static fileprivate func resultText(user: [Card], opponent: [Card], bet: Int) -> (hand: String?, opponentHand: String?, result: String?) {
+            let (result, receive, handTexts) = results(userCards: user, opponentCards: opponent, bet: bet)
+            return (handTexts.user, handTexts.opponent, result.text(receive: receive))
         }
         
-        static fileprivate func receive(hand: Hand, opponentHand: Hand, bet: Int) -> Int {
-            return results(hand: hand, opponentHand: opponentHand, bet: bet).receive
+        static fileprivate func receive(user: [Card], opponent: [Card], bet: Int) -> Int {
+            return results(userCards: user, opponentCards: opponent, bet: bet).receive
         }
         
         fileprivate func text(receive: Int) -> String {
             return rawValue + " + \(receive)"
         }
         
-        static private func results(hand: Hand, opponentHand: Hand, bet: Int) -> (result: Result, receive: Int) {
+        static private func results(userCards: [Card], opponentCards: [Card], bet: Int) -> (result: Result, receive: Int, handTexts: (user: String, opponent: String)) {
             let table = Table()
-            table.bet(hand: hand, bet)
+            let userHand = Hand(cards: userCards, name: "user")
+            let opponentHand = Hand(cards: opponentCards, name: "opponent")
+            table.bet(hand: userHand, bet)
             table.bet(hand: opponentHand, 0)
-            let ranking = table.ranking(hand: hand)
+            let ranking = table.ranking(hand: userHand)
             let opponentRanking = table.ranking(hand: opponentHand)
-            let receive = table.receive(hand: hand)
+            let receive = table.receive(hand: userHand)
+            let handTexts = (userHand.hand().text, opponentHand.hand().text)
             if ranking == opponentRanking {
-                return (.draw, receive)
+                return (.draw, receive, handTexts)
             } else if ranking == 1 {
-                return (.win, receive)
+                return (.win, receive, handTexts)
             } else {
-                return (.lose, receive)
+                return (.lose, receive, handTexts)
             }
         }
     }
-    
-    private let userName = "user"
-    private let opponentName = "opponent"
 }
