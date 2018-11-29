@@ -36,18 +36,33 @@ final class PokerViewPresenter {
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
     /// 所持金の表示を更新します
     private let walletText: Binder<String>
+    /// ユーザーのカードをめくります
+    private let turnOverUserCards: Binder<Bool>
+    /// 対戦相手のカードをめくります
+    private let turnOverOpponentCards: Binder<Bool>
     
     init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
          handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
-         walletText: Binder<String>) {
+         walletText: Binder<String>,
+         turnOverUserCards: Binder<Bool>,
+         turnOverOpponentCards: Binder<Bool>) {
         self.updateCards = updateCards
         self.handText = handText
         self.walletText = walletText
+        self.turnOverUserCards = turnOverUserCards
+        self.turnOverOpponentCards = turnOverOpponentCards
+        
         self.walletText.onNext("\(wallet)")
     }
     
     func walletContent() -> Int {
         return wallet
+    }
+    
+    /// スタートボタンのタップ時に呼んでください
+    func postTapStartButton() {
+        turnOverUserCards.onNext(true)
+        turnOverOpponentCards.onNext(true)
     }
     
     /// ゲームスタート時に呼んでください
@@ -60,6 +75,7 @@ final class PokerViewPresenter {
         updateCards.onNext((cards: userCards.map { $0.card },
                             opponentCards: opponentCards))
         handText.onNext((hand: nil, opponentHand: nil, result: nil))
+        turnOverUserCards.onNext(false)
     }
     
     /// カードの選択状態が変わるときに呼んでください
@@ -79,6 +95,7 @@ final class PokerViewPresenter {
         handText.onNext((hand: hand.hand().text,
                          opponentHand: opponentHand.hand().text,
                          result: Result.resultText(hand: hand, opponentHand: opponentHand)))
+        turnOverOpponentCards.onNext(false)
     }
     
     private enum Result: String {

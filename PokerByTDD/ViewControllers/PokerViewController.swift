@@ -35,7 +35,8 @@ final class PokerViewController: UIViewController {
         
         presenter = PokerViewPresenter(updateCards: updateCards,
                                        handText: handText,
-                                       walletText: walletText)
+                                       walletText: walletText, turnOverUserCards: turnOverUserCards,
+                                       turnOverOpponentCards: turnOverOpponentCards)
         userCardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
     }
@@ -70,6 +71,18 @@ final class PokerViewController: UIViewController {
         }
     }
     
+    private var turnOverUserCards: Binder<Bool> {
+        return Binder(self) { _self, isBack in
+            _self.userCardViews.forEach { $0.isBack = isBack }
+        }
+    }
+    
+    private var turnOverOpponentCards: Binder<Bool> {
+        return Binder(self) { _self, isBack in
+            _self.opponentCardsViews.forEach { $0.isBack = isBack }
+        }
+    }
+    
     @objc private func selectCard(_ sender: UITapGestureRecognizer) {
         userCardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
         guard let cardView = sender.view as? CardView else { return }
@@ -80,8 +93,6 @@ final class PokerViewController: UIViewController {
         tradeButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(true)
-        turnOverCards(isBack: true)
-        turnOverOpponentCards(isBack: true)
         let bet = presenter.walletContent()
         let betPickerVC = BetPickerViewController.instantiate(possessionMoney: bet) { [weak self] bet in
             self?.start(bet: bet)
@@ -90,7 +101,6 @@ final class PokerViewController: UIViewController {
     }
     
     func start(bet: Int) {
-        turnOverCards(isBack: false)
         presenter.postStart(bet: bet)
     }
     
@@ -98,19 +108,10 @@ final class PokerViewController: UIViewController {
         startButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(false)
-        turnOverOpponentCards(isBack: false)
         presenter.postTrade()
     }
     
     func setSelectable(_ selectable: Bool) {
         userCardViews.forEach { $0.isUserInteractionEnabled = selectable }
-    }
-    
-    func turnOverCards(isBack: Bool) {
-        userCardViews.forEach { $0.isBack = isBack }
-    }
-    
-    func turnOverOpponentCards(isBack: Bool) {
-        opponentCardsViews.forEach { $0.isBack = isBack }
     }
 }
