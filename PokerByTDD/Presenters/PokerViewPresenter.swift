@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: - PokerViewPresenter
+/// ポーカー画面の Presenter
 final class PokerViewPresenter {
     
     /// カードの配布や交換をしてくれるディーラーさん
@@ -66,7 +68,12 @@ final class PokerViewPresenter {
         
         self.walletText.onNext("\(wallet)")
     }
+}
+
+// MARK: - VC 側で使用するためのメソッド等
+extension PokerViewPresenter {
     
+    /// 所持金を返します
     func walletContent() -> Int {
         return wallet
     }
@@ -89,6 +96,7 @@ final class PokerViewPresenter {
         updateCards.onNext((cards: userCards.map { $0.card },
                             opponentCards: opponentCards))
         handText.onNext((hand: nil, opponentHand: nil, result: nil))
+        
         turnOverUserCards.onNext(false)
         switchSelectableCards.onNext(true)
     }
@@ -107,11 +115,16 @@ final class PokerViewPresenter {
         wallet += Result.receive(user: cards, opponent: opponentCards, bet: bet)
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
         handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
+        
         turnOverOpponentCards.onNext(false)
         switchSelectableCards.onNext(false)
         switchIsStartButtonEnabled.onNext(true)
         switchIsTradeButtonEnabled.onNext(false)
     }
+}
+
+// MARK: - 表示する勝敗結果の計算ロジック
+extension PokerViewPresenter {
     
     private enum Result: String {
         case win = "勝ち(`･ω･´)"
