@@ -14,9 +14,9 @@ import RxCocoa
 final class PokerViewController: UIViewController {
     
     /// ユーザーのカードのビュー
-    @IBOutlet private var cardViews: [CardView]!
+    @IBOutlet private var userCardViews: [CardView]!
     /// ユーザーの役を表示するラベル
-    @IBOutlet private weak var handLabel: UILabel!
+    @IBOutlet private weak var userHandLabel: UILabel!
     /// 対戦相手のカードのビュー
     @IBOutlet private var opponentCardsViews: [CardView]!
     /// 対戦相手の役を表示するラベル
@@ -30,43 +30,29 @@ final class PokerViewController: UIViewController {
     
     private var presenter: PokerViewPresenter!
     
-    private var cards: [Card] {
-        return cardViews.cards()
-    }
-    
-    private var opponentCards: [Card] {
-        return opponentCardsViews.cards()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter = PokerViewPresenter(updateCards: updateCards,
                                        handText: handText,
-                                       walletText: walletText)
-        cardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
+                                       walletText: walletText, turnOverUserCards: turnOverUserCards,
+                                       turnOverOpponentCards: turnOverOpponentCards)
+        userCardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
     }
     
     private var updateCards: Binder<(cards: [Card], opponentCards: [Card])> {
         return Binder(self) { _self, params in
             let (cards, opponentCards) = params
-            cards.enumerated().forEach { index, card in
-                let cardView = _self.cardViews.filter { $0.tag == index }.first
-                cardView?.card = card
-                cardView?.isSelected = false // 選択状態を解除
-            }
-            opponentCards.enumerated().forEach { index, card in
-                let cardView = _self.opponentCardsViews.filter { $0.tag == index }.first
-                cardView?.card = card
-            }
+            _self.userCardViews.configure(cards: cards)
+            _self.opponentCardsViews.configure(cards: opponentCards)
         }
     }
     
     private var handText: Binder<(hand: String?, opponentHand: String?, result: String?)> {
         return Binder(self) { _self, params in
             let (hand, opponentHand, result) = params
-            _self.handLabel.text = hand
+            _self.userHandLabel.text = hand
             _self.opponentHandLabel.text = opponentHand
             _self.resultLabel.text = result
         }
@@ -78,60 +64,59 @@ final class PokerViewController: UIViewController {
         }
     }
     
+    private var turnOverUserCards: Binder<Bool> {
+        return Binder(self) { _self, isBack in
+            _self.userCardViews.turnOver(isBack: isBack)
+        }
+    }
+    
+    private var turnOverOpponentCards: Binder<Bool> {
+        return Binder(self) { _self, isBack in
+            _self.opponentCardsViews.turnOver(isBack: isBack)
+        }
+    }
+    
     @objc private func selectCard(_ sender: UITapGestureRecognizer) {
-        cardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
+        userCardViews.filter { $0.tag == sender.view?.tag }.forEach { $0.isSelected = !$0.isSelected }
+        guard let cardView = sender.view as? CardView else { return }
+        presenter.switchIsSelectCard(tag: cardView.tag, isSelected: cardView.isSelected)
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {
         tradeButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(true)
-        turnOverCards(isBack: true)
-        turnOverOpponentCards(isBack: true)
-        let bet = presenter.walletContent()
-        let betPickerVC = BetPickerViewController.instantiate(possessionMoney: bet) { [weak self] bet in
-            self?.start(bet: bet)
+        presenter.postTapStartButton()
+        let betPickerVC = BetPickerViewController
+            .instantiate(possessionMoney: presenter.walletContent()) { [weak self] bet in
+            self?.presenter.postStart(bet: bet)
         }
         present(betPickerVC, animated: true)
-    }
-    
-    func start(bet: Int) {
-        turnOverCards(isBack: false)
-        presenter.postStart(gatherCards: cards, opponentCards: opponentCards, bet: bet)
     }
     
     @IBAction private func tapTradeButton(_ sender: UIButton) {
         startButton.isEnabled = true
         sender.isEnabled = false
         setSelectable(false)
-        turnOverOpponentCards(isBack: false)
-        presenter.postTrade(selected: cardViews.selectedCards(), notSelected: cardViews.notSelectedCards())
+        presenter.postTrade()
     }
     
     func setSelectable(_ selectable: Bool) {
-        cardViews.forEach { $0.isUserInteractionEnabled = selectable }
-    }
-    
-    func turnOverCards(isBack: Bool) {
-        cardViews.forEach { $0.isBack = isBack }
-    }
-    
-    func turnOverOpponentCards(isBack: Bool) {
-        opponentCardsViews.forEach { $0.isBack = isBack }
+        userCardViews.forEach { $0.isUserInteractionEnabled = selectable }
     }
 }
 
 private extension Array where Element==CardView {
     
-    func selectedCards() -> [Card] {
-        return filter { $0.isSelected }.cards()
+    func configure(cards: [Card]) {
+        cards.enumerated().forEach { index, card in
+            let cardView = filter { $0.tag == index }.first
+            cardView?.card = card
+            cardView?.isSelected = false
+        }
     }
     
-    func notSelectedCards() -> [Card] {
-        return filter { !$0.isSelected }.cards()
-    }
-    
-    func cards() -> [Card] {
-        return map { $0.card }.filter { $0 != nil }.map { $0! }
+    func turnOver(isBack: Bool) {
+        forEach { $0.isBack = isBack }
     }
 }
