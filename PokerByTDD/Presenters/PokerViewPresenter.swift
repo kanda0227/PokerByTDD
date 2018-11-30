@@ -19,13 +19,9 @@ final class PokerViewPresenter {
     /// 今回は手札が5枚ずつのポーカーを想定
     private let useCardNum = 5
     
+    private let bag = DisposeBag()
+    
     private var bet = 0
-    /// 所持金
-    private var wallet = 100 { // TODO: 初期値を考えて所持金は永続化したものを使いたい
-        didSet {
-            walletText.onNext("\(wallet)")
-        }
-    }
     
     /// ユーザーの手札
     private var userCards: [(card: Card, isSelected: Bool)] = []
@@ -66,7 +62,12 @@ final class PokerViewPresenter {
         self.switchIsStartButtonEnabled = switchIsStartButtonEnabled
         self.switchIsTradeButtonEnabled = switchIsTradeButtonEnabled
         
-        self.walletText.onNext("\(wallet)")
+        setupEvent()
+    }
+    
+    private func setupEvent() {
+        // 所持金の表示
+        Wallet.shared.observable().map { "\($0)" }.subscribe(walletText.asObserver()).disposed(by: bag)
     }
 }
 
@@ -75,7 +76,7 @@ extension PokerViewPresenter {
     
     /// 所持金を返します
     func walletContent() -> Int {
-        return wallet
+        return Wallet.shared.value()
     }
     
     /// スタートボタンのタップ時に呼んでください
@@ -89,7 +90,7 @@ extension PokerViewPresenter {
     /// ゲームスタート時に呼んでください
     func postStart(bet: Int) {
         self.bet = bet
-        self.wallet -= bet
+        Wallet.shared.pay(bet)
         dealer.gatherCards(userCards.map { $0.card } + opponentCards)
         userCards = dealer.dealCards(useCardNum).sorted().map { ($0, false) }
         opponentCards = dealer.dealCards(useCardNum).sorted()
@@ -112,7 +113,7 @@ extension PokerViewPresenter {
         let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
         userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }
         let cards = userCards.map { $0.card }
-        wallet += Result.receive(user: cards, opponent: opponentCards, bet: bet)
+        Wallet.shared.receipt(Result.receive(user: cards, opponent: opponentCards, bet: bet))
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
         handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
         
