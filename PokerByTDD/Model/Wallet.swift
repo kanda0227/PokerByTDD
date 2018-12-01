@@ -13,6 +13,7 @@ import RxSwift
 final class Wallet {
     
     private let walletContentKey = "WalletContentKey"
+    private let lastPresentTimeKey = "LastPresentTimeKey"
     /// 永続化されたお金が無かった場合は 1000 円あげる
     private let firstMoney = 1000
     /// 1分あたりにあげるお金
@@ -65,5 +66,13 @@ final class Wallet {
     private func restore() -> Int? {
         // 永続化した値を取得
         return UserDefaults.standard.object(forKey: walletContentKey) as? Int
+    }
+    
+    private func save(_ date: Date) {
+        UserDefaults.standard.set(date, forKey: lastPresentTimeKey)
+    }
+    
+    private func restore() -> Date? {
+        return UserDefaults.standard.object(forKey: lastPresentTimeKey) as? Date
     }
 }
