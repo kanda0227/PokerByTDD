@@ -20,6 +20,8 @@ final class Wallet {
     private let presentMoneyPerTime = 10
     /// 自然回復上限
     private let recoveryMax = 1000
+    /// 回復時間間隔
+    private let interval = 60
     
     private lazy var subject = BehaviorSubject<Int>(value: money)
     
@@ -38,9 +40,9 @@ final class Wallet {
     func setup() {
         if let date: Date = restore() {
             let diffTime = Int(Date().timeIntervalSince(date))
-            let offTime = diffTime / 60
+            let offTime = diffTime / interval
             for _ in 0..<offTime { presentMoney() }
-            let lastPresentTime = diffTime % 60
+            let lastPresentTime = diffTime % interval
             Timer.scheduledTimer(timeInterval: Double(lastPresentTime), target: self, selector: #selector(self.setupPresent), userInfo: nil, repeats: false)
         } else {
             setupPresent()
@@ -49,7 +51,7 @@ final class Wallet {
     
     @objc private func setupPresent() {
         // 1分あたりに一定値お財布の中身を回復させる
-        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(interval), target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
     }
     
     @objc private func presentMoney() {
