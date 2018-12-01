@@ -17,7 +17,7 @@ final class Wallet {
     /// 永続化されたお金が無かった場合は 1000 円あげる
     private let firstMoney = 1000
     /// 1分あたりにあげるお金
-    private let presentMoneyPerMinute = 10
+    private let presentMoneyPerTime = 10
     /// 自然回復上限
     private let recoveryMax = 1000
     
@@ -40,7 +40,7 @@ final class Wallet {
     
     @objc private func presentMoney() {
         if recoveryMax > money {
-            receipt(presentMoneyPerMinute)
+            receipt(presentMoneyPerTime)
         }
         save(Date())
     }
