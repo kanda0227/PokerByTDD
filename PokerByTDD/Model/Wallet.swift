@@ -38,6 +38,7 @@ final class Wallet {
     
     @objc private func presentMoney() {
         receipt(presentMoneyPerMinute)
+        save(Date())
     }
     
     func receipt(_ value: Int) {
