@@ -13,10 +13,19 @@ import RxSwift
 final class Wallet {
     
     private let walletContentKey = "WalletContentKey"
-    /// 永続化されたお金が無かった場合は 1000 円あげる
-    private let firstMoney = 1000
+    private let lastPresentTimeKey = "LastPresentTimeKey"
+    /// 永続化されたお金が無かった場合にあげるお金
+    private let firstMoney = 300
+    /// 1分あたりにあげるお金
+    private let presentMoneyPerTime = 10
+    /// 自然回復上限
+    private let recoveryMax = 1000
+    /// 回復時間間隔
+    private let interval = 60
     
     private lazy var subject = BehaviorSubject<Int>(value: money)
+    
+    private var timer: Timer?
     
     /// シングルトン
     static let shared = Wallet()
@@ -24,6 +33,41 @@ final class Wallet {
     private init() {}
     
     private lazy var money: Int = restore() ?? firstMoney
+    
+    /// お財布モデルの設定をします
+    ///
+    /// applicationDidBecomeActive で呼んでください
+    func setup() {
+        if let date: Date = restore() {
+            let diffTime = Int(Date().timeIntervalSince(date))
+            let offTime = diffTime / interval
+            for _ in 0..<offTime { presentMoney() }
+            let lastPresentTime = diffTime % interval
+            Timer.scheduledTimer(timeInterval: Double(lastPresentTime), target: self, selector: #selector(self.setupPresent), userInfo: nil, repeats: false)
+        } else {
+            setupPresent()
+        }
+    }
+    
+    @objc private func setupPresent() {
+        // 1分あたりに一定値お財布の中身を回復させる
+        timer = Timer.scheduledTimer(timeInterval: Double(interval), target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func presentMoney() {
+        if recoveryMax > money {
+            receipt(presentMoneyPerTime)
+        }
+        save(Date())
+    }
+    
+    /// お財布モデルの設定をリセットします
+    ///
+    /// applicationDidEnterBackground で呼んでください
+    func reset() {
+        // タイマーを切る
+        timer?.invalidate()
+    }
     
     func receipt(_ value: Int) {
         save(money + value)
@@ -51,5 +95,13 @@ final class Wallet {
     private func restore() -> Int? {
         // 永続化した値を取得
         return UserDefaults.standard.object(forKey: walletContentKey) as? Int
+    }
+    
+    private func save(_ date: Date) {
+        UserDefaults.standard.set(date, forKey: lastPresentTimeKey)
+    }
+    
+    private func restore() -> Date? {
+        return UserDefaults.standard.object(forKey: lastPresentTimeKey) as? Date
     }
 }
