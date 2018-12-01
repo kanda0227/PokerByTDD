@@ -18,6 +18,8 @@ final class Wallet {
     private let firstMoney = 1000
     /// 1分あたりにあげるお金
     private let presentMoneyPerMinute = 10
+    /// 自然回復上限
+    private let recoveryMax = 1000
     
     private lazy var subject = BehaviorSubject<Int>(value: money)
     
@@ -37,7 +39,9 @@ final class Wallet {
     }
     
     @objc private func presentMoney() {
-        receipt(presentMoneyPerMinute)
+        if recoveryMax > money {
+            receipt(presentMoneyPerMinute)
+        }
         save(Date())
     }
     
