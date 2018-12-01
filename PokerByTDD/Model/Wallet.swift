@@ -14,8 +14,8 @@ final class Wallet {
     
     private let walletContentKey = "WalletContentKey"
     private let lastPresentTimeKey = "LastPresentTimeKey"
-    /// 永続化されたお金が無かった場合は 1000 円あげる
-    private let firstMoney = 1000
+    /// 永続化されたお金が無かった場合にあげるお金
+    private let firstMoney = 300
     /// 1分あたりにあげるお金
     private let presentMoneyPerTime = 10
     /// 自然回復上限
