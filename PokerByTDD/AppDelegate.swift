@@ -14,10 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        Wallet.shared.setup()
-        
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        Wallet.shared.setup()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        Wallet.shared.reset()
     }
 }
 

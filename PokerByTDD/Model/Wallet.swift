@@ -23,6 +23,8 @@ final class Wallet {
     
     private lazy var subject = BehaviorSubject<Int>(value: money)
     
+    private var timer: Timer?
+    
     /// シングルトン
     static let shared = Wallet()
     
@@ -32,10 +34,22 @@ final class Wallet {
     
     /// お財布モデルの設定をします
     ///
-    /// didFinishLaunchingWithOptions で呼んでください
+    /// applicationDidBecomeActive で呼んでください
     func setup() {
+        if let date: Date = restore() {
+            let diffTime = Int(Date().timeIntervalSince(date))
+            let offTime = diffTime / 60
+            for _ in 0..<offTime { presentMoney() }
+            let lastPresentTime = diffTime % 60
+            Timer.scheduledTimer(timeInterval: Double(lastPresentTime), target: self, selector: #selector(self.setupPresent), userInfo: nil, repeats: false)
+        } else {
+            setupPresent()
+        }
+    }
+    
+    @objc private func setupPresent() {
         // 1分あたりに一定値お財布の中身を回復させる
-        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
     }
     
     @objc private func presentMoney() {
@@ -43,6 +57,14 @@ final class Wallet {
             receipt(presentMoneyPerTime)
         }
         save(Date())
+    }
+    
+    /// お財布モデルの設定をリセットします
+    ///
+    /// applicationDidEnterBackground で呼んでください
+    func reset() {
+        // タイマーを切る
+        timer?.invalidate()
     }
     
     func receipt(_ value: Int) {
