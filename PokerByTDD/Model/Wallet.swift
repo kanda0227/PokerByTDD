@@ -15,6 +15,8 @@ final class Wallet {
     private let walletContentKey = "WalletContentKey"
     /// 永続化されたお金が無かった場合は 1000 円あげる
     private let firstMoney = 1000
+    /// 1分あたりにあげるお金
+    private let presentMoneyPerMinute = 10
     
     private lazy var subject = BehaviorSubject<Int>(value: money)
     
@@ -24,6 +26,18 @@ final class Wallet {
     private init() {}
     
     private lazy var money: Int = restore() ?? firstMoney
+    
+    /// お財布モデルの設定をします
+    ///
+    /// didFinishLaunchingWithOptions で呼んでください
+    func setup() {
+        // 1分あたりに一定値お財布の中身を回復させる
+        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func presentMoney() {
+        receipt(presentMoneyPerMinute)
+    }
     
     func receipt(_ value: Int) {
         save(money + value)
