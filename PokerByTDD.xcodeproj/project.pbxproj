@@ -17,6 +17,7 @@
 		F254FB4B21B0B39C00A77302 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4A21B0B39C00A77302 /* Wallet.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
 		F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4E21B3AA9B00A77302 /* Setting.storyboard */; };
+		F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5921B3B58900A77302 /* UITableViewExtension.swift */; };
 		F26A01F421A389CF008897A1 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
@@ -55,6 +56,7 @@
 		F254FB4A21B0B39C00A77302 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		F254FB4C21B39FDC00A77302 /* TopView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopView.storyboard; sourceTree = "<group>"; };
 		F254FB4E21B3AA9B00A77302 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		F254FB5921B3B58900A77302 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F254FB5821B3B56800A77302 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
+				F254FB5821B3B56800A77302 /* Utility */,
 				F2F940C821A6206000387AA5 /* Presenters */,
 				F26A01F621A43DA7008897A1 /* Design */,
 				F26A01F521A43D6D008897A1 /* ViewControllers */,
@@ -338,6 +349,7 @@
 				F26A01F421A389CF008897A1 /* Dealer.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
+				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
 				F2D79B78219CEC8200962D26 /* Card.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
 			);
