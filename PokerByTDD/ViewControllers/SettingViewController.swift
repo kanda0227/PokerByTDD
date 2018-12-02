@@ -36,7 +36,7 @@ extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SettingItemCell = tableView.dequeueReusableCell(for: indexPath)
         let item = presenter.item(at: indexPath)
-        cell.set(item: item)
+        cell.set(itemName: item.itemName)
         return cell
     }
 }
