@@ -30,6 +30,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="dataSource" destination="aY0-qA-iAi" id="dcL-Su-emx"/>
+                                    <outlet property="delegate" destination="aY0-qA-iAi" id="jPN-ag-yCu"/>
                                 </connections>
                             </tableView>
                         </subviews>

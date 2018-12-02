@@ -8,4 +8,11 @@
 
 import UIKit
 
-final class CardDesignChoiceViewController: UIViewController {}
+final class CardDesignChoiceViewController: UIViewController {
+    
+    static func instantiate(category: CardDesignCategory) -> CardDesignChoiceViewController {
+        let vc = UIViewController.instantiate(withStoryboardID: "CardDesignChoiceView") as! CardDesignChoiceViewController
+        vc.title = category.rawValue
+        return vc
+    }
+}
