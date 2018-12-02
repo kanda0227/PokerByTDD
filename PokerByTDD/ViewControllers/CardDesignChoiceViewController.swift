@@ -10,7 +10,7 @@ import UIKit
 
 final class CardDesignChoiceViewController: UIViewController, UINavigationControllerDelegate {
     
-    @IBOutlet private weak var pickedImage: UIImageView!
+    @IBOutlet private weak var pickedImageView: UIImageView! 
     
     static func instantiate(category: CardDesignCategory) -> CardDesignChoiceViewController {
         let vc = UIViewController.instantiate(withStoryboardID: "CardDesignChoiceView") as! CardDesignChoiceViewController

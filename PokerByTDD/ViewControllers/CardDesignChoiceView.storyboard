@@ -74,7 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="DSs-xM-tgE"/>
                     </view>
                     <connections>
-                        <outlet property="pickedImage" destination="roX-2h-NtT" id="GVO-NQ-CW2"/>
+                        <outlet property="pickedImageView" destination="roX-2h-NtT" id="c6b-lF-RNK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkI-Go-ciV" userLabel="First Responder" sceneMemberID="firstResponder"/>
