@@ -28,6 +28,7 @@
 		F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */; };
 		F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */; };
 		F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */; };
+		F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6721B401A400A77302 /* RealmExtension.swift */; };
 		F26A01F421A389CF008897A1 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
@@ -77,6 +78,7 @@
 		F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignPresenter.swift; sourceTree = "<group>"; };
 		F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDesignChoiceView.storyboard; sourceTree = "<group>"; };
 		F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignChoiceViewController.swift; sourceTree = "<group>"; };
+		F254FB6721B401A400A77302 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
 				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
+				F254FB6721B401A400A77302 /* RealmExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
+				F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */,
 				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
 				F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */,
 				F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */,
