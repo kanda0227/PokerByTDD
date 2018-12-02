@@ -17,6 +17,7 @@
 		F254FB4B21B0B39C00A77302 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4A21B0B39C00A77302 /* Wallet.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
 		F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4E21B3AA9B00A77302 /* Setting.storyboard */; };
+		F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5221B3B2D800A77302 /* SettingPresenter.swift */; };
 		F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
 		F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
 		F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5921B3B58900A77302 /* UITableViewExtension.swift */; };
@@ -59,6 +60,7 @@
 		F254FB4A21B0B39C00A77302 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		F254FB4C21B39FDC00A77302 /* TopView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopView.storyboard; sourceTree = "<group>"; };
 		F254FB4E21B3AA9B00A77302 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		F254FB5221B3B2D800A77302 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		F254FB5421B3B46400A77302 /* SettingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingItemCell.xib; sourceTree = "<group>"; };
 		F254FB5621B3B4E300A77302 /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
 		F254FB5921B3B58900A77302 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
 				F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */,
+				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */,
 				F2361975219F85F200C91A8C /* Hand.swift in Sources */,
 				F26A01F421A389CF008897A1 /* Dealer.swift in Sources */,
+				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
 				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
