@@ -26,6 +26,8 @@
 		F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */; };
 		F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */; };
 		F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */; };
+		F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */; };
+		F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */; };
 		F26A01F421A389CF008897A1 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
@@ -73,6 +75,8 @@
 		F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignViewController.swift; sourceTree = "<group>"; };
 		F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignPresenter.swift; sourceTree = "<group>"; };
+		F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDesignChoiceView.storyboard; sourceTree = "<group>"; };
+		F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignChoiceViewController.swift; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
 				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
 				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
+				F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */,
+				F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 			files = (
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
+				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
@@ -371,6 +378,7 @@
 				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2361977219FFCF700C91A8C /* PokerHand.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
+				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */,
 				F2361975219F85F200C91A8C /* Hand.swift in Sources */,
