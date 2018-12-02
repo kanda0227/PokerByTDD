@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @IBDesignable final class CardView: UIView {
     
@@ -91,6 +92,12 @@ import UIKit
         self.layer.borderWidth = borderWidth
         self.layer.cornerRadius = cornerRadius
         self.backView.layer.cornerRadius = cornerRadius
+    }
+    
+    func reload() {
+        if let image = try! Realm().restoreImage(key: CardDesignCategory.back.key()) {
+            backView.image = image
+        }
     }
 }
 
