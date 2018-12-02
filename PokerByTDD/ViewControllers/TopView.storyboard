@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FfP-xL-G8m">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sPa-k6-1nc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wtn-wZ-6yN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="FfP-xL-G8m" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tgv-md-CYF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="green"/>
+                        <color key="tintColor" name="blue"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HZU-ve-Xej" kind="relationship" relationship="viewControllers" id="vpm-MT-b2T"/>
+                        <segue destination="Tps-M2-IUk" kind="relationship" relationship="viewControllers" id="BVi-zH-nvu"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-500" y="-37"/>
+        </scene>
+        <!--Poker-->
+        <scene sceneID="spU-em-5NQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Poker" id="HZU-ve-Xej" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="LOo-mn-BWu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Xg-lI-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="-259"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="JQY-BM-DzF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="Tps-M2-IUk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="6Tr-rL-bCl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJX-H9-JfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402" y="149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="blue">
+            <color red="0.55294117647058827" green="0.64313725490196083" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.69019607843137254" green="0.83529411764705885" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
