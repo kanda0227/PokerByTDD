@@ -17,6 +17,7 @@
 		F254FB4B21B0B39C00A77302 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4A21B0B39C00A77302 /* Wallet.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
 		F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4E21B3AA9B00A77302 /* Setting.storyboard */; };
+		F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5021B3B23F00A77302 /* SettingViewController.swift */; };
 		F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5221B3B2D800A77302 /* SettingPresenter.swift */; };
 		F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
 		F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
@@ -60,6 +61,7 @@
 		F254FB4A21B0B39C00A77302 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		F254FB4C21B39FDC00A77302 /* TopView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopView.storyboard; sourceTree = "<group>"; };
 		F254FB4E21B3AA9B00A77302 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		F254FB5021B3B23F00A77302 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F254FB5221B3B2D800A77302 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		F254FB5421B3B46400A77302 /* SettingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingItemCell.xib; sourceTree = "<group>"; };
 		F254FB5621B3B4E300A77302 /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				F254FB4621AB61F700A77302 /* BetPickerViewController.swift */,
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
+				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				F236197921A1286500C91A8C /* Table.swift in Sources */,
 				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2361977219FFCF700C91A8C /* PokerHand.swift in Sources */,
+				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */,
 				F2361975219F85F200C91A8C /* Hand.swift in Sources */,
