@@ -12,7 +12,7 @@ final class SettingItemCell: UITableViewCell {
     
     @IBOutlet private weak var itemLabel: UILabel!
     
-    func set(item: SettingPresenter.Item) {
-        itemLabel.text = item.itemName
+    func set(itemName: String) {
+        itemLabel.text = itemName
     }
 }
