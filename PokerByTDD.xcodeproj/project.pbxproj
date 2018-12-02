@@ -22,7 +22,9 @@
 		F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
 		F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
 		F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5921B3B58900A77302 /* UITableViewExtension.swift */; };
+		F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */; };
 		F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */; };
+		F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */; };
 		F26A01F421A389CF008897A1 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
@@ -66,7 +68,9 @@
 		F254FB5421B3B46400A77302 /* SettingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingItemCell.xib; sourceTree = "<group>"; };
 		F254FB5621B3B4E300A77302 /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
 		F254FB5921B3B58900A77302 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDesignView.storyboard; sourceTree = "<group>"; };
 		F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignViewController.swift; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
+				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
+				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
+				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
 				F26A01F821A43DBD008897A1 /* CardView.xib in Resources */,
@@ -371,6 +378,7 @@
 				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
 				F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */,
 				F2D79B78219CEC8200962D26 /* Card.swift in Sources */,
+				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
