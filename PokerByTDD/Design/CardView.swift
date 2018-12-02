@@ -17,12 +17,15 @@ import RealmSwift
             setCard(card)
         }
     }
+    @IBOutlet private weak var rankBackLabel: UILabel!
     @IBOutlet private weak var suitLabel: UILabel! {
         didSet {
             setCard(card)
         }
     }
+    @IBOutlet private weak var suitBackLabel: UILabel!
     @IBOutlet private weak var backView: UIImageView!
+    @IBOutlet private weak var cardImageView: UIImageView!
     
     var card: Card? {
         didSet {
@@ -51,8 +54,11 @@ import RealmSwift
         let suit = card.suit
         rankLabel.text = rank.rawValue
         rankLabel.textColor = suit.color()
+        rankBackLabel.text = rank.rawValue
         suitLabel.text = suit.rawValue
         suitLabel.textColor = suit.color()
+        suitBackLabel.text = suit.rawValue
+        setupCardImageView()
     }
     
     override init(frame: CGRect) {
@@ -92,11 +98,27 @@ import RealmSwift
         self.layer.borderWidth = borderWidth
         self.layer.cornerRadius = cornerRadius
         self.backView.layer.cornerRadius = cornerRadius
+        self.cardImageView.layer.cornerRadius = cornerRadius
     }
     
     func reload() {
+        setupCardBackView()
+        setupCardImageView()
+    }
+    
+    private func setupCardBackView() {
         if let image = try! Realm().restoreImage(key: CardDesignCategory.back.key()) {
             backView.image = image
+        }
+    }
+    
+    private func setupCardImageView() {
+        if let card = card,
+            let category = card.category,
+            let image = try! Realm().restoreImage(key: category.key()) {
+            cardImageView.image = image
+        } else {
+            cardImageView.image = nil
         }
     }
 }

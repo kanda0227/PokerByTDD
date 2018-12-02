@@ -78,6 +78,15 @@ struct Card: Hashable {
     
     /// デフォルトでとりあえずカードが欲しい時に渡す用の定数
     static let defaultCard = Card(rank: .ace, suit: .club)
+    
+    var category: CardDesignCategory? {
+        switch self.rank {
+        case .ace:
+            return .ace
+        default:
+            return nil
+        }
+    }
 }
 
 // MARK: - Equatable

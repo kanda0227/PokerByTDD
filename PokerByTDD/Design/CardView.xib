@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
             <connections>
                 <outlet property="backView" destination="8tI-Ew-A0M" id="Avl-Ui-DrE"/>
+                <outlet property="cardImageView" destination="Hea-Gv-OgQ" id="ddk-r1-MkJ"/>
+                <outlet property="rankBackLabel" destination="kmS-i5-UoV" id="cJx-Bq-TOy"/>
                 <outlet property="rankLabel" destination="NWq-ER-cPy" id="tyJ-Sl-CYv"/>
+                <outlet property="suitBackLabel" destination="pd4-sh-U9g" id="oJs-hl-elN"/>
                 <outlet property="suitLabel" destination="Iax-Tn-4if" id="tIf-yP-N0Q"/>
             </connections>
         </placeholder>
@@ -22,10 +26,32 @@
             <rect key="frame" x="0.0" y="0.0" width="80" height="128"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neko" translatesAutoresizingMaskIntoConstraints="NO" id="Wot-QI-Yjh">
+                    <rect key="frame" x="45" y="93" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Hfp-3g-KXd"/>
+                        <constraint firstAttribute="width" secondItem="Wot-QI-Yjh" secondAttribute="height" multiplier="1:1" id="nGP-pi-1VM"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hea-Gv-OgQ">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="128"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmS-i5-UoV">
+                    <rect key="frame" x="6.5" y="8" width="13" height="19.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" name="beige"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWq-ER-cPy">
                     <rect key="frame" x="7" y="8" width="12.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♦︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-sh-U9g">
+                    <rect key="frame" x="5.5" y="26.5" width="15" height="26.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" name="beige"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♦︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-Tn-4if">
@@ -34,13 +60,6 @@
                     <nil key="textColor"/>
                     <color key="highlightedColor" red="0.98823529409999999" green="0.69803921570000005" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neko" translatesAutoresizingMaskIntoConstraints="NO" id="Wot-QI-Yjh">
-                    <rect key="frame" x="45" y="93" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Hfp-3g-KXd"/>
-                        <constraint firstAttribute="width" secondItem="Wot-QI-Yjh" secondAttribute="height" multiplier="1:1" id="nGP-pi-1VM"/>
-                    </constraints>
-                </imageView>
                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="argyle" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-Ew-A0M">
                     <rect key="frame" x="0.0" y="0.0" width="80" height="128"/>
                 </imageView>
@@ -50,13 +69,21 @@
                 <constraint firstItem="Wot-QI-Yjh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-5" id="3e4-Js-JoJ"/>
                 <constraint firstItem="Wot-QI-Yjh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-5" id="3hw-mp-rIS"/>
                 <constraint firstItem="NWq-ER-cPy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="43W-rg-lbb"/>
+                <constraint firstAttribute="trailing" secondItem="Hea-Gv-OgQ" secondAttribute="trailing" id="5ew-HS-CDb"/>
                 <constraint firstItem="Iax-Tn-4if" firstAttribute="centerX" secondItem="NWq-ER-cPy" secondAttribute="centerX" id="A5F-Tp-OPL"/>
+                <constraint firstItem="pd4-sh-U9g" firstAttribute="centerY" secondItem="Iax-Tn-4if" secondAttribute="centerY" id="CMl-H5-V4b"/>
+                <constraint firstItem="Hea-Gv-OgQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Hi9-Ad-b61"/>
                 <constraint firstAttribute="trailing" secondItem="8tI-Ew-A0M" secondAttribute="trailing" id="Lzc-7m-cvY"/>
                 <constraint firstItem="8tI-Ew-A0M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OLa-By-WGc"/>
                 <constraint firstItem="8tI-Ew-A0M" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="R5i-ea-U3u"/>
+                <constraint firstItem="kmS-i5-UoV" firstAttribute="centerX" secondItem="NWq-ER-cPy" secondAttribute="centerX" id="Ua1-hH-xrh"/>
+                <constraint firstItem="Hea-Gv-OgQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aEO-Gg-Gxi"/>
                 <constraint firstItem="Iax-Tn-4if" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="gRD-hV-OkB"/>
                 <constraint firstItem="8tI-Ew-A0M" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="jb8-BL-ay0"/>
+                <constraint firstItem="kmS-i5-UoV" firstAttribute="centerY" secondItem="NWq-ER-cPy" secondAttribute="centerY" id="jc6-PC-kxh"/>
+                <constraint firstItem="pd4-sh-U9g" firstAttribute="centerX" secondItem="Iax-Tn-4if" secondAttribute="centerX" id="vd9-AB-1nZ"/>
                 <constraint firstItem="Iax-Tn-4if" firstAttribute="top" secondItem="NWq-ER-cPy" secondAttribute="bottom" id="yjT-L2-gFL"/>
+                <constraint firstItem="Hea-Gv-OgQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="z39-yR-AsG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -66,5 +93,8 @@
     <resources>
         <image name="argyle" width="120" height="150"/>
         <image name="neko" width="100" height="100"/>
+        <namedColor name="beige">
+            <color red="1" green="1" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
