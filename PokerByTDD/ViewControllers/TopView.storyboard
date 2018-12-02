@@ -20,6 +20,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="green"/>
                         <color key="tintColor" name="blue"/>
+                        <color key="barTintColor" name="green"/>
                     </tabBar>
                     <connections>
                         <segue destination="HZU-ve-Xej" kind="relationship" relationship="viewControllers" id="vpm-MT-b2T"/>
@@ -52,7 +53,7 @@
     </scenes>
     <resources>
         <namedColor name="blue">
-            <color red="0.55294117647058827" green="0.64313725490196083" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.43137254901960786" green="0.61176470588235299" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="green">
             <color red="0.69019607843137254" green="0.83529411764705885" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
