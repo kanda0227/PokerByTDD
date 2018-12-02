@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8at-Iu-TFd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Design Choice View Controller-->
+        <scene sceneID="UVG-Nr-SJ1">
+            <objects>
+                <viewController id="8at-Iu-TFd" customClass="CardDesignChoiceViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y89-Bt-2AS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="roX-2h-NtT">
+                                <rect key="frame" x="40" y="36" width="295" height="442.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="roX-2h-NtT" secondAttribute="height" multiplier="2:3" id="a3j-c4-vZh"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVx-8V-dpx">
+                                <rect key="frame" x="32" y="494.5" width="311" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-YY-Ugy">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
+                                        <state key="normal" title="アルバムから選ぶ"/>
+                                        <connections>
+                                            <action selector="tapSelectFromAlbumButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="OVX-Rh-bkZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSU-s9-ogr">
+                                        <rect key="frame" x="163" y="0.0" width="77" height="30"/>
+                                        <state key="normal" title="写真を撮る"/>
+                                        <connections>
+                                            <action selector="tapTakePictureButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="hrb-yr-pLT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-r3-Tcx">
+                                        <rect key="frame" x="280" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="決定"/>
+                                        <connections>
+                                            <action selector="tapDoneButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="41P-Rh-Cf2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ViW-r3-Tcx" firstAttribute="centerY" secondItem="0pg-YY-Ugy" secondAttribute="centerY" id="4TP-nL-4gU"/>
+                                    <constraint firstItem="ViW-r3-Tcx" firstAttribute="leading" secondItem="TSU-s9-ogr" secondAttribute="trailing" constant="40" id="A1Q-jP-Kgc"/>
+                                    <constraint firstItem="TSU-s9-ogr" firstAttribute="leading" secondItem="0pg-YY-Ugy" secondAttribute="trailing" constant="40" id="C4I-rh-v24"/>
+                                    <constraint firstItem="0pg-YY-Ugy" firstAttribute="top" secondItem="JVx-8V-dpx" secondAttribute="top" id="XZj-Kg-qi7"/>
+                                    <constraint firstItem="TSU-s9-ogr" firstAttribute="centerY" secondItem="0pg-YY-Ugy" secondAttribute="centerY" id="pYh-Yy-9j0"/>
+                                    <constraint firstAttribute="trailing" secondItem="ViW-r3-Tcx" secondAttribute="trailing" id="sUV-mO-0CZ"/>
+                                    <constraint firstItem="0pg-YY-Ugy" firstAttribute="leading" secondItem="JVx-8V-dpx" secondAttribute="leading" id="vDI-lM-Z4w"/>
+                                    <constraint firstAttribute="bottom" secondItem="0pg-YY-Ugy" secondAttribute="bottom" id="yl6-q2-8hL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="beige"/>
+                        <constraints>
+                            <constraint firstItem="JVx-8V-dpx" firstAttribute="centerX" secondItem="DSs-xM-tgE" secondAttribute="centerX" id="QfX-bw-6mT"/>
+                            <constraint firstItem="JVx-8V-dpx" firstAttribute="top" secondItem="roX-2h-NtT" secondAttribute="bottom" constant="16" id="Qnz-FK-jfP"/>
+                            <constraint firstItem="DSs-xM-tgE" firstAttribute="trailing" secondItem="roX-2h-NtT" secondAttribute="trailing" constant="40" id="Y8U-DE-IW1"/>
+                            <constraint firstItem="roX-2h-NtT" firstAttribute="leading" secondItem="DSs-xM-tgE" secondAttribute="leading" constant="40" id="e3G-l0-HZh"/>
+                            <constraint firstItem="roX-2h-NtT" firstAttribute="top" secondItem="DSs-xM-tgE" secondAttribute="top" constant="16" id="mzD-9N-9za"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DSs-xM-tgE"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickedImageView" destination="roX-2h-NtT" id="c6b-lF-RNK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkI-Go-ciV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="96.7016491754123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="beige">
+            <color red="1" green="1" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

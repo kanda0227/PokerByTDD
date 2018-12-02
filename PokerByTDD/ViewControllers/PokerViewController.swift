@@ -44,6 +44,11 @@ final class PokerViewController: UIViewController {
         setSelectable(false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (userCardViews + opponentCardsViews).forEach { $0.reload() }
+    }
+    
     private var updateCards: Binder<(cards: [Card], opponentCards: [Card])> {
         return Binder(self) { _self, params in
             let (cards, opponentCards) = params
