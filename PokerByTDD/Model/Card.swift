@@ -83,6 +83,12 @@ struct Card: Hashable {
         switch self.rank {
         case .ace:
             return .ace
+        case .jack:
+            return .jack
+        case .queen:
+            return .queen
+        case .king:
+            return .king
         default:
             return nil
         }

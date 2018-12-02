@@ -23,11 +23,23 @@ final class CardDesignPresenter {
 
 enum CardDesignCategory: String, CaseIterable {
     case back = "カードの柄を変更する"
+    case ace = "Aのカードの画像を変更する"
+    case jack = "Jのカードの画像を変更する"
+    case queen = "Qのカードの画像を変更する"
+    case king = "Kのカードの画像を変更する"
     
     func key() -> String {
         switch self {
         case .back:
             return "CardBackImageKey"
+        case .ace:
+            return "CardAceImageKey"
+        case .jack:
+            return "CardJackImageKey"
+        case .queen:
+            return "CardQueenImageKey"
+        case .king:
+            return "CardKingImageKey"
         }
     }
 }
