@@ -21,12 +21,29 @@ final class CardDesignPresenter {
     }
 }
 
+// TODO: ここもうちょっとスマートにしたいな
 enum CardDesignCategory: String, CaseIterable {
     case back = "カードの柄を変更する"
-    case ace = "Aのカードの画像を変更する"
-    case jack = "Jのカードの画像を変更する"
-    case queen = "Qのカードの画像を変更する"
-    case king = "Kのカードの画像を変更する"
+    case ace = "Aのカード全部の画像を変更する"
+    case jack = "Jのカード全部の画像を変更する"
+    case queen = "Qのカード全部の画像を変更する"
+    case king = "Kのカード全部の画像を変更する"
+    case heartAce = "A♥のカードの画像を変更する"
+    case heartJack = "J♥のカードの画像を変更する"
+    case heartQueen = "Q♥のカードの画像を変更する"
+    case heartKing = "K♥のカードの画像を変更する"
+    case spadeAce = "A♠︎のカードの画像を変更する"
+    case spadeJack = "J♠︎のカードの画像を変更する"
+    case spadeQueen = "Q♠︎のカードの画像を変更する"
+    case spadeKing = "K♠︎のカードの画像を変更する"
+    case clubAce = "A♣︎のカードの画像を変更する"
+    case clubJack = "J♣︎のカードの画像を変更する"
+    case clubQueen = "Q♣︎のカードの画像を変更する"
+    case clubKing = "K♣︎のカードの画像を変更する"
+    case diamondAce = "A♦︎のカードの画像を変更する"
+    case diamondJack = "J♦︎のカードの画像を変更する"
+    case diamondQueen = "Q♦︎のカードの画像を変更する"
+    case diamondKing = "K♦︎のカードの画像を変更する"
     
     func key() -> String {
         switch self {
@@ -40,6 +57,38 @@ enum CardDesignCategory: String, CaseIterable {
             return "CardQueenImageKey"
         case .king:
             return "CardKingImageKey"
+        case .heartAce:
+            return "CardHeartAceImageKey"
+        case .heartJack:
+            return "CardHeartJackImageKey"
+        case .heartQueen:
+            return "CardHeartQueenImageKey"
+        case .heartKing:
+            return "CardHeartKingImageKey"
+        case .spadeAce:
+            return "CardSpadeAceImageKey"
+        case .spadeJack:
+            return "CardSpadeJackImageKey"
+        case .spadeQueen:
+            return "CardSpadeQueenImageKey"
+        case .spadeKing:
+            return "CardClubKingImageKey"
+        case .clubAce:
+            return "CardClubAceImageKey"
+        case .clubJack:
+            return "CardClubJackImageKey"
+        case .clubQueen:
+            return "CardClubQueenImageKey"
+        case .clubKing:
+            return "CardClubKingImageKey"
+        case .diamondAce:
+            return "CardDiamondAceImageKey"
+        case .diamondJack:
+            return "CardDiamondJackImageKey"
+        case .diamondQueen:
+            return "CardDiamondQueenImageKey"
+        case .diamondKing:
+            return "CardDiamondKingImageKey"
         }
     }
 }
