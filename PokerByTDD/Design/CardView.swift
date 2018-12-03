@@ -113,10 +113,17 @@ import RealmSwift
     }
     
     private func setupCardImageView() {
-        if let card = card,
-            let category = card.category,
-            let image = try! Realm().restoreImage(key: category.key()) {
-            cardImageView.image = image
+        // TODO: ここのロジック分岐どうにかできないか
+        if let card = card, !card.category.isEmpty {
+            if let category = card.category.first,
+                let image = try! Realm().restoreImage(key: category.key()) {
+                cardImageView.image = image
+            } else if let category = card.category.last,
+                let image = try! Realm().restoreImage(key: category.key()) {
+                cardImageView.image = image
+            } else {
+                cardImageView.image = nil
+            }
         } else {
             cardImageView.image = nil
         }
