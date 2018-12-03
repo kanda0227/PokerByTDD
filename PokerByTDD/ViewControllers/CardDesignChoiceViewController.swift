@@ -69,16 +69,7 @@ extension CardDesignChoiceViewController: UIImagePickerControllerDelegate {
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            // 画像のリサイズ
-            // TODO: この辺りのロジックは Presenter を作成して移動させたい
-            let scale = min(imageSize.height/image.size.height,
-                            imageSize.width/image.size.width)
-            let resizedSize = CGSize(width: image.size.width * scale, height: image.size.height * scale)
-            UIGraphicsBeginImageContext(resizedSize)
-            image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
-            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            pickedImage = resizedImage
+            pickedImage = image.resize(imageSize)
         }
         picker.dismiss(animated: true, completion: nil)
     }
