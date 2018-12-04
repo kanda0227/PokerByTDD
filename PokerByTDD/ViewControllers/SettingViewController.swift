@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utility
 
 /// 設定画面のVC
 final class SettingViewController: UIViewController {

@@ -7,7 +7,6 @@
 //
 
 import RealmSwift
-import Realm
 import UIKit
 
 class ImageObject: Object {
@@ -15,7 +14,7 @@ class ImageObject: Object {
     @objc dynamic var key: String = ""
     
     /// 絶対呼んでね！
-    func set(data: Data, key: String) {
+    fileprivate func set(data: Data, key: String) {
         self.data = data
         self.key = key
     }
@@ -23,7 +22,7 @@ class ImageObject: Object {
 
 extension Realm {
     
-    func saveImage(_ image: UIImage, key: String) {
+    public func saveImage(_ image: UIImage, key: String) {
         if let data = image.pngData() {
             if let imageObj = objects(ImageObject.self).filter("key = '\(key)'").first {
                 try! write {
@@ -39,7 +38,7 @@ extension Realm {
         }
     }
     
-    func restoreImage(key: String) -> UIImage? {
+    public func restoreImage(key: String) -> UIImage? {
         guard let imageObj = objects(ImageObject.self).filter("key = '\(key)'").first else { return nil }
         return UIImage(data: imageObj.data)
     }

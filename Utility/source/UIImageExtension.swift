@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImage {
     
-    func resize(_ targetSize: CGSize) -> UIImage? {
+    public func resize(_ targetSize: CGSize) -> UIImage? {
         let scale = min(targetSize.width/size.width,
                         targetSize.height/size.height)
         let resizedSize = CGSize(width: size.width * scale, height: size.height * scale)
