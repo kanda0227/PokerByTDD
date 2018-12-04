@@ -16,15 +16,11 @@
 		F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5221B3B2D800A77302 /* SettingPresenter.swift */; };
 		F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
 		F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
-		F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5921B3B58900A77302 /* UITableViewExtension.swift */; };
 		F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */; };
-		F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */; };
 		F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */; };
 		F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */; };
 		F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */; };
 		F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */; };
-		F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6721B401A400A77302 /* RealmExtension.swift */; };
-		F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */; };
 		F254FB6E21B5F70400A77302 /* CardDesignChoicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */; };
 		F254FB7D21B5FA2300A77302 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
 		F254FB8421B5FA2300A77302 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB8321B5FA2300A77302 /* ModelTests.swift */; };
@@ -45,6 +41,10 @@
 		F254FC4521B7370300A77302 /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = F254FC3521B7370300A77302 /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F254FC4821B7370300A77302 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
 		F254FC4921B7370300A77302 /* Utility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6721B401A400A77302 /* RealmExtension.swift */; };
+		F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */; };
+		F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5921B3B58900A77302 /* UITableViewExtension.swift */; };
+		F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -701,6 +701,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
+				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
+				F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */,
+				F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,13 +730,9 @@
 				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
-				F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */,
 				F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */,
 				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
-				F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */,
-				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
-				F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
