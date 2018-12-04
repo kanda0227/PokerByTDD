@@ -366,6 +366,7 @@
 		F254FC5C21B739C700A77302 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F254FC8221B73CA900A77302 /* source */,
 				F254FC5D21B739C700A77302 /* Presenter.h */,
 				F254FC5E21B739C700A77302 /* Info.plist */,
 			);
@@ -379,6 +380,18 @@
 				F254FC6C21B739C700A77302 /* Info.plist */,
 			);
 			path = PresenterTests;
+			sourceTree = "<group>";
+		};
+		F254FC8221B73CA900A77302 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */,
+				F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */,
+				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
+				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
+				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
@@ -449,7 +462,6 @@
 				F26A01F621A43DA7008897A1 /* Design */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
 				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
-				F2F940C821A6206000387AA5 /* Presenters */,
 				F26A01F521A43D6D008897A1 /* ViewControllers */,
 			);
 			path = PokerByTDD;
@@ -473,18 +485,6 @@
 				F2F940C121A61E9800387AA5 /* RxSwift.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F2F940C821A6206000387AA5 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */,
-				F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */,
-				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
-				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
-				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
