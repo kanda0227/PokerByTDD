@@ -12,8 +12,6 @@
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
 		F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4E21B3AA9B00A77302 /* Setting.storyboard */; };
 		F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5021B3B23F00A77302 /* SettingViewController.swift */; };
-		F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
-		F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
 		F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */; };
 		F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */; };
 		F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */; };
@@ -62,8 +60,10 @@
 		F254FC9A21B73D5800A77302 /* Design.h in Headers */ = {isa = PBXBuildFile; fileRef = F254FC8A21B73D5800A77302 /* Design.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F254FC9D21B73D5800A77302 /* Design.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC8821B73D5800A77302 /* Design.framework */; };
 		F254FC9E21B73D5800A77302 /* Design.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC8821B73D5800A77302 /* Design.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
-		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
+		F254FCA521B73DA200A77302 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
+		F254FCA621B73DA200A77302 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
+		F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
+		F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
 		F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B58219CE57000962D26 /* PokerViewController.swift */; };
 		F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5A219CE57000962D26 /* Poker.storyboard */; };
@@ -906,6 +906,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FCA621B73DA200A77302 /* CardView.xib in Resources */,
+				F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,11 +926,9 @@
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
 				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
-				F26A01F821A43DBD008897A1 /* CardView.xib in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
-				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1032,6 +1032,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
+				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,9 +1053,7 @@
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
-				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
-				F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
