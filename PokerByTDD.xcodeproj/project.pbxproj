@@ -172,11 +172,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */,
 				F2F940CB21A62BC500387AA5 /* Realm.framework in Frameworks */,
 				F2F940CC21A62BC500387AA5 /* RealmSwift.framework in Frameworks */,
 				F2F940CD21A62BC500387AA5 /* RxCocoa.framework in Frameworks */,
 				F2F940CE21A62BC500387AA5 /* RxSwift.framework in Frameworks */,
-				F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,10 +193,10 @@
 		F254FB5821B3B56800A77302 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
-				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
 				F254FB6721B401A400A77302 /* RealmExtension.swift */,
 				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
+				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
+				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -204,15 +204,15 @@
 		F254FB7521B5FA2300A77302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F26A01F321A389CF008897A1 /* Dealer.swift */,
 				F2D79B77219CEC8200962D26 /* Card.swift */,
-				F236197821A1286500C91A8C /* Table.swift */,
+				F26A01F321A389CF008897A1 /* Dealer.swift */,
 				F2361974219F85F100C91A8C /* Hand.swift */,
+				F254FB7721B5FA2300A77302 /* Info.plist */,
+				F254FB7621B5FA2300A77302 /* Model.h */,
 				F2361976219FFCF700C91A8C /* PokerHand.swift */,
 				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
+				F236197821A1286500C91A8C /* Table.swift */,
 				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
-				F254FB7621B5FA2300A77302 /* Model.h */,
-				F254FB7721B5FA2300A77302 /* Info.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,8 +220,8 @@
 		F254FB8221B5FA2300A77302 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
-				F254FB8321B5FA2300A77302 /* ModelTests.swift */,
 				F254FB8521B5FA2300A77302 /* Info.plist */,
+				F254FB8321B5FA2300A77302 /* ModelTests.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -229,17 +229,17 @@
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
-				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
 				F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */,
 				F254FB4621AB61F700A77302 /* BetPickerViewController.swift */,
-				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
-				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
-				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
-				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
-				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
 				F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */,
 				F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */,
+				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
+				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
+				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
+				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
+				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
+				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
+				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,10 +247,10 @@
 		F26A01F621A43DA7008897A1 /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				F26A01F721A43DBD008897A1 /* CardView.xib */,
 				F26A01F921A43DFC008897A1 /* CardView.swift */,
-				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
+				F26A01F721A43DBD008897A1 /* CardView.xib */,
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
+				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -258,22 +258,22 @@
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
-				F2D79B55219CE57000962D26 /* PokerByTDD */,
-				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
+				F2F940BE21A61E9700387AA5 /* Frameworks */,
 				F254FB7521B5FA2300A77302 /* Model */,
 				F254FB8221B5FA2300A77302 /* ModelTests */,
+				F2D79B55219CE57000962D26 /* PokerByTDD */,
+				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
 				F2D79B54219CE57000962D26 /* Products */,
-				F2F940BE21A61E9700387AA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		F2D79B54219CE57000962D26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
-				F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */,
 				F254FB7421B5FA2200A77302 /* Model.framework */,
 				F254FB7C21B5FA2300A77302 /* ModelTests.xctest */,
+				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
+				F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,14 +281,14 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
-				F254FB5821B3B56800A77302 /* Utility */,
-				F2F940C821A6206000387AA5 /* Presenters */,
-				F26A01F621A43DA7008897A1 /* Design */,
-				F26A01F521A43D6D008897A1 /* ViewControllers */,
 				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
 				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
-				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
+				F26A01F621A43DA7008897A1 /* Design */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
+				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
+				F2F940C821A6206000387AA5 /* Presenters */,
+				F254FB5821B3B56800A77302 /* Utility */,
+				F26A01F521A43D6D008897A1 /* ViewControllers */,
 			);
 			path = PokerByTDD;
 			sourceTree = "<group>";
@@ -296,8 +296,8 @@
 		F2D79B6A219CE57200962D26 /* PokerByTDDTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */,
 				F2D79B6D219CE57200962D26 /* Info.plist */,
+				F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */,
 			);
 			path = PokerByTDDTests;
 			sourceTree = "<group>";
@@ -316,11 +316,11 @@
 		F2F940C821A6206000387AA5 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
 				F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */,
-				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
-				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
 				F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */,
+				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
+				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
+				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -453,10 +453,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F2D79B52219CE57000962D26 /* PokerByTDD */,
-				F2D79B66219CE57200962D26 /* PokerByTDDTests */,
 				F254FB7321B5FA2200A77302 /* Model */,
 				F254FB7B21B5FA2300A77302 /* ModelTests */,
+				F2D79B52219CE57000962D26 /* PokerByTDD */,
+				F2D79B66219CE57200962D26 /* PokerByTDDTests */,
 			);
 		};
 /* End PBXProject section */
@@ -480,15 +480,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
-				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
-				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
-				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
-				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
-				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
+				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
+				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
+				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F26A01F821A43DBD008897A1 /* CardView.xib in Resources */,
+				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
+				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
+				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,13 +531,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F254FBA821B6025200A77302 /* Wallet.swift in Sources */,
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
-				F254FBA521B6025200A77302 /* Table.swift in Sources */,
+				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F254FBA221B6025200A77302 /* PokerHand.swift in Sources */,
 				F254FBA421B6025200A77302 /* PokerHandDecisionHelper.swift in Sources */,
-				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
+				F254FBA521B6025200A77302 /* Table.swift in Sources */,
+				F254FBA821B6025200A77302 /* Wallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,23 +553,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
 				F254FB4921AE09C200A77302 /* BetPickerPresenter.swift in Sources */,
-				F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */,
-				F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */,
-				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
-				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
-				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
-				F254FB6E21B5F70400A77302 /* CardDesignChoicePresenter.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
-				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
+				F254FB6E21B5F70400A77302 /* CardDesignChoicePresenter.swift in Sources */,
+				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
+				F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */,
+				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
+				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
 				F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */,
-				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
 				F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */,
-				F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */,
-				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
-				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
+				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
+				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
+				F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */,
+				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
+				F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +613,7 @@
 				F2D79B5B219CE57000962D26 /* Base */,
 			);
 			name = Poker.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */ = {
@@ -621,6 +622,7 @@
 				F2D79B60219CE57200962D26 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
