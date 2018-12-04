@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class BetPickerPresenter {
+public final class BetPickerPresenter {
     
     private let componentsNum = 3
     private let rowsInComponentNum = 10
@@ -29,7 +29,7 @@ final class BetPickerPresenter {
     private let betLabelText: Binder<String?>
     private let switchIsDoneButtonEnabled: Binder<Bool>
     
-    init(possessionMoney: Int,
+    public init(possessionMoney: Int,
          betLabelText: Binder<String?>,
          switchIsDoneButtonEnabled: Binder<Bool>) {
         self.possessionMoney = possessionMoney
@@ -42,7 +42,7 @@ final class BetPickerPresenter {
         return isInRangeValue() ? "\(selectedValue)" : "所持金を超えているようです"
     }
     
-    func betValue() -> Int {
+    public func betValue() -> Int {
         // 不正な値の場合は0を返しておく
         guard isInRangeValue() else { return 0 }
         return selectedValue
@@ -54,19 +54,19 @@ final class BetPickerPresenter {
     
     // MARK: - Picker
     
-    func numberOfComponents() -> Int {
+    public func numberOfComponents() -> Int {
         return componentsNum
     }
     
-    func numberOfRowsInComponent(_ component: Int) -> Int {
+    public func numberOfRowsInComponent(_ component: Int) -> Int {
         return rowsInComponentNum
     }
     
-    func titleForRow(_ row: Int, component: Int) -> String? {
+    public func titleForRow(_ row: Int, component: Int) -> String? {
         return "\(row)"
     }
     
-    func didSelectRow(_ row: Int, component: Int) {
+    public func didSelectRow(_ row: Int, component: Int) {
         pickerValue[component] = row
         betLabelText.onNext(betText())
         switchIsDoneButtonEnabled.onNext(isInRangeValue())

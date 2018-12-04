@@ -9,21 +9,23 @@
 import Foundation
 import Model
 
-final class CardDesignPresenter {
+public final class CardDesignPresenter {
+    
+    public init() {}
     
     private let items: [CardDesignCategory] = CardDesignCategory.allCases
     
-    func numberOfRowsInSection() -> Int {
+    public func numberOfRowsInSection() -> Int {
         return items.count
     }
     
-    func item(at indexPath: IndexPath) -> CardDesignCategory {
+    public func item(at indexPath: IndexPath) -> CardDesignCategory {
         return items[indexPath.row]
     }
 }
 
 // TODO: ここもうちょっとスマートにしたいな
-enum CardDesignCategory: String, CaseIterable {
+public enum CardDesignCategory: String, CaseIterable {
     case back = "カードの柄を変更する"
     case ace = "Aのカード全部の画像を変更する"
     case jack = "Jのカード全部の画像を変更する"
@@ -46,7 +48,7 @@ enum CardDesignCategory: String, CaseIterable {
     case diamondQueen = "Q♦︎のカードの画像を変更する"
     case diamondKing = "K♦︎のカードの画像を変更する"
     
-    func key() -> String {
+    public func key() -> String {
         switch self {
         case .back:
             return "CardBackImageKey"
@@ -99,7 +101,7 @@ extension Card {
     /// カードのカテゴリを返します
     ///
     /// 複数当てはまることがあるため，優先度の高い順に並べています
-    var category: [CardDesignCategory] {
+    public var category: [CardDesignCategory] {
         switch (rank, suit) {
         case (.ace, .heart):
             return [.heartAce, .ace]

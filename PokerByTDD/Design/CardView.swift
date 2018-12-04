@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Model
+import Presenter
 
 @IBDesignable final class CardView: UIView {
     
