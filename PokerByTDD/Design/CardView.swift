@@ -11,6 +11,8 @@ import RealmSwift
 
 @IBDesignable final class CardView: UIView {
     
+    let realm = try! Realm()
+    
     private var contentSize: CGSize!
     @IBOutlet private weak var rankLabel: UILabel! {
         didSet {
@@ -113,20 +115,9 @@ import RealmSwift
     }
     
     private func setupCardImageView() {
-        // TODO: ここのロジック分岐どうにかできないか
-        if let card = card, !card.category.isEmpty {
-            if let category = card.category.first,
-                let image = try! Realm().restoreImage(key: category.key()) {
-                cardImageView.image = image
-            } else if let category = card.category.last,
-                let image = try! Realm().restoreImage(key: category.key()) {
-                cardImageView.image = image
-            } else {
-                cardImageView.image = nil
-            }
-        } else {
-            cardImageView.image = nil
-        }
+        // 該当のカテゴリキーの画像を一旦全部復元させているので
+        // パフォーマンスが悪い気がするが，現状では高々2つなのでこのままにしておく
+        cardImageView.image = card?.category.compactMap { realm.restoreImage(key: $0.key()) }.first
     }
 }
 
