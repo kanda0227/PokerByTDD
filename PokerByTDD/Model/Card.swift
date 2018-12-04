@@ -11,10 +11,10 @@ import Foundation
 // MARK: - Card
 
 /// トランプのカード
-struct Card: Hashable {
+public struct Card: Hashable {
     
     // 定義順は弱い順においてね
-    enum Rank: String, CaseIterable {
+    public enum Rank: String, CaseIterable {
         /// 2
         case two = "2"
         /// 3
@@ -49,7 +49,7 @@ struct Card: Hashable {
         }
     }
     
-    enum Suit: String, CaseIterable {
+    public enum Suit: String, CaseIterable {
         /// ハート
         case heart = "♥"
         /// スペード
@@ -60,8 +60,8 @@ struct Card: Hashable {
         case diamond = "♦︎"
     }
     
-    let rank: Rank
-    let suit: Suit
+    public let rank: Rank
+    public let suit: Suit
     
     /// 文字列表記
     var notation: String {
@@ -84,7 +84,7 @@ struct Card: Hashable {
 
 extension Card: Equatable {
     
-    static func ==(lhs: Card, rhs: Card) -> Bool {
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
         return lhs.hasSameRank(rhs) && lhs.hasSameSuit(rhs)
     }
 }
@@ -93,7 +93,7 @@ extension Card: Equatable {
 
 extension Card: Comparable {
     
-    static func <(lhs: Card, rhs: Card) -> Bool {
+    public static func <(lhs: Card, rhs: Card) -> Bool {
         return lhs.rank.stlength < rhs.rank.stlength
     }
 }

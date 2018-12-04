@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Hand: Hashable {
+public struct Hand: Hashable {
     
     private let cards: [Card]
     
-    let name: String
+    private let name: String
     
-    init(cards: [Card], name: String = "no_name") {
+    public init(cards: [Card], name: String = "no_name") {
         self.cards = cards
         self.name = name
     }
@@ -60,7 +60,7 @@ struct Hand: Hashable {
     }
     
     /// カードの役を返します
-    func hand() -> PokerHand {
+    public func hand() -> PokerHand {
         // 必ず何かしらに該当するはず
         return PokerHandDecisionHelper.pockerHand(cards: cards)
     }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Model
 
 // MARK: - PokerViewPresenter
 /// ポーカー画面の Presenter

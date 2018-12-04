@@ -10,7 +10,7 @@ import Foundation
 
 /// ポーカーの役一覧
 /// 弱い順に並べくださいね
-enum PokerHand {
+public enum PokerHand {
     
     typealias Rank = Card.Rank
     
@@ -88,7 +88,7 @@ enum PokerHand {
         }
     }
     
-    var text: String {
+    public var text: String {
         switch self {
         case .highCard:
             return "ハイカード"
@@ -169,7 +169,7 @@ extension PokerHand {
 }
 
 extension PokerHand: Equatable {
-    static func == (lhs: PokerHand, rhs: PokerHand) -> Bool {
+    public static func == (lhs: PokerHand, rhs: PokerHand) -> Bool {
         switch (lhs, rhs) {
         case (_, _) where !lhs.sameHand(rhs):
             return false
@@ -188,7 +188,7 @@ extension PokerHand: Equatable {
 
 extension PokerHand: Comparable {
     
-    static func < (lhs: PokerHand, rhs: PokerHand) -> Bool {
+    public static func < (lhs: PokerHand, rhs: PokerHand) -> Bool {
         switch (lhs, rhs) {
             
         case (_, _) where !lhs.sameHand(rhs):

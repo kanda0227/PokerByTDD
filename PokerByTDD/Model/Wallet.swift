@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 /// お財布モデル
-final class Wallet {
+public final class Wallet {
     
     private let walletContentKey = "WalletContentKey"
     private let lastPresentTimeKey = "LastPresentTimeKey"
@@ -28,7 +28,7 @@ final class Wallet {
     private var timer: Timer?
     
     /// シングルトン
-    static let shared = Wallet()
+    public static let shared = Wallet()
     
     private init() {}
     
@@ -37,7 +37,7 @@ final class Wallet {
     /// お財布モデルの設定をします
     ///
     /// applicationDidBecomeActive で呼んでください
-    func setup() {
+    public func setup() {
         if let date: Date = restore() {
             let diffTime = Int(Date().timeIntervalSince(date))
             let offTime = diffTime / interval
@@ -64,24 +64,24 @@ final class Wallet {
     /// お財布モデルの設定をリセットします
     ///
     /// applicationDidEnterBackground で呼んでください
-    func reset() {
+    public func reset() {
         // タイマーを切る
         timer?.invalidate()
     }
     
-    func receipt(_ value: Int) {
+    public func receipt(_ value: Int) {
         save(money + value)
     }
     
-    func pay(_ value: Int) {
+    public func pay(_ value: Int) {
         save(money - value)
     }
     
-    func value() -> Int {
+    public func value() -> Int {
         return money
     }
     
-    func observable() -> Observable<Int> {
+    public func observable() -> Observable<Int> {
         return subject.asObservable()
     }
     

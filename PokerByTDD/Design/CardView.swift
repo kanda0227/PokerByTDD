@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Model
 
 @IBDesignable final class CardView: UIView {
     
