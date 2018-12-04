@@ -8,6 +8,7 @@
 
 import UIKit
 import Presenter
+import Design
 
 final class CardDesignViewController: UIViewController {
     
