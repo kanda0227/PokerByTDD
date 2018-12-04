@@ -40,6 +40,11 @@
 		F254FBA721B6025200A77302 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
 		F254FBA821B6025200A77302 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4A21B0B39C00A77302 /* Wallet.swift */; };
 		F254FBA921B6026B00A77302 /* PokerByTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */; };
+		F254FC3C21B7370300A77302 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
+		F254FC4321B7370300A77302 /* UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FC4221B7370300A77302 /* UtilityTests.swift */; };
+		F254FC4521B7370300A77302 /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = F254FC3521B7370300A77302 /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F254FC4821B7370300A77302 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
+		F254FC4921B7370300A77302 /* Utility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -76,6 +81,27 @@
 			remoteGlobalIDString = F254FB7321B5FA2200A77302;
 			remoteInfo = Model;
 		};
+		F254FC3D21B7370300A77302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F254FC3221B7370200A77302;
+			remoteInfo = Utility;
+		};
+		F254FC3F21B7370300A77302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2D79B52219CE57000962D26;
+			remoteInfo = PokerByTDD;
+		};
+		F254FC4621B7370300A77302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F254FC3221B7370200A77302;
+			remoteInfo = Utility;
+		};
 		F2D79B68219CE57200962D26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
@@ -93,6 +119,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F254FB8A21B5FA2300A77302 /* Model.framework in Embed Frameworks */,
+				F254FC4921B7370300A77302 /* Utility.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +157,12 @@
 		F254FB7C21B5FA2300A77302 /* ModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F254FB8321B5FA2300A77302 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		F254FB8521B5FA2300A77302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F254FC3321B7370200A77302 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F254FC3521B7370300A77302 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		F254FC3621B7370300A77302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F254FC3B21B7370300A77302 /* UtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F254FC4221B7370300A77302 /* UtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityTests.swift; sourceTree = "<group>"; };
+		F254FC4421B7370300A77302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -168,6 +201,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F254FC3021B7370200A77302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FC3821B7370300A77302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FC3C21B7370300A77302 /* Utility.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2D79B50219CE57000962D26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +223,7 @@
 				F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */,
 				F2F940CB21A62BC500387AA5 /* Realm.framework in Frameworks */,
 				F2F940CC21A62BC500387AA5 /* RealmSwift.framework in Frameworks */,
+				F254FC4821B7370300A77302 /* Utility.framework in Frameworks */,
 				F2F940CD21A62BC500387AA5 /* RxCocoa.framework in Frameworks */,
 				F2F940CE21A62BC500387AA5 /* RxSwift.framework in Frameworks */,
 			);
@@ -234,6 +283,24 @@
 			path = source;
 			sourceTree = "<group>";
 		};
+		F254FC3421B7370300A77302 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F254FC3521B7370300A77302 /* Utility.h */,
+				F254FC3621B7370300A77302 /* Info.plist */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F254FC4121B7370300A77302 /* UtilityTests */ = {
+			isa = PBXGroup;
+			children = (
+				F254FC4221B7370300A77302 /* UtilityTests.swift */,
+				F254FC4421B7370300A77302 /* Info.plist */,
+			);
+			path = UtilityTests;
+			sourceTree = "<group>";
+		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +333,8 @@
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
+				F254FC3421B7370300A77302 /* Utility */,
+				F254FC4121B7370300A77302 /* UtilityTests */,
 				F2F940BE21A61E9700387AA5 /* Frameworks */,
 				F254FB7521B5FA2300A77302 /* Model */,
 				F254FB8221B5FA2300A77302 /* ModelTests */,
@@ -282,6 +351,8 @@
 				F254FB7C21B5FA2300A77302 /* ModelTests.xctest */,
 				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
 				F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */,
+				F254FC3321B7370200A77302 /* Utility.framework */,
+				F254FC3B21B7370300A77302 /* UtilityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +415,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F254FC2E21B7370200A77302 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FC4521B7370300A77302 /* Utility.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +463,43 @@
 			productReference = F254FB7C21B5FA2300A77302 /* ModelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F254FC3221B7370200A77302 /* Utility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F254FC4E21B7370300A77302 /* Build configuration list for PBXNativeTarget "Utility" */;
+			buildPhases = (
+				F254FC2E21B7370200A77302 /* Headers */,
+				F254FC2F21B7370200A77302 /* Sources */,
+				F254FC3021B7370200A77302 /* Frameworks */,
+				F254FC3121B7370200A77302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Utility;
+			productName = Utility;
+			productReference = F254FC3321B7370200A77302 /* Utility.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F254FC3A21B7370300A77302 /* UtilityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F254FC4F21B7370300A77302 /* Build configuration list for PBXNativeTarget "UtilityTests" */;
+			buildPhases = (
+				F254FC3721B7370300A77302 /* Sources */,
+				F254FC3821B7370300A77302 /* Frameworks */,
+				F254FC3921B7370300A77302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F254FC3E21B7370300A77302 /* PBXTargetDependency */,
+				F254FC4021B7370300A77302 /* PBXTargetDependency */,
+			);
+			name = UtilityTests;
+			productName = UtilityTests;
+			productReference = F254FC3B21B7370300A77302 /* UtilityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F2D79B52219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2D79B70219CE57200962D26 /* Build configuration list for PBXNativeTarget "PokerByTDD" */;
@@ -398,6 +514,7 @@
 			);
 			dependencies = (
 				F254FB8821B5FA2300A77302 /* PBXTargetDependency */,
+				F254FC4721B7370300A77302 /* PBXTargetDependency */,
 			);
 			name = PokerByTDD;
 			productName = PokerByTDD;
@@ -439,6 +556,13 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = F2D79B52219CE57000962D26;
 					};
+					F254FC3221B7370200A77302 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F254FC3A21B7370300A77302 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F2D79B52219CE57000962D26;
+					};
 					F2D79B52219CE57000962D26 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -465,6 +589,8 @@
 				F254FB7B21B5FA2300A77302 /* ModelTests */,
 				F2D79B52219CE57000962D26 /* PokerByTDD */,
 				F2D79B66219CE57200962D26 /* PokerByTDDTests */,
+				F254FC3221B7370200A77302 /* Utility */,
+				F254FC3A21B7370300A77302 /* UtilityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -478,6 +604,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F254FB7A21B5FA2300A77302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FC3121B7370200A77302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FC3921B7370300A77302 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -557,6 +697,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F254FC2F21B7370200A77302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FC3721B7370300A77302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FC4321B7370300A77302 /* UtilityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2D79B4F219CE57000962D26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +761,21 @@
 			isa = PBXTargetDependency;
 			target = F254FB7321B5FA2200A77302 /* Model */;
 			targetProxy = F254FB8721B5FA2300A77302 /* PBXContainerItemProxy */;
+		};
+		F254FC3E21B7370300A77302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F254FC3221B7370200A77302 /* Utility */;
+			targetProxy = F254FC3D21B7370300A77302 /* PBXContainerItemProxy */;
+		};
+		F254FC4021B7370300A77302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2D79B52219CE57000962D26 /* PokerByTDD */;
+			targetProxy = F254FC3F21B7370300A77302 /* PBXContainerItemProxy */;
+		};
+		F254FC4721B7370300A77302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F254FC3221B7370200A77302 /* Utility */;
+			targetProxy = F254FC4621B7370300A77302 /* PBXContainerItemProxy */;
 		};
 		F2D79B69219CE57200962D26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -735,6 +905,102 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.ModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerByTDD.app/PokerByTDD";
+			};
+			name = Release;
+		};
+		F254FC4A21B7370300A77302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Utility/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.Utility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F254FC4B21B7370300A77302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Utility/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.Utility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F254FC4C21B7370300A77302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = UtilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.UtilityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerByTDD.app/PokerByTDD";
+			};
+			name = Debug;
+		};
+		F254FC4D21B7370300A77302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = UtilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.UtilityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -969,6 +1235,24 @@
 			buildConfigurations = (
 				F254FB9021B5FA2400A77302 /* Debug */,
 				F254FB9121B5FA2400A77302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F254FC4E21B7370300A77302 /* Build configuration list for PBXNativeTarget "Utility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F254FC4A21B7370300A77302 /* Debug */,
+				F254FC4B21B7370300A77302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F254FC4F21B7370300A77302 /* Build configuration list for PBXNativeTarget "UtilityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F254FC4C21B7370300A77302 /* Debug */,
+				F254FC4D21B7370300A77302 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

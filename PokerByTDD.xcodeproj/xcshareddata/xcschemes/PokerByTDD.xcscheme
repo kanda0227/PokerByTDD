@@ -48,6 +48,16 @@
                ReferencedContainer = "container:PokerByTDD.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F254FC3A21B7370300A77302"
+               BuildableName = "UtilityTests.xctest"
+               BlueprintName = "UtilityTests"
+               ReferencedContainer = "container:PokerByTDD.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
