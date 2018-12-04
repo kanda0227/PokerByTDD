@@ -45,6 +45,7 @@
 		F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */; };
 		F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5921B3B58900A77302 /* UITableViewExtension.swift */; };
 		F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */; };
+		F254FC5421B7375A00A77302 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940BF21A61E9700387AA5 /* RealmSwift.framework */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -205,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FC5421B7375A00A77302 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +925,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Utility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -951,6 +957,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Utility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
