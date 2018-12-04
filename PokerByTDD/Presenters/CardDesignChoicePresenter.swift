@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Utility
 import UIKit
 
 final class CardDesignChoicePresenter {
