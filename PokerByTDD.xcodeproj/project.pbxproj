@@ -241,17 +241,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F254FB5821B3B56800A77302 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				F254FB6721B401A400A77302 /* RealmExtension.swift */,
-				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
-				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
-				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		F254FB7521B5FA2300A77302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +277,7 @@
 		F254FC3421B7370300A77302 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F254FC5521B738D600A77302 /* source */,
 				F254FC3521B7370300A77302 /* Utility.h */,
 				F254FC3621B7370300A77302 /* Info.plist */,
 			);
@@ -301,6 +291,17 @@
 				F254FC4421B7370300A77302 /* Info.plist */,
 			);
 			path = UtilityTests;
+			sourceTree = "<group>";
+		};
+		F254FC5521B738D600A77302 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F254FB6721B401A400A77302 /* RealmExtension.swift */,
+				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
+				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
+				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
@@ -368,7 +369,6 @@
 				F2D79B62219CE57200962D26 /* Info.plist */,
 				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
 				F2F940C821A6206000387AA5 /* Presenters */,
-				F254FB5821B3B56800A77302 /* Utility */,
 				F26A01F521A43D6D008897A1 /* ViewControllers */,
 			);
 			path = PokerByTDD;
