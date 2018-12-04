@@ -151,8 +151,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F254FB8A21B5FA2300A77302 /* Model.framework in Embed Frameworks */,
-				F254FC4921B7370300A77302 /* Utility.framework in Embed Frameworks */,
 				F254FC7121B739C700A77302 /* Presenter.framework in Embed Frameworks */,
+				F254FC4921B7370300A77302 /* Utility.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FC8121B73A9B00A77302 /* Model.framework in Frameworks */,
-				F254FC8021B73A9000A77302 /* Utility.framework in Frameworks */,
 				F254FC7D21B73A7D00A77302 /* RealmSwift.framework in Frameworks */,
 				F254FC7E21B73A7D00A77302 /* RxCocoa.framework in Frameworks */,
 				F254FC7F21B73A7D00A77302 /* RxSwift.framework in Frameworks */,
+				F254FC8021B73A9000A77302 /* Utility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,9 +366,9 @@
 		F254FC5C21B739C700A77302 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F254FC8221B73CA900A77302 /* source */,
-				F254FC5D21B739C700A77302 /* Presenter.h */,
 				F254FC5E21B739C700A77302 /* Info.plist */,
+				F254FC5D21B739C700A77302 /* Presenter.h */,
+				F254FC8221B73CA900A77302 /* source */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -376,8 +376,8 @@
 		F254FC6921B739C700A77302 /* PresenterTests */ = {
 			isa = PBXGroup;
 			children = (
-				F254FC6A21B739C700A77302 /* PresenterTests.swift */,
 				F254FC6C21B739C700A77302 /* Info.plist */,
+				F254FC6A21B739C700A77302 /* PresenterTests.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -426,13 +426,13 @@
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
-				F254FC5C21B739C700A77302 /* Presenter */,
-				F254FC6921B739C700A77302 /* PresenterTests */,
 				F2F940BE21A61E9700387AA5 /* Frameworks */,
 				F254FB7521B5FA2300A77302 /* Model */,
 				F254FB8221B5FA2300A77302 /* ModelTests */,
 				F2D79B55219CE57000962D26 /* PokerByTDD */,
 				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
+				F254FC5C21B739C700A77302 /* Presenter */,
+				F254FC6921B739C700A77302 /* PresenterTests */,
 				F2D79B54219CE57000962D26 /* Products */,
 				F254FC3421B7370300A77302 /* Utility */,
 				F254FC4121B7370300A77302 /* UtilityTests */,
@@ -446,10 +446,10 @@
 				F254FB7C21B5FA2300A77302 /* ModelTests.xctest */,
 				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
 				F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */,
-				F254FC3321B7370200A77302 /* Utility.framework */,
-				F254FC3B21B7370300A77302 /* UtilityTests.xctest */,
 				F254FC5B21B739C600A77302 /* Presenter.framework */,
 				F254FC6321B739C700A77302 /* PresenterTests.xctest */,
+				F254FC3321B7370200A77302 /* Utility.framework */,
+				F254FC3B21B7370300A77302 /* UtilityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -620,8 +620,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				F254FC6621B739C700A77302 /* PBXTargetDependency */,
 				F254FC6821B739C700A77302 /* PBXTargetDependency */,
+				F254FC6621B739C700A77302 /* PBXTargetDependency */,
 			);
 			name = PresenterTests;
 			productName = PresenterTests;
@@ -642,8 +642,8 @@
 			);
 			dependencies = (
 				F254FB8821B5FA2300A77302 /* PBXTargetDependency */,
-				F254FC4721B7370300A77302 /* PBXTargetDependency */,
 				F254FC6F21B739C700A77302 /* PBXTargetDependency */,
+				F254FC4721B7370300A77302 /* PBXTargetDependency */,
 			);
 			name = PokerByTDD;
 			productName = PokerByTDD;
@@ -725,10 +725,10 @@
 				F254FB7B21B5FA2300A77302 /* ModelTests */,
 				F2D79B52219CE57000962D26 /* PokerByTDD */,
 				F2D79B66219CE57200962D26 /* PokerByTDDTests */,
-				F254FC3221B7370200A77302 /* Utility */,
-				F254FC3A21B7370300A77302 /* UtilityTests */,
 				F254FC5A21B739C600A77302 /* Presenter */,
 				F254FC6221B739C700A77302 /* PresenterTests */,
+				F254FC3221B7370200A77302 /* Utility */,
+				F254FC3A21B7370300A77302 /* UtilityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -872,11 +872,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F254FC7C21B739F000A77302 /* SettingPresenter.swift in Sources */,
-				F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */,
 				F254FC7821B739F000A77302 /* BetPickerPresenter.swift in Sources */,
 				F254FC7921B739F000A77302 /* CardDesignChoicePresenter.swift in Sources */,
+				F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */,
 				F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */,
+				F254FC7C21B739F000A77302 /* SettingPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
