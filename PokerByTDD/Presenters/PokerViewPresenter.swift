@@ -13,7 +13,7 @@ import Model
 
 // MARK: - PokerViewPresenter
 /// ポーカー画面の Presenter
-final class PokerViewPresenter {
+public final class PokerViewPresenter {
     
     /// カードの配布や交換をしてくれるディーラーさん
     private let dealer = Dealer()
@@ -46,7 +46,7 @@ final class PokerViewPresenter {
     /// トレードボタンの有効・無効を切り替えます
     private let switchIsTradeButtonEnabled: Binder<Bool>
     
-    init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
+    public init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
          handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
          walletText: Binder<String>,
          turnOverUserCards: Binder<Bool>,
@@ -76,12 +76,12 @@ final class PokerViewPresenter {
 extension PokerViewPresenter {
     
     /// 所持金を返します
-    func walletContent() -> Int {
+    public func walletContent() -> Int {
         return Wallet.shared.value()
     }
     
     /// スタートボタンのタップ時に呼んでください
-    func postTapStartButton() {
+    public func postTapStartButton() {
         turnOverUserCards.onNext(true)
         turnOverOpponentCards.onNext(true)
         switchIsStartButtonEnabled.onNext(false)
@@ -89,7 +89,7 @@ extension PokerViewPresenter {
     }
     
     /// ゲームスタート時に呼んでください
-    func postStart(bet: Int) {
+    public func postStart(bet: Int) {
         self.bet = bet
         Wallet.shared.pay(bet)
         dealer.gatherCards(userCards.map { $0.card } + opponentCards)
@@ -104,12 +104,12 @@ extension PokerViewPresenter {
     }
     
     /// カードの選択状態が変わるときに呼んでください
-    func switchIsSelectCard(tag: Int, isSelected: Bool) {
+    public func switchIsSelectCard(tag: Int, isSelected: Bool) {
         userCards[tag].isSelected = isSelected
     }
     
     /// カード交換ボタンのタップ時に呼んでください
-    func postTrade() {
+    public func postTrade() {
         let selected = userCards.filter { $0.isSelected }.map { $0.card }
         let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
         userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }

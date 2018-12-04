@@ -11,17 +11,17 @@ import RealmSwift
 import Utility
 import UIKit
 
-final class CardDesignChoicePresenter {
+public final class CardDesignChoicePresenter {
     
     private let realm = try! Realm()
     
-    init() {}
+    public init() {}
     
-    func restoreImage(category: CardDesignCategory) -> UIImage? {
+    public func restoreImage(category: CardDesignCategory) -> UIImage? {
         return realm.restoreImage(key: category.key())
     }
     
-    func saveImage(_ image: UIImage, category: CardDesignCategory) {
+    public func saveImage(_ image: UIImage, category: CardDesignCategory) {
         realm.saveImage(image, key: category.key())
     }
 }

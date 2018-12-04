@@ -8,21 +8,21 @@
 
 import Foundation
 
-final class SettingPresenter {
+public final class SettingPresenter {
     
-    typealias Item = (itemName: String, storyboardID: String)
+    public typealias Item = (itemName: String, storyboardID: String)
     
     private let items: [Item] = [
         ("カードデザイン設定", "CardDesignView")
     ]
     
-    init() {}
+    public init() {}
     
-    func numberOfRowsInSection() -> Int {
+    public func numberOfRowsInSection() -> Int {
         return items.count
     }
     
-    func item(at indexPath: IndexPath) -> Item {
+    public func item(at indexPath: IndexPath) -> Item {
         return items[indexPath.row]
     }
 }
