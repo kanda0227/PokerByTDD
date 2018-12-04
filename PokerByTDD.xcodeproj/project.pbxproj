@@ -204,15 +204,9 @@
 		F254FB7521B5FA2300A77302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F2D79B77219CEC8200962D26 /* Card.swift */,
-				F26A01F321A389CF008897A1 /* Dealer.swift */,
-				F2361974219F85F100C91A8C /* Hand.swift */,
+				F254FBAA21B603C800A77302 /* source */,
 				F254FB7721B5FA2300A77302 /* Info.plist */,
 				F254FB7621B5FA2300A77302 /* Model.h */,
-				F2361976219FFCF700C91A8C /* PokerHand.swift */,
-				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
-				F236197821A1286500C91A8C /* Table.swift */,
-				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +218,20 @@
 				F254FB8321B5FA2300A77302 /* ModelTests.swift */,
 			);
 			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		F254FBAA21B603C800A77302 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F2D79B77219CEC8200962D26 /* Card.swift */,
+				F26A01F321A389CF008897A1 /* Dealer.swift */,
+				F2361974219F85F100C91A8C /* Hand.swift */,
+				F2361976219FFCF700C91A8C /* PokerHand.swift */,
+				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
+				F236197821A1286500C91A8C /* Table.swift */,
+				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
