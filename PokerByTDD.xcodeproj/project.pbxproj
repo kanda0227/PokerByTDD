@@ -225,9 +225,9 @@
 				F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */,
 				F2F940CB21A62BC500387AA5 /* Realm.framework in Frameworks */,
 				F2F940CC21A62BC500387AA5 /* RealmSwift.framework in Frameworks */,
-				F254FC4821B7370300A77302 /* Utility.framework in Frameworks */,
 				F2F940CD21A62BC500387AA5 /* RxCocoa.framework in Frameworks */,
 				F2F940CE21A62BC500387AA5 /* RxSwift.framework in Frameworks */,
+				F254FC4821B7370300A77302 /* Utility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,9 +277,9 @@
 		F254FC3421B7370300A77302 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F254FC3621B7370300A77302 /* Info.plist */,
 				F254FC5521B738D600A77302 /* source */,
 				F254FC3521B7370300A77302 /* Utility.h */,
-				F254FC3621B7370300A77302 /* Info.plist */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -287,8 +287,8 @@
 		F254FC4121B7370300A77302 /* UtilityTests */ = {
 			isa = PBXGroup;
 			children = (
-				F254FC4221B7370300A77302 /* UtilityTests.swift */,
 				F254FC4421B7370300A77302 /* Info.plist */,
+				F254FC4221B7370300A77302 /* UtilityTests.swift */,
 			);
 			path = UtilityTests;
 			sourceTree = "<group>";
@@ -336,14 +336,14 @@
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
-				F254FC3421B7370300A77302 /* Utility */,
-				F254FC4121B7370300A77302 /* UtilityTests */,
 				F2F940BE21A61E9700387AA5 /* Frameworks */,
 				F254FB7521B5FA2300A77302 /* Model */,
 				F254FB8221B5FA2300A77302 /* ModelTests */,
 				F2D79B55219CE57000962D26 /* PokerByTDD */,
 				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
 				F2D79B54219CE57000962D26 /* Products */,
+				F254FC3421B7370300A77302 /* Utility */,
+				F254FC4121B7370300A77302 /* UtilityTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -494,8 +494,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				F254FC3E21B7370300A77302 /* PBXTargetDependency */,
 				F254FC4021B7370300A77302 /* PBXTargetDependency */,
+				F254FC3E21B7370300A77302 /* PBXTargetDependency */,
 			);
 			name = UtilityTests;
 			productName = UtilityTests;
@@ -703,10 +703,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
-				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
 				F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */,
 				F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */,
+				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
+				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
