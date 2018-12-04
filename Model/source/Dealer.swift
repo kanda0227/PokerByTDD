@@ -8,9 +8,11 @@
 
 import Foundation
 
-final class Dealer {
+public final class Dealer {
     
     private lazy var trumpCase: [Card] = allCards
+    
+    public init() {}
     
     private var allCards: [Card] {
         return Card.Rank.allCases.flatMap { rank in
@@ -20,7 +22,7 @@ final class Dealer {
         }
     }
     
-    func dealCards(_ n: Int) -> [Card] {
+    public func dealCards(_ n: Int) -> [Card] {
         guard trumpCase.count >= n else {
             // 配るカードが足りないのでとりあえず手持ちを全部渡す
             return trumpCase
@@ -36,11 +38,11 @@ final class Dealer {
         return cards
     }
     
-    func gatherCards(_ cards: [Card]) {
+    public func gatherCards(_ cards: [Card]) {
         trumpCase.append(contentsOf: cards)
     }
     
-    func tradeCards(_ cards: [Card]) -> [Card] {
+    public func tradeCards(_ cards: [Card]) -> [Card] {
         let returnCards = dealCards(cards.count)
         // 交換に出したカードは返してあげない
         trumpCase.append(contentsOf: cards)

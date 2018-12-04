@@ -11,10 +11,10 @@ import Foundation
 // MARK: - Card
 
 /// トランプのカード
-struct Card: Hashable {
+public struct Card: Hashable {
     
     // 定義順は弱い順においてね
-    enum Rank: String, CaseIterable {
+    public enum Rank: String, CaseIterable {
         /// 2
         case two = "2"
         /// 3
@@ -49,7 +49,7 @@ struct Card: Hashable {
         }
     }
     
-    enum Suit: String, CaseIterable {
+    public enum Suit: String, CaseIterable {
         /// ハート
         case heart = "♥"
         /// スペード
@@ -60,8 +60,8 @@ struct Card: Hashable {
         case diamond = "♦︎"
     }
     
-    let rank: Rank
-    let suit: Suit
+    public let rank: Rank
+    public let suit: Suit
     
     /// 文字列表記
     var notation: String {
@@ -78,55 +78,13 @@ struct Card: Hashable {
     
     /// デフォルトでとりあえずカードが欲しい時に渡す用の定数
     static let defaultCard = Card(rank: .ace, suit: .club)
-    
-    /// カードのカテゴリを返します
-    ///
-    /// 複数当てはまることがあるため，優先度の高い順に並べています
-    var category: [CardDesignCategory] {
-        switch (rank, suit) {
-        case (.ace, .heart):
-            return [.heartAce, .ace]
-        case (.jack, .heart):
-            return [.heartJack, .jack]
-        case (.queen, .heart):
-            return [.heartQueen, .queen]
-        case (.king, .heart):
-            return [.heartKing, .king]
-        case (.ace, .spade):
-            return [.spadeAce, .ace]
-        case (.jack, .spade):
-            return [.spadeJack, .jack]
-        case (.queen, .spade):
-            return [.spadeQueen, .queen]
-        case (.king, .spade):
-            return [.spadeKing, .king]
-        case (.ace, .club):
-            return [.clubAce, .ace]
-        case (.jack, .club):
-            return [.clubJack, .jack]
-        case (.queen, .club):
-            return [.clubQueen, .queen]
-        case (.king, .club):
-            return [.clubKing, .king]
-        case (.ace, .diamond):
-            return [.diamondAce, .ace]
-        case (.jack, .diamond):
-            return [.diamondJack, .jack]
-        case (.queen, .diamond):
-            return [.diamondQueen, .queen]
-        case (.king, .diamond):
-            return [.diamondKing, .king]
-        default:
-            return []
-        }
-    }
 }
 
 // MARK: - Equatable
 
 extension Card: Equatable {
     
-    static func ==(lhs: Card, rhs: Card) -> Bool {
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
         return lhs.hasSameRank(rhs) && lhs.hasSameSuit(rhs)
     }
 }
@@ -135,7 +93,7 @@ extension Card: Equatable {
 
 extension Card: Comparable {
     
-    static func <(lhs: Card, rhs: Card) -> Bool {
+    public static func <(lhs: Card, rhs: Card) -> Bool {
         return lhs.rank.stlength < rhs.rank.stlength
     }
 }

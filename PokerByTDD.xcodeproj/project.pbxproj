@@ -7,14 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2361975219F85F200C91A8C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2361974219F85F100C91A8C /* Hand.swift */; };
-		F2361977219FFCF700C91A8C /* PokerHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2361976219FFCF700C91A8C /* PokerHand.swift */; };
-		F236197921A1286500C91A8C /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236197821A1286500C91A8C /* Table.swift */; };
-		F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */; };
 		F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */; };
 		F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4621AB61F700A77302 /* BetPickerViewController.swift */; };
 		F254FB4921AE09C200A77302 /* BetPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */; };
-		F254FB4B21B0B39C00A77302 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4A21B0B39C00A77302 /* Wallet.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
 		F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4E21B3AA9B00A77302 /* Setting.storyboard */; };
 		F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5021B3B23F00A77302 /* SettingViewController.swift */; };
@@ -31,7 +26,20 @@
 		F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6721B401A400A77302 /* RealmExtension.swift */; };
 		F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */; };
 		F254FB6E21B5F70400A77302 /* CardDesignChoicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */; };
-		F26A01F421A389CF008897A1 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
+		F254FB7D21B5FA2300A77302 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
+		F254FB8421B5FA2300A77302 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB8321B5FA2300A77302 /* ModelTests.swift */; };
+		F254FB8621B5FA2300A77302 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = F254FB7621B5FA2300A77302 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
+		F254FB8A21B5FA2300A77302 /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F254FB9921B5FB0F00A77302 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C121A61E9800387AA5 /* RxSwift.framework */; };
+		F254FBA121B6025200A77302 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2361974219F85F100C91A8C /* Hand.swift */; };
+		F254FBA221B6025200A77302 /* PokerHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2361976219FFCF700C91A8C /* PokerHand.swift */; };
+		F254FBA421B6025200A77302 /* PokerHandDecisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */; };
+		F254FBA521B6025200A77302 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236197821A1286500C91A8C /* Table.swift */; };
+		F254FBA621B6025200A77302 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B77219CEC8200962D26 /* Card.swift */; };
+		F254FBA721B6025200A77302 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F321A389CF008897A1 /* Dealer.swift */; };
+		F254FBA821B6025200A77302 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4A21B0B39C00A77302 /* Wallet.swift */; };
+		F254FBA921B6026B00A77302 /* PokerByTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -39,8 +47,6 @@
 		F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5A219CE57000962D26 /* Poker.storyboard */; };
 		F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5D219CE57200962D26 /* Assets.xcassets */; };
 		F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */; };
-		F2D79B6C219CE57200962D26 /* PokerByTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */; };
-		F2D79B78219CEC8200962D26 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B77219CEC8200962D26 /* Card.swift */; };
 		F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */; };
 		F2F940CB21A62BC500387AA5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C221A61E9800387AA5 /* Realm.framework */; };
 		F2F940CC21A62BC500387AA5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940BF21A61E9700387AA5 /* RealmSwift.framework */; };
@@ -49,6 +55,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F254FB7E21B5FA2300A77302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F254FB7321B5FA2200A77302;
+			remoteInfo = Model;
+		};
+		F254FB8021B5FA2300A77302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2D79B52219CE57000962D26;
+			remoteInfo = PokerByTDD;
+		};
+		F254FB8721B5FA2300A77302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F254FB7321B5FA2200A77302;
+			remoteInfo = Model;
+		};
 		F2D79B68219CE57200962D26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2D79B4B219CE57000962D26 /* Project object */;
@@ -57,6 +84,20 @@
 			remoteInfo = PokerByTDD;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F254FB8E21B5FA2400A77302 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F254FB8A21B5FA2300A77302 /* Model.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F2361974219F85F100C91A8C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -83,6 +124,12 @@
 		F254FB6721B401A400A77302 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDesignChoicePresenter.swift; sourceTree = "<group>"; };
+		F254FB7421B5FA2200A77302 /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F254FB7621B5FA2300A77302 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		F254FB7721B5FA2300A77302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F254FB7C21B5FA2300A77302 /* ModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F254FB8321B5FA2300A77302 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		F254FB8521B5FA2300A77302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F26A01F321A389CF008897A1 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		F26A01F721A43DBD008897A1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		F26A01F921A43DFC008897A1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -105,10 +152,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F254FB7121B5FA2200A77302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FB9921B5FB0F00A77302 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FB7921B5FA2300A77302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FB7D21B5FA2300A77302 /* Model.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2D79B50219CE57000962D26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */,
 				F2F940CB21A62BC500387AA5 /* Realm.framework in Frameworks */,
 				F2F940CC21A62BC500387AA5 /* RealmSwift.framework in Frameworks */,
 				F2F940CD21A62BC500387AA5 /* RxCocoa.framework in Frameworks */,
@@ -129,28 +193,61 @@
 		F254FB5821B3B56800A77302 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
-				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
 				F254FB6721B401A400A77302 /* RealmExtension.swift */,
 				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
+				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
+				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		F254FB7521B5FA2300A77302 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F254FB7721B5FA2300A77302 /* Info.plist */,
+				F254FB7621B5FA2300A77302 /* Model.h */,
+				F254FBAA21B603C800A77302 /* source */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F254FB8221B5FA2300A77302 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				F254FB8521B5FA2300A77302 /* Info.plist */,
+				F254FB8321B5FA2300A77302 /* ModelTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		F254FBAA21B603C800A77302 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F2D79B77219CEC8200962D26 /* Card.swift */,
+				F26A01F321A389CF008897A1 /* Dealer.swift */,
+				F2361974219F85F100C91A8C /* Hand.swift */,
+				F2361976219FFCF700C91A8C /* PokerHand.swift */,
+				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
+				F236197821A1286500C91A8C /* Table.swift */,
+				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
-				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
 				F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */,
 				F254FB4621AB61F700A77302 /* BetPickerViewController.swift */,
-				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
-				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
-				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
-				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
-				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
 				F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */,
 				F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */,
+				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
+				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
+				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
+				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
+				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
+				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
+				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -158,10 +255,10 @@
 		F26A01F621A43DA7008897A1 /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				F26A01F721A43DBD008897A1 /* CardView.xib */,
 				F26A01F921A43DFC008897A1 /* CardView.swift */,
-				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
+				F26A01F721A43DBD008897A1 /* CardView.xib */,
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
+				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -169,16 +266,20 @@
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
+				F2F940BE21A61E9700387AA5 /* Frameworks */,
+				F254FB7521B5FA2300A77302 /* Model */,
+				F254FB8221B5FA2300A77302 /* ModelTests */,
 				F2D79B55219CE57000962D26 /* PokerByTDD */,
 				F2D79B6A219CE57200962D26 /* PokerByTDDTests */,
 				F2D79B54219CE57000962D26 /* Products */,
-				F2F940BE21A61E9700387AA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		F2D79B54219CE57000962D26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				F254FB7421B5FA2200A77302 /* Model.framework */,
+				F254FB7C21B5FA2300A77302 /* ModelTests.xctest */,
 				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
 				F2D79B67219CE57200962D26 /* PokerByTDDTests.xctest */,
 			);
@@ -188,15 +289,14 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
-				F254FB5821B3B56800A77302 /* Utility */,
-				F2F940C821A6206000387AA5 /* Presenters */,
-				F26A01F621A43DA7008897A1 /* Design */,
-				F26A01F521A43D6D008897A1 /* ViewControllers */,
-				F2D79B76219CEC7300962D26 /* Model */,
 				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
 				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
-				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
+				F26A01F621A43DA7008897A1 /* Design */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
+				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
+				F2F940C821A6206000387AA5 /* Presenters */,
+				F254FB5821B3B56800A77302 /* Utility */,
+				F26A01F521A43D6D008897A1 /* ViewControllers */,
 			);
 			path = PokerByTDD;
 			sourceTree = "<group>";
@@ -204,24 +304,10 @@
 		F2D79B6A219CE57200962D26 /* PokerByTDDTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */,
 				F2D79B6D219CE57200962D26 /* Info.plist */,
+				F2D79B6B219CE57200962D26 /* PokerByTDDTests.swift */,
 			);
 			path = PokerByTDDTests;
-			sourceTree = "<group>";
-		};
-		F2D79B76219CEC7300962D26 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F26A01F321A389CF008897A1 /* Dealer.swift */,
-				F2D79B77219CEC8200962D26 /* Card.swift */,
-				F236197821A1286500C91A8C /* Table.swift */,
-				F2361974219F85F100C91A8C /* Hand.swift */,
-				F2361976219FFCF700C91A8C /* PokerHand.swift */,
-				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
-				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F2F940BE21A61E9700387AA5 /* Frameworks */ = {
@@ -238,18 +324,66 @@
 		F2F940C821A6206000387AA5 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
 				F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */,
-				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
-				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
 				F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */,
+				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
+				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
+				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F254FB6F21B5FA2200A77302 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FB8621B5FA2300A77302 /* Model.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		F254FB7321B5FA2200A77302 /* Model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F254FB8B21B5FA2400A77302 /* Build configuration list for PBXNativeTarget "Model" */;
+			buildPhases = (
+				F254FB6F21B5FA2200A77302 /* Headers */,
+				F254FB7021B5FA2200A77302 /* Sources */,
+				F254FB7121B5FA2200A77302 /* Frameworks */,
+				F254FB7221B5FA2200A77302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Model;
+			productName = Model;
+			productReference = F254FB7421B5FA2200A77302 /* Model.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F254FB7B21B5FA2300A77302 /* ModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F254FB8F21B5FA2400A77302 /* Build configuration list for PBXNativeTarget "ModelTests" */;
+			buildPhases = (
+				F254FB7821B5FA2300A77302 /* Sources */,
+				F254FB7921B5FA2300A77302 /* Frameworks */,
+				F254FB7A21B5FA2300A77302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F254FB7F21B5FA2300A77302 /* PBXTargetDependency */,
+				F254FB8121B5FA2300A77302 /* PBXTargetDependency */,
+			);
+			name = ModelTests;
+			productName = ModelTests;
+			productReference = F254FB7C21B5FA2300A77302 /* ModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F2D79B52219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2D79B70219CE57200962D26 /* Build configuration list for PBXNativeTarget "PokerByTDD" */;
@@ -258,10 +392,12 @@
 				F2D79B50219CE57000962D26 /* Frameworks */,
 				F2D79B51219CE57000962D26 /* Resources */,
 				F2F940C721A61EC400387AA5 /* ShellScript */,
+				F254FB8E21B5FA2400A77302 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F254FB8821B5FA2300A77302 /* PBXTargetDependency */,
 			);
 			name = PokerByTDD;
 			productName = PokerByTDD;
@@ -296,6 +432,13 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = sena.kanda;
 				TargetAttributes = {
+					F254FB7321B5FA2200A77302 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F254FB7B21B5FA2300A77302 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F2D79B52219CE57000962D26;
+					};
 					F2D79B52219CE57000962D26 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -318,6 +461,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				F254FB7321B5FA2200A77302 /* Model */,
+				F254FB7B21B5FA2300A77302 /* ModelTests */,
 				F2D79B52219CE57000962D26 /* PokerByTDD */,
 				F2D79B66219CE57200962D26 /* PokerByTDDTests */,
 			);
@@ -325,19 +470,33 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F254FB7221B5FA2200A77302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FB7A21B5FA2300A77302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2D79B51219CE57000962D26 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
-				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
-				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
-				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
-				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
-				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
+				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
+				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
+				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F26A01F821A43DBD008897A1 /* CardView.xib in Resources */,
+				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
+				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
+				F254FB5521B3B46400A77302 /* SettingItemCell.xib in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,34 +535,49 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F254FB7021B5FA2200A77302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FBA621B6025200A77302 /* Card.swift in Sources */,
+				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
+				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
+				F254FBA221B6025200A77302 /* PokerHand.swift in Sources */,
+				F254FBA421B6025200A77302 /* PokerHandDecisionHelper.swift in Sources */,
+				F254FBA521B6025200A77302 /* Table.swift in Sources */,
+				F254FBA821B6025200A77302 /* Wallet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F254FB7821B5FA2300A77302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F254FB8421B5FA2300A77302 /* ModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F2D79B4F219CE57000962D26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F254FB4B21B0B39C00A77302 /* Wallet.swift in Sources */,
+				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
 				F254FB4921AE09C200A77302 /* BetPickerPresenter.swift in Sources */,
-				F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */,
-				F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */,
-				F236197921A1286500C91A8C /* Table.swift in Sources */,
-				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
-				F2361977219FFCF700C91A8C /* PokerHand.swift in Sources */,
-				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
-				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
-				F254FB6E21B5F70400A77302 /* CardDesignChoicePresenter.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
-				F236197B21A1578300C91A8C /* PokerHandDecisionHelper.swift in Sources */,
-				F2361975219F85F200C91A8C /* Hand.swift in Sources */,
-				F26A01F421A389CF008897A1 /* Dealer.swift in Sources */,
-				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
+				F254FB6E21B5F70400A77302 /* CardDesignChoicePresenter.swift in Sources */,
+				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
+				F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */,
+				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
+				F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F2F940CA21A6207A00387AA5 /* PokerViewPresenter.swift in Sources */,
 				F254FB6821B401A400A77302 /* RealmExtension.swift in Sources */,
-				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
 				F254FB5721B3B4E300A77302 /* SettingItemCell.swift in Sources */,
-				F254FB6221B3E3E800A77302 /* CardDesignPresenter.swift in Sources */,
-				F2D79B78219CEC8200962D26 /* Card.swift in Sources */,
-				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
-				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
+				F254FB5321B3B2D800A77302 /* SettingPresenter.swift in Sources */,
+				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
+				F254FB6C21B5F0D400A77302 /* UIImageExtension.swift in Sources */,
+				F254FB5A21B3B58900A77302 /* UITableViewExtension.swift in Sources */,
+				F254FB5E21B3BC7900A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,13 +585,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2D79B6C219CE57200962D26 /* PokerByTDDTests.swift in Sources */,
+				F254FBA921B6026B00A77302 /* PokerByTDDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F254FB7F21B5FA2300A77302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F254FB7321B5FA2200A77302 /* Model */;
+			targetProxy = F254FB7E21B5FA2300A77302 /* PBXContainerItemProxy */;
+		};
+		F254FB8121B5FA2300A77302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2D79B52219CE57000962D26 /* PokerByTDD */;
+			targetProxy = F254FB8021B5FA2300A77302 /* PBXContainerItemProxy */;
+		};
+		F254FB8821B5FA2300A77302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F254FB7321B5FA2200A77302 /* Model */;
+			targetProxy = F254FB8721B5FA2300A77302 /* PBXContainerItemProxy */;
+		};
 		F2D79B69219CE57200962D26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F2D79B52219CE57000962D26 /* PokerByTDD */;
@@ -432,6 +621,7 @@
 				F2D79B5B219CE57000962D26 /* Base */,
 			);
 			name = Poker.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */ = {
@@ -440,11 +630,118 @@
 				F2D79B60219CE57200962D26 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F254FB8C21B5FA2400A77302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Model/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.Model;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F254FB8D21B5FA2400A77302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Model/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.Model;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F254FB9021B5FA2400A77302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = ModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.ModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerByTDD.app/PokerByTDD";
+			};
+			name = Debug;
+		};
+		F254FB9121B5FA2400A77302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3GN4JB29B;
+				INFOPLIST_FILE = ModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakanda.ModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokerByTDD.app/PokerByTDD";
+			};
+			name = Release;
+		};
 		F2D79B6E219CE57200962D26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -564,6 +861,7 @@
 		F2D79B71219CE57200962D26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -589,6 +887,7 @@
 		F2D79B72219CE57200962D26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -656,6 +955,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F254FB8B21B5FA2400A77302 /* Build configuration list for PBXNativeTarget "Model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F254FB8C21B5FA2400A77302 /* Debug */,
+				F254FB8D21B5FA2400A77302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F254FB8F21B5FA2400A77302 /* Build configuration list for PBXNativeTarget "ModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F254FB9021B5FA2400A77302 /* Debug */,
+				F254FB9121B5FA2400A77302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F2D79B4E219CE57000962D26 /* Build configuration list for PBXProject "PokerByTDD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

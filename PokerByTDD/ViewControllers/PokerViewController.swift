@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Model
 
 /// ポーカー画面
 final class PokerViewController: UIViewController {
