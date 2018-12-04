@@ -52,6 +52,11 @@
 		F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */; };
 		F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */; };
 		F254FC7C21B739F000A77302 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5221B3B2D800A77302 /* SettingPresenter.swift */; };
+		F254FC7D21B73A7D00A77302 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940BF21A61E9700387AA5 /* RealmSwift.framework */; };
+		F254FC7E21B73A7D00A77302 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C021A61E9800387AA5 /* RxCocoa.framework */; };
+		F254FC7F21B73A7D00A77302 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940C121A61E9800387AA5 /* RxSwift.framework */; };
+		F254FC8021B73A9000A77302 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
+		F254FC8121B73A9B00A77302 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
 		F26A01F821A43DBD008897A1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F26A01FA21A43DFC008897A1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A01F921A43DFC008897A1 /* CardView.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -255,6 +260,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FC8121B73A9B00A77302 /* Model.framework in Frameworks */,
+				F254FC8021B73A9000A77302 /* Utility.framework in Frameworks */,
+				F254FC7D21B73A7D00A77302 /* RealmSwift.framework in Frameworks */,
+				F254FC7E21B73A7D00A77302 /* RxCocoa.framework in Frameworks */,
+				F254FC7F21B73A7D00A77302 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,6 +1211,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Presenter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1229,6 +1243,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Presenter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
