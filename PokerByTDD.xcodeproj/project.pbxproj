@@ -204,9 +204,9 @@
 		F254FB7521B5FA2300A77302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F254FBAA21B603C800A77302 /* source */,
 				F254FB7721B5FA2300A77302 /* Info.plist */,
 				F254FB7621B5FA2300A77302 /* Model.h */,
+				F254FBAA21B603C800A77302 /* source */,
 			);
 			path = Model;
 			sourceTree = "<group>";
