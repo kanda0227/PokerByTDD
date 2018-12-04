@@ -64,6 +64,9 @@
 		F254FCA621B73DA200A77302 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A01F721A43DBD008897A1 /* CardView.xib */; };
 		F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB5621B3B4E300A77302 /* SettingItemCell.swift */; };
 		F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F254FB5421B3B46400A77302 /* SettingItemCell.xib */; };
+		F254FCA921B73DFC00A77302 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
+		F254FCAA21B73DFC00A77302 /* Presenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC5B21B739C600A77302 /* Presenter.framework */; };
+		F254FCAB21B73E1900A77302 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F940BF21A61E9700387AA5 /* RealmSwift.framework */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
 		F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B58219CE57000962D26 /* PokerViewController.swift */; };
 		F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D79B5A219CE57000962D26 /* Poker.storyboard */; };
@@ -313,6 +316,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FCAB21B73E1900A77302 /* RealmSwift.framework in Frameworks */,
+				F254FCA921B73DFC00A77302 /* Model.framework in Frameworks */,
+				F254FCAA21B73DFC00A77302 /* Presenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1487,6 +1493,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Design/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1515,6 +1525,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Design/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
