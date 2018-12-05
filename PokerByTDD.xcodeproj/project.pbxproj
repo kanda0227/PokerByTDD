@@ -453,9 +453,9 @@
 		F254FC8921B73D5800A77302 /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				F254FCAE21B8945C00A77302 /* source */,
 				F254FC8A21B73D5800A77302 /* Design.h */,
 				F254FC8B21B73D5800A77302 /* Info.plist */,
+				F254FCAE21B8945C00A77302 /* source */,
 			);
 			path = Design;
 			sourceTree = "<group>";
