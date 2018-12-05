@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Model
 import Presenter
+import Design
 
 /// ポーカー画面
 final class PokerViewController: UIViewController {

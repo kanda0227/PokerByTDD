@@ -9,6 +9,7 @@
 import UIKit
 import Utility
 import Presenter
+import Design
 
 /// 設定画面のVC
 final class SettingViewController: UIViewController {

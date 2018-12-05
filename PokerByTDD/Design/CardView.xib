@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="PokerByTDD" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="Design">
             <connections>
                 <outlet property="backView" destination="8tI-Ew-A0M" id="Avl-Ui-DrE"/>
                 <outlet property="cardImageView" destination="Hea-Gv-OgQ" id="ddk-r1-MkJ"/>

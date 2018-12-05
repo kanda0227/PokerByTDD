@@ -8,11 +8,11 @@
 
 import UIKit
 
-final class SettingItemCell: UITableViewCell {
+public final class SettingItemCell: UITableViewCell {
     
     @IBOutlet private weak var itemLabel: UILabel!
     
-    func set(itemName: String) {
+    public func set(itemName: String) {
         itemLabel.text = itemName
     }
 }

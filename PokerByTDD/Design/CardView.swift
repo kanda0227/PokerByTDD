@@ -11,7 +11,7 @@ import RealmSwift
 import Model
 import Presenter
 
-@IBDesignable final class CardView: UIView {
+@IBDesignable public final class CardView: UIView {
     
     let realm = try! Realm()
     
@@ -31,19 +31,19 @@ import Presenter
     @IBOutlet private weak var backView: UIImageView!
     @IBOutlet private weak var cardImageView: UIImageView!
     
-    var card: Card? {
+    public var card: Card? {
         didSet {
             setCard(card)
         }
     }
     
-    @IBInspectable var isBack: Bool = true {
+    @IBInspectable public var isBack: Bool = true {
         didSet {
             backView.isHidden = !isBack
         }
     }
     
-    var isSelected: Bool = false {
+    public var isSelected: Bool = false {
         didSet {
             switchCardBorderColor()
         }
@@ -76,7 +76,9 @@ import Presenter
     }
     
     private func instantiate() -> UIView {
-        return Bundle.main.loadNibNamed("CardView", owner: self)!.first! as! UIView
+    return UINib(nibName: "CardView", bundle: Bundle(for: CardView.self))
+        .instantiate(withOwner: self, options: nil)
+        .first as! UIView
     }
     
     // イニシャライザの共通処理
@@ -89,7 +91,7 @@ import Presenter
         backView.clipsToBounds = true
     }
     
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         return contentSize
     }
     
@@ -105,7 +107,7 @@ import Presenter
         self.cardImageView.layer.cornerRadius = cornerRadius
     }
     
-    func reload() {
+    public func reload() {
         setupCardBackView()
         setupCardImageView()
     }
