@@ -76,7 +76,9 @@ import Presenter
     }
     
     private func instantiate() -> UIView {
-        return Bundle.main.loadNibNamed("CardView", owner: self)!.first! as! UIView
+    return UINib(nibName: "CardView", bundle: Bundle(for: CardView.self))
+        .instantiate(withOwner: self, options: nil)
+        .first as! UIView
     }
     
     // イニシャライザの共通処理
