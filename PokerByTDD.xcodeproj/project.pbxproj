@@ -453,6 +453,7 @@
 		F254FC8921B73D5800A77302 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				F254FCAE21B8945C00A77302 /* source */,
 				F254FC8A21B73D5800A77302 /* Design.h */,
 				F254FC8B21B73D5800A77302 /* Info.plist */,
 			);
@@ -466,6 +467,17 @@
 				F254FC9921B73D5800A77302 /* Info.plist */,
 			);
 			path = DesignTests;
+			sourceTree = "<group>";
+		};
+		F254FCAE21B8945C00A77302 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F26A01F921A43DFC008897A1 /* CardView.swift */,
+				F26A01F721A43DBD008897A1 /* CardView.xib */,
+				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
+				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
@@ -484,17 +496,6 @@
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		F26A01F621A43DA7008897A1 /* Design */ = {
-			isa = PBXGroup;
-			children = (
-				F26A01F921A43DFC008897A1 /* CardView.swift */,
-				F26A01F721A43DBD008897A1 /* CardView.xib */,
-				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
-				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
-			);
-			path = Design;
 			sourceTree = "<group>";
 		};
 		F2D79B4A219CE57000962D26 = {
@@ -537,7 +538,6 @@
 			children = (
 				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
 				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
-				F26A01F621A43DA7008897A1 /* Design */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
 				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
 				F26A01F521A43D6D008897A1 /* ViewControllers */,
