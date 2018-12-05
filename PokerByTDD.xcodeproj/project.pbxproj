@@ -180,9 +180,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F254FC9E21B73D5800A77302 /* Design.framework in Embed Frameworks */,
 				F254FB8A21B5FA2300A77302 /* Model.framework in Embed Frameworks */,
 				F254FC7121B739C700A77302 /* Presenter.framework in Embed Frameworks */,
-				F254FC9E21B73D5800A77302 /* Design.framework in Embed Frameworks */,
 				F254FC4921B7370300A77302 /* Utility.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -317,9 +317,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F254FCAB21B73E1900A77302 /* RealmSwift.framework in Frameworks */,
 				F254FCA921B73DFC00A77302 /* Model.framework in Frameworks */,
 				F254FCAA21B73DFC00A77302 /* Presenter.framework in Frameworks */,
+				F254FCAB21B73E1900A77302 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,13 +335,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F254FC9D21B73D5800A77302 /* Design.framework in Frameworks */,
 				F254FB8921B5FA2300A77302 /* Model.framework in Frameworks */,
 				F254FC7021B739C700A77302 /* Presenter.framework in Frameworks */,
 				F2F940CB21A62BC500387AA5 /* Realm.framework in Frameworks */,
 				F2F940CC21A62BC500387AA5 /* RealmSwift.framework in Frameworks */,
 				F2F940CD21A62BC500387AA5 /* RxCocoa.framework in Frameworks */,
 				F2F940CE21A62BC500387AA5 /* RxSwift.framework in Frameworks */,
-				F254FC9D21B73D5800A77302 /* Design.framework in Frameworks */,
 				F254FC4821B7370300A77302 /* Utility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +518,8 @@
 		F2D79B54219CE57000962D26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				F254FC8821B73D5800A77302 /* Design.framework */,
+				F254FC9021B73D5800A77302 /* DesignTests.xctest */,
 				F254FB7421B5FA2200A77302 /* Model.framework */,
 				F254FB7C21B5FA2300A77302 /* ModelTests.xctest */,
 				F2D79B53219CE57000962D26 /* PokerByTDD.app */,
@@ -526,8 +528,6 @@
 				F254FC6321B739C700A77302 /* PresenterTests.xctest */,
 				F254FC3321B7370200A77302 /* Utility.framework */,
 				F254FC3B21B7370300A77302 /* UtilityTests.xctest */,
-				F254FC8821B73D5800A77302 /* Design.framework */,
-				F254FC9021B73D5800A77302 /* DesignTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -764,10 +764,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				F254FC9C21B73D5800A77302 /* PBXTargetDependency */,
 				F254FB8821B5FA2300A77302 /* PBXTargetDependency */,
 				F254FC6F21B739C700A77302 /* PBXTargetDependency */,
 				F254FC4721B7370300A77302 /* PBXTargetDependency */,
-				F254FC9C21B73D5800A77302 /* PBXTargetDependency */,
 			);
 			name = PokerByTDD;
 			productName = PokerByTDD;
@@ -852,6 +852,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				F254FC8721B73D5800A77302 /* Design */,
+				F254FC8F21B73D5800A77302 /* DesignTests */,
 				F254FB7321B5FA2200A77302 /* Model */,
 				F254FB7B21B5FA2300A77302 /* ModelTests */,
 				F2D79B52219CE57000962D26 /* PokerByTDD */,
@@ -860,8 +862,6 @@
 				F254FC6221B739C700A77302 /* PresenterTests */,
 				F254FC3221B7370200A77302 /* Utility */,
 				F254FC3A21B7370300A77302 /* UtilityTests */,
-				F254FC8721B73D5800A77302 /* Design */,
-				F254FC8F21B73D5800A77302 /* DesignTests */,
 			);
 		};
 /* End PBXProject section */
