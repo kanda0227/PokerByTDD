@@ -19,6 +19,8 @@ import Model
     @IBOutlet private weak var backView: UIImageView!
     @IBOutlet private weak var cardImageView: UIImageView!
     
+    public private(set) var card: Card?
+    
     @IBInspectable public var isBack: Bool = true {
         didSet {
             backView.isHidden = !isBack
@@ -32,6 +34,7 @@ import Model
     }
     
     public func setCard(_ card: Card?, cardImage: UIImage?) {
+        self.card = card
         let shouldHiddenLabels = card == nil
         rankLabel?.isHidden = shouldHiddenLabels
         suitLabel?.isHidden = shouldHiddenLabels
@@ -96,8 +99,11 @@ import Model
         self.cardImageView.layer.cornerRadius = cornerRadius
     }
     
-    public func reset(back: UIImage, card: UIImage) {
-        backView.image = back
+    public func reset(back: UIImage?, card: UIImage?) {
+        if let back = back {
+            /// 裏面のビューは nil もセットしちゃうとカード丸見えになっちゃうからね
+            backView.image = back
+        }
         cardImageView.image = card
     }
 }
