@@ -28,4 +28,12 @@ public final class CardImageHelper {
         // パフォーマンスが悪い気がするが，現状では高々2つなのでこのままにしておく
         return card?.category.compactMap { realm.restoreImage(key: $0.key()) }.first
     }
+    
+    public func image(_ category: CardDesignCategory) -> UIImage? {
+        return realm.restoreImage(key: category.key())
+    }
+    
+    public func saveImage(_ image: UIImage, category: CardDesignCategory) {
+        realm.saveImage(image, key: category.key())
+    }
 }
