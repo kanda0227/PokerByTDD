@@ -7,35 +7,19 @@
 //
 
 import UIKit
-import RealmSwift
 import Model
-import Presenter
 
 @IBDesignable public final class CardView: UIView {
     
-    let realm = try! Realm()
-    
     private var contentSize: CGSize!
-    @IBOutlet private weak var rankLabel: UILabel! {
-        didSet {
-            setCard(card)
-        }
-    }
+    @IBOutlet private weak var rankLabel: UILabel!
     @IBOutlet private weak var rankBackLabel: UILabel!
-    @IBOutlet private weak var suitLabel: UILabel! {
-        didSet {
-            setCard(card)
-        }
-    }
+    @IBOutlet private weak var suitLabel: UILabel!
     @IBOutlet private weak var suitBackLabel: UILabel!
     @IBOutlet private weak var backView: UIImageView!
     @IBOutlet private weak var cardImageView: UIImageView!
     
-    public var card: Card? {
-        didSet {
-            setCard(card)
-        }
-    }
+    public private(set) var card: Card?
     
     @IBInspectable public var isBack: Bool = true {
         didSet {
@@ -49,20 +33,28 @@ import Presenter
         }
     }
     
-    private func setCard(_ card: Card?) {
+    public func setCard(_ card: Card?, cardImage: UIImage?) {
+        self.card = card
         let shouldHiddenLabels = card == nil
         rankLabel?.isHidden = shouldHiddenLabels
         suitLabel?.isHidden = shouldHiddenLabels
         guard let card = card else { return }
-        let rank = card.rank
+        setRank(card)
+        setSuit(card)
+        cardImageView.image = cardImage
+    }
+    
+    private func setRank(_ card: Card) {
+        rankLabel.text = card.rank.rawValue
+        rankLabel.textColor = card.suit.color()
+        rankBackLabel.text = card.rank.rawValue
+    }
+    
+    private func setSuit(_ card: Card) {
         let suit = card.suit
-        rankLabel.text = rank.rawValue
-        rankLabel.textColor = suit.color()
-        rankBackLabel.text = rank.rawValue
         suitLabel.text = suit.rawValue
         suitLabel.textColor = suit.color()
         suitBackLabel.text = suit.rawValue
-        setupCardImageView()
     }
     
     override init(frame: CGRect) {
@@ -107,21 +99,12 @@ import Presenter
         self.cardImageView.layer.cornerRadius = cornerRadius
     }
     
-    public func reload() {
-        setupCardBackView()
-        setupCardImageView()
-    }
-    
-    private func setupCardBackView() {
-        if let image = try! Realm().restoreImage(key: CardDesignCategory.back.key()) {
-            backView.image = image
+    public func reset(back: UIImage?, card: UIImage?) {
+        if let back = back {
+            /// 裏面のビューは nil もセットしちゃうとカード丸見えになっちゃうからね
+            backView.image = back
         }
-    }
-    
-    private func setupCardImageView() {
-        // 該当のカテゴリキーの画像を一旦全部復元させているので
-        // パフォーマンスが悪い気がするが，現状では高々2つなのでこのままにしておく
-        cardImageView.image = card?.category.compactMap { realm.restoreImage(key: $0.key()) }.first
+        cardImageView.image = card
     }
 }
 
