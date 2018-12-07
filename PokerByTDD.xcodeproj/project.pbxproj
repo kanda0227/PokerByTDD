@@ -442,9 +442,9 @@
 				F254FB4821AE09C200A77302 /* BetPickerPresenter.swift */,
 				F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */,
 				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
+				F254FCB321B9F05C00A77302 /* CardImageHelper.swift */,
 				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
 				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
-				F254FCB321B9F05C00A77302 /* CardImageHelper.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1021,8 +1021,8 @@
 				F254FC7821B739F000A77302 /* BetPickerPresenter.swift in Sources */,
 				F254FC7921B739F000A77302 /* CardDesignChoicePresenter.swift in Sources */,
 				F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */,
-				F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */,
 				F254FCB421B9F05C00A77302 /* CardImageHelper.swift in Sources */,
+				F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */,
 				F254FC7C21B739F000A77302 /* SettingPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
