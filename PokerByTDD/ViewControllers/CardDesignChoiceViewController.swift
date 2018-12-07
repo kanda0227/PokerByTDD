@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import Presenter
 
 final class CardDesignChoiceViewController: UIViewController, UINavigationControllerDelegate {
