@@ -49,7 +49,9 @@ final class PokerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        (userCardViews + opponentCardsViews).forEach { $0.reload() }
+        (userCardViews + opponentCardsViews).forEach {
+            $0.reset(back: CardImageHelper.shared.backImage(), card: CardImageHelper.shared.cardImage($0.card))
+        }
     }
     
     private var updateCards: Binder<(cards: [Card], opponentCards: [Card])> {
@@ -134,7 +136,7 @@ private extension Array where Element==CardView {
     func configure(cards: [Card]) {
         cards.enumerated().forEach { index, card in
             let cardView = filter { $0.tag == index }.first
-            cardView?.card = card
+            cardView?.setCard(card, cardImage: CardImageHelper.shared.cardImage(card))
             cardView?.isSelected = false
         }
     }
