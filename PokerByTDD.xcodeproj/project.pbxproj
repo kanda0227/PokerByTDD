@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
+		F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */; };
 		F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */; };
 		F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4621AB61F700A77302 /* BetPickerViewController.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
@@ -192,6 +193,7 @@
 
 /* Begin PBXFileReference section */
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
+		F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoGacha.storyboard; sourceTree = "<group>"; };
 		F2361974219F85F100C91A8C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		F2361976219FFCF700C91A8C /* PokerHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerHand.swift; sourceTree = "<group>"; };
 		F236197821A1286500C91A8C /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
+				F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 			files = (
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
+				F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */,
 				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
