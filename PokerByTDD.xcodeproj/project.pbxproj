@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
 		F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */; };
 		F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4621AB61F700A77302 /* BetPickerViewController.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
@@ -190,6 +191,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
 		F2361974219F85F100C91A8C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		F2361976219FFCF700C91A8C /* PokerHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerHand.swift; sourceTree = "<group>"; };
 		F236197821A1286500C91A8C /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
 				F236197821A1286500C91A8C /* Table.swift */,
 				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
+				F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 			files = (
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
+				F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F254FBA221B6025200A77302 /* PokerHand.swift in Sources */,
 				F254FBA421B6025200A77302 /* PokerHandDecisionHelper.swift in Sources */,
