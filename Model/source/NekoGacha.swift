@@ -12,7 +12,7 @@ public final class NekoGacha {
     
     private init() {}
     
-    public let shared = NekoGacha()
+    public static let shared = NekoGacha()
     
     public func get() -> Neko {
         let neko = Neko.allCases.randomElement()!
@@ -47,5 +47,20 @@ public enum Neko: String, CaseIterable {
     
     fileprivate func hasNekoKey() -> String {
         return hasKey + rawValue
+    }
+    
+    public var name: String {
+        switch self {
+        case .mike:
+            return "みけねこさん"
+        case .black:
+            return "くろねこさん"
+        case .white:
+            return "しろねこさん"
+        case .russianBlue:
+            return "ロシアンブルーさん"
+        case .socks:
+            return "くつしたさん"
+        }
     }
 }
