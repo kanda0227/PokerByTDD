@@ -57,6 +57,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65G-Ch-4vi">
                                 <rect key="frame" x="141.5" y="473" width="92" height="30"/>
                                 <state key="normal" title="所持ねこ一覧"/>
+                                <connections>
+                                    <segue destination="pEY-Eb-S2N" kind="show" id="1Gl-QW-2Y8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-uM-l0N">
                                 <rect key="frame" x="141.5" y="303" width="92" height="30"/>
@@ -90,6 +93,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bco-Vq-tbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="154" y="157"/>
+        </scene>
+        <!--NekoLibraryView-->
+        <scene sceneID="GWd-9n-M4v">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NekoLibraryView" id="pEY-Eb-S2N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQx-yc-ij5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="157"/>
         </scene>
     </scenes>
     <resources>
