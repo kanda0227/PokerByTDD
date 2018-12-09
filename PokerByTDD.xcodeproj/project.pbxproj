@@ -10,6 +10,11 @@
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
 		F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */; };
 		F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */; };
+		F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2319B6C21BCC1BF001AD8CF /* NekoLibraryView.storyboard */; };
+		F2319B6F21BCC247001AD8CF /* NekoLibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */; };
+		F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */; };
+		F2319B7321BCC37B001AD8CF /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */; };
+		F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */; };
 		F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */; };
 		F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4621AB61F700A77302 /* BetPickerViewController.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
@@ -196,6 +201,11 @@
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
 		F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoGacha.storyboard; sourceTree = "<group>"; };
 		F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGachaViewController.swift; sourceTree = "<group>"; };
+		F2319B6C21BCC1BF001AD8CF /* NekoLibraryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoLibraryView.storyboard; sourceTree = "<group>"; };
+		F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NekoLibraryCell.xib; sourceTree = "<group>"; };
+		F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoLibraryCollectionViewController.swift; sourceTree = "<group>"; };
+		F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoLibraryCell.swift; sourceTree = "<group>"; };
 		F2361974219F85F100C91A8C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		F2361976219FFCF700C91A8C /* PokerHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerHand.swift; sourceTree = "<group>"; };
 		F236197821A1286500C91A8C /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -417,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				F254FB6721B401A400A77302 /* RealmExtension.swift */,
+				F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */,
 				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
 				F254FB5921B3B58900A77302 /* UITableViewExtension.swift */,
 				F254FB5D21B3BC7900A77302 /* UIViewControllerExtension.swift */,
@@ -480,6 +491,8 @@
 			children = (
 				F26A01F921A43DFC008897A1 /* CardView.swift */,
 				F26A01F721A43DBD008897A1 /* CardView.xib */,
+				F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */,
+				F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */,
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
 			);
@@ -497,6 +510,8 @@
 				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
 				F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */,
 				F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */,
+				F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */,
+				F2319B6C21BCC1BF001AD8CF /* NekoLibraryView.storyboard */,
 				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
 				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
@@ -922,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FCA621B73DA200A77302 /* CardView.xib in Resources */,
+				F2319B6F21BCC247001AD8CF /* NekoLibraryCell.xib in Resources */,
 				F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,6 +959,7 @@
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */,
+				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
@@ -1011,6 +1028,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */,
+				F2319B7321BCC37B001AD8CF /* UICollectionViewExtension.swift in Sources */,
 				F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */,
 				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
 				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
@@ -1052,6 +1070,7 @@
 			files = (
 				F254FCAC21B7FC6800A77302 /* Assets.xcassets in Sources */,
 				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
+				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1073,6 +1092,7 @@
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
+				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
 			);

@@ -51,12 +51,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ねこ表示区域" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-z6-Aan">
                                 <rect key="frame" x="135.5" y="222" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65G-Ch-4vi">
                                 <rect key="frame" x="141.5" y="473" width="92" height="30"/>
                                 <state key="normal" title="所持ねこ一覧"/>
+                                <connections>
+                                    <segue destination="pEY-Eb-S2N" kind="show" id="1Gl-QW-2Y8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-uM-l0N">
                                 <rect key="frame" x="141.5" y="303" width="92" height="30"/>
@@ -66,12 +69,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="beige"/>
                         <constraints>
                             <constraint firstItem="IRc-uM-l0N" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="5Tg-PY-1ue"/>
                             <constraint firstItem="65G-Ch-4vi" firstAttribute="top" secondItem="IRc-uM-l0N" secondAttribute="bottom" constant="140" id="E7q-DJ-vKi"/>
                             <constraint firstItem="HkQ-Ka-cxb" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="10" id="IW3-mu-3bY"/>
-                            <constraint firstItem="IRc-uM-l0N" firstAttribute="top" secondItem="6VX-z6-Aan" secondAttribute="bottom" constant="60" id="Tdi-69-Kdv"/>
+                            <constraint firstItem="IRc-uM-l0N" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="239" id="dZW-OC-2ba"/>
                             <constraint firstItem="65G-Ch-4vi" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="iDp-AJ-v6e"/>
                             <constraint firstItem="6VX-z6-Aan" firstAttribute="top" secondItem="HkQ-Ka-cxb" secondAttribute="bottom" constant="20" id="m6h-ft-x7N"/>
                             <constraint firstItem="6VX-z6-Aan" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="xIn-GT-GvI"/>
@@ -91,12 +94,26 @@
             </objects>
             <point key="canvasLocation" x="154" y="157"/>
         </scene>
+        <!--NekoLibraryView-->
+        <scene sceneID="GWd-9n-M4v">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NekoLibraryView" id="pEY-Eb-S2N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQx-yc-ij5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="157"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_paw" width="50" height="50"/>
         <image name="mike_neko_sit1" width="309" height="461"/>
         <namedColor name="beige">
             <color red="1" green="1" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="beige">
+            <color red="1" green="1" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black">
+            <color red="0.25882352941176473" green="0.28235294117647058" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="pink">
             <color red="0.9882352941176471" green="0.69803921568627447" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
