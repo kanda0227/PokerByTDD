@@ -63,4 +63,27 @@ public enum Neko: String, CaseIterable {
             return "くつしたさん"
         }
     }
+    
+    public var image: UIImage {
+        switch self {
+        case .mike:
+            return #imageLiteral(resourceName: "mike_neko_sit1")
+        case .black:
+            return #imageLiteral(resourceName: "kuro_neko_sit1")
+        case .white:
+            return #imageLiteral(resourceName: "siro_neko_sit1")
+        case .russianBlue:
+            return #imageLiteral(resourceName: "rosian_neko_sit1")
+        case .socks:
+            return #imageLiteral(resourceName: "kutsusita_neko_sit1")
+        }
+    }
+    
+    fileprivate func save() {
+        UserDefaults.standard.set(true, forKey: hasNekoKey())
+    }
+    
+    fileprivate func restore() -> Bool {
+        return UserDefaults.standard.object(forKey: hasNekoKey()) as? Bool ?? false
+    }
 }
