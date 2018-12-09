@@ -11,13 +11,21 @@ import Foundation
 public final class NekoGacha {
     
     private init() {}
+    private let wallet = Wallet.shared
+    private let gachaPrice = 200
     
     public static let shared = NekoGacha()
     
-    public func get() -> Neko {
+    public func get() -> Neko? {
+        guard canGacha else { return nil }
+        wallet.pay(gachaPrice)
         let neko = Neko.allCases.randomElement()!
         neko.save()
         return neko
+    }
+    
+    private var canGacha: Bool {
+        return wallet.value() >= gachaPrice
     }
 }
 
