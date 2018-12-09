@@ -16,16 +16,8 @@ public final class NekoGacha {
     
     public func get() -> Neko {
         let neko = Neko.allCases.randomElement()!
-        save(neko: neko)
+        neko.save()
         return neko
-    }
-    
-    private func save(neko: Neko) {
-        UserDefaults.standard.set(true, forKey: neko.hasNekoKey())
-    }
-    
-    private func restore(neko: Neko) -> Bool {
-        return UserDefaults.standard.object(forKey: neko.hasNekoKey()) as? Bool ?? false
     }
 }
 
@@ -47,6 +39,10 @@ public enum Neko: String, CaseIterable {
     
     fileprivate func hasNekoKey() -> String {
         return hasKey + rawValue
+    }
+    
+    public var hasNeko: Bool {
+        return restore()
     }
     
     public var name: String {
