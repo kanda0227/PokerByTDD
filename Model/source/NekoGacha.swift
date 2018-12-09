@@ -7,12 +7,22 @@
 //
 
 import Foundation
+import RxSwift
 
 public final class NekoGacha {
     
-    private init() {}
     private let wallet = Wallet.shared
     private let gachaPrice = 200
+    private lazy var canGachaSubject = BehaviorSubject<Bool>(value: canGacha)
+    private let bag = DisposeBag()
+    
+    private init() {
+        wallet.observable()
+            .subscribe(onNext: { [weak self] _ in
+                guard let _self = self else { return }
+                _self.canGachaSubject.onNext(_self.canGacha) })
+            .disposed(by: bag)
+    }
     
     public static let shared = NekoGacha()
     
@@ -26,6 +36,10 @@ public final class NekoGacha {
     
     private var canGacha: Bool {
         return wallet.value() >= gachaPrice
+    }
+    
+    public func canGachaObservable() -> Observable<Bool> {
+        return canGachaSubject.asObservable()
     }
 }
 
