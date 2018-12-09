@@ -9,21 +9,32 @@
 import Foundation
 import UIKit
 import Model
+import RxSwift
 
 final class NekoGachaViewController: UIViewController {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: UILabel!
+    @IBOutlet private weak var walletLabel: UILabel! {
+        didSet {
+            walletLabel.text = "\(Wallet.shared.value())"
+        }
+    }
+    @IBOutlet private weak var gachaButton: UIButton!
+    
+    private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nekoImageView.image = nil
         nekoLabel.text = nil
+        Wallet.shared.observable().map { "\($0)" }.subscribe(walletLabel.rx.text).disposed(by: bag)
+        NekoGacha.shared.canGachaObservable().subscribe(gachaButton.rx.isEnabled).disposed(by: bag)
     }
     
     @IBAction private func tapGachaButton(sender: Any) {
         let neko = NekoGacha.shared.get()
-        nekoImageView.image = neko.image
-        nekoLabel.text = neko.name
+        nekoImageView.image = neko?.image
+        nekoLabel.text = neko?.name
     }
 }
