@@ -11,16 +11,12 @@ import Model
 
 public final class NekoLibraryCell: UICollectionViewCell {
     
-    private let unknownNekoImage = #imageLiteral(resourceName: "neko")
-    private let unknownNekoName = "？？？"
-    
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: UILabel!
     
     public func set(neko: Neko) {
-        let hasNeko = neko.hasNeko
-        nekoImageView.image = hasNeko ? neko.image : unknownNekoImage
-        nekoLabel.text = hasNeko ? neko.name : unknownNekoName
+        nekoImageView.image = neko.image
+        nekoLabel.text = neko.name
         setBorderColoer()
     }
     

@@ -10,44 +10,47 @@ import Foundation
 import UIKit
 import Model
 import RxSwift
+import RxCocoa
+import Presenter
 
 final class NekoGachaViewController: UIViewController {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: UILabel!
-    @IBOutlet private weak var walletLabel: UILabel! {
-        didSet {
-            walletLabel.text = "\(Wallet.shared.value())"
-        }
-    }
+    @IBOutlet private weak var walletLabel: UILabel!
     @IBOutlet private weak var gachaButton: UIButton!
     @IBOutlet private weak var newImage: UIImageView!
     
-    private let bag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nekoImageView.image = nil
-        nekoLabel.text = nil
-        Wallet.shared.observable().map { "\($0)" }.subscribe(walletLabel.rx.text).disposed(by: bag)
-        NekoGacha.shared.canGachaObservable().subscribe(gachaButton.rx.isEnabled).disposed(by: bag)
-    }
+    private lazy var presenter = NekoGachaPresenter(walletText: walletText,
+                                                    switchGachaButtonEnabled: switchGachaButtonEnabled,
+                                                    nekoBinder: nekoBinder)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        resetViews()
+        presenter.postViewWillAppear()
+    }
+    
+    private var walletText: Binder<String> {
+        return Binder(self) { _self, text in
+            _self.walletLabel?.text = text
+        }
+    }
+    
+    private var switchGachaButtonEnabled: Binder<Bool> {
+        return Binder(self) { _self, isEnabled in
+            _self.gachaButton?.isEnabled = isEnabled
+        }
+    }
+    
+    private var nekoBinder: Binder<(neko: Neko, new: Bool)?> {
+        return Binder(self) { _self, elems in
+            _self.nekoImageView?.image = elems?.neko.image
+            _self.nekoLabel?.text = elems?.neko.name
+            _self.newImage?.isHidden = !(elems?.new ?? false)
+        }
     }
     
     @IBAction private func tapGachaButton(sender: Any) {
-        let neko = NekoGacha.shared.get()
-        nekoImageView.image = neko?.neko.image
-        nekoLabel.text = neko?.neko.name
-        newImage.isHidden = !(neko?.new ?? false)
-    }
-    
-    private func resetViews() {
-        nekoLabel.text = nil
-        nekoImageView.image = nil
-        newImage.isHidden = true
+        presenter.gacha()
     }
 }

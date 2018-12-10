@@ -10,8 +10,11 @@ import UIKit
 import Model
 import Utility
 import Design
+import Presenter
 
 final class NekoLibraryCollectionViewController: UICollectionViewController {
+    
+    private lazy var presenter = NekoLibraryPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +22,16 @@ final class NekoLibraryCollectionViewController: UICollectionViewController {
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return presenter.numberOfSections()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Neko.allCases.count
+        return presenter.numberOfItemsInSection(section)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: NekoLibraryCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.set(neko: Neko.allCases[indexPath.item])
+        cell.set(neko: presenter.neko(at: indexPath))
         return cell
     }
 }
