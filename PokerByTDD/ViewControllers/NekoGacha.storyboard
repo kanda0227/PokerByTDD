@@ -80,6 +80,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_new" translatesAutoresizingMaskIntoConstraints="NO" id="6Og-eh-Rgx">
+                                <rect key="frame" x="203.5" y="74" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="73Z-bC-9zG"/>
+                                    <constraint firstAttribute="width" constant="48" id="fOC-LW-LHF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="beige"/>
                         <constraints>
@@ -87,11 +94,13 @@
                             <constraint firstItem="65G-Ch-4vi" firstAttribute="top" secondItem="IRc-uM-l0N" secondAttribute="bottom" constant="140" id="E7q-DJ-vKi"/>
                             <constraint firstItem="FbV-Xg-nJj" firstAttribute="trailing" secondItem="fa6-bl-u5c" secondAttribute="trailing" constant="16" id="Gd0-dF-c9x"/>
                             <constraint firstItem="HkQ-Ka-cxb" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="10" id="IW3-mu-3bY"/>
+                            <constraint firstItem="6Og-eh-Rgx" firstAttribute="trailing" secondItem="HkQ-Ka-cxb" secondAttribute="trailing" id="W8w-yE-RBf"/>
                             <constraint firstItem="fa6-bl-u5c" firstAttribute="leading" secondItem="4HO-p4-yw5" secondAttribute="trailing" constant="8" id="Zzo-EB-t23"/>
                             <constraint firstItem="IRc-uM-l0N" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="239" id="dZW-OC-2ba"/>
                             <constraint firstItem="65G-Ch-4vi" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="iDp-AJ-v6e"/>
                             <constraint firstItem="4HO-p4-yw5" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="10" id="j9p-LT-jWo"/>
                             <constraint firstItem="6VX-z6-Aan" firstAttribute="top" secondItem="HkQ-Ka-cxb" secondAttribute="bottom" constant="20" id="m6h-ft-x7N"/>
+                            <constraint firstItem="6Og-eh-Rgx" firstAttribute="top" secondItem="HkQ-Ka-cxb" secondAttribute="top" id="u31-BI-Zyy"/>
                             <constraint firstItem="fa6-bl-u5c" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="10" id="wD8-y6-FjE"/>
                             <constraint firstItem="6VX-z6-Aan" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="xIn-GT-GvI"/>
                             <constraint firstItem="HkQ-Ka-cxb" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="yy2-xt-9iV"/>
@@ -105,12 +114,13 @@
                         <outlet property="gachaButton" destination="IRc-uM-l0N" id="yvO-dT-vQW"/>
                         <outlet property="nekoImageView" destination="HkQ-Ka-cxb" id="7UB-6e-Uh1"/>
                         <outlet property="nekoLabel" destination="6VX-z6-Aan" id="FTg-aC-Snn"/>
+                        <outlet property="newImage" destination="6Og-eh-Rgx" id="m2m-wV-IzD"/>
                         <outlet property="walletLabel" destination="fa6-bl-u5c" id="unQ-j7-Eef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bco-Vq-tbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="157"/>
+            <point key="canvasLocation" x="152.80000000000001" y="156.97151424287858"/>
         </scene>
         <!--NekoLibraryView-->
         <scene sceneID="GWd-9n-M4v">
@@ -122,6 +132,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_new" width="64" height="64"/>
         <image name="ic_paw" width="50" height="50"/>
         <image name="mike_neko_sit1" width="309" height="461"/>
         <namedColor name="beige">

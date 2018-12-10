@@ -21,6 +21,7 @@ final class NekoGachaViewController: UIViewController {
         }
     }
     @IBOutlet private weak var gachaButton: UIButton!
+    @IBOutlet private weak var newImage: UIImageView!
     
     private let bag = DisposeBag()
     
@@ -34,7 +35,9 @@ final class NekoGachaViewController: UIViewController {
     
     @IBAction private func tapGachaButton(sender: Any) {
         let neko = NekoGacha.shared.get()
-        nekoImageView.image = neko?.image
-        nekoLabel.text = neko?.name
+        nekoImageView.image = neko?.neko.image
+        nekoLabel.text = neko?.neko.name
+        newImage.isHidden = !(neko?.new ?? false)
+    }
     }
 }
