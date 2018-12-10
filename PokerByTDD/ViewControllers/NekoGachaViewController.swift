@@ -33,11 +33,21 @@ final class NekoGachaViewController: UIViewController {
         NekoGacha.shared.canGachaObservable().subscribe(gachaButton.rx.isEnabled).disposed(by: bag)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetViews()
+    }
+    
     @IBAction private func tapGachaButton(sender: Any) {
         let neko = NekoGacha.shared.get()
         nekoImageView.image = neko?.neko.image
         nekoLabel.text = neko?.neko.name
         newImage.isHidden = !(neko?.new ?? false)
     }
+    
+    private func resetViews() {
+        nekoLabel.text = nil
+        nekoImageView.image = nil
+        newImage.isHidden = true
     }
 }
