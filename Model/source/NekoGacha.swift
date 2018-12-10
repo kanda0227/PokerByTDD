@@ -26,12 +26,13 @@ public final class NekoGacha {
     
     public static let shared = NekoGacha()
     
-    public func get() -> Neko? {
+    public func get() -> (neko: Neko, new: Bool)? {
         guard canGacha else { return nil }
         wallet.pay(gachaPrice)
         let neko = Neko.allCases.randomElement()!
+        let new = !neko.restore()
         neko.save()
-        return neko
+        return (neko, new)
     }
     
     private var canGacha: Bool {
