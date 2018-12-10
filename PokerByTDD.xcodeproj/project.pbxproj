@@ -15,6 +15,7 @@
 		F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */; };
 		F2319B7321BCC37B001AD8CF /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */; };
 		F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */; };
+		F2319B7721BF1F28001AD8CF /* NekoGachaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B7621BF1F28001AD8CF /* NekoGachaPresenter.swift */; };
 		F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */; };
 		F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F254FB4621AB61F700A77302 /* BetPickerViewController.swift */; };
 		F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F254FB4C21B39FDC00A77302 /* TopView.storyboard */; };
@@ -206,6 +207,7 @@
 		F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoLibraryCollectionViewController.swift; sourceTree = "<group>"; };
 		F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoLibraryCell.swift; sourceTree = "<group>"; };
+		F2319B7621BF1F28001AD8CF /* NekoGachaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGachaPresenter.swift; sourceTree = "<group>"; };
 		F2361974219F85F100C91A8C /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		F2361976219FFCF700C91A8C /* PokerHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerHand.swift; sourceTree = "<group>"; };
 		F236197821A1286500C91A8C /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				F254FCB321B9F05C00A77302 /* CardImageHelper.swift */,
 				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
 				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
+				F2319B7621BF1F28001AD8CF /* NekoGachaPresenter.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 			files = (
 				F254FC7821B739F000A77302 /* BetPickerPresenter.swift in Sources */,
 				F254FC7921B739F000A77302 /* CardDesignChoicePresenter.swift in Sources */,
+				F2319B7721BF1F28001AD8CF /* NekoGachaPresenter.swift in Sources */,
 				F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */,
 				F254FCB421B9F05C00A77302 /* CardImageHelper.swift in Sources */,
 				F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */,
