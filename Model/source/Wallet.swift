@@ -19,7 +19,7 @@ public final class Wallet {
     /// 1分あたりにあげるお金
     private let presentMoneyPerTime = 10
     /// 自然回復上限
-    private let recoveryMax = 1000
+    private let recoveryMax = 300
     /// 回復時間間隔
     private let interval = 60
     
