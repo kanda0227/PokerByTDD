@@ -13,7 +13,7 @@ public final class NekoLibraryPresenter {
     
     public init() {}
     
-    private let nekos = Neko.allCases
+    private let nekos = Neko.libraryNekos
     
     public func numberOfSections() -> Int {
         return 1

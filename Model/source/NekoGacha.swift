@@ -29,7 +29,7 @@ public final class NekoGacha {
     public func get() -> (neko: Neko, new: Bool)? {
         guard canGacha else { return nil }
         wallet.pay(gachaPrice)
-        let neko = Neko.allCases.randomElement()!
+        let neko = Neko.allNekos.randomElement()!
         let new = !neko.restore()
         neko.save()
         return (neko, new)
@@ -55,6 +55,16 @@ public enum Neko: String, CaseIterable {
     case russianBlue
     /// くつした
     case socks
+    /// 未所持用
+    case unknown
+    
+    static public var allNekos: [Neko] {
+        return Neko.allCases.filter { $0 != .unknown }
+    }
+    
+    static public var libraryNekos: [Neko] {
+        return allNekos.map { $0.hasNeko ? $0 : .unknown }
+    }
     
     private var hasKey: String {
         return "hasNekoKey"
@@ -80,6 +90,8 @@ public enum Neko: String, CaseIterable {
             return "ロシアンブルーさん"
         case .socks:
             return "くつしたさん"
+        case .unknown:
+            return "？？？"
         }
     }
     
@@ -95,6 +107,8 @@ public enum Neko: String, CaseIterable {
             return #imageLiteral(resourceName: "rosian_neko_sit1")
         case .socks:
             return #imageLiteral(resourceName: "kutsusita_neko_sit1")
+        case .unknown:
+            return #imageLiteral(resourceName: "neko")
         }
     }
     
