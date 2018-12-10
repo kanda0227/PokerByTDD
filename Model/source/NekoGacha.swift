@@ -74,7 +74,7 @@ public enum Neko: String, CaseIterable {
         return hasKey + rawValue
     }
     
-    public var hasNeko: Bool {
+    private var hasNeko: Bool {
         return restore()
     }
     
