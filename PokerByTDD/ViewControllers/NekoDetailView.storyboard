@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Neko Detail View Controller-->
         <scene sceneID="gFV-JD-DHN">
             <objects>
-                <viewController id="zav-fo-sli" sceneMemberID="viewController">
+                <viewController id="zav-fo-sli" customClass="NekoDetailViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KAQ-eE-EDS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,6 +29,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYm-qp-4be">
                                         <rect key="frame" x="74" y="271" width="92" height="30"/>
                                         <state key="normal" title="この子を選ぶ"/>
+                                        <connections>
+                                            <action selector="tapChooseButton:" destination="zav-fo-sli" eventType="touchUpInside" id="yTW-6m-Ml7"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike_neko_sit1" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-iA-Cnz">
                                         <rect key="frame" x="30" y="30" width="180" height="180"/>
@@ -46,6 +49,9 @@
                                         <rect key="frame" x="202" y="8" width="30" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="×"/>
+                                        <connections>
+                                            <action selector="tapDismissButton:" destination="zav-fo-sli" eventType="touchUpInside" id="ybK-k5-0Za"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="beige"/>
@@ -77,6 +83,12 @@
                         <viewLayoutGuide key="safeArea" id="24z-0m-EW9"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="chooseButton" destination="BYm-qp-4be" id="fnx-RB-UG1"/>
+                        <outlet property="mainView" destination="Jf6-sr-RcJ" id="MHr-pz-yAT"/>
+                        <outlet property="nekoImageView" destination="UHV-iA-Cnz" id="l65-Kq-xLA"/>
+                        <outlet property="nekoLabel" destination="h3i-r0-xDB" id="WLu-DM-sFc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7T-D9-qVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
