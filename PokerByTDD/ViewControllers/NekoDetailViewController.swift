@@ -48,14 +48,27 @@ final class NekoDetailViewController: UIViewController {
             nekoLabel.text = neko.name
         }
     }
+    @IBOutlet private weak var backView: UIView! {
+        didSet {
+            backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NekoDetailViewController.tapBackView)))
+        }
+    }
     
     private var neko: Neko!
+    
+    @objc private func tapBackView(_ sender: UITapGestureRecognizer) {
+        dismissView()
+    }
     
     @IBAction private func tapChooseButton(_ sender: Any) {
         
     }
     
     @IBAction private func tapDismissButton(_ sender: Any) {
+        dismissView()
+    }
+    
+    private func dismissView() {
         dismiss(animated: true, completion: nil)
     }
 }

@@ -84,6 +84,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="backView" destination="ueB-5C-gS2" id="e9y-mp-SR6"/>
                         <outlet property="chooseButton" destination="BYm-qp-4be" id="fnx-RB-UG1"/>
                         <outlet property="mainView" destination="Jf6-sr-RcJ" id="MHr-pz-yAT"/>
                         <outlet property="nekoImageView" destination="UHV-iA-Cnz" id="l65-Kq-xLA"/>
