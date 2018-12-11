@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zav-fo-sli">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Neko Detail View Controller-->
+        <scene sceneID="gFV-JD-DHN">
+            <objects>
+                <viewController id="zav-fo-sli" customClass="NekoDetailViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KAQ-eE-EDS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-5C-gS2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-sr-RcJ">
+                                <rect key="frame" x="67.5" y="183.5" width="240" height="320"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYm-qp-4be">
+                                        <rect key="frame" x="74" y="271" width="92" height="30"/>
+                                        <state key="normal" title="この子を選ぶ"/>
+                                        <connections>
+                                            <action selector="tapChooseButton:" destination="zav-fo-sli" eventType="touchUpInside" id="yTW-6m-Ml7"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike_neko_sit1" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-iA-Cnz">
+                                        <rect key="frame" x="30" y="30" width="180" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="UHV-iA-Cnz" secondAttribute="height" multiplier="1:1" id="PFn-cY-2Rp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ねこの名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3i-r0-xDB">
+                                        <rect key="frame" x="76.5" y="230" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-Ih-U65">
+                                        <rect key="frame" x="202" y="8" width="30" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="×"/>
+                                        <connections>
+                                            <action selector="tapDismissButton:" destination="zav-fo-sli" eventType="touchUpInside" id="ybK-k5-0Za"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="beige"/>
+                                <constraints>
+                                    <constraint firstItem="h3i-r0-xDB" firstAttribute="centerX" secondItem="EIe-d2-ALK" secondAttribute="centerX" id="CmZ-rz-1dR"/>
+                                    <constraint firstItem="h3i-r0-xDB" firstAttribute="top" secondItem="UHV-iA-Cnz" secondAttribute="bottom" constant="20" id="LUV-Er-VET"/>
+                                    <constraint firstItem="UHV-iA-Cnz" firstAttribute="top" secondItem="EIe-d2-ALK" secondAttribute="top" constant="30" id="Lqd-gz-ycd"/>
+                                    <constraint firstItem="EIe-d2-ALK" firstAttribute="trailing" secondItem="UHV-iA-Cnz" secondAttribute="trailing" constant="30" id="SYN-bM-q1c"/>
+                                    <constraint firstAttribute="height" constant="320" id="W7f-Vx-y6W"/>
+                                    <constraint firstAttribute="width" constant="240" id="dss-hx-9wC"/>
+                                    <constraint firstItem="BYm-qp-4be" firstAttribute="top" secondItem="h3i-r0-xDB" secondAttribute="bottom" constant="20" id="fR7-au-F2v"/>
+                                    <constraint firstItem="EIe-d2-ALK" firstAttribute="trailing" secondItem="1rF-Ih-U65" secondAttribute="trailing" constant="8" id="mMB-UU-Xuj"/>
+                                    <constraint firstItem="UHV-iA-Cnz" firstAttribute="leading" secondItem="EIe-d2-ALK" secondAttribute="leading" constant="30" id="rVv-su-DYK"/>
+                                    <constraint firstItem="1rF-Ih-U65" firstAttribute="top" secondItem="EIe-d2-ALK" secondAttribute="top" constant="8" id="wMO-Zd-yu1"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="EIe-d2-ALK"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ueB-5C-gS2" firstAttribute="leading" secondItem="24z-0m-EW9" secondAttribute="leading" id="4KU-7l-rHi"/>
+                            <constraint firstItem="Jf6-sr-RcJ" firstAttribute="centerY" secondItem="24z-0m-EW9" secondAttribute="centerY" id="8Rz-b5-toQ"/>
+                            <constraint firstItem="Jf6-sr-RcJ" firstAttribute="centerX" secondItem="24z-0m-EW9" secondAttribute="centerX" id="Tvu-Qr-TRa"/>
+                            <constraint firstItem="BYm-qp-4be" firstAttribute="centerX" secondItem="24z-0m-EW9" secondAttribute="centerX" id="VdZ-3k-WbY"/>
+                            <constraint firstItem="24z-0m-EW9" firstAttribute="trailing" secondItem="ueB-5C-gS2" secondAttribute="trailing" id="bmY-PE-ybc"/>
+                            <constraint firstItem="24z-0m-EW9" firstAttribute="bottom" secondItem="ueB-5C-gS2" secondAttribute="bottom" id="yeQ-hy-gho"/>
+                            <constraint firstItem="ueB-5C-gS2" firstAttribute="top" secondItem="KAQ-eE-EDS" secondAttribute="top" id="zkG-bc-8zs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="24z-0m-EW9"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="backView" destination="ueB-5C-gS2" id="e9y-mp-SR6"/>
+                        <outlet property="chooseButton" destination="BYm-qp-4be" id="fnx-RB-UG1"/>
+                        <outlet property="mainView" destination="Jf6-sr-RcJ" id="MHr-pz-yAT"/>
+                        <outlet property="nekoImageView" destination="UHV-iA-Cnz" id="l65-Kq-xLA"/>
+                        <outlet property="nekoLabel" destination="h3i-r0-xDB" id="WLu-DM-sFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7T-D9-qVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="154"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mike_neko_sit1" width="309" height="461"/>
+        <namedColor name="beige">
+            <color red="1" green="1" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
