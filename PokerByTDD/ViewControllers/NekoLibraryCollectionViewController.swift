@@ -34,4 +34,9 @@ final class NekoLibraryCollectionViewController: UICollectionViewController {
         cell.set(neko: presenter.neko(at: indexPath))
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nekoDetailVC = NekoDetailViewController.instantiate(neko: presenter.neko(at: indexPath))
+        present(nekoDetailVC, animated: true)
+    }
 }
