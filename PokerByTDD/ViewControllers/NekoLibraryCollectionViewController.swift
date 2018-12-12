@@ -37,6 +37,9 @@ final class NekoLibraryCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nekoDetailVC = NekoDetailViewController.instantiate(neko: presenter.neko(at: indexPath))
-        present(nekoDetailVC, animated: true)
+        // ここで直接 present するとタブバーが表示されてしまい，
+        // モーダル画面を開いた状態でのタブバー移動ができてしまうため
+        // バグの素になりそうなのでタブバーに present させる
+        UIApplication.shared.keyWindow?.rootViewController?.present(nekoDetailVC, animated: true)
     }
 }
