@@ -469,10 +469,10 @@
 				F254FB6D21B5F70400A77302 /* CardDesignChoicePresenter.swift */,
 				F254FB6121B3E3E800A77302 /* CardDesignPresenter.swift */,
 				F254FCB321B9F05C00A77302 /* CardImageHelper.swift */,
-				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
-				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
 				F2319B7621BF1F28001AD8CF /* NekoGachaPresenter.swift */,
 				F2319B7821BF24C5001AD8CF /* NekoLibraryPresenter.swift */,
+				F2F940C921A6207A00387AA5 /* PokerViewPresenter.swift */,
+				F254FB5221B3B2D800A77302 /* SettingPresenter.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -518,6 +518,8 @@
 				F254FB6521B3EFC100A77302 /* CardDesignChoiceViewController.swift */,
 				F254FB5B21B3BA3000A77302 /* CardDesignView.storyboard */,
 				F254FB5F21B3BE1A00A77302 /* CardDesignViewController.swift */,
+				F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */,
+				F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */,
 				F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */,
 				F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */,
 				F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */,
@@ -527,8 +529,6 @@
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
-				F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */,
-				F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -969,8 +969,8 @@
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
 				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
-				F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
+				F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */,
 				F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */,
 				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
@@ -1062,12 +1062,12 @@
 			files = (
 				F254FC7821B739F000A77302 /* BetPickerPresenter.swift in Sources */,
 				F254FC7921B739F000A77302 /* CardDesignChoicePresenter.swift in Sources */,
-				F2319B7721BF1F28001AD8CF /* NekoGachaPresenter.swift in Sources */,
 				F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */,
 				F254FCB421B9F05C00A77302 /* CardImageHelper.swift in Sources */,
+				F2319B7721BF1F28001AD8CF /* NekoGachaPresenter.swift in Sources */,
+				F2319B7921BF24C5001AD8CF /* NekoLibraryPresenter.swift in Sources */,
 				F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */,
 				F254FC7C21B739F000A77302 /* SettingPresenter.swift in Sources */,
-				F2319B7921BF24C5001AD8CF /* NekoLibraryPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,8 +1106,8 @@
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
-				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
+				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
