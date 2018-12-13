@@ -15,7 +15,7 @@ public final class NekoLibraryCell: UICollectionViewCell {
     @IBOutlet private weak var nekoLabel: UILabel!
     
     public func set(neko: Neko) {
-        nekoImageView.image = neko.image
+        nekoImageView.image = neko.image()
         nekoLabel.text = neko.name
         setBorderColoer()
     }

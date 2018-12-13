@@ -44,7 +44,7 @@ final class NekoDetailViewController: UIViewController {
     }
     @IBOutlet private weak var nekoImageView: UIImageView! {
         didSet {
-            nekoImageView.image = neko.image
+            nekoImageView.image = neko.image()
         }
     }
     @IBOutlet private weak var nekoLabel: UILabel! {
