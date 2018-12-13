@@ -14,23 +14,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalletView" customModule="Design" customModuleProvider="target">
             <connections>
                 <outlet property="itemNameLabel" destination="twO-yZ-cE5" id="sLX-Xn-cvC"/>
+                <outlet property="recoveryLabel" destination="zKw-5x-dCq" id="MAQ-br-lve"/>
                 <outlet property="walletLabel" destination="HWn-Dz-NOa" id="usE-kt-899"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="106" height="21"/>
+            <rect key="frame" x="0.0" y="0.0" width="232" height="21"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="所持金 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twO-yZ-cE5">
-                    <rect key="frame" x="0.0" y="0.0" width="57" height="21"/>
+                    <rect key="frame" x="126" y="0.0" width="57" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="black"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="250" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWn-Dz-NOa">
-                    <rect key="frame" x="57" y="0.0" width="49" height="21"/>
+                    <rect key="frame" x="183" y="0.0" width="49" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="black"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あとn秒でxx回復　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-5x-dCq">
+                    <rect key="frame" x="0.0" y="3" width="126" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" name="black"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -40,14 +47,16 @@
                 <constraint firstItem="HWn-Dz-NOa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="1qz-Lp-jzo"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HWn-Dz-NOa" secondAttribute="bottom" id="JqJ-cf-Dpq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HWn-Dz-NOa" secondAttribute="trailing" id="M1O-DK-yxa"/>
-                <constraint firstItem="twO-yZ-cE5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Oyy-Qi-egS"/>
                 <constraint firstItem="twO-yZ-cE5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Qsm-lu-yJn"/>
+                <constraint firstItem="zKw-5x-dCq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Sin-eD-icS"/>
+                <constraint firstItem="twO-yZ-cE5" firstAttribute="leading" secondItem="zKw-5x-dCq" secondAttribute="trailing" id="lIl-On-zCh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="twO-yZ-cE5" secondAttribute="bottom" id="tnG-dx-aUR"/>
                 <constraint firstItem="HWn-Dz-NOa" firstAttribute="leading" secondItem="twO-yZ-cE5" secondAttribute="trailing" id="uFT-1K-0Vv"/>
+                <constraint firstItem="zKw-5x-dCq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="zqQ-lY-ldg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-67.200000000000003" y="-133.5832083958021"/>
+            <point key="canvasLocation" x="-168" y="-133.5832083958021"/>
         </view>
     </objects>
     <resources>
