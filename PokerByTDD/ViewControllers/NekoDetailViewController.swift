@@ -37,7 +37,11 @@ final class NekoDetailViewController: UIViewController {
             mainView.layer.cornerRadius = 7
         }
     }
-    @IBOutlet private weak var chooseButton: UIButton!
+    @IBOutlet private weak var chooseButton: UIButton! {
+        didSet {
+            chooseButton.isEnabled = neko != .unknown
+        }
+    }
     @IBOutlet private weak var nekoImageView: UIImageView! {
         didSet {
             nekoImageView.image = neko.image
