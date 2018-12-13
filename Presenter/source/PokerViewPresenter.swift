@@ -34,7 +34,7 @@ public final class PokerViewPresenter {
     /// ユーザーと対戦相手の役のテキストを表示します
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
     /// 所持金の表示を更新します
-    private let wallet: Binder<Int>
+    private let wallet: Binder<(money: Int, count: Int, perTime: Int, shouldPresentMoney: Bool)>
     /// ユーザーのカードをめくります
     private let turnOverUserCards: Binder<Bool>
     /// 対戦相手のカードをめくります
@@ -48,7 +48,7 @@ public final class PokerViewPresenter {
     
     public init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
          handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
-         wallet: Binder<Int>,
+         wallet: Binder<(money: Int, count: Int, perTime: Int, shouldPresentMoney: Bool)>,
          turnOverUserCards: Binder<Bool>,
          turnOverOpponentCards: Binder<Bool>,
          switchSelectableCards: Binder<Bool>,
