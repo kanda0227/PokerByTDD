@@ -17,7 +17,7 @@ public final class NekoGachaPresenter {
     
     private let nekoBinder: Binder<(neko: Neko, new: Bool)?>
     
-    public init(wallet: Binder<Int>,
+    public init(wallet: Binder<(money: Int, count: Int, perTime: Int, shouldPresentMoney: Bool)>,
                 switchGachaButtonEnabled: Binder<Bool>,
                 nekoBinder:Binder<(neko: Neko, new: Bool)?>) {
         self.nekoBinder = nekoBinder
@@ -26,9 +26,9 @@ public final class NekoGachaPresenter {
         self.nekoBinder.onNext(nil)
     }
     
-    private func setupEvent(wallet: Binder<Int>, switchGachaButtonEnabled: Binder<Bool>) {
+    private func setupEvent(wallet: Binder<(money: Int, count: Int, perTime: Int, shouldPresentMoney: Bool)>, switchGachaButtonEnabled: Binder<Bool>) {
         // 所持金のテキスト更新
-        Wallet.shared.observable().startWith(Wallet.shared.value()).subscribe(wallet).disposed(by: bag)
+        Wallet.shared.observable().subscribe(wallet).disposed(by: bag)
         // ガチャボタンの有効・無効切り替え
         NekoGacha.shared.canGachaObservable().subscribe(switchGachaButtonEnabled).disposed(by: bag)
     }

@@ -31,9 +31,10 @@ final class NekoGachaViewController: UIViewController {
         presenter.postViewWillAppear()
     }
     
-    private var walletBinder: Binder<Int> {
-        return Binder(walletView) { walletView, money in
-            walletView.money = money
+    private var walletBinder: Binder<(money: Int, count: Int, perTime: Int, shouldPresentMoney: Bool)> {
+        return Binder(walletView) { walletView, elems in
+            walletView.money = elems.money
+            walletView.set(second: elems.count, presentMoneyPerTime: elems.perTime, shouldPresentMoney: elems.shouldPresentMoney)
         }
     }
     
