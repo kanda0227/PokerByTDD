@@ -509,8 +509,8 @@
 				F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */,
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
-				F216D77421C1C4B0003F54BB /* WalletView.xib */,
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
+				F216D77421C1C4B0003F54BB /* WalletView.xib */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1091,10 +1091,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FCAC21B7FC6800A77302 /* Assets.xcassets in Sources */,
-				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
 				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
+				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
