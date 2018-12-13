@@ -12,16 +12,17 @@ import Model
 import RxSwift
 import RxCocoa
 import Presenter
+import Design
 
 final class NekoGachaViewController: UIViewController {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: UILabel!
-    @IBOutlet private weak var walletLabel: UILabel!
+    @IBOutlet private weak var walletView: WalletView!
     @IBOutlet private weak var gachaButton: UIButton!
     @IBOutlet private weak var newImage: UIImageView!
     
-    private lazy var presenter = NekoGachaPresenter(walletText: walletText,
+    private lazy var presenter = NekoGachaPresenter(wallet: walletBinder,
                                                     switchGachaButtonEnabled: switchGachaButtonEnabled,
                                                     nekoBinder: nekoBinder)
     
@@ -30,9 +31,9 @@ final class NekoGachaViewController: UIViewController {
         presenter.postViewWillAppear()
     }
     
-    private var walletText: Binder<String> {
-        return Binder(self) { _self, text in
-            _self.walletLabel?.text = text
+    private var walletBinder: Binder<Int> {
+        return Binder(walletView) { walletView, money in
+            walletView.money = money
         }
     }
     

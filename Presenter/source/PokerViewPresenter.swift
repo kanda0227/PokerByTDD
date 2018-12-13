@@ -34,7 +34,7 @@ public final class PokerViewPresenter {
     /// ユーザーと対戦相手の役のテキストを表示します
     private let handText: Binder<(hand: String?, opponentHand: String?, result: String?)>
     /// 所持金の表示を更新します
-    private let walletText: Binder<String>
+    private let wallet: Binder<Int>
     /// ユーザーのカードをめくります
     private let turnOverUserCards: Binder<Bool>
     /// 対戦相手のカードをめくります
@@ -48,7 +48,7 @@ public final class PokerViewPresenter {
     
     public init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
          handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
-         walletText: Binder<String>,
+         wallet: Binder<Int>,
          turnOverUserCards: Binder<Bool>,
          turnOverOpponentCards: Binder<Bool>,
          switchSelectableCards: Binder<Bool>,
@@ -56,7 +56,7 @@ public final class PokerViewPresenter {
          switchIsTradeButtonEnabled: Binder<Bool>) {
         self.updateCards = updateCards
         self.handText = handText
-        self.walletText = walletText
+        self.wallet = wallet
         self.turnOverUserCards = turnOverUserCards
         self.turnOverOpponentCards = turnOverOpponentCards
         self.switchSelectableCards = switchSelectableCards
@@ -68,7 +68,7 @@ public final class PokerViewPresenter {
     
     private func setupEvent() {
         // 所持金の表示
-        Wallet.shared.observable().map { "\($0)" }.subscribe(walletText.asObserver()).disposed(by: bag)
+        Wallet.shared.observable().subscribe(wallet.asObserver()).disposed(by: bag)
     }
 }
 
