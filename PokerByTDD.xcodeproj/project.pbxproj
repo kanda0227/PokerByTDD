@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
+		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
 		F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */; };
 		F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */; };
@@ -204,6 +205,7 @@
 
 /* Begin PBXFileReference section */
 		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
+		F216D77621C1C5C8003F54BB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
 		F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoGacha.storyboard; sourceTree = "<group>"; };
 		F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGachaViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
+				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1088,6 +1091,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FCAC21B7FC6800A77302 /* Assets.xcassets in Sources */,
+				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
 				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
