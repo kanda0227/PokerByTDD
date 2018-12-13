@@ -29,7 +29,7 @@ final class PokerViewController: UIViewController {
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var tradeButton: UIButton!
     /// 所持金を表示するラベル
-    @IBOutlet private weak var walletLabel: UILabel!
+    @IBOutlet private weak var walletView: WalletView!
     
     private var presenter: PokerViewPresenter!
     
@@ -38,7 +38,7 @@ final class PokerViewController: UIViewController {
         
         presenter = PokerViewPresenter(updateCards: updateCards,
                                        handText: handText,
-                                       walletText: walletText, turnOverUserCards: turnOverUserCards,
+                                       wallet: walletBinder, turnOverUserCards: turnOverUserCards,
                                        turnOverOpponentCards: turnOverOpponentCards,
                                        switchSelectableCards: switchSelectableCards,
                                        switchIsStartButtonEnabled: switchIsStartButtonEnabled,
@@ -71,9 +71,9 @@ final class PokerViewController: UIViewController {
         }
     }
     
-    private var walletText: Binder<String> {
-        return Binder(walletLabel) { walletLabel, text in
-            walletLabel.text = text
+    private var walletBinder: Binder<Int> {
+        return Binder(walletView) { walletView, money in
+            walletView.money = money
         }
     }
     
