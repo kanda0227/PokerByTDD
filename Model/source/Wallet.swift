@@ -17,13 +17,15 @@ public final class Wallet {
     /// 永続化されたお金が無かった場合にあげるお金
     private let firstMoney = 300
     /// 1分あたりにあげるお金
-    private let presentMoneyPerTime = 10
+    public let presentMoneyPerTime = 10
     /// 自然回復上限
     private let recoveryMax = 300
     /// 回復時間間隔
     private let interval = 60
     
-    private lazy var subject = BehaviorSubject<Int>(value: money)
+    private lazy var moneySubject = BehaviorSubject<Int>(value: money)
+    
+    private lazy var countSubject = BehaviorSubject<Int>(value: counter)
     
     private var timer: Timer?
     
@@ -33,6 +35,7 @@ public final class Wallet {
     private init() {}
     
     private lazy var money: Int = restore() ?? firstMoney
+    private lazy var counter: Int = interval
     
     /// お財布モデルの設定をします
     ///
@@ -43,19 +46,30 @@ public final class Wallet {
             let offTime = diffTime / interval
             for _ in 0..<offTime { presentMoney() }
             let lastPresentTime = diffTime % interval
-            Timer.scheduledTimer(timeInterval: Double(lastPresentTime), target: self, selector: #selector(self.setupPresent), userInfo: nil, repeats: false)
-        } else {
-            setupPresent()
+            counter = lastPresentTime
+        }
+        setupPresent()
+    }
+    
+    private func setupPresent() {
+        // 1分あたりに一定値お財布の中身を回復させる
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func countTime() {
+        countDown()
+        if counter == 0 {
+            presentMoney()
         }
     }
     
-    @objc private func setupPresent() {
-        // 1分あたりに一定値お財布の中身を回復させる
-        timer = Timer.scheduledTimer(timeInterval: Double(interval), target: self, selector: #selector(self.presentMoney), userInfo: nil, repeats: true)
+    private func countDown() {
+        counter = counter == 0 ? interval : counter - 1
+        countSubject.onNext(counter)
     }
     
-    @objc private func presentMoney() {
-        if recoveryMax > money {
+    private func presentMoney() {
+        if shouldPresentMoney() {
             receipt(presentMoneyPerTime)
         }
         save(Date())
@@ -81,15 +95,29 @@ public final class Wallet {
         return money
     }
     
-    public func observable() -> Observable<Int> {
-        return subject.asObservable()
+    public func moneyObservable() -> Observable<Int> {
+        return moneySubject.asObservable()
+    }
+    
+    public func countDownObservable() -> Observable<Int> {
+        return moneySubject.asObservable()
+    }
+    
+    public func observable() -> Observable<(money: Int, count: Int, perTime: Int, shouldPresentMoney: Bool)> {
+        return Observable.combineLatest(moneySubject.asObservable(),
+                                        countSubject.asObservable())
+            .map { ($0.0, $0.1, self.presentMoneyPerTime, self.shouldPresentMoney()) }
+    }
+    
+    public func shouldPresentMoney() -> Bool {
+        return recoveryMax > money
     }
     
     private func save(_ value: Int) {
         // 所持金を永続化
         UserDefaults.standard.set(value, forKey: walletContentKey)
         money = value
-        subject.onNext(value)
+        moneySubject.onNext(value)
     }
     
     private func restore() -> Int? {
