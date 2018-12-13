@@ -75,8 +75,8 @@
                                     <constraint firstAttribute="width" constant="48" id="fOC-LW-LHF"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhE-pd-f8n" customClass="WalletView" customModule="Design">
-                                <rect key="frame" x="212" y="74" width="240" height="128"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhE-pd-f8n" customClass="WalletView" customModule="Design">
+                                <rect key="frame" x="212" y="74" width="240" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="money">
@@ -90,7 +90,7 @@
                             <constraint firstItem="IRc-uM-l0N" firstAttribute="centerX" secondItem="FbV-Xg-nJj" secondAttribute="centerX" id="5Tg-PY-1ue"/>
                             <constraint firstItem="UhE-pd-f8n" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="10" id="BAu-4T-ywR"/>
                             <constraint firstItem="65G-Ch-4vi" firstAttribute="top" secondItem="IRc-uM-l0N" secondAttribute="bottom" constant="140" id="E7q-DJ-vKi"/>
-                            <constraint firstItem="HkQ-Ka-cxb" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="10" id="IW3-mu-3bY"/>
+                            <constraint firstItem="HkQ-Ka-cxb" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="40" id="IW3-mu-3bY"/>
                             <constraint firstAttribute="trailing" secondItem="UhE-pd-f8n" secondAttribute="trailing" constant="16" id="TWh-BY-YfS"/>
                             <constraint firstItem="6Og-eh-Rgx" firstAttribute="trailing" secondItem="HkQ-Ka-cxb" secondAttribute="trailing" id="W8w-yE-RBf"/>
                             <constraint firstItem="IRc-uM-l0N" firstAttribute="top" secondItem="FbV-Xg-nJj" secondAttribute="top" constant="239" id="dZW-OC-2ba"/>
