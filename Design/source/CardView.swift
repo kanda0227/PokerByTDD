@@ -68,9 +68,9 @@ import Model
     }
     
     private func instantiate() -> UIView {
-    return UINib(nibName: "CardView", bundle: Bundle(for: CardView.self))
-        .instantiate(withOwner: self, options: nil)
-        .first as! UIView
+        return UINib(nibName: "CardView", bundle: Bundle(for: CardView.self))
+            .instantiate(withOwner: self, options: nil)
+            .first as! UIView
     }
     
     // イニシャライザの共通処理
