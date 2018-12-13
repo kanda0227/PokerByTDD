@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
 		F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */; };
 		F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */; };
@@ -202,6 +203,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
 		F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoGacha.storyboard; sourceTree = "<group>"; };
 		F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGachaViewController.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */,
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
+				F216D77421C1C4B0003F54BB /* WalletView.xib */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				F254FCA621B73DA200A77302 /* CardView.xib in Resources */,
 				F2319B6F21BCC247001AD8CF /* NekoLibraryCell.xib in Resources */,
 				F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */,
+				F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
