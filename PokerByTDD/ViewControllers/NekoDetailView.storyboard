@@ -33,7 +33,7 @@
                                             <action selector="tapChooseButton:" destination="zav-fo-sli" eventType="touchUpInside" id="yTW-6m-Ml7"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike_neko_sit1" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-iA-Cnz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike_neko_sit1" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-iA-Cnz" customClass="NekoAnimateView" customModule="Design">
                                         <rect key="frame" x="30" y="30" width="180" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UHV-iA-Cnz" secondAttribute="height" multiplier="1:1" id="PFn-cY-2Rp"/>
@@ -87,7 +87,7 @@
                         <outlet property="backView" destination="ueB-5C-gS2" id="e9y-mp-SR6"/>
                         <outlet property="chooseButton" destination="BYm-qp-4be" id="fnx-RB-UG1"/>
                         <outlet property="mainView" destination="Jf6-sr-RcJ" id="MHr-pz-yAT"/>
-                        <outlet property="nekoImageView" destination="UHV-iA-Cnz" id="l65-Kq-xLA"/>
+                        <outlet property="nekoImageView" destination="UHV-iA-Cnz" id="x7N-Iq-LDi"/>
                         <outlet property="nekoLabel" destination="h3i-r0-xDB" id="WLu-DM-sFc"/>
                     </connections>
                 </viewController>
@@ -97,7 +97,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mike_neko_sit1" width="309" height="461"/>
+        <image name="mike_neko_sit1" width="309" height="466"/>
         <namedColor name="beige">
             <color red="1" green="1" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
