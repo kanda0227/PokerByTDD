@@ -106,9 +106,9 @@ public enum Neko: String, CaseIterable {
 
 public extension Neko {
     public enum Pose: String {
-        /// 座る (笑顔)
-        case sit1
         /// 座る (真顔)
+        case sit1
+        /// 座る (笑顔)
         case sit2
     }
     
