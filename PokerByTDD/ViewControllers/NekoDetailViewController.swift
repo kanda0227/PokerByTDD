@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Model
+import Design
 
 /// ねこ詳細画面
 ///
@@ -42,9 +43,9 @@ final class NekoDetailViewController: UIViewController {
             chooseButton.isEnabled = neko != .unknown
         }
     }
-    @IBOutlet private weak var nekoImageView: UIImageView! {
+    @IBOutlet private weak var nekoImageView: NekoAnimateView! {
         didSet {
-            nekoImageView.image = neko.image()
+            nekoImageView.set(neko: neko)
         }
     }
     @IBOutlet private weak var nekoLabel: UILabel! {
@@ -65,7 +66,7 @@ final class NekoDetailViewController: UIViewController {
     }
     
     @IBAction private func tapChooseButton(_ sender: Any) {
-        
+        nekoImageView.action()
     }
     
     @IBAction private func tapDismissButton(_ sender: Any) {
