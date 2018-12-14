@@ -48,13 +48,13 @@ public enum Neko: String, CaseIterable {
     /// みけねこ
     case mike
     /// くろねこ
-    case black
+    case kuro
     /// しろねこ
-    case white
+    case shiro
     /// ロシアンブルー
-    case russianBlue
+    case russian
     /// くつした
-    case socks
+    case kutsusita
     /// 未所持用
     case unknown
     
@@ -82,33 +82,16 @@ public enum Neko: String, CaseIterable {
         switch self {
         case .mike:
             return "みけねこさん"
-        case .black:
+        case .kuro:
             return "くろねこさん"
-        case .white:
+        case .shiro:
             return "しろねこさん"
-        case .russianBlue:
+        case .russian:
             return "ロシアンブルーさん"
-        case .socks:
+        case .kutsusita:
             return "くつしたさん"
         case .unknown:
             return "？？？"
-        }
-    }
-    
-    public var image: UIImage {
-        switch self {
-        case .mike:
-            return #imageLiteral(resourceName: "mike_neko_sit1")
-        case .black:
-            return #imageLiteral(resourceName: "kuro_neko_sit1")
-        case .white:
-            return #imageLiteral(resourceName: "siro_neko_sit1")
-        case .russianBlue:
-            return #imageLiteral(resourceName: "rosian_neko_sit1")
-        case .socks:
-            return #imageLiteral(resourceName: "kutsusita_neko_sit1")
-        case .unknown:
-            return #imageLiteral(resourceName: "neko")
         }
     }
     
@@ -118,5 +101,21 @@ public enum Neko: String, CaseIterable {
     
     fileprivate func restore() -> Bool {
         return UserDefaults.standard.object(forKey: hasNekoKey()) as? Bool ?? false
+    }
+}
+
+public extension Neko {
+    public enum Pose: String {
+        /// 座る (真顔)
+        case sit1
+        /// 座る (笑顔)
+        case sit2
+    }
+    
+    public func image(pose: Neko.Pose = .sit1) -> UIImage {
+        guard self != .unknown else { return #imageLiteral(resourceName: "neko") }
+        let imageName = "\(rawValue)_neko_\(pose.rawValue)"
+        // リソースはちゃんと用意してね
+        return UIImage(named: imageName)!
     }
 }

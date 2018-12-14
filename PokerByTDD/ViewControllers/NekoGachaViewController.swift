@@ -46,7 +46,7 @@ final class NekoGachaViewController: UIViewController {
     
     private var nekoBinder: Binder<(neko: Neko, new: Bool)?> {
         return Binder(self) { _self, elems in
-            _self.nekoImageView?.image = elems?.neko.image
+            _self.nekoImageView?.image = elems?.neko.image()
             _self.nekoLabel?.text = elems?.neko.name
             _self.newImage?.isHidden = !(elems?.new ?? false)
         }
