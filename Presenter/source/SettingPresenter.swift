@@ -13,7 +13,8 @@ public final class SettingPresenter {
     public typealias Item = (itemName: String, storyboardID: String)
     
     private let items: [Item] = [
-        ("カードデザイン設定", "CardDesignView")
+        ("カードデザイン設定", "CardDesignView"),
+        ("カラーテーマ設定", "ColorSettingView")
     ]
     
     public init() {}
