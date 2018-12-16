@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let selectedColorSet = "selectedColorSet"
+
 public enum ColorSet: String, CaseIterable {
     case `default` = "デフォルト"
     case cute = "キュート"
@@ -77,5 +79,15 @@ public enum ColorSet: String, CaseIterable {
         case .passion:
             return UIColor(named: "positivegreen")!
         }
+    }
+    
+    public func save() {
+        UserDefaults.standard.set(self.rawValue, forKey: selectedColorSet)
+        ColorSetNotification.shared.post(self)
+    }
+    
+    public static func restore() -> ColorSet {
+        let rawValue = UserDefaults.standard.string(forKey: selectedColorSet)
+        return rawValue.flatMap(ColorSet.init) ?? .default
     }
 }
