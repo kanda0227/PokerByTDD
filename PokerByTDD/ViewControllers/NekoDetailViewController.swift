@@ -67,6 +67,7 @@ final class NekoDetailViewController: UIViewController {
     
     @IBAction private func tapChooseButton(_ sender: Any) {
         nekoImageView.action()
+        neko.select()
     }
     
     @IBAction private func tapDismissButton(_ sender: Any) {
