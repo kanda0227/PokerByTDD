@@ -24,7 +24,8 @@
                     <connections>
                         <segue destination="HZU-ve-Xej" kind="relationship" relationship="viewControllers" id="vpm-MT-b2T"/>
                         <segue destination="A2A-Wg-eVq" kind="relationship" relationship="viewControllers" id="iju-Uv-2y5"/>
-                        <segue destination="Tps-M2-IUk" kind="relationship" relationship="viewControllers" id="Bng-GU-vWs"/>
+                        <segue destination="tjK-A3-rjm" kind="relationship" relationship="viewControllers" id="Dsz-3k-WZs"/>
+                        <segue destination="Tps-M2-IUk" kind="relationship" relationship="viewControllers" id="jZd-UL-R5P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wtn-wZ-6yN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,7 +50,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHW-pL-ZHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-38"/>
+            <point key="canvasLocation" x="422" y="-99"/>
+        </scene>
+        <!--NekoRoomView-->
+        <scene sceneID="n1y-lP-gdw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NekoRoomView" id="tjK-A3-rjm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4DM-mA-4iw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zD2-Qa-KCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="38"/>
         </scene>
         <!--Setting-->
         <scene sceneID="JQY-BM-DzF">
