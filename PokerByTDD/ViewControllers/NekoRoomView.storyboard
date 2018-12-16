@@ -38,12 +38,12 @@
         <!--ねこ部屋-->
         <scene sceneID="aXO-QK-RtT">
             <objects>
-                <viewController title="ねこ部屋" id="uvx-F0-ttm" sceneMemberID="viewController">
+                <viewController title="ねこ部屋" id="uvx-F0-ttm" customClass="NekoRoomViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vQw-wB-an1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neko" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-zX-toX" customClass="NekoAnimateView" customModule="Design">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neko" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-zX-toX" customClass="NekoAnimateView" customModule="Design">
                                 <rect key="frame" x="137.5" y="291" width="100" height="100"/>
                             </imageView>
                         </subviews>
@@ -54,7 +54,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bhc-Sh-fnj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JxO-Ir-cZE"/>
+                    <navigationItem key="navigationItem" title="ねこ部屋" id="JxO-Ir-cZE"/>
+                    <connections>
+                        <outlet property="nekoImage" destination="oUv-zX-toX" id="eC2-Ua-Qq7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcL-wy-aMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
