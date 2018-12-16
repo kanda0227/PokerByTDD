@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let selectedNekoKey = "selectedNekoKey"
+
 public enum Neko: String, CaseIterable {
     /// みけねこ
     case mike
@@ -65,6 +67,15 @@ public enum Neko: String, CaseIterable {
     
     func restore() -> Bool {
         return UserDefaults.standard.object(forKey: hasNekoKey()) as? Bool ?? false
+    }
+    
+    public func select() {
+        UserDefaults.standard.setValue(self.rawValue, forKey: selectedNekoKey)
+    }
+    
+    static public func selectedNeko() -> Neko? {
+        let nekoValue = UserDefaults.standard.string(forKey: selectedNekoKey)
+        return nekoValue.flatMap(Neko.init)
     }
 }
 
