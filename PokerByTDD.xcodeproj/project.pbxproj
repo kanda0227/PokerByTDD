@@ -89,6 +89,7 @@
 		F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A9F2D421C6164A009278D6 /* NekoRoomView.storyboard */; };
 		F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57621C6194E00FA3ACC /* Neko.swift */; };
 		F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */; };
+		F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -288,6 +289,7 @@
 		F2A9F2D421C6164A009278D6 /* NekoRoomView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoRoomView.storyboard; sourceTree = "<group>"; };
 		F2B2E57621C6194E00FA3ACC /* Neko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neko.swift; sourceTree = "<group>"; };
 		F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoRoomViewController.swift; sourceTree = "<group>"; };
+		F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationController.swift; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
 		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -569,6 +571,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F2B2E57A21C7134C00FA3ACC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		F2D79B4A219CE57000962D26 = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +617,7 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2E57A21C7134C00FA3ACC /* Base */,
 				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
 				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
@@ -1154,6 +1165,7 @@
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
+				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
 				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
 				F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */,
