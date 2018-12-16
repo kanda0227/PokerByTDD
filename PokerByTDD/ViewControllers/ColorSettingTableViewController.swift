@@ -34,4 +34,8 @@ final class ColorSettingTableViewController: UITableViewController {
         cell.set(presenter.item(at: indexPath))
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(at: indexPath)
+    }
 }
