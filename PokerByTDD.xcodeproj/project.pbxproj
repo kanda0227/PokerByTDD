@@ -86,6 +86,7 @@
 		F2A9F2CF21C5340A009278D6 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A9F2CE21C5340A009278D6 /* ColorSet.swift */; };
 		F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A9F2D021C53EBE009278D6 /* ColorSettingTableViewController.swift */; };
 		F2A9F2D321C53EF9009278D6 /* ColorSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A9F2D221C53EF9009278D6 /* ColorSettingPresenter.swift */; };
+		F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A9F2D421C6164A009278D6 /* NekoRoomView.storyboard */; };
 		F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57621C6194E00FA3ACC /* Neko.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
@@ -283,6 +284,7 @@
 		F2A9F2CE21C5340A009278D6 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
 		F2A9F2D021C53EBE009278D6 /* ColorSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingTableViewController.swift; sourceTree = "<group>"; };
 		F2A9F2D221C53EF9009278D6 /* ColorSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingPresenter.swift; sourceTree = "<group>"; };
+		F2A9F2D421C6164A009278D6 /* NekoRoomView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoRoomView.storyboard; sourceTree = "<group>"; };
 		F2B2E57621C6194E00FA3ACC /* Neko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neko.swift; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 				F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */,
 				F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */,
 				F2319B6821BBE394001AD8CF /* NekoGacha.storyboard */,
+				F2A9F2D421C6164A009278D6 /* NekoRoomView.storyboard */,
 				F2319B6A21BBEA34001AD8CF /* NekoGachaViewController.swift */,
 				F2319B7021BCC344001AD8CF /* NekoLibraryCollectionViewController.swift */,
 				F2319B6C21BCC1BF001AD8CF /* NekoLibraryView.storyboard */,
@@ -1003,6 +1006,7 @@
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */,
+				F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */,
 				F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */,
 				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
