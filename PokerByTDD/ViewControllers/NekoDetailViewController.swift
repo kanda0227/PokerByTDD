@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import Model
 import Design
+import RxSwift
 
 /// ねこ詳細画面
 ///
 /// 将来的にはもっと表示する情報増やしたいね
-final class NekoDetailViewController: UIViewController {
+final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     
     /// ファクトリーメソッド
     ///
@@ -59,7 +60,23 @@ final class NekoDetailViewController: UIViewController {
         }
     }
     
+    private let bag = DisposeBag()
+    
     private var neko: Neko!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
+    }
     
     @objc private func tapBackView(_ sender: UITapGestureRecognizer) {
         dismissView()

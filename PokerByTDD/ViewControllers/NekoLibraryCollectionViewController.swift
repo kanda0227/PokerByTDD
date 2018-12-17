@@ -11,14 +11,27 @@ import Model
 import Utility
 import Design
 import Presenter
+import RxSwift
 
-final class NekoLibraryCollectionViewController: UICollectionViewController {
+final class NekoLibraryCollectionViewController: UICollectionViewController, ColorSetViewProtocol {
+    
+    private let bag = DisposeBag()
     
     private lazy var presenter = NekoLibraryPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(NekoLibraryCell.self)
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

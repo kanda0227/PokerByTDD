@@ -14,7 +14,7 @@ import Presenter
 import Design
 
 /// ポーカー画面
-final class PokerViewController: UIViewController {
+final class PokerViewController: UIViewController, ColorSetViewProtocol {
     
     /// ユーザーのカードのビュー
     @IBOutlet private var userCardViews: [CardView]!
@@ -31,6 +31,8 @@ final class PokerViewController: UIViewController {
     /// 所持金を表示するラベル
     @IBOutlet private weak var walletView: WalletView!
     
+    private let bag = DisposeBag()
+    
     private var presenter: PokerViewPresenter!
     
     override func viewDidLoad() {
@@ -45,6 +47,16 @@ final class PokerViewController: UIViewController {
                                        switchIsTradeButtonEnabled: switchIsTradeButtonEnabled)
         userCardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
     
     override func viewWillAppear(_ animated: Bool) {

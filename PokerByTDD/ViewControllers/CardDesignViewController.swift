@@ -9,8 +9,10 @@
 import UIKit
 import Presenter
 import Design
+import RxSwift
+import Model
 
-final class CardDesignViewController: UIViewController {
+final class CardDesignViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -18,13 +20,29 @@ final class CardDesignViewController: UIViewController {
         }
     }
     
+    private let bag = DisposeBag()
+    
     private lazy var presenter = CardDesignPresenter()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventDisposable().disposed(by: bag)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
 }
 
