@@ -10,23 +10,21 @@ import UIKit
 import Model
 import RxSwift
 
-final class CommonNavigationController: UINavigationController {
+final class CommonNavigationController: UINavigationController, ColorSetViewProtocol {
     
     private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ColorSetNotification.shared.observable().subscribe(onNext: { [weak self] colorSet in
-            self?.reloadColor(colorSet: colorSet)
-        }).disposed(by: bag)
+        eventDisposable().disposed(by: bag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        reloadColor(colorSet: ColorSet.restore())
+        setupColor()
     }
     
-    private func reloadColor(colorSet: ColorSet) {
+    func reloadColor(colorSet: ColorSet) {
         navigationBar.barTintColor = colorSet.navigationBarColor()
         navigationBar.tintColor = colorSet.backgroundColor()
         navigationBar.titleTextAttributes = [.foregroundColor : colorSet.backgroundColor()]
