@@ -578,9 +578,9 @@
 		F2B2E57A21C7134C00FA3ACC /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */,
 				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
 				F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */,
-				F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -623,9 +623,9 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
-				F2B2E57A21C7134C00FA3ACC /* Base */,
 				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
 				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
+				F2B2E57A21C7134C00FA3ACC /* Base */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
 				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
 				F26A01F521A43D6D008897A1 /* ViewControllers */,
@@ -1165,15 +1165,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
-				F2B2E58021C71AB400FA3ACC /* ColorSetViewProtocol.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
-				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
+				F2B2E58021C71AB400FA3ACC /* ColorSetViewProtocol.swift in Sources */,
 				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
+				F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */,
+				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
 				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
 				F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */,
