@@ -14,7 +14,7 @@ import RxCocoa
 import Presenter
 import Design
 
-final class NekoGachaViewController: UIViewController {
+final class NekoGachaViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: UILabel!
@@ -22,9 +22,25 @@ final class NekoGachaViewController: UIViewController {
     @IBOutlet private weak var gachaButton: UIButton!
     @IBOutlet private weak var newImage: UIImageView!
     
+    private let bag = DisposeBag()
+    
     private lazy var presenter = NekoGachaPresenter(wallet: walletBinder,
                                                     switchGachaButtonEnabled: switchGachaButtonEnabled,
                                                     nekoBinder: nekoBinder)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

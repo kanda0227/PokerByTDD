@@ -26,4 +26,8 @@ public final class ColorSettingPresenter {
     public func item(at indexPath: IndexPath) -> ColorSet {
         return items[indexPath.row]
     }
+    
+    public func didSelect(at indexPath: IndexPath) {
+        item(at: indexPath).save()
+    }
 }

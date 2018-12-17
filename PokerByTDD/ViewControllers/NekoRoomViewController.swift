@@ -9,19 +9,28 @@
 import UIKit
 import Model
 import Design
+import RxSwift
 
-final class NekoRoomViewController: UIViewController {
+final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImage: NekoAnimateView!
+    
+    private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nekoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NekoRoomViewController.tapNeko)))
+        eventDisposable().disposed(by: bag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Neko.selectedNeko().map(nekoImage.set)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {

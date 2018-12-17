@@ -10,14 +10,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Presenter
+import Model
 
 // MARK: - BetPickerViewController
 
 /// 賭け金選択画面
-final class BetPickerViewController: UIViewController {
+final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     
     /// この画面を閉じる際に実行するクロージャ
     private var completion: ((_ bet: Int) -> ())?
+    
+    private let bag = DisposeBag()
     
     private var presenter: BetPickerPresenter!
     
@@ -58,6 +61,20 @@ final class BetPickerViewController: UIViewController {
             betLabelText: vc.betLabelText,
             switchIsDoneButtonEnabled: vc.switchIsDoneButtonEnabled)
         return vc
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
     
     @IBAction private func tapDoneButton(_ sender: Any) {

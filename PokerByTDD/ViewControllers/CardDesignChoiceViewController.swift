@@ -8,10 +8,14 @@
 
 import UIKit
 import Presenter
+import RxSwift
+import Model
 
-final class CardDesignChoiceViewController: UIViewController, UINavigationControllerDelegate {
+final class CardDesignChoiceViewController: UIViewController, UINavigationControllerDelegate, ColorSetViewProtocol {
     
     private let imageSize = CGSize(width: 900, height: 1350)
+    
+    private let bag = DisposeBag()
     
     private lazy var presenter = CardDesignChoicePresenter()
     
@@ -33,6 +37,20 @@ final class CardDesignChoiceViewController: UIViewController, UINavigationContro
         vc.imageCategory = category
         vc.pickedImage = vc.presenter.restoreImage(category: category)
         return vc
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
     
     @IBAction func tapSelectFromAlbumButton(_ sender: Any) {

@@ -14,7 +14,7 @@
         <!--ねこ部屋-->
         <scene sceneID="Pza-Bm-PaA">
             <objects>
-                <navigationController id="az3-Gf-xOq" sceneMemberID="viewController">
+                <navigationController id="az3-Gf-xOq" customClass="CommonNavigationController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ねこ部屋" image="ic_home" landscapeImage="ic_home" largeContentSizeImage="ic_home" selectedImage="ic_home" id="g3B-m4-DRj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YLF-f0-wJv">

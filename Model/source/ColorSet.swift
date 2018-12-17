@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import RxSwift
+
+private let selectedColorSet = "selectedColorSet"
 
 public enum ColorSet: String, CaseIterable {
     case `default` = "デフォルト"
@@ -77,5 +80,32 @@ public enum ColorSet: String, CaseIterable {
         case .passion:
             return UIColor(named: "positivegreen")!
         }
+    }
+    
+    public func save() {
+        UserDefaults.standard.set(self.rawValue, forKey: selectedColorSet)
+        ColorSetNotification.shared.post(self)
+    }
+    
+    public static func restore() -> ColorSet {
+        let rawValue = UserDefaults.standard.string(forKey: selectedColorSet)
+        return rawValue.flatMap(ColorSet.init) ?? .default
+    }
+}
+
+public final class ColorSetNotification {
+    
+    public static let shared = ColorSetNotification()
+    
+    private init() {}
+    
+    private let subject = PublishSubject<ColorSet>()
+    
+    fileprivate func post(_ colorSet: ColorSet) {
+        subject.onNext(colorSet)
+    }
+    
+    public func observable() -> Observable<ColorSet> {
+        return subject.asObservable()
     }
 }

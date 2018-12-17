@@ -14,7 +14,7 @@ import Design
 /// ねこ詳細画面
 ///
 /// 将来的にはもっと表示する情報増やしたいね
-final class NekoDetailViewController: UIViewController {
+final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     
     /// ファクトリーメソッド
     ///
@@ -33,9 +33,7 @@ final class NekoDetailViewController: UIViewController {
     
     @IBOutlet private weak var mainView: UIView! {
         didSet {
-            mainView.layer.borderColor = UIColor(named: "pink")?.cgColor
-            mainView.layer.borderWidth = 5
-            mainView.layer.cornerRadius = 7
+            setupColor()
         }
     }
     @IBOutlet private weak var chooseButton: UIButton! {
@@ -60,6 +58,13 @@ final class NekoDetailViewController: UIViewController {
     }
     
     private var neko: Neko!
+    
+    func reloadColor(colorSet: ColorSet) {
+        mainView.backgroundColor = colorSet.backgroundColor()
+        mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
+        mainView.layer.borderWidth = 5
+        mainView.layer.cornerRadius = 7
+    }
     
     @objc private func tapBackView(_ sender: UITapGestureRecognizer) {
         dismissView()

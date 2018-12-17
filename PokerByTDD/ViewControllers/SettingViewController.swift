@@ -10,9 +10,11 @@ import UIKit
 import Utility
 import Presenter
 import Design
+import RxSwift
+import Model
 
 /// 設定画面のVC
-final class SettingViewController: UIViewController {
+final class SettingViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -20,7 +22,24 @@ final class SettingViewController: UIViewController {
         }
     }
     
+    private let bag = DisposeBag()
+    
     private lazy var presenter = SettingPresenter()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
+        tableView.backgroundColor = colorSet.backgroundColor()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -10,8 +10,12 @@ import UIKit
 import Utility
 import Design
 import Presenter
+import RxSwift
+import Model
 
-final class ColorSettingTableViewController: UITableViewController {
+final class ColorSettingTableViewController: UITableViewController, ColorSetViewProtocol {
+    
+    private let bag = DisposeBag()
     
     private lazy var presenter = ColorSettingPresenter()
     
@@ -19,6 +23,16 @@ final class ColorSettingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(ColorSettingCell.self)
+        eventDisposable().disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupColor()
+    }
+    
+    func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,5 +47,9 @@ final class ColorSettingTableViewController: UITableViewController {
         let cell: ColorSettingCell = tableView.dequeueReusableCell(for: indexPath)
         cell.set(presenter.item(at: indexPath))
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(at: indexPath)
     }
 }
