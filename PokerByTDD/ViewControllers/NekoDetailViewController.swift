@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Model
 import Design
-import RxSwift
 
 /// ねこ詳細画面
 ///
@@ -34,9 +33,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var mainView: UIView! {
         didSet {
-            mainView.layer.borderColor = UIColor(named: "pink")?.cgColor
-            mainView.layer.borderWidth = 5
-            mainView.layer.cornerRadius = 7
+            setupColor()
         }
     }
     @IBOutlet private weak var chooseButton: UIButton! {
@@ -60,22 +57,13 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
         }
     }
     
-    private let bag = DisposeBag()
-    
     private var neko: Neko!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        eventDisposable().disposed(by: bag)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupColor()
-    }
-    
     func reloadColor(colorSet: ColorSet) {
-        commonSetupColor(colorSet: colorSet)
+        mainView.backgroundColor = colorSet.backgroundColor()
+        mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
+        mainView.layer.borderWidth = 5
+        mainView.layer.cornerRadius = 7
     }
     
     @objc private func tapBackView(_ sender: UITapGestureRecognizer) {

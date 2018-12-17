@@ -38,6 +38,7 @@ final class SettingViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        tableView.backgroundColor = colorSet.backgroundColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {

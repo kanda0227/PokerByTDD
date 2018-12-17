@@ -32,6 +32,7 @@ final class NekoLibraryCollectionViewController: UICollectionViewController, Col
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        collectionView.backgroundColor = colorSet.backgroundColor()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
