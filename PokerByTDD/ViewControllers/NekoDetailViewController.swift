@@ -31,11 +31,12 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
         return vc
     }
     
-    @IBOutlet private weak var mainView: UIView! {
-        didSet {
-            setupColor()
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupColor()
     }
+    
+    @IBOutlet private weak var mainView: UIView!
     @IBOutlet private weak var chooseButton: UIButton! {
         didSet {
             chooseButton.isEnabled = neko != .unknown

@@ -68,8 +68,8 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
         eventDisposable().disposed(by: bag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupColor()
     }
     
