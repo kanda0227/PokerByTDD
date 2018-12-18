@@ -25,8 +25,8 @@ final class NekoLibraryCollectionViewController: UICollectionViewController, Col
         eventDisposable().disposed(by: bag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupColor()
     }
     
@@ -45,7 +45,7 @@ final class NekoLibraryCollectionViewController: UICollectionViewController, Col
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: NekoLibraryCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.set(neko: presenter.neko(at: indexPath))
+        cell.set(neko: presenter.neko(at: indexPath), colorSet: ColorSet.restore())
         return cell
     }
     

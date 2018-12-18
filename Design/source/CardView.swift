@@ -20,6 +20,7 @@ import Model
     @IBOutlet private weak var cardImageView: UIImageView!
     
     public private(set) var card: Card?
+    private var currentColorSet: ColorSet = .default
     
     @IBInspectable public var isBack: Bool = true {
         didSet {
@@ -57,6 +58,11 @@ import Model
         suitBackLabel.text = suit.rawValue
     }
     
+    public func setColor(colorSet: ColorSet) {
+        switchCardBorderColor(colorSet: colorSet)
+        self.currentColorSet = colorSet
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -87,12 +93,13 @@ import Model
         return contentSize
     }
     
-    private func switchCardBorderColor() {
-        let colorName = isSelected ? "green" : "pink"
+    private func switchCardBorderColor(colorSet: ColorSet? = nil) {
+        let colorSet = colorSet ?? currentColorSet
+        let color = isSelected ? colorSet.tabBarColor() : colorSet.navigationBarColor()
         let borderWidth: CGFloat = isSelected ? 4 : 2
         let cornerRadius: CGFloat = 5
         
-        self.layer.borderColor = UIColor(named: colorName)?.cgColor
+        self.layer.borderColor = color.cgColor
         self.layer.borderWidth = borderWidth
         self.layer.cornerRadius = cornerRadius
         self.backView.layer.cornerRadius = cornerRadius

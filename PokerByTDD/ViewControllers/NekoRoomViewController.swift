@@ -23,10 +23,14 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
         eventDisposable().disposed(by: bag)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupColor()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Neko.selectedNeko().map(nekoImage.set)
-        setupColor()
     }
     
     func reloadColor(colorSet: ColorSet) {

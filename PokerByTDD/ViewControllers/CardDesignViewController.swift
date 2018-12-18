@@ -36,8 +36,8 @@ final class CardDesignViewController: UIViewController, ColorSetViewProtocol {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupColor()
     }
     

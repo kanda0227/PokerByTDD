@@ -19,8 +19,8 @@ final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
         eventDisposable().disposed(by: bag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupColor()
     }
     

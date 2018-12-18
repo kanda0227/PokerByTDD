@@ -26,7 +26,6 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var mainView: UIView! {
         didSet {
-            mainView.layer.borderColor = UIColor(named: "pink")?.cgColor
             mainView.layer.borderWidth = 5
             mainView.layer.cornerRadius = 7
         }
@@ -68,13 +67,14 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
         eventDisposable().disposed(by: bag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setupColor()
     }
     
     func reloadColor(colorSet: ColorSet) {
-        commonSetupColor(colorSet: colorSet)
+        mainView.backgroundColor = colorSet.backgroundColor()
+        mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
     }
     
     @IBAction private func tapDoneButton(_ sender: Any) {
