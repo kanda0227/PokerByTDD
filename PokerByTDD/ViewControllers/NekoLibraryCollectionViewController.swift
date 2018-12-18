@@ -45,7 +45,7 @@ final class NekoLibraryCollectionViewController: UICollectionViewController, Col
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: NekoLibraryCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.set(neko: presenter.neko(at: indexPath))
+        cell.set(neko: presenter.neko(at: indexPath), colorSet: ColorSet.restore())
         return cell
     }
     
