@@ -41,6 +41,7 @@ import UIKit
         let view = instantiate()
         view.frame = bounds
         self.addSubview(view)
+        backgroundColor = .clear
     }
     
     override public var intrinsicContentSize: CGSize {
