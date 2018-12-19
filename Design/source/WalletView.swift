@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Model
 
 @IBDesignable public final class WalletView: UIView {
     
@@ -42,6 +43,12 @@ import UIKit
         view.frame = bounds
         self.addSubview(view)
         backgroundColor = .clear
+    }
+    
+    public func set(colorSet: ColorSet) {
+        walletLabel.textColor = colorSet.textColor()
+        itemNameLabel.textColor = colorSet.textColor()
+        recoveryLabel.textColor = colorSet.textColor()
     }
     
     override public var intrinsicContentSize: CGSize {
