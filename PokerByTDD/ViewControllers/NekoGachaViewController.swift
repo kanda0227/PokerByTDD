@@ -40,6 +40,7 @@ final class NekoGachaViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        walletView.set(colorSet: colorSet)
     }
     
     override func viewWillAppear(_ animated: Bool) {

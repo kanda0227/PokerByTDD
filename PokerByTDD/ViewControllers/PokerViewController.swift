@@ -58,6 +58,7 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
         (userCardViews + opponentCardsViews).forEach { $0.setColor(colorSet: colorSet) }
+        walletView.set(colorSet: colorSet)
     }
     
     override func viewWillAppear(_ animated: Bool) {

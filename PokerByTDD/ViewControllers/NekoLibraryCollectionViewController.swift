@@ -33,6 +33,11 @@ final class NekoLibraryCollectionViewController: UICollectionViewController, Col
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
         collectionView.backgroundColor = colorSet.backgroundColor()
+        collectionView.visibleCells.map { ($0, collectionView.indexPath(for: $0)) }.forEach { elems in
+            guard let cell = elems.0 as? NekoLibraryCell,
+                let indexPath = elems.1 else { return }
+            cell.set(neko: presenter.neko(at: indexPath), colorSet: colorSet)
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
