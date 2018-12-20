@@ -30,19 +30,3 @@ public extension ColorSetViewProtocol where Self: UIViewController {
         view.backgroundColor = colorSet.backgroundColor()
     }
 }
-
-public extension ColorSetViewProtocol where Self: UILabel {
-    
-    func reloadColor(colorSet: ColorSet) {
-        textColor = colorSet.textColor()
-    }
-}
-
-public extension ColorSetViewProtocol where Self: UIView {
-    
-    func reloadColor(colorSet: ColorSet) {
-        subviews
-            .filter { $0 is ColorSetViewProtocol }
-            .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }
-    }
-}

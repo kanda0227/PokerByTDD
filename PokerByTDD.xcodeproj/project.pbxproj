@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */; };
 		F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */; };
+		F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2C21CBD23200E1D1E1 /* CustomView.swift */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -219,6 +220,7 @@
 
 /* Begin PBXFileReference section */
 		F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		F2004A2C21CBD23200E1D1E1 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		F216D77621C1C5C8003F54BB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
 				F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */,
+				F2004A2C21CBD23200E1D1E1 /* CustomView.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1150,6 +1153,7 @@
 				F254FCAC21B7FC6800A77302 /* Assets.xcassets in Sources */,
 				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
 				F2A9F2CD21C53345009278D6 /* ColorSettingCell.swift in Sources */,
+				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
 				F2A9F2C521C32028009278D6 /* NekoAnimateView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,

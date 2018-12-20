@@ -10,4 +10,9 @@ import UIKit
 import Model
 import Utility
 
-public class CustomLabel: UILabel, ColorSetViewProtocol {}
+public class CustomLabel: UILabel, ColorSetViewProtocol {
+    
+    public func reloadColor(colorSet: ColorSet) {
+        textColor = colorSet.textColor()
+    }
+}
