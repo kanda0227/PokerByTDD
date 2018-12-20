@@ -10,12 +10,12 @@ import UIKit
 import RxSwift
 import Model
 
-protocol ColorSetViewProtocol {
+public protocol ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet)
     func setupColor()
 }
 
-extension ColorSetViewProtocol where Self: UIViewController {
+public extension ColorSetViewProtocol where Self: UIViewController {
     
     func eventDisposable() -> Disposable {
         return ColorSetNotification.shared.observable().subscribe(onNext: { [weak self] colorSet in
@@ -29,5 +29,12 @@ extension ColorSetViewProtocol where Self: UIViewController {
     
     func commonSetupColor(colorSet: ColorSet) {
         view.backgroundColor = colorSet.backgroundColor()
+    }
+}
+
+public extension ColorSetViewProtocol where Self: UILabel {
+    
+    func setupColor(colorSet: ColorSet) {
+        textColor = colorSet.textColor()
     }
 }

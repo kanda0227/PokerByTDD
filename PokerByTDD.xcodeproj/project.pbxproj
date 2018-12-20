@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -91,7 +92,6 @@
 		F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */; };
 		F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */; };
 		F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */; };
-		F2B2E58021C71AB400FA3ACC /* ColorSetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -466,6 +466,7 @@
 		F254FC5521B738D600A77302 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */,
 				F254FB6721B401A400A77302 /* RealmExtension.swift */,
 				F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */,
 				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
@@ -578,7 +579,6 @@
 		F2B2E57A21C7134C00FA3ACC /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */,
 				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
 				F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */,
 			);
@@ -1102,6 +1102,7 @@
 				F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */,
 				F2319B7321BCC37B001AD8CF /* UICollectionViewExtension.swift in Sources */,
 				F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */,
+				F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */,
 				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
 				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
@@ -1170,7 +1171,6 @@
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
-				F2B2E58021C71AB400FA3ACC /* ColorSetViewProtocol.swift in Sources */,
 				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
 				F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
