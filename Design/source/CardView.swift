@@ -12,10 +12,10 @@ import Model
 @IBDesignable public final class CardView: UIView {
     
     private var contentSize: CGSize!
-    @IBOutlet private weak var rankLabel: CustomLabel!
-    @IBOutlet private weak var rankBackLabel: CustomLabel!
-    @IBOutlet private weak var suitLabel: CustomLabel!
-    @IBOutlet private weak var suitBackLabel: CustomLabel!
+    @IBOutlet private weak var rankLabel: UILabel!
+    @IBOutlet private weak var rankBackLabel: UILabel!
+    @IBOutlet private weak var suitLabel: UILabel!
+    @IBOutlet private weak var suitBackLabel: UILabel!
     @IBOutlet private weak var backView: UIImageView!
     @IBOutlet private weak var cardImageView: UIImageView!
     
