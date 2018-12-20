@@ -37,3 +37,12 @@ public extension ColorSetViewProtocol where Self: UILabel {
         textColor = colorSet.textColor()
     }
 }
+
+public extension ColorSetViewProtocol where Self: UIView {
+    
+    func reloadColor(colorSet: ColorSet) {
+        subviews
+            .filter { $0 is ColorSetViewProtocol }
+            .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }
+    }
+}
