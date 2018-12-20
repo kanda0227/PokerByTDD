@@ -9,7 +9,7 @@
 import UIKit
 import Model
 
-public final class ColorSettingCell: UICollectionViewCell {
+public final class ColorSettingCell: UITableViewCell {
     
     @IBOutlet private weak var navigationBarColorView: UIView!
     @IBOutlet private weak var backgroundColorView: UIView!
