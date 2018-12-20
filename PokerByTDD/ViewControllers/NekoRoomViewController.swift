@@ -10,6 +10,7 @@ import UIKit
 import Model
 import Design
 import RxSwift
+import Utility
 
 final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     

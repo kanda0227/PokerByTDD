@@ -10,7 +10,7 @@ import UIKit
 
 public final class SettingItemCell: UITableViewCell {
     
-    @IBOutlet private weak var itemLabel: UILabel!
+    @IBOutlet private weak var itemLabel: CustomLabel!
     
     public func set(itemName: String) {
         itemLabel.text = itemName

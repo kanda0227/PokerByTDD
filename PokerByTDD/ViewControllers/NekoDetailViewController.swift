@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Model
 import Design
+import Utility
 
 /// ねこ詳細画面
 ///
@@ -47,7 +48,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
             nekoImageView.set(neko: neko)
         }
     }
-    @IBOutlet private weak var nekoLabel: UILabel! {
+    @IBOutlet private weak var nekoLabel: CustomLabel! {
         didSet {
             nekoLabel.text = neko.name
         }

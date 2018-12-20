@@ -15,7 +15,7 @@ public final class ColorSettingCell: UITableViewCell {
     @IBOutlet private weak var backgroundColorView: UIView!
     @IBOutlet private weak var tabBarColorView: UIView!
     @IBOutlet private weak var tabBarItemColorView: UIView!
-    @IBOutlet private weak var textSampleLabel: UILabel!
+    @IBOutlet private weak var textSampleLabel: CustomLabel!
     
     public func set(_ colorSet: ColorSet) {
         navigationBarColorView.backgroundColor = colorSet.navigationBarColor()

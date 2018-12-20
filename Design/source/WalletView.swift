@@ -11,9 +11,9 @@ import Model
 
 @IBDesignable public final class WalletView: UIView {
     
-    @IBOutlet private weak var walletLabel: UILabel!
-    @IBOutlet private weak var itemNameLabel: UILabel!
-    @IBOutlet private weak var recoveryLabel: UILabel!
+    @IBOutlet private weak var walletLabel: CustomLabel!
+    @IBOutlet private weak var itemNameLabel: CustomLabel!
+    @IBOutlet private weak var recoveryLabel: CustomLabel!
     
     @IBInspectable public var money: Int = 10000 {
         didSet {

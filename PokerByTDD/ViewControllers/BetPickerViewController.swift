@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import Presenter
 import Model
+import Utility
+import Design
 
 // MARK: - BetPickerViewController
 
@@ -31,7 +33,7 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
         }
     }
     /// 賭けたい金額を表示するためのラベル
-    @IBOutlet private weak var betLabel: UILabel!
+    @IBOutlet private weak var betLabel: CustomLabel!
     /// 賭け金選択用のピッカー
     @IBOutlet private weak var picker: UIPickerView! {
         didSet {

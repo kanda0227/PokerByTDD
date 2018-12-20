@@ -12,7 +12,7 @@ import Model
 public final class NekoLibraryCell: UICollectionViewCell {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
-    @IBOutlet private weak var nekoLabel: UILabel!
+    @IBOutlet private weak var nekoLabel: CustomLabel!
     
     public func set(neko: Neko, colorSet: ColorSet) {
         nekoImageView.image = neko.image()
