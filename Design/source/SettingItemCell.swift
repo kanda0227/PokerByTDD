@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Utility
+import Model
 
-public final class SettingItemCell: UITableViewCell {
+public final class SettingItemCell: UITableViewCell, ColorSetViewProtocol {
     
     @IBOutlet private weak var itemLabel: CustomLabel!
     
     public func set(itemName: String) {
         itemLabel.text = itemName
+    }
+    
+    public func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
 }

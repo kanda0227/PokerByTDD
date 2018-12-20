@@ -10,6 +10,8 @@
 		F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */; };
 		F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */; };
 		F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2C21CBD23200E1D1E1 /* CustomView.swift */; };
+		F2004A3221CBD7AF00E1D1E1 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
+		F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -339,6 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2004A3221CBD7AF00E1D1E1 /* Model.framework in Frameworks */,
 				F254FC5421B7375A00A77302 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +378,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */,
 				F254FCA921B73DFC00A77302 /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,3 +33,21 @@ public extension ColorSetViewProtocol where Self: UIViewController {
             .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }
     }
 }
+
+public extension ColorSetViewProtocol where Self: UITableViewCell {
+    
+    func commonSetupColor(colorSet: ColorSet) {
+        contentView.subviews
+            .filter { $0 is ColorSetViewProtocol }
+            .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }
+    }
+}
+
+public extension ColorSetViewProtocol where Self: UICollectionViewCell {
+    
+    func commonSetupColor(colorSet: ColorSet) {
+        contentView.subviews
+            .filter { $0 is ColorSetViewProtocol }
+            .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }
+    }
+}

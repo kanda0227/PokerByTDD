@@ -8,8 +8,9 @@
 
 import UIKit
 import Model
+import Utility
 
-public final class NekoLibraryCell: UICollectionViewCell {
+public final class NekoLibraryCell: UICollectionViewCell, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: CustomLabel!
@@ -17,7 +18,7 @@ public final class NekoLibraryCell: UICollectionViewCell {
     public func set(neko: Neko, colorSet: ColorSet) {
         nekoImageView.image = neko.image()
         nekoLabel.text = neko.name
-        setBorderColoer(colorSet: colorSet)
+        reloadColor(colorSet: colorSet)
     }
     
     private func setBorderColoer(colorSet: ColorSet) {
@@ -25,5 +26,10 @@ public final class NekoLibraryCell: UICollectionViewCell {
         self.layer.borderColor = colorSet.navigationBarColor().cgColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 5
+    }
+    
+    public func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
+        setBorderColoer(colorSet: colorSet)
     }
 }
