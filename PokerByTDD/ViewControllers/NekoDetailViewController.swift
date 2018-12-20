@@ -37,7 +37,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
         setupColor()
     }
     
-    @IBOutlet private weak var mainView: UIView!
+    @IBOutlet private weak var mainView: CustomView!
     @IBOutlet private weak var chooseButton: UIButton! {
         didSet {
             chooseButton.isEnabled = neko != .unknown
@@ -62,7 +62,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     private var neko: Neko!
     
     func reloadColor(colorSet: ColorSet) {
-        mainView.backgroundColor = colorSet.backgroundColor()
+        mainView.reloadColor(colorSet: colorSet)
         mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
         mainView.layer.borderWidth = 5
         mainView.layer.cornerRadius = 7

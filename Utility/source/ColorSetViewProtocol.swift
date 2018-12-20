@@ -28,5 +28,8 @@ public extension ColorSetViewProtocol where Self: UIViewController {
     
     func commonSetupColor(colorSet: ColorSet) {
         view.backgroundColor = colorSet.backgroundColor()
+        view.subviews
+            .filter { $0 is ColorSetViewProtocol }
+            .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }
     }
 }
