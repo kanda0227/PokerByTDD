@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */; };
+		F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */; };
+		F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2C21CBD23200E1D1E1 /* CustomView.swift */; };
+		F2004A3221CBD7AF00E1D1E1 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
+		F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -91,7 +96,6 @@
 		F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */; };
 		F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */; };
 		F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */; };
-		F2B2E58021C71AB400FA3ACC /* ColorSetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -217,6 +221,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		F2004A2C21CBD23200E1D1E1 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		F216D77621C1C5C8003F54BB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2004A3221CBD7AF00E1D1E1 /* Model.framework in Frameworks */,
 				F254FC5421B7375A00A77302 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +378,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */,
 				F254FCA921B73DFC00A77302 /* Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +474,7 @@
 		F254FC5521B738D600A77302 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */,
 				F254FB6721B401A400A77302 /* RealmExtension.swift */,
 				F2319B7221BCC37B001AD8CF /* UICollectionViewExtension.swift */,
 				F254FB6B21B5F0D300A77302 /* UIImageExtension.swift */,
@@ -543,6 +552,8 @@
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
+				F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */,
+				F2004A2C21CBD23200E1D1E1 /* CustomView.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -578,7 +589,6 @@
 		F2B2E57A21C7134C00FA3ACC /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */,
 				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
 				F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */,
 			);
@@ -1102,6 +1112,7 @@
 				F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */,
 				F2319B7321BCC37B001AD8CF /* UICollectionViewExtension.swift in Sources */,
 				F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */,
+				F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */,
 				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
 				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
@@ -1146,10 +1157,12 @@
 				F254FCAC21B7FC6800A77302 /* Assets.xcassets in Sources */,
 				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
 				F2A9F2CD21C53345009278D6 /* ColorSettingCell.swift in Sources */,
+				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
 				F2A9F2C521C32028009278D6 /* NekoAnimateView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
 				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
+				F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1170,7 +1183,6 @@
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
-				F2B2E58021C71AB400FA3ACC /* ColorSetViewProtocol.swift in Sources */,
 				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
 				F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,

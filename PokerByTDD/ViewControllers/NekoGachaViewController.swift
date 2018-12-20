@@ -13,11 +13,12 @@ import RxSwift
 import RxCocoa
 import Presenter
 import Design
+import Utility
 
 final class NekoGachaViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImageView: UIImageView!
-    @IBOutlet private weak var nekoLabel: UILabel!
+    @IBOutlet private weak var nekoLabel: CustomLabel!
     @IBOutlet private weak var walletView: WalletView!
     @IBOutlet private weak var gachaButton: UIButton!
     @IBOutlet private weak var newImage: UIImageView!

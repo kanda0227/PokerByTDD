@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import Presenter
 import Model
+import Utility
+import Design
 
 // MARK: - BetPickerViewController
 
@@ -24,14 +26,14 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     
     private var presenter: BetPickerPresenter!
     
-    @IBOutlet private weak var mainView: UIView! {
+    @IBOutlet private weak var mainView: CustomView! {
         didSet {
             mainView.layer.borderWidth = 5
             mainView.layer.cornerRadius = 7
         }
     }
     /// 賭けたい金額を表示するためのラベル
-    @IBOutlet private weak var betLabel: UILabel!
+    @IBOutlet private weak var betLabel: CustomLabel!
     /// 賭け金選択用のピッカー
     @IBOutlet private weak var picker: UIPickerView! {
         didSet {
@@ -73,7 +75,7 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     }
     
     func reloadColor(colorSet: ColorSet) {
-        mainView.backgroundColor = colorSet.backgroundColor()
+        mainView.reloadColor(colorSet: colorSet)
         mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
     }
     

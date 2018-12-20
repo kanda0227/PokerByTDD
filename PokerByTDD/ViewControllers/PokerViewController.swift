@@ -12,6 +12,7 @@ import RxCocoa
 import Model
 import Presenter
 import Design
+import Utility
 
 /// ポーカー画面
 final class PokerViewController: UIViewController, ColorSetViewProtocol {
@@ -19,13 +20,13 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     /// ユーザーのカードのビュー
     @IBOutlet private var userCardViews: [CardView]!
     /// ユーザーの役を表示するラベル
-    @IBOutlet private weak var userHandLabel: UILabel!
+    @IBOutlet private weak var userHandLabel: CustomLabel!
     /// 対戦相手のカードのビュー
     @IBOutlet private var opponentCardsViews: [CardView]!
     /// 対戦相手の役を表示するラベル
-    @IBOutlet private weak var opponentHandLabel: UILabel!
+    @IBOutlet private weak var opponentHandLabel: CustomLabel!
     /// 対戦結果を表示するラベル
-    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var resultLabel: CustomLabel!
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var tradeButton: UIButton!
     /// 所持金を表示するラベル
@@ -57,7 +58,7 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
-        (userCardViews + opponentCardsViews).forEach { $0.setColor(colorSet: colorSet) }
+        (userCardViews + opponentCardsViews).forEach { $0.reloadColor(colorSet: colorSet) }
         walletView.set(colorSet: colorSet)
     }
     

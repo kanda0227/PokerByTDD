@@ -8,8 +8,9 @@
 
 import UIKit
 import Model
+import Utility
 
-@IBDesignable public final class CardView: UIView {
+@IBDesignable public final class CardView: CustomView {
     
     private var contentSize: CGSize!
     @IBOutlet private weak var rankLabel: UILabel!
@@ -58,7 +59,8 @@ import Model
         suitBackLabel.text = suit.rawValue
     }
     
-    public func setColor(colorSet: ColorSet) {
+    override public func reloadColor(colorSet: ColorSet) {
+        super.reloadColor(colorSet: colorSet)
         switchCardBorderColor(colorSet: colorSet)
         self.currentColorSet = colorSet
     }
