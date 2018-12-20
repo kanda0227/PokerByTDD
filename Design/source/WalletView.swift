@@ -8,8 +8,9 @@
 
 import UIKit
 import Model
+import Utility
 
-@IBDesignable public final class WalletView: UIView {
+@IBDesignable public final class WalletView: CustomView {
     
     @IBOutlet private weak var walletLabel: CustomLabel!
     @IBOutlet private weak var itemNameLabel: CustomLabel!
