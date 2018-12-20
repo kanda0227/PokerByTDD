@@ -12,7 +12,6 @@ import Model
 
 public protocol ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet)
-    func setupColor()
 }
 
 public extension ColorSetViewProtocol where Self: UIViewController {
@@ -34,7 +33,7 @@ public extension ColorSetViewProtocol where Self: UIViewController {
 
 public extension ColorSetViewProtocol where Self: UILabel {
     
-    func setupColor(colorSet: ColorSet) {
+    func reloadColor(colorSet: ColorSet) {
         textColor = colorSet.textColor()
     }
 }
