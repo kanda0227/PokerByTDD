@@ -30,18 +30,27 @@ import Model
         contentSize = bounds.size
     }
     
+    private var neko: Neko = .mike {
+        didSet {
+            resetNeko()
+        }
+    }
+    
     /// 画像のセット作業
     ///
     /// これを呼ばないとアニメーションしません
     public func set(neko: Neko) {
-        image = neko.image()
-        highlightedAnimationImages = [neko.image(pose: .sit1), neko.image(pose: .sit2)]
-        animationDuration = 1
-        animationRepeatCount = 1
+        self.neko = neko
     }
     
-    public func action() {
-        isHighlighted = true
+    private func resetNeko() {
+        image = neko.image()
+    }
+    
+    public func action(_ newAction: NekoAction) {
+        animationImages = newAction.animateImage(neko: neko)
+        animationDuration = newAction.duration()
+        animationRepeatCount = newAction.repeatCount()
         startAnimating()
     }
     
