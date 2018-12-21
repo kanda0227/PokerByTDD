@@ -39,6 +39,6 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {
-        nekoImage.actionTapped()
+        nekoImage.action(.meow)
     }
 }

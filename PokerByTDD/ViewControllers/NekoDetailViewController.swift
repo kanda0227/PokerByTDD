@@ -73,7 +73,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     }
     
     @IBAction private func tapChooseButton(_ sender: Any) {
-        nekoImageView.actionTapped()
+        nekoImageView.action(.meow)
         neko.select()
     }
     
