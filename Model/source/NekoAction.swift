@@ -11,6 +11,8 @@ import Foundation
 public enum NekoAction {
     /// 鳴く
     case meow
+    /// じゃれる
+    case frolic
     /// 歩く
     case walk
     /// 寝る
@@ -20,6 +22,8 @@ public enum NekoAction {
         switch self {
         case .meow:
             return [.sit1, .sit2]
+        case .frolic:
+            return [.stand, .fight]
         default:
             return [.sit1]
         }
@@ -33,6 +37,8 @@ public enum NekoAction {
         switch self {
         case .meow:
             return 1
+        case .frolic:
+            return 1
         default:
             return 1
         }
@@ -42,6 +48,8 @@ public enum NekoAction {
         switch self {
         case .meow:
             return 1
+        case .frolic:
+            return 0
         default:
             return 0
         }

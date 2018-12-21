@@ -85,6 +85,10 @@ public extension Neko {
         case sit1
         /// 座る (笑顔)
         case sit2
+        /// 立つ
+        case stand
+        /// 戦う
+        case fight
     }
     
     public func image(pose: Neko.Pose = .sit1) -> UIImage {
