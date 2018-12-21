@@ -28,4 +28,22 @@ public enum NekoAction {
     public func animateImage(neko: Neko) -> [UIImage] {
         return animateImage().map { neko.image(pose: $0) }
     }
+    
+    public func duration() -> TimeInterval {
+        switch self {
+        case .meow:
+            return 1
+        default:
+            return 1
+        }
+    }
+    
+    public func repeatCount() -> Int {
+        switch self {
+        case .meow:
+            return 1
+        default:
+            return 0
+        }
+    }
 }
