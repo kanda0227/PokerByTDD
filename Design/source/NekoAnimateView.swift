@@ -35,7 +35,7 @@ import Model
     /// これを呼ばないとアニメーションしません
     public func set(neko: Neko) {
         image = neko.image()
-        highlightedAnimationImages = [neko.image(pose: .sit1), neko.image(pose: .sit2)]
+        highlightedAnimationImages = NekoAction.meow.animateImage(neko: neko)
         animationDuration = 1
         animationRepeatCount = 1
     }
