@@ -40,7 +40,7 @@ import Model
         animationRepeatCount = 1
     }
     
-    public func action() {
+    public func actionTapped() {
         isHighlighted = true
         startAnimating()
     }
