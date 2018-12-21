@@ -12,6 +12,7 @@
 		F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A2C21CBD23200E1D1E1 /* CustomView.swift */; };
 		F2004A3221CBD7AF00E1D1E1 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
 		F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
+		F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -223,6 +224,7 @@
 /* Begin PBXFileReference section */
 		F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		F2004A2C21CBD23200E1D1E1 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoAction.swift; sourceTree = "<group>"; };
 		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		F216D77621C1C5C8003F54BB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				F26A01F321A389CF008897A1 /* Dealer.swift */,
 				F2361974219F85F100C91A8C /* Hand.swift */,
 				F2B2E57621C6194E00FA3ACC /* Neko.swift */,
+				F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */,
 				F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */,
 				F2361976219FFCF700C91A8C /* PokerHand.swift */,
 				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
@@ -1085,6 +1088,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
+				F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */,
 				F2A9F2CF21C5340A009278D6 /* ColorSet.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
