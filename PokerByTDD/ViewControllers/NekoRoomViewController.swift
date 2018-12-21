@@ -22,6 +22,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
         super.viewDidLoad()
         nekoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NekoRoomViewController.tapNeko)))
         eventDisposable().disposed(by: bag)
+        nekoImage.action(.frolic)
     }
     
     override func viewDidLayoutSubviews() {
