@@ -30,7 +30,7 @@ import Model
         contentSize = bounds.size
     }
     
-    private var neko: Neko = .mike {
+    private var neko: Neko = .unknown {
         didSet {
             resetNeko()
         }

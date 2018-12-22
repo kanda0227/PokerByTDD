@@ -62,3 +62,13 @@ final class NekoLibraryCollectionViewController: UICollectionViewController, Col
         UIApplication.shared.keyWindow?.rootViewController?.present(nekoDetailVC, animated: true)
     }
 }
+
+extension NekoLibraryCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let margin: CGFloat = 30
+        let width = (UIScreen.main.bounds.size.width - margin) / 3
+        let height: CGFloat = 153
+        return CGSize(width: width, height: height)
+    }
+}
