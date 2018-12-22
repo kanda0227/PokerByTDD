@@ -82,6 +82,10 @@ public enum ColorSet: String, CaseIterable {
         }
     }
     
+    public func tintColor() -> UIColor {
+        return .blue
+    }
+    
     public func save() {
         UserDefaults.standard.set(self.rawValue, forKey: selectedColorSet)
         ColorSetNotification.shared.post(self)
