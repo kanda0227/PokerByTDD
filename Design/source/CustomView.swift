@@ -13,6 +13,7 @@ import Model
 public class CustomView: UIView, ColorSetViewProtocol {
     
     public func reloadColor(colorSet: ColorSet) {
+        backgroundColor = colorSet.backgroundColor()
         subviews
             .filter { $0 is ColorSetViewProtocol }
             .forEach { ($0 as! ColorSetViewProtocol).reloadColor(colorSet: colorSet) }

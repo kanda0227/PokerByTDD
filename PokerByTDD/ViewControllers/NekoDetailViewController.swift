@@ -63,7 +63,6 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         mainView.reloadColor(colorSet: colorSet)
-        mainView.backgroundColor = colorSet.backgroundColor()
         mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
         mainView.layer.borderWidth = 5
         mainView.layer.cornerRadius = 7

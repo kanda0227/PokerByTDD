@@ -76,7 +76,6 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         mainView.reloadColor(colorSet: colorSet)
-        mainView.backgroundColor = colorSet.backgroundColor()
         mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
     }
     
