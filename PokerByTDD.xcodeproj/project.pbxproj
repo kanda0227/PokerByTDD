@@ -13,6 +13,7 @@
 		F2004A3221CBD7AF00E1D1E1 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FB7421B5FA2200A77302 /* Model.framework */; };
 		F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F254FC3321B7370200A77302 /* Utility.framework */; };
 		F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */; };
+		F2004A3721CFAA1600E1D1E1 /* TopTabSelectableNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -225,6 +226,7 @@
 		F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		F2004A2C21CBD23200E1D1E1 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoAction.swift; sourceTree = "<group>"; };
+		F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabSelectableNotification.swift; sourceTree = "<group>"; };
 		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		F216D77621C1C5C8003F54BB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
 				F236197821A1286500C91A8C /* Table.swift */,
 				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
+				F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1093,6 +1096,7 @@
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */,
+				F2004A3721CFAA1600E1D1E1 /* TopTabSelectableNotification.swift in Sources */,
 				F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */,
 				F254FBA221B6025200A77302 /* PokerHand.swift in Sources */,
 				F254FBA421B6025200A77302 /* PokerHandDecisionHelper.swift in Sources */,

@@ -86,6 +86,7 @@ extension PokerViewPresenter {
         turnOverOpponentCards.onNext(true)
         switchIsStartButtonEnabled.onNext(false)
         switchIsTradeButtonEnabled.onNext(true)
+        TopTabSelectableNotification.shared.post(selectable: false)
     }
     
     /// ゲームスタート時に呼んでください
@@ -122,6 +123,7 @@ extension PokerViewPresenter {
         switchSelectableCards.onNext(false)
         switchIsStartButtonEnabled.onNext(true)
         switchIsTradeButtonEnabled.onNext(false)
+        TopTabSelectableNotification.shared.post(selectable: true)
     }
 }
 

@@ -18,6 +18,7 @@ final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         eventDisposable().disposed(by: bag)
+        delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -28,5 +29,12 @@ final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet) {
         tabBar.barTintColor = colorSet.tabBarColor()
         tabBar.tintColor = colorSet.tabBarItemColor()
+    }
+}
+
+extension CommonTabBarController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return TopTabSelectableNotification.shared.shouldSelectable()
     }
 }
