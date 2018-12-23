@@ -27,6 +27,10 @@ public final class ColorSettingCell: UITableViewCell {
         self.colorSet = colorSet
     }
     
+    public func selected(_ isSelectedColorSet: Bool) {
+        self.isSelectedColorSet = isSelectedColorSet
+    }
+    
     private func setupColor() {
         guard let colorSet = colorSet else { return }
         navigationBarColorView.backgroundColor = colorSet.navigationBarColor()
@@ -35,11 +39,17 @@ public final class ColorSettingCell: UITableViewCell {
         tabBarItemColorView.backgroundColor = colorSet.tabBarItemColor()
         textSampleLabel.textColor = colorSet.textColor()
         textSampleLabel.text = colorSet.rawValue
-        self.layer.borderWidth = isSelected ? 2 : 0
-        contentView.layer.borderColor = colorSet.navigationBarColor().cgColor
+        self.layer.borderWidth = isSelectedColorSet ? 2 : 0
+        contentView.layer.borderColor = UIColor.black.cgColor
     }
     
-    override public var isSelected: Bool {
+    private var isSelectedColorSet: Bool = false {
+        didSet {
+            setupColor()
+        }
+    }
+    
+    public override var isSelected: Bool {
         didSet {
             setupColor()
         }

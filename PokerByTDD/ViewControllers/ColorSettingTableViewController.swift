@@ -24,6 +24,7 @@ final class ColorSettingTableViewController: UITableViewController, ColorSetView
         
         tableView.register(ColorSettingCell.self)
         eventDisposable().disposed(by: bag)
+        tableView.selectRow(at: presenter.selectedIndex(), animated: false, scrollPosition: .top)
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,5 +52,10 @@ final class ColorSettingTableViewController: UITableViewController, ColorSetView
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.didSelect(at: indexPath)
+        (tableView.cellForRow(at: indexPath) as? ColorSettingCell)?.selected(true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        (tableView.cellForRow(at: indexPath) as? ColorSettingCell)?.selected(false)
     }
 }

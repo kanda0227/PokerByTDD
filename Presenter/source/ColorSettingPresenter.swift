@@ -30,4 +30,9 @@ public final class ColorSettingPresenter {
     public func didSelect(at indexPath: IndexPath) {
         item(at: indexPath).save()
     }
+    
+    public func selectedIndex() -> IndexPath? {
+        guard let index = items.firstIndex(of: ColorSet.restore()) else { return nil }
+        return IndexPath(row: index, section: 0)
+    }
 }
