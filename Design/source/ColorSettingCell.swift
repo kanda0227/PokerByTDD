@@ -39,7 +39,7 @@ public final class ColorSettingCell: UITableViewCell {
         tabBarItemColorView.backgroundColor = colorSet.tabBarItemColor()
         textSampleLabel.textColor = colorSet.textColor()
         textSampleLabel.text = colorSet.rawValue
-        self.layer.borderWidth = isSelectedColorSet ? 2 : 0
+        self.layer.borderWidth = isSelectedColorSet ? 3 : 0
         contentView.layer.borderColor = UIColor.black.cgColor
     }
     
