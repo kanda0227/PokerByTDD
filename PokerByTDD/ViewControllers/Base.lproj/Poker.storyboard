@@ -72,7 +72,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isBack" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-pH-mjw">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-pH-mjw" customClass="CustomButton" customModule="Design">
                                 <rect key="frame" x="155" y="551" width="62" height="30"/>
                                 <state key="normal" title="交換する"/>
                                 <connections>
@@ -135,7 +135,7 @@
                                 <color key="textColor" red="0.25882352941176467" green="0.28235294117647058" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPp-sh-mYw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPp-sh-mYw" customClass="CustomButton" customModule="Design">
                                 <rect key="frame" x="156.5" y="498" width="62" height="30"/>
                                 <state key="normal" title="はじめる"/>
                                 <connections>

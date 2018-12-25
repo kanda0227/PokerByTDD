@@ -27,8 +27,8 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var opponentHandLabel: CustomLabel!
     /// 対戦結果を表示するラベル
     @IBOutlet private weak var resultLabel: CustomLabel!
-    @IBOutlet private weak var startButton: UIButton!
-    @IBOutlet private weak var tradeButton: UIButton!
+    @IBOutlet private weak var startButton: CustomButton!
+    @IBOutlet private weak var tradeButton: CustomButton!
     /// 所持金を表示するラベル
     @IBOutlet private weak var walletView: WalletView!
     
@@ -60,6 +60,8 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
         commonSetupColor(colorSet: colorSet)
         (userCardViews + opponentCardsViews).forEach { $0.reloadColor(colorSet: colorSet) }
         walletView.set(colorSet: colorSet)
+        tradeButton.colorSet = colorSet
+        startButton.colorSet = colorSet
     }
     
     override func viewWillAppear(_ animated: Bool) {
