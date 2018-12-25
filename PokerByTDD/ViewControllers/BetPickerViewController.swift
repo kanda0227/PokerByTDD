@@ -42,7 +42,7 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
         }
     }
     /// 完了ボタン
-    @IBOutlet private weak var doneButton: UIButton!
+    @IBOutlet private weak var doneButton: CustomButton!
     
     /// ファクトリーメソッド
     ///
@@ -77,6 +77,7 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet) {
         mainView.reloadColor(colorSet: colorSet)
         mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
+        doneButton.colorSet = colorSet
     }
     
     @IBAction private func tapDoneButton(_ sender: Any) {

@@ -54,14 +54,14 @@
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65G-Ch-4vi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65G-Ch-4vi" customClass="CustomButton" customModule="Design">
                                 <rect key="frame" x="141.5" y="473" width="92" height="30"/>
                                 <state key="normal" title="所持ねこ一覧"/>
                                 <connections>
                                     <segue destination="pEY-Eb-S2N" kind="show" id="1Gl-QW-2Y8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-uM-l0N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-uM-l0N" customClass="CustomButton" customModule="Design">
                                 <rect key="frame" x="122" y="303" width="131" height="30"/>
                                 <state key="normal" title="ガチャを回す(200)"/>
                                 <connections>
@@ -109,6 +109,7 @@
                         <outlet property="gachaButton" destination="IRc-uM-l0N" id="yvO-dT-vQW"/>
                         <outlet property="nekoImageView" destination="HkQ-Ka-cxb" id="7UB-6e-Uh1"/>
                         <outlet property="nekoLabel" destination="6VX-z6-Aan" id="FTg-aC-Snn"/>
+                        <outlet property="nekoLibraryButton" destination="65G-Ch-4vi" id="dmP-0q-Vd0"/>
                         <outlet property="newImage" destination="6Og-eh-Rgx" id="m2m-wV-IzD"/>
                         <outlet property="walletView" destination="UhE-pd-f8n" id="9gV-o9-PNT"/>
                     </connections>

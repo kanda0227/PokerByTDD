@@ -11,6 +11,7 @@ import Presenter
 import RxSwift
 import Model
 import Utility
+import Design
 
 final class CardDesignChoiceViewController: UIViewController, UINavigationControllerDelegate, ColorSetViewProtocol {
     
@@ -20,6 +21,7 @@ final class CardDesignChoiceViewController: UIViewController, UINavigationContro
     
     private lazy var presenter = CardDesignChoicePresenter()
     
+    @IBOutlet private var buttons: [CustomButton]!
     @IBOutlet private weak var pickedImageView: UIImageView! {
         didSet {
             pickedImageView.image = pickedImage
@@ -52,6 +54,7 @@ final class CardDesignChoiceViewController: UIViewController, UINavigationContro
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        buttons.forEach { $0.colorSet = colorSet }
     }
     
     @IBAction func tapSelectFromAlbumButton(_ sender: Any) {
