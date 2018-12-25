@@ -28,21 +28,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVx-8V-dpx">
                                 <rect key="frame" x="32" y="494.5" width="311" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-YY-Ugy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-YY-Ugy" customClass="CustomButton" customModule="Design">
                                         <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
                                         <state key="normal" title="アルバムから選ぶ"/>
                                         <connections>
                                             <action selector="tapSelectFromAlbumButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="OVX-Rh-bkZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSU-s9-ogr">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSU-s9-ogr" customClass="CustomButton" customModule="Design">
                                         <rect key="frame" x="163" y="0.0" width="77" height="30"/>
                                         <state key="normal" title="写真を撮る"/>
                                         <connections>
                                             <action selector="tapTakePictureButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="hrb-yr-pLT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-r3-Tcx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-r3-Tcx" customClass="CustomButton" customModule="Design">
                                         <rect key="frame" x="280" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="決定"/>
                                         <connections>
@@ -75,6 +75,9 @@
                     </view>
                     <connections>
                         <outlet property="pickedImageView" destination="roX-2h-NtT" id="c6b-lF-RNK"/>
+                        <outletCollection property="buttons" destination="0pg-YY-Ugy" collectionClass="NSMutableArray" id="79z-aU-UO8"/>
+                        <outletCollection property="buttons" destination="TSU-s9-ogr" collectionClass="NSMutableArray" id="ZAu-W2-9wa"/>
+                        <outletCollection property="buttons" destination="ViW-r3-Tcx" collectionClass="NSMutableArray" id="1hY-R3-qmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkI-Go-ciV" userLabel="First Responder" sceneMemberID="firstResponder"/>
