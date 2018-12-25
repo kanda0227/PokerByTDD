@@ -384,8 +384,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */,
 				F254FCA921B73DFC00A77302 /* Model.framework in Frameworks */,
+				F2004A3321CBD89F00E1D1E1 /* Utility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,8 +454,8 @@
 				F2361976219FFCF700C91A8C /* PokerHand.swift */,
 				F236197A21A1578300C91A8C /* PokerHandDecisionHelper.swift */,
 				F236197821A1286500C91A8C /* Table.swift */,
-				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
 				F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */,
+				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -553,6 +553,9 @@
 				F26A01F721A43DBD008897A1 /* CardView.xib */,
 				F2A9F2CC21C53345009278D6 /* ColorSettingCell.swift */,
 				F2A9F2C821C530FE009278D6 /* ColorSettingCell.xib */,
+				F2004A3821D275CA00E1D1E1 /* CustomButton.swift */,
+				F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */,
+				F2004A2C21CBD23200E1D1E1 /* CustomView.swift */,
 				F2A9F2C421C32028009278D6 /* NekoAnimateView.swift */,
 				F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */,
 				F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */,
@@ -560,9 +563,6 @@
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
-				F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */,
-				F2004A2C21CBD23200E1D1E1 /* CustomView.swift */,
-				F2004A3821D275CA00E1D1E1 /* CustomButton.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1094,16 +1094,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
-				F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */,
 				F2A9F2CF21C5340A009278D6 /* ColorSet.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */,
-				F2004A3721CFAA1600E1D1E1 /* TopTabSelectableNotification.swift in Sources */,
+				F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */,
 				F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */,
 				F254FBA221B6025200A77302 /* PokerHand.swift in Sources */,
 				F254FBA421B6025200A77302 /* PokerHandDecisionHelper.swift in Sources */,
 				F254FBA521B6025200A77302 /* Table.swift in Sources */,
+				F2004A3721CFAA1600E1D1E1 /* TopTabSelectableNotification.swift in Sources */,
 				F254FBA821B6025200A77302 /* Wallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1120,10 +1120,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */,
 				F254FC5021B7372300A77302 /* RealmExtension.swift in Sources */,
 				F2319B7321BCC37B001AD8CF /* UICollectionViewExtension.swift in Sources */,
 				F254FC5121B7372700A77302 /* UIImageExtension.swift in Sources */,
-				F2004A2B21CBC9BC00E1D1E1 /* ColorSetViewProtocol.swift in Sources */,
 				F254FC5221B7372D00A77302 /* UITableViewExtension.swift in Sources */,
 				F254FC5321B7373100A77302 /* UIViewControllerExtension.swift in Sources */,
 			);
@@ -1168,13 +1168,13 @@
 				F254FCAC21B7FC6800A77302 /* Assets.xcassets in Sources */,
 				F254FCA521B73DA200A77302 /* CardView.swift in Sources */,
 				F2A9F2CD21C53345009278D6 /* ColorSettingCell.swift in Sources */,
-				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
 				F2004A3921D275CA00E1D1E1 /* CustomButton.swift in Sources */,
+				F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */,
+				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
 				F2A9F2C521C32028009278D6 /* NekoAnimateView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
 				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
-				F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
