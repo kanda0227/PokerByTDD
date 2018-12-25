@@ -38,7 +38,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     }
     
     @IBOutlet private weak var mainView: CustomView!
-    @IBOutlet private weak var chooseButton: UIButton! {
+    @IBOutlet private weak var chooseButton: CustomButton! {
         didSet {
             chooseButton.isEnabled = neko != .unknown
         }
@@ -66,6 +66,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
         mainView.layer.borderColor = colorSet.navigationBarColor().cgColor
         mainView.layer.borderWidth = 5
         mainView.layer.cornerRadius = 7
+        chooseButton.colorSet = colorSet
     }
     
     @objc private func tapBackView(_ sender: UITapGestureRecognizer) {

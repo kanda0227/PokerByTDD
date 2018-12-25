@@ -26,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-sr-RcJ" customClass="CustomView" customModule="Design">
                                 <rect key="frame" x="67.5" y="183.5" width="240" height="320"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYm-qp-4be">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYm-qp-4be" customClass="CustomButton" customModule="Design">
                                         <rect key="frame" x="74" y="271" width="92" height="30"/>
                                         <state key="normal" title="この子を選ぶ"/>
                                         <connections>
