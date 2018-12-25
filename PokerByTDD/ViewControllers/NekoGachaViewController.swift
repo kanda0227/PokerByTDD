@@ -20,7 +20,8 @@ final class NekoGachaViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: CustomLabel!
     @IBOutlet private weak var walletView: WalletView!
-    @IBOutlet private weak var gachaButton: UIButton!
+    @IBOutlet private weak var gachaButton: CustomButton!
+    @IBOutlet private weak var nekoLibraryButton: CustomButton!
     @IBOutlet private weak var newImage: UIImageView!
     
     private let bag = DisposeBag()
@@ -42,6 +43,8 @@ final class NekoGachaViewController: UIViewController, ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
         walletView.set(colorSet: colorSet)
+        gachaButton.colorSet = colorSet
+        nekoLibraryButton.colorSet = colorSet
     }
     
     override func viewWillAppear(_ animated: Bool) {
