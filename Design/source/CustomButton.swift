@@ -33,8 +33,13 @@ public final class CustomButton: UIButton {
     
     private func setColorSet() {
         backgroundColor = colorSet.navigationBarColor()
-        titleLabel?.textColor = colorSet.backgroundColor()
         layer.cornerRadius = 5
+        
+        guard let text = titleLabel?.text else { return }
+        let attributedText = NSAttributedString(string: text,
+                                                        attributes: [.font : UIFont.boldSystemFont(ofSize: 15),
+                                                                     .foregroundColor : colorSet.backgroundColor()])
+        setAttributedTitle(attributedText, for: .normal)
     }
     
     public override var intrinsicContentSize: CGSize {
