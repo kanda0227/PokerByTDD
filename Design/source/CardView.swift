@@ -104,6 +104,7 @@ import Utility
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = borderWidth
         self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = true
         self.backView.layer.cornerRadius = cornerRadius
         self.cardImageView.layer.cornerRadius = cornerRadius
     }

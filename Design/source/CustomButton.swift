@@ -9,7 +9,7 @@
 import UIKit
 import Model
 
-public final class CustomButton: UIButton {
+@IBDesignable public final class CustomButton: UIButton {
     
     public var colorSet: ColorSet = .default {
         didSet {
@@ -29,17 +29,33 @@ public final class CustomButton: UIButton {
     
     private func configure() {
         setColorSet()
+        setAlpha()
     }
     
     private func setColorSet() {
         backgroundColor = colorSet.navigationBarColor()
-        titleLabel?.textColor = colorSet.backgroundColor()
         layer.cornerRadius = 5
+        
+        guard let text = titleLabel?.text else { return }
+        let attributedText = NSAttributedString(string: text,
+                                                        attributes: [.font : UIFont.boldSystemFont(ofSize: 15),
+                                                                     .foregroundColor : colorSet.backgroundColor()])
+        setAttributedTitle(attributedText, for: .normal)
     }
     
     public override var intrinsicContentSize: CGSize {
-        let margin: CGFloat = 60
+        let margin: CGFloat = 40
         let titleWidth = titleLabel?.intrinsicContentSize.width ?? 0
         return CGSize(width: titleWidth + margin, height: 30)
+    }
+    
+    override public var isEnabled: Bool {
+        didSet {
+            setAlpha()
+        }
+    }
+    
+    private func setAlpha() {
+        alpha = isEnabled ? 1 : 0.3
     }
 }
