@@ -29,6 +29,7 @@ public final class CustomButton: UIButton {
     
     private func configure() {
         setColorSet()
+        setAlpha()
     }
     
     private func setColorSet() {
@@ -46,5 +47,15 @@ public final class CustomButton: UIButton {
         let margin: CGFloat = 60
         let titleWidth = titleLabel?.intrinsicContentSize.width ?? 0
         return CGSize(width: titleWidth + margin, height: 30)
+    }
+    
+    override public var isEnabled: Bool {
+        didSet {
+            setAlpha()
+        }
+    }
+    
+    private func setAlpha() {
+        alpha = isEnabled ? 1 : 0.3
     }
 }
