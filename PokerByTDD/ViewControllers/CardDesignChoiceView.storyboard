@@ -53,8 +53,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ViW-r3-Tcx" firstAttribute="centerY" secondItem="0pg-YY-Ugy" secondAttribute="centerY" id="4TP-nL-4gU"/>
-                                    <constraint firstItem="ViW-r3-Tcx" firstAttribute="leading" secondItem="TSU-s9-ogr" secondAttribute="trailing" constant="40" id="A1Q-jP-Kgc"/>
-                                    <constraint firstItem="TSU-s9-ogr" firstAttribute="leading" secondItem="0pg-YY-Ugy" secondAttribute="trailing" constant="40" id="C4I-rh-v24"/>
+                                    <constraint firstItem="ViW-r3-Tcx" firstAttribute="leading" secondItem="TSU-s9-ogr" secondAttribute="trailing" constant="10" id="A1Q-jP-Kgc"/>
+                                    <constraint firstItem="TSU-s9-ogr" firstAttribute="leading" secondItem="0pg-YY-Ugy" secondAttribute="trailing" constant="10" id="C4I-rh-v24"/>
                                     <constraint firstItem="0pg-YY-Ugy" firstAttribute="top" secondItem="JVx-8V-dpx" secondAttribute="top" id="XZj-Kg-qi7"/>
                                     <constraint firstItem="TSU-s9-ogr" firstAttribute="centerY" secondItem="0pg-YY-Ugy" secondAttribute="centerY" id="pYh-Yy-9j0"/>
                                     <constraint firstAttribute="trailing" secondItem="ViW-r3-Tcx" secondAttribute="trailing" id="sUV-mO-0CZ"/>
