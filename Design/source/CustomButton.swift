@@ -9,7 +9,7 @@
 import UIKit
 import Model
 
-public final class CustomButton: UIButton {
+@IBDesignable public final class CustomButton: UIButton {
     
     public var colorSet: ColorSet = .default {
         didSet {
@@ -44,7 +44,7 @@ public final class CustomButton: UIButton {
     }
     
     public override var intrinsicContentSize: CGSize {
-        let margin: CGFloat = 60
+        let margin: CGFloat = 40
         let titleWidth = titleLabel?.intrinsicContentSize.width ?? 0
         return CGSize(width: titleWidth + margin, height: 30)
     }
