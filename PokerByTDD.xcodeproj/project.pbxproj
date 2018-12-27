@@ -15,6 +15,7 @@
 		F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */; };
 		F2004A3721CFAA1600E1D1E1 /* TopTabSelectableNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */; };
 		F2004A3921D275CA00E1D1E1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3821D275CA00E1D1E1 /* CustomButton.swift */; };
+		F2004A3B21D5163E00E1D1E1 /* NekoWalkCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2004A3A21D5163D00E1D1E1 /* NekoWalkCalculation.swift */; };
 		F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F216D77421C1C4B0003F54BB /* WalletView.xib */; };
 		F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F216D77621C1C5C8003F54BB /* WalletView.swift */; };
 		F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */; };
@@ -229,6 +230,7 @@
 		F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoAction.swift; sourceTree = "<group>"; };
 		F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabSelectableNotification.swift; sourceTree = "<group>"; };
 		F2004A3821D275CA00E1D1E1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		F2004A3A21D5163D00E1D1E1 /* NekoWalkCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoWalkCalculation.swift; sourceTree = "<group>"; };
 		F216D77421C1C4B0003F54BB /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		F216D77621C1C5C8003F54BB /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoGacha.swift; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 				F2319B6C21BCC1BF001AD8CF /* NekoLibraryView.storyboard */,
 				F2A9F2D421C6164A009278D6 /* NekoRoomView.storyboard */,
 				F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */,
+				F2004A3A21D5163D00E1D1E1 /* NekoWalkCalculation.swift */,
 				F2D79B5A219CE57000962D26 /* Poker.storyboard */,
 				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
@@ -1199,6 +1202,7 @@
 				F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
 				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
+				F2004A3B21D5163E00E1D1E1 /* NekoWalkCalculation.swift in Sources */,
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
 				F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
