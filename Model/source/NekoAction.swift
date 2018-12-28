@@ -24,6 +24,8 @@ public enum NekoAction {
             return [.sit1, .sit2]
         case .frolic:
             return [.stand, .fight]
+        case .walk:
+            return [.walk_r1, .walk_r2]
         default:
             return [.sit1]
         }
@@ -39,6 +41,8 @@ public enum NekoAction {
             return 1
         case .frolic:
             return 1
+        case .walk:
+            return 0.8
         default:
             return 1
         }
@@ -49,6 +53,8 @@ public enum NekoAction {
         case .meow:
             return 1
         case .frolic:
+            return 0
+        case .walk:
             return 0
         default:
             return 0
