@@ -12,7 +12,7 @@ import UIKit
 
 public final class NekoWalkCalculation {
     
-    private let walkSpeed: CGFloat = 10
+    private let walkSpeed: CGFloat = 40
     public let interval: TimeInterval = 0.1
     
     private var startPoint = CGPoint(x: 0, y: 0)
