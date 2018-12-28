@@ -12,8 +12,8 @@ import UIKit
 
 public final class NekoWalkCalculation {
     
-    private let walkSpeed: CGFloat = 10
-    private let interval: TimeInterval = 0.1
+    private let walkSpeed: CGFloat = 40
+    public let interval: TimeInterval = 0.1
     
     private var startPoint = CGPoint(x: 0, y: 0)
     private var goalPoint = CGPoint(x: 0, y: 0)
@@ -24,6 +24,7 @@ public final class NekoWalkCalculation {
     static public let shared = NekoWalkCalculation()
     
     private let positionSubject = PublishSubject<CGPoint>()
+    private let stopSubject = PublishSubject<Void>()
     
     public func walk(startPoint: CGPoint, goalPoint: CGPoint) {
         self.startPoint = startPoint
@@ -34,11 +35,16 @@ public final class NekoWalkCalculation {
     }
     
     public func stop() {
-        timer = nil
+        timer?.invalidate()
+        stopSubject.onNext(())
     }
     
-    public func observable() -> Observable<CGPoint> {
+    public func walkObservable() -> Observable<CGPoint> {
         return positionSubject.asObservable()
+    }
+    
+    public func stopObservable() -> Observable<Void> {
+        return stopSubject.asObservable()
     }
     
     private func direction() -> (x: CGFloat, y: CGFloat) {
