@@ -9,6 +9,8 @@
 import Foundation
 
 public enum NekoAction {
+    /// 座る
+    case sit
     /// 鳴く
     case meow
     /// じゃれる
@@ -20,6 +22,8 @@ public enum NekoAction {
     
     private func animateImage() -> [Neko.Pose] {
         switch self {
+        case .sit:
+            return [.sit1]
         case .meow:
             return [.sit1, .sit2]
         case .frolic:
