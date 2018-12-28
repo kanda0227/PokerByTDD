@@ -18,6 +18,8 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     private let bag = DisposeBag()
     
+    private var nekoWalkDisposable: Disposable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nekoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NekoRoomViewController.tapNeko)))
@@ -41,5 +43,30 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {
         nekoImage.action(.meow)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let goalPoint = event?.allTouches?.first?.location(in: self.view) else { return }
+        let startPoint = nekoImage.center
+        NekoWalkCalculation.shared.stop()
+        NekoWalkCalculation.shared.walk(startPoint: startPoint, goalPoint: goalPoint)
+        nekoImage.action(.walk)
+        let disposables = [
+            NekoWalkCalculation.shared.walkObservable().subscribe(onNext: { [weak self] point in
+                self?.nekoWalk(point)
+            }),
+            NekoWalkCalculation.shared.stopObservable().subscribe(onNext: { [weak self] in
+                self?.nekoWalkDisposable?.dispose()
+                self?.nekoImage?.action(.sit)
+            })
+            ]
+        nekoWalkDisposable = Disposables.create(disposables)
+        
+    }
+    
+    private func nekoWalk(_ point: CGPoint) {
+        UIView.animate(withDuration: NekoWalkCalculation.shared.interval, delay: 0.0, options: .autoreverse, animations: { [weak self] in
+            self?.nekoImage.center = point
+        }, completion: nil)
     }
 }
