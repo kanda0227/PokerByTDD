@@ -53,7 +53,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
         let startPoint = nekoImage.center
         NekoWalkCalculation.shared.stop()
         NekoWalkCalculation.shared.walk(startPoint: startPoint, goalPoint: goalPoint)
-        nekoImage.action(.walk)
+        nekoImage.action(.walk(NekoWalkCalculation.shared.walkDirection()))
         let disposables = [
             NekoWalkCalculation.shared.walkObservable().subscribe(onNext: { [weak self] point in
                 self?.nekoWalk(point)
