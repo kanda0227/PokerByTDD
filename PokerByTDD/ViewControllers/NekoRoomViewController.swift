@@ -46,7 +46,10 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard event?.touches(for: nekoImage) == nil else { return }
+        
         guard let goalPoint = event?.allTouches?.first?.location(in: self.view) else { return }
+        
         let startPoint = nekoImage.center
         NekoWalkCalculation.shared.stop()
         NekoWalkCalculation.shared.walk(startPoint: startPoint, goalPoint: goalPoint)
