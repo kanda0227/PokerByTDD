@@ -23,8 +23,8 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         nekoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NekoRoomViewController.tapNeko)))
+        nekoImage.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(NekoRoomViewController.longPressNeko)))
         eventDisposable().disposed(by: bag)
-        nekoImage.action(.frolic)
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,6 +35,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Neko.selectedNeko().map(nekoImage.set)
+        nekoImage.action(.sit)
     }
     
     func reloadColor(colorSet: ColorSet) {
@@ -43,6 +44,15 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {
         nekoImage.action(.meow)
+    }
+    
+    @objc private func longPressNeko(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            nekoImage.action(.frolic)
+        }
+        if sender.state == .ended {
+            nekoImage.action(.sit)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
