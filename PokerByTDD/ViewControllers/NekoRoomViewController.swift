@@ -23,8 +23,8 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         nekoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NekoRoomViewController.tapNeko)))
+        nekoImage.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(NekoRoomViewController.longPressNeko)))
         eventDisposable().disposed(by: bag)
-        nekoImage.action(.frolic)
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,6 +35,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Neko.selectedNeko().map(nekoImage.set)
+        nekoImage.action(.sit)
     }
     
     func reloadColor(colorSet: ColorSet) {
@@ -45,12 +46,24 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
         nekoImage.action(.meow)
     }
     
+    @objc private func longPressNeko(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            nekoImage.action(.frolic)
+        }
+        if sender.state == .ended {
+            nekoImage.action(.sit)
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard event?.touches(for: nekoImage) == nil else { return }
+        
         guard let goalPoint = event?.allTouches?.first?.location(in: self.view) else { return }
+        
         let startPoint = nekoImage.center
         NekoWalkCalculation.shared.stop()
         NekoWalkCalculation.shared.walk(startPoint: startPoint, goalPoint: goalPoint)
-        nekoImage.action(.walk)
+        nekoImage.action(.walk(NekoWalkCalculation.shared.walkDirection()))
         let disposables = [
             NekoWalkCalculation.shared.walkObservable().subscribe(onNext: { [weak self] point in
                 self?.nekoWalk(point)
@@ -65,7 +78,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     private func nekoWalk(_ point: CGPoint) {
-        UIView.animate(withDuration: NekoWalkCalculation.shared.interval, delay: 0.0, options: .autoreverse, animations: { [weak self] in
+        UIView.animate(withDuration: NekoWalkCalculation.shared.interval, delay: 0.0, animations: { [weak self] in
             self?.nekoImage.center = point
         }, completion: nil)
     }

@@ -34,6 +34,10 @@ public final class NekoWalkCalculation {
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(self.postWalk), userInfo: nil, repeats: true)
     }
     
+    public func walkDirection() -> NekoAction.Direction {
+        return startPoint.x < goalPoint.x ? .right : .left
+    }
+    
     public func stop() {
         timer?.invalidate()
         stopSubject.onNext(())
