@@ -16,7 +16,7 @@ public enum NekoAction {
     /// じゃれる
     case frolic
     /// 歩く
-    case walk
+    case walk(Direction)
     /// 寝る
     case sleep
     
@@ -28,8 +28,10 @@ public enum NekoAction {
             return [.sit1, .sit2]
         case .frolic:
             return [.stand, .fight]
-        case .walk:
+        case .walk(.right):
             return [.walk_r1, .walk_r2]
+        case .walk(.left):
+            return [.walk_l1, .walk_l2]
         default:
             return [.sit1]
         }
@@ -45,7 +47,7 @@ public enum NekoAction {
             return 1
         case .frolic:
             return 1
-        case .walk:
+        case .walk(_):
             return 0.8
         default:
             return 1
@@ -58,10 +60,15 @@ public enum NekoAction {
             return 1
         case .frolic:
             return 0
-        case .walk:
+        case .walk(_):
             return 0
         default:
             return 0
         }
+    }
+    
+    public enum Direction {
+        case right
+        case left
     }
 }
