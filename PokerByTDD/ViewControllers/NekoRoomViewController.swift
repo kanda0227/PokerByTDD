@@ -68,7 +68,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     private func nekoWalk(_ point: CGPoint) {
-        UIView.animate(withDuration: NekoWalkCalculation.shared.interval, delay: 0.0, options: .autoreverse, animations: { [weak self] in
+        UIView.animate(withDuration: NekoWalkCalculation.shared.interval, delay: 0.0, animations: { [weak self] in
             self?.nekoImage.center = point
         }, completion: nil)
     }

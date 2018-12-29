@@ -45,13 +45,10 @@
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neko" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-zX-toX" customClass="NekoAnimateView" customModule="Design">
                                 <rect key="frame" x="137.5" y="291" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="beige"/>
-                        <constraints>
-                            <constraint firstItem="oUv-zX-toX" firstAttribute="centerX" secondItem="Bhc-Sh-fnj" secondAttribute="centerX" id="4HU-Ub-z2A"/>
-                            <constraint firstItem="oUv-zX-toX" firstAttribute="centerY" secondItem="Bhc-Sh-fnj" secondAttribute="centerY" id="Y1S-sD-OkC"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bhc-Sh-fnj"/>
                     </view>
                     <navigationItem key="navigationItem" title="ねこ部屋" id="JxO-Ir-cZE"/>
