@@ -597,9 +597,9 @@
 				F2D79B58219CE57000962D26 /* PokerViewController.swift */,
 				F254FB4E21B3AA9B00A77302 /* Setting.storyboard */,
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
-				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 				F241172D21D90C9E002114ED /* ShopView.storyboard */,
 				F241172F21D90CC5002114ED /* ShopViewController.swift */,
+				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1055,12 +1055,12 @@
 				F2A9F2C721C52FBC009278D6 /* ColorSettingView.storyboard in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
 				F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */,
-				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
 				F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */,
 				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
+				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1213,8 +1213,8 @@
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
 				F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */,
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
-				F241173021D90CC5002114ED /* ShopViewController.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
+				F241173021D90CC5002114ED /* ShopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
