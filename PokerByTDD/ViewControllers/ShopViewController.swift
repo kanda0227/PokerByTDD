@@ -12,6 +12,11 @@ import Model
 
 final class ShopViewController: UIViewController, ColorSetViewProtocol {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupColor()
+    }
+    
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
     }
