@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Utility
+import Model
 
-public final class ShopCell: UICollectionViewCell {
+public final class ShopCell: UICollectionViewCell, ColorSetViewProtocol {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var label: CustomLabel!
@@ -16,5 +18,9 @@ public final class ShopCell: UICollectionViewCell {
     public func set(itemName: String, image: UIImage) {
         label.text = itemName
         imageView.image = image
+    }
+    
+    public func reloadColor(colorSet: ColorSet) {
+        commonSetupColor(colorSet: colorSet)
     }
 }

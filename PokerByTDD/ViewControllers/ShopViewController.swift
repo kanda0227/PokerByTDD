@@ -18,12 +18,19 @@ final class ShopViewController: UICollectionViewController, ColorSetViewProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupColor()
         collectionView.register(ShopCell.self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupColor()
     }
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        collectionView.visibleCells.forEach { cell in
+            (cell as? ShopCell)?.reloadColor(colorSet: colorSet)
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
