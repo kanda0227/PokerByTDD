@@ -11,14 +11,17 @@ import Utility
 import Model
 import Presenter
 import Design
+import RxSwift
 
 final class ShopViewController: UICollectionViewController, ColorSetViewProtocol {
     
     private lazy var presenter = ShopPresenter()
+    private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(ShopCell.self)
+        eventDisposable().disposed(by: bag)
     }
     
     override func viewDidLayoutSubviews() {
