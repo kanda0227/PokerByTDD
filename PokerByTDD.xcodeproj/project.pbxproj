@@ -105,6 +105,7 @@
 		F2C70FDB21DA529000A1038D /* ShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FDA21DA529000A1038D /* ShopPresenter.swift */; };
 		F2C70FDD21DA585C00A1038D /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FDC21DA585C00A1038D /* ShopCell.xib */; };
 		F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FDE21DA58F200A1038D /* ShopCell.swift */; };
+		F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE021DBA07600A1038D /* AudioHelper.swift */; };
 		F2C70FE421DBA4F000A1038D /* meow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE321DBA4F000A1038D /* meow.mp3 */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
@@ -319,6 +320,7 @@
 		F2C70FDA21DA529000A1038D /* ShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPresenter.swift; sourceTree = "<group>"; };
 		F2C70FDC21DA585C00A1038D /* ShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCell.xib; sourceTree = "<group>"; };
 		F2C70FDE21DA58F200A1038D /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		F2C70FE021DBA07600A1038D /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 		F2C70FE321DBA4F000A1038D /* meow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = meow.mp3; path = ../../../../Downloads/meow.mp3; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				F236197821A1286500C91A8C /* Table.swift */,
 				F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */,
 				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
+				F2C70FE021DBA07600A1038D /* AudioHelper.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1130,6 +1133,7 @@
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */,
+				F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */,
 				F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */,
 				F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */,
 				F2004A3C21D51F4600E1D1E1 /* NekoWalkCalculation.swift in Sources */,
