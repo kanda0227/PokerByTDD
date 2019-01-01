@@ -48,6 +48,7 @@ import Model
     }
     
     public func action(_ newAction: NekoAction) {
+        newAction.audio().flatMap(AudioHelper.shared.play)
         animationImages = newAction.animateImage(neko: neko)
         animationDuration = newAction.duration()
         animationRepeatCount = newAction.repeatCount()

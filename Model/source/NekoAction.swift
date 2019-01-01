@@ -54,6 +54,15 @@ public enum NekoAction {
         }
     }
     
+    public func audio() -> NekoAudio? {
+        switch self {
+        case .meow:
+            return .meow
+        default:
+            return nil
+        }
+    }
+    
     public func repeatCount() -> Int {
         switch self {
         case .meow:
