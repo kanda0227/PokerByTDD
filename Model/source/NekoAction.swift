@@ -25,7 +25,7 @@ public enum NekoAction {
         case .sit:
             return [.sit1]
         case .meow:
-            return [.sit1, .sit2]
+            return [.sit2]
         case .frolic:
             return [.stand, .fight]
         case .walk(.right):
