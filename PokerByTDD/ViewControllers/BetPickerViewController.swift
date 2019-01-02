@@ -20,7 +20,7 @@ import Design
 final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     
     /// この画面を閉じる際に実行するクロージャ
-    private var completion: ((_ bet: Int) -> ())?
+    private var completion: ((_ bet: Int?) -> ())?
     
     private let bag = DisposeBag()
     
@@ -49,7 +49,7 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     /// - Parameters:
     ///     - possessionMoney: 所持金を渡してください．
     ///     - post: 画面を閉じる際に呼ばれるクロージャです．賭ける金額を引数にしてください．
-    static func instantiate(possessionMoney: Int, post: @escaping (_ bet: Int) -> ()) -> BetPickerViewController {
+    static func instantiate(possessionMoney: Int, post: @escaping (_ bet: Int?) -> ()) -> BetPickerViewController {
         
         let vc = UIStoryboard(name: "BetPickerView", bundle: nil).instantiateInitialViewController() as! BetPickerViewController
         
@@ -82,6 +82,11 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
     
     @IBAction private func tapDoneButton(_ sender: Any) {
         completion?(presenter.betValue())
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func tapCancelButton(_ sender: Any) {
+        completion?(nil)
         dismiss(animated: true, completion: nil)
     }
     
