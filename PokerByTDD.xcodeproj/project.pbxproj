@@ -107,6 +107,7 @@
 		F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FDE21DA58F200A1038D /* ShopCell.swift */; };
 		F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE021DBA07600A1038D /* AudioHelper.swift */; };
 		F2C70FE421DBA4F000A1038D /* meow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE321DBA4F000A1038D /* meow.mp3 */; };
+		F2C70FE621DCF12600A1038D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE521DCF12600A1038D /* Alert.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -322,6 +323,7 @@
 		F2C70FDE21DA58F200A1038D /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		F2C70FE021DBA07600A1038D /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 		F2C70FE321DBA4F000A1038D /* meow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = meow.mp3; path = ../../../../Downloads/meow.mp3; sourceTree = "<group>"; };
+		F2C70FE521DCF12600A1038D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
 		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -460,6 +462,7 @@
 		F254FBAA21B603C800A77302 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				F2C70FE021DBA07600A1038D /* AudioHelper.swift */,
 				F2D79B77219CEC8200962D26 /* Card.swift */,
 				F2A9F2CE21C5340A009278D6 /* ColorSet.swift */,
 				F26A01F321A389CF008897A1 /* Dealer.swift */,
@@ -473,7 +476,6 @@
 				F236197821A1286500C91A8C /* Table.swift */,
 				F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */,
 				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
-				F2C70FE021DBA07600A1038D /* AudioHelper.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -580,10 +582,10 @@
 				F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */,
 				F254FB5621B3B4E300A77302 /* SettingItemCell.swift */,
 				F254FB5421B3B46400A77302 /* SettingItemCell.xib */,
+				F2C70FDE21DA58F200A1038D /* ShopCell.swift */,
+				F2C70FDC21DA585C00A1038D /* ShopCell.xib */,
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
-				F2C70FDC21DA585C00A1038D /* ShopCell.xib */,
-				F2C70FDE21DA58F200A1038D /* ShopCell.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -621,6 +623,7 @@
 		F2B2E57A21C7134C00FA3ACC /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F2C70FE521DCF12600A1038D /* Alert.swift */,
 				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
 				F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */,
 			);
@@ -673,9 +676,9 @@
 		F2D79B55219CE57000962D26 /* PokerByTDD */ = {
 			isa = PBXGroup;
 			children = (
-				F2C70FE221DBA4DE00A1038D /* Audio */,
 				F2D79B56219CE57000962D26 /* AppDelegate.swift */,
 				F2D79B5D219CE57200962D26 /* Assets.xcassets */,
+				F2C70FE221DBA4DE00A1038D /* Audio */,
 				F2B2E57A21C7134C00FA3ACC /* Base */,
 				F2D79B62219CE57200962D26 /* Info.plist */,
 				F2D79B5F219CE57200962D26 /* LaunchScreen.storyboard */,
@@ -1056,8 +1059,8 @@
 				F2A9F2C921C530FE009278D6 /* ColorSettingCell.xib in Resources */,
 				F2319B6F21BCC247001AD8CF /* NekoLibraryCell.xib in Resources */,
 				F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */,
-				F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */,
 				F2C70FDD21DA585C00A1038D /* ShopCell.xib in Resources */,
+				F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,12 +1081,12 @@
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
 				F2A9F2C721C52FBC009278D6 /* ColorSettingView.storyboard in Resources */,
 				F2D79B61219CE57200962D26 /* LaunchScreen.storyboard in Resources */,
+				F2C70FE421DBA4F000A1038D /* meow.mp3 in Resources */,
 				F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */,
 				F2319B6921BBE394001AD8CF /* NekoGacha.storyboard in Resources */,
 				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
-				F2C70FE421DBA4F000A1038D /* meow.mp3 in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
@@ -1128,12 +1131,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */,
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
 				F2A9F2CF21C5340A009278D6 /* ColorSet.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */,
-				F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */,
 				F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */,
 				F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */,
 				F2004A3C21D51F4600E1D1E1 /* NekoWalkCalculation.swift in Sources */,
@@ -1178,7 +1181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C70FDB21DA529000A1038D /* ShopPresenter.swift in Sources */,
 				F254FC7821B739F000A77302 /* BetPickerPresenter.swift in Sources */,
 				F254FC7921B739F000A77302 /* CardDesignChoicePresenter.swift in Sources */,
 				F254FC7A21B739F000A77302 /* CardDesignPresenter.swift in Sources */,
@@ -1188,6 +1190,7 @@
 				F2319B7921BF24C5001AD8CF /* NekoLibraryPresenter.swift in Sources */,
 				F254FC7B21B739F000A77302 /* PokerViewPresenter.swift in Sources */,
 				F254FC7C21B739F000A77302 /* SettingPresenter.swift in Sources */,
+				F2C70FDB21DA529000A1038D /* ShopPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,9 +1213,9 @@
 				F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */,
 				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
 				F2A9F2C521C32028009278D6 /* NekoAnimateView.swift in Sources */,
-				F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
+				F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */,
 				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1229,6 +1232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C70FE621DCF12600A1038D /* Alert.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,

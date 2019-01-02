@@ -84,13 +84,11 @@ extension PokerViewPresenter {
     public func postTapStartButton() {
         turnOverUserCards.onNext(true)
         turnOverOpponentCards.onNext(true)
-        switchIsStartButtonEnabled.onNext(false)
-        switchIsTradeButtonEnabled.onNext(true)
-        TopTabSelectableNotification.shared.post(selectable: false)
     }
     
     /// ゲームスタート時に呼んでください
-    public func postStart(bet: Int) {
+    public func postStart(bet: Int?) {
+        guard let bet = bet else { return }
         self.bet = bet
         Wallet.shared.pay(bet)
         dealer.gatherCards(userCards.map { $0.card } + opponentCards)
@@ -102,6 +100,9 @@ extension PokerViewPresenter {
         
         turnOverUserCards.onNext(false)
         switchSelectableCards.onNext(true)
+        switchIsStartButtonEnabled.onNext(false)
+        switchIsTradeButtonEnabled.onNext(true)
+        TopTabSelectableNotification.shared.post(selectable: false)
     }
     
     /// カードの選択状態が変わるときに呼んでください

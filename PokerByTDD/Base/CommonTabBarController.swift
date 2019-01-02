@@ -35,6 +35,10 @@ final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
 extension CommonTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        return TopTabSelectableNotification.shared.shouldSelectable()
+        let selectable = TopTabSelectableNotification.shared.shouldSelectable()
+        if !selectable {
+            self.present(UIAlertController.alert(title: "ポーカーゲームが終わるまで\nタブの切り替えは出来ません"), animated: true, completion: nil)
+        }
+        return selectable
     }
 }
