@@ -14,7 +14,8 @@ public final class SettingPresenter {
     
     private let items: [Item] = [
         ("カードデザイン設定", "CardDesignView"),
-        ("カラーテーマ設定", "ColorSettingView")
+        ("カラーテーマ設定", "ColorSettingView"),
+        ("音設定", "AudioSettingView")
     ]
     
     public init() {}

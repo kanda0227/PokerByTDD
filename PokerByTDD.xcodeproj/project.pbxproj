@@ -108,6 +108,8 @@
 		F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE021DBA07600A1038D /* AudioHelper.swift */; };
 		F2C70FE421DBA4F000A1038D /* meow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE321DBA4F000A1038D /* meow.mp3 */; };
 		F2C70FE621DCF12600A1038D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE521DCF12600A1038D /* Alert.swift */; };
+		F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */; };
+		F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -324,6 +326,8 @@
 		F2C70FE021DBA07600A1038D /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 		F2C70FE321DBA4F000A1038D /* meow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = meow.mp3; path = ../../../../Downloads/meow.mp3; sourceTree = "<group>"; };
 		F2C70FE521DCF12600A1038D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioSettingView.storyboard; sourceTree = "<group>"; };
+		F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingViewController.swift; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
 		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -593,6 +597,8 @@
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */,
+				F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */,
 				F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */,
 				F254FB4621AB61F700A77302 /* BetPickerViewController.swift */,
 				F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */,
@@ -1076,6 +1082,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
+				F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */,
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
 				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
@@ -1234,6 +1241,7 @@
 			files = (
 				F2C70FE621DCF12600A1038D /* Alert.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
+				F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,

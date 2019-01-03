@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Z0-Lz-oOf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Audio Setting View Controller-->
+        <scene sceneID="Gyp-aM-jWV">
+            <objects>
+                <viewController id="2Z0-Lz-oOf" customClass="AudioSettingViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ar-ON-SwT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGs-tX-Ocp">
+                                <rect key="frame" x="286" y="55" width="51" height="31"/>
+                                <connections>
+                                    <action selector="tapMeowSwitchWithSender:" destination="2Z0-Lz-oOf" eventType="touchUpInside" id="qWC-MQ-5qx"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鳴き声" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-Sl-GqB" customClass="CustomLabel" customModule="Design">
+                                <rect key="frame" x="40" y="60" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6lC-Sl-GqB" firstAttribute="top" secondItem="H71-go-H2I" secondAttribute="top" constant="40" id="61Q-cO-RNf"/>
+                            <constraint firstItem="H71-go-H2I" firstAttribute="trailing" secondItem="HGs-tX-Ocp" secondAttribute="trailing" constant="40" id="lW8-m9-v4K"/>
+                            <constraint firstItem="6lC-Sl-GqB" firstAttribute="leading" secondItem="H71-go-H2I" secondAttribute="leading" constant="40" id="q5E-1J-VaL"/>
+                            <constraint firstItem="HGs-tX-Ocp" firstAttribute="centerY" secondItem="6lC-Sl-GqB" secondAttribute="centerY" id="wDP-nI-r4L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H71-go-H2I"/>
+                    </view>
+                    <connections>
+                        <outlet property="meowSwitch" destination="HGs-tX-Ocp" id="bdF-0N-R5J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJi-iY-iWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="173"/>
+        </scene>
+    </scenes>
+</document>
