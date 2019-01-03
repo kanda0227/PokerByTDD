@@ -12,9 +12,14 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var audioPlayer: AVAudioPlayer?
     
+    private var shouldSound: Bool = true
+    
     public static let shared = AudioHelper()
     
     public func play(_ audio: NekoAudio) {
+        
+        guard shouldSound else { return }
+        
         guard let path = Bundle.main.path(forResource: audio.rawValue, ofType: NekoAudio.type()) else {
             fatalError("音声リソースを用意しておくれ")
         }
@@ -23,6 +28,10 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         
         audioPlayer?.delegate = self
         audioPlayer?.play()
+    }
+    
+    public func setShouldSound(_ shouldSound: Bool) {
+        self.shouldSound = shouldSound
     }
 }
 
