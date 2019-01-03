@@ -597,6 +597,8 @@
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */,
+				F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */,
 				F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */,
 				F254FB4621AB61F700A77302 /* BetPickerViewController.swift */,
 				F254FB6321B3EF9800A77302 /* CardDesignChoiceView.storyboard */,
@@ -620,8 +622,6 @@
 				F241172D21D90C9E002114ED /* ShopView.storyboard */,
 				F241172F21D90CC5002114ED /* ShopViewController.swift */,
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
-				F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */,
-				F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1082,6 +1082,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D79B5E219CE57200962D26 /* Assets.xcassets in Resources */,
+				F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */,
 				F254FB4521AB5F9E00A77302 /* BetPickerView.storyboard in Resources */,
 				F254FB6421B3EF9800A77302 /* CardDesignChoiceView.storyboard in Resources */,
 				F254FB5C21B3BA3000A77302 /* CardDesignView.storyboard in Resources */,
@@ -1094,7 +1095,6 @@
 				F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
-				F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */,
 				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
@@ -1241,9 +1241,9 @@
 			files = (
 				F2C70FE621DCF12600A1038D /* Alert.swift in Sources */,
 				F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */,
+				F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */,
 				F254FB4721AB61F700A77302 /* BetPickerViewController.swift in Sources */,
 				F254FB6621B3EFC100A77302 /* CardDesignChoiceViewController.swift in Sources */,
-				F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */,
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
 				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
