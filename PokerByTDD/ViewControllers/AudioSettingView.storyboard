@@ -10,18 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Audio Setting View Controller-->
         <scene sceneID="Gyp-aM-jWV">
             <objects>
-                <viewController id="2Z0-Lz-oOf" sceneMemberID="viewController">
+                <viewController id="2Z0-Lz-oOf" customClass="AudioSettingViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ar-ON-SwT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGs-tX-Ocp">
                                 <rect key="frame" x="286" y="55" width="51" height="31"/>
+                                <connections>
+                                    <action selector="tapMeowSwitchWithSender:" destination="2Z0-Lz-oOf" eventType="touchUpInside" id="qWC-MQ-5qx"/>
+                                </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鳴き声" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-Sl-GqB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鳴き声" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-Sl-GqB" customClass="CustomLabel" customModule="Design">
                                 <rect key="frame" x="40" y="60" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -37,6 +40,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H71-go-H2I"/>
                     </view>
+                    <connections>
+                        <outlet property="meowSwitch" destination="HGs-tX-Ocp" id="bdF-0N-R5J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJi-iY-iWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
