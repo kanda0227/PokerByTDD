@@ -10,13 +10,13 @@ import AVFoundation
 
 public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
-    private var audioPlayer: AVAudioPlayer?
+    private var nekoAudioPlayer: AVAudioPlayer?
     
     private var shouldMeow: Bool = true
     
     public static let shared = AudioHelper()
     
-    public func play(_ audio: NekoAudio) {
+    public func nekoPlay(_ audio: NekoAudio) {
         
         guard shouldMeow else { return }
         
@@ -24,10 +24,10 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
             fatalError("音声リソースを用意しておくれ")
         }
         
-        audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+        nekoAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
         
-        audioPlayer?.delegate = self
-        audioPlayer?.play()
+        nekoAudioPlayer?.delegate = self
+        nekoAudioPlayer?.play()
     }
     
     public func setIsOnMeowSwitch(_ shouldSound: Bool) {
