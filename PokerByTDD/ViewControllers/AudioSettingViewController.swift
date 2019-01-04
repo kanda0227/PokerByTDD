@@ -30,13 +30,16 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
         AudioHelper.shared.setIsOnMeowSwitch(sender.isOn)
     }
     
-    @IBAction private func tapMusicSwitch(_ sender: Any) {
+    @IBAction private func tapMusicSwitch(_ sender: UISwitch) {
+        AudioHelper.shared.setIsOnMusicSwitch(sender.isOn)
     }
     
-    @IBAction func slideMusicSlide(_ sender: Any) {
+    @IBAction func slideMusicSlide(_ sender: UISlider) { AudioHelper.shared.setMusicVolume(sender.value)
     }
     
     private func setup() {
         meowSwitch.isOn = AudioHelper.shared.isOnMeowSwitch()
+        musicSwitch.isOn = AudioHelper.shared.isOnMusicSwitch()
+        musicSlider.value = AudioHelper.shared.musicVolumeValue()
     }
 }
