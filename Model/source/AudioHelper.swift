@@ -109,7 +109,7 @@ public enum NekoAudio: String {
 }
 
 public enum MusicAudio: String {
-    case undefault
+    case test
     
     fileprivate static func type() -> String? {
         return "mp3"
