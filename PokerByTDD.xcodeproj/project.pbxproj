@@ -101,7 +101,7 @@
 		F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57621C6194E00FA3ACC /* Neko.swift */; };
 		F2B2E57921C61BB800FA3ACC /* NekoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */; };
 		F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */; };
-		F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */; };
+		F2B2E57E21C718B700FA3ACC /* TopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2E57D21C718B700FA3ACC /* TopTabBarController.swift */; };
 		F2C70FDB21DA529000A1038D /* ShopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FDA21DA529000A1038D /* ShopPresenter.swift */; };
 		F2C70FDD21DA585C00A1038D /* ShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FDC21DA585C00A1038D /* ShopCell.xib */; };
 		F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FDE21DA58F200A1038D /* ShopCell.swift */; };
@@ -110,6 +110,7 @@
 		F2C70FE621DCF12600A1038D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE521DCF12600A1038D /* Alert.swift */; };
 		F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */; };
 		F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */; };
+		F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FEB21DFA89300A1038D /* test.mp3 */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -318,7 +319,7 @@
 		F2B2E57621C6194E00FA3ACC /* Neko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neko.swift; sourceTree = "<group>"; };
 		F2B2E57821C61BB800FA3ACC /* NekoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoRoomViewController.swift; sourceTree = "<group>"; };
 		F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationController.swift; sourceTree = "<group>"; };
-		F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTabBarController.swift; sourceTree = "<group>"; };
+		F2B2E57D21C718B700FA3ACC /* TopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarController.swift; sourceTree = "<group>"; };
 		F2B2E57F21C71AB400FA3ACC /* ColorSetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetViewProtocol.swift; sourceTree = "<group>"; };
 		F2C70FDA21DA529000A1038D /* ShopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPresenter.swift; sourceTree = "<group>"; };
 		F2C70FDC21DA585C00A1038D /* ShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCell.xib; sourceTree = "<group>"; };
@@ -328,6 +329,7 @@
 		F2C70FE521DCF12600A1038D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioSettingView.storyboard; sourceTree = "<group>"; };
 		F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingViewController.swift; sourceTree = "<group>"; };
+		F2C70FEB21DFA89300A1038D /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../Downloads/test.mp3; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
 		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -621,6 +623,7 @@
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
 				F241172D21D90C9E002114ED /* ShopView.storyboard */,
 				F241172F21D90CC5002114ED /* ShopViewController.swift */,
+				F2B2E57D21C718B700FA3ACC /* TopTabBarController.swift */,
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 			);
 			path = ViewControllers;
@@ -631,7 +634,6 @@
 			children = (
 				F2C70FE521DCF12600A1038D /* Alert.swift */,
 				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
-				F2B2E57D21C718B700FA3ACC /* CommonTabBarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -640,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C70FE321DBA4F000A1038D /* meow.mp3 */,
+				F2C70FEB21DFA89300A1038D /* test.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -1096,6 +1099,7 @@
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
+				F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1247,7 +1251,6 @@
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
 				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
-				F2B2E57E21C718B700FA3ACC /* CommonTabBarController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
 				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
@@ -1255,6 +1258,7 @@
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
 				F241173021D90CC5002114ED /* ShopViewController.swift in Sources */,
+				F2B2E57E21C718B700FA3ACC /* TopTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

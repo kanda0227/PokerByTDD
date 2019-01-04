@@ -13,11 +13,13 @@ import Model
 final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var meowSwitch: UISwitch!
+    @IBOutlet private weak var musicSwitch: UISwitch!
+    @IBOutlet private weak var musicSlider: UISlider!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupColor()
-        setupMeowSwitch()
+        setup()
     }
     
     func reloadColor(colorSet: ColorSet) {
@@ -28,7 +30,16 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
         AudioHelper.shared.setIsOnMeowSwitch(sender.isOn)
     }
     
-    private func setupMeowSwitch() {
+    @IBAction private func tapMusicSwitch(_ sender: UISwitch) {
+        AudioHelper.shared.setIsOnMusicSwitch(sender.isOn)
+    }
+    
+    @IBAction func slideMusicSlide(_ sender: UISlider) { AudioHelper.shared.setMusicVolume(sender.value)
+    }
+    
+    private func setup() {
         meowSwitch.isOn = AudioHelper.shared.isOnMeowSwitch()
+        musicSwitch.isOn = AudioHelper.shared.isOnMusicSwitch()
+        musicSlider.value = AudioHelper.shared.musicVolumeValue()
     }
 }

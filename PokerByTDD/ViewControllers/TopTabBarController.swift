@@ -11,7 +11,7 @@ import Model
 import RxSwift
 import Utility
 
-final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
+final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     
     private let bag = DisposeBag()
     
@@ -19,6 +19,7 @@ final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
         super.viewDidLoad()
         eventDisposable().disposed(by: bag)
         delegate = self
+        AudioHelper.shared.musicPlay(.test)
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,7 +33,7 @@ final class CommonTabBarController: UITabBarController, ColorSetViewProtocol {
     }
 }
 
-extension CommonTabBarController: UITabBarControllerDelegate {
+extension TopTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let selectable = TopTabSelectableNotification.shared.shouldSelectable()
