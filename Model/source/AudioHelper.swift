@@ -12,6 +12,8 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var nekoAudioPlayer: AVAudioPlayer?
     
+    private var musicPlayer: AVAudioPlayer?
+    
     private var shouldMeow: Bool = true
     
     public static let shared = AudioHelper()
@@ -30,6 +32,19 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         nekoAudioPlayer?.play()
     }
     
+    public func musicPlay(_ audio: MusicAudio) {
+        
+        guard let path = Bundle.main.path(forResource: audio.rawValue, ofType: MusicAudio.type()) else {
+            fatalError("音楽リソースを用意しておくれ")
+        }
+        
+        musicPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+        
+        musicPlayer?.delegate = self
+        musicPlayer?.numberOfLoops = -1
+        musicPlayer?.play()
+    }
+    
     public func setIsOnMeowSwitch(_ shouldSound: Bool) {
         self.shouldMeow = shouldSound
     }
@@ -41,6 +56,14 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
 
 public enum NekoAudio: String {
     case meow
+    
+    fileprivate static func type() -> String? {
+        return "mp3"
+    }
+}
+
+public enum MusicAudio: String {
+    case undefault
     
     fileprivate static func type() -> String? {
         return "mp3"
