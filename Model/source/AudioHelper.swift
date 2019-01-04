@@ -16,6 +16,10 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var shouldMeow: Bool = true
     
+    private var shouldPlayMusic: Bool = true
+    
+    private var musicVolume: Float = 1.0
+    
     public static let shared = AudioHelper()
     
     public func nekoPlay(_ audio: NekoAudio) {
@@ -34,6 +38,10 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func musicPlay(_ audio: MusicAudio) {
         
+        guard shouldPlayMusic else {
+            return
+        }
+        
         guard let path = Bundle.main.path(forResource: audio.rawValue, ofType: MusicAudio.type()) else {
             fatalError("音楽リソースを用意しておくれ")
         }
@@ -42,6 +50,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         
         musicPlayer?.delegate = self
         musicPlayer?.numberOfLoops = -1
+        musicPlayer?.volume = musicVolume
         musicPlayer?.play()
     }
     
@@ -49,8 +58,24 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         self.shouldMeow = shouldSound
     }
     
+    public func setIsOnMusicSwitch(_ shouldSound: Bool) {
+        self.shouldPlayMusic = shouldSound
+    }
+    
+    public func setMusicVolume(_ volume: Float) {
+        self.musicVolume = volume
+    }
+    
     public func isOnMeowSwitch() -> Bool {
         return shouldMeow
+    }
+    
+    public func isOnMusicSwitch() -> Bool {
+        return shouldPlayMusic
+    }
+    
+    public func musicVolumeValue() -> Float {
+        return musicVolume
     }
 }
 
