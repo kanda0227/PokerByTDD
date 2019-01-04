@@ -38,9 +38,15 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-5p-QjQ">
                                 <rect key="frame" x="38" y="197" width="299" height="31"/>
+                                <connections>
+                                    <action selector="slideMusicSlide:" destination="2Z0-Lz-oOf" eventType="valueChanged" id="hkx-mF-59r"/>
+                                </connections>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5Y-9q-V8k">
                                 <rect key="frame" x="286" y="146" width="51" height="31"/>
+                                <connections>
+                                    <action selector="tapMusicSwitch:" destination="2Z0-Lz-oOf" eventType="valueChanged" id="LAw-dX-CIm"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,6 +67,8 @@
                     </view>
                     <connections>
                         <outlet property="meowSwitch" destination="HGs-tX-Ocp" id="bdF-0N-R5J"/>
+                        <outlet property="musicSlider" destination="VSi-5p-QjQ" id="rGD-Ir-N1r"/>
+                        <outlet property="musicSwitch" destination="v5Y-9q-V8k" id="bXE-HJ-nXR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJi-iY-iWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
