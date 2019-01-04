@@ -599,7 +599,6 @@
 		F26A01F521A43D6D008897A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2B2E57D21C718B700FA3ACC /* TopTabBarController.swift */,
 				F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */,
 				F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */,
 				F254FB4421AB5F9E00A77302 /* BetPickerView.storyboard */,
@@ -624,6 +623,7 @@
 				F254FB5021B3B23F00A77302 /* SettingViewController.swift */,
 				F241172D21D90C9E002114ED /* ShopView.storyboard */,
 				F241172F21D90CC5002114ED /* ShopViewController.swift */,
+				F2B2E57D21C718B700FA3ACC /* TopTabBarController.swift */,
 				F254FB4C21B39FDC00A77302 /* TopView.storyboard */,
 			);
 			path = ViewControllers;
@@ -1097,9 +1097,9 @@
 				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
-				F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
+				F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1251,7 +1251,6 @@
 				F254FB6021B3BE1A00A77302 /* CardDesignViewController.swift in Sources */,
 				F2A9F2D121C53EBE009278D6 /* ColorSettingTableViewController.swift in Sources */,
 				F2B2E57C21C7136200FA3ACC /* CommonNavigationController.swift in Sources */,
-				F2B2E57E21C718B700FA3ACC /* TopTabBarController.swift in Sources */,
 				F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */,
 				F2319B6B21BBEA34001AD8CF /* NekoGachaViewController.swift in Sources */,
 				F2319B7121BCC344001AD8CF /* NekoLibraryCollectionViewController.swift in Sources */,
@@ -1259,6 +1258,7 @@
 				F2D79B59219CE57000962D26 /* PokerViewController.swift in Sources */,
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
 				F241173021D90CC5002114ED /* ShopViewController.swift in Sources */,
+				F2B2E57E21C718B700FA3ACC /* TopTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
