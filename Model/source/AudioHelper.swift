@@ -16,9 +16,17 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var shouldMeow: Bool = true
     
-    private var shouldPlayMusic: Bool = true
+    private var shouldPlayMusic: Bool = true {
+        didSet {
+            resetMusicPlayer()
+        }
+    }
     
-    private var musicVolume: Float = 1.0
+    private var musicVolume: Float = 1.0 {
+        didSet {
+            resetMusicPlayer()
+        }
+    }
     
     public static let shared = AudioHelper()
     
@@ -76,6 +84,19 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func musicVolumeValue() -> Float {
         return musicVolume
+    }
+    
+    private func resetMusicPlayer() {
+        guard let musicPlayer = musicPlayer, musicPlayer.isPlaying else { return }
+        
+        musicPlayer.stop()
+        
+        guard shouldPlayMusic else {
+            return
+        }
+        
+        musicPlayer.volume = musicVolume
+        musicPlayer.play()
     }
 }
 
