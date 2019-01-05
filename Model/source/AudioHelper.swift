@@ -19,8 +19,6 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var musicPlayer: AVAudioPlayer?
     
-    private var shouldMeow: Bool = true
-    
     private var shouldPlayMusic: Bool = true
     
     private var musicVolume: Float = 1.0
@@ -31,7 +29,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func nekoPlay(_ audio: NekoAudio) {
         
-        guard shouldMeow else { return }
+        guard isOnMeowSwitch() else { return }
         
         guard let path = Bundle.main.path(forResource: audio.rawValue, ofType: NekoAudio.type()) else {
             fatalError("音声リソースを用意しておくれ")
@@ -62,7 +60,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func setIsOnMeowSwitch(_ shouldSound: Bool) {
-        self.shouldMeow = shouldSound
+        UserDefaults.standard.set(shouldSound, forKey: shouldMeowKey)
     }
     
     public func setIsOnMusicSwitch(_ shouldSound: Bool) {
@@ -81,7 +79,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func isOnMeowSwitch() -> Bool {
-        return shouldMeow
+        return UserDefaults.standard.bool(forKey: shouldMeowKey)
     }
     
     public func isOnMusicSwitch() -> Bool {
