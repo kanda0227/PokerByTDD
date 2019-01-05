@@ -28,6 +28,12 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         }
     }
     
+    private var music: MusicAudio = .test {
+        didSet {
+            resetMusicPlayer()
+        }
+    }
+    
     public static let shared = AudioHelper()
     
     public func nekoPlay(_ audio: NekoAudio) {
@@ -87,7 +93,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     private func resetMusicPlayer() {
-        guard let musicPlayer = musicPlayer, musicPlayer.isPlaying else { return }
+        guard let musicPlayer = musicPlayer else { return }
         
         musicPlayer.stop()
         
