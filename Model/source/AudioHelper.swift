@@ -73,15 +73,15 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func isOnMeowSwitch() -> Bool {
-        return UserDefaults.standard.bool(forKey: shouldMeowKey)
+        return UserDefaults.standard.value(forKey: shouldMeowKey) as? Bool ?? true
     }
     
     public func isOnMusicSwitch() -> Bool {
-        return UserDefaults.standard.bool(forKey: shouldPlayMusicKey)
+        return UserDefaults.standard.value(forKey: shouldPlayMusicKey) as? Bool ?? true
     }
     
     public func musicVolumeValue() -> Float {
-        return UserDefaults.standard.float(forKey: musicVolumeKey)
+        return UserDefaults.standard.value(forKey: musicVolumeKey) as? Float ?? 1.0
     }
     
     public func currentMusic() -> MusicAudio {
