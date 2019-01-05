@@ -19,8 +19,6 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var musicPlayer: AVAudioPlayer?
     
-    private var shouldPlayMusic: Bool = true
-    
     private var musicVolume: Float = 1.0
     
     private var music: MusicAudio = .test
@@ -43,7 +41,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func musicPlay(_ audio: MusicAudio) {
         
-        guard shouldPlayMusic else {
+        guard isOnMusicSwitch() else {
             return
         }
         
@@ -64,7 +62,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func setIsOnMusicSwitch(_ shouldSound: Bool) {
-        self.shouldPlayMusic = shouldSound
+        UserDefaults.standard.set(shouldSound, forKey: shouldPlayMusicKey)
         resetMusicPlayer()
     }
     
@@ -83,7 +81,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func isOnMusicSwitch() -> Bool {
-        return shouldPlayMusic
+        return UserDefaults.standard.bool(forKey: shouldPlayMusicKey)
     }
     
     public func musicVolumeValue() -> Float {
@@ -95,7 +93,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         
         musicPlayer.stop()
         
-        guard shouldPlayMusic else {
+        guard isOnMusicSwitch() else {
             return
         }
         
