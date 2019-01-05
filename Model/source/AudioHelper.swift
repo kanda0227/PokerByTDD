@@ -19,8 +19,6 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var musicPlayer: AVAudioPlayer?
     
-    private var musicVolume: Float = 1.0
-    
     private var music: MusicAudio = .test
     
     public static let shared = AudioHelper()
@@ -53,7 +51,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         
         musicPlayer?.delegate = self
         musicPlayer?.numberOfLoops = -1
-        musicPlayer?.volume = musicVolume
+        musicPlayer?.volume = musicVolumeValue()
         musicPlayer?.play()
     }
     
@@ -67,7 +65,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func setMusicVolume(_ volume: Float) {
-        self.musicVolume = volume
+        UserDefaults.standard.set(volume, forKey: musicVolumeKey)
         resetMusicPlayer()
     }
     
@@ -85,7 +83,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func musicVolumeValue() -> Float {
-        return musicVolume
+        return UserDefaults.standard.float(forKey: musicVolumeKey)
     }
     
     private func resetMusicPlayer() {
@@ -97,7 +95,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
             return
         }
         
-        musicPlayer.volume = musicVolume
+        musicPlayer.volume = musicVolumeValue()
         musicPlayer.play()
     }
 }
