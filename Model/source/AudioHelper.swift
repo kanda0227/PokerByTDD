@@ -10,29 +10,22 @@ import AVFoundation
 
 public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
+    private let shouldMeowKey = "shouldMeowKey"
+    private let shouldPlayMusicKey = "shouldPlayMusicKey"
+    private let musicVolumeKey = "musicVolumeKey"
+    private let musicKey = "musicKey"
+    
     private var nekoAudioPlayer: AVAudioPlayer?
     
     private var musicPlayer: AVAudioPlayer?
     
     private var shouldMeow: Bool = true
     
-    private var shouldPlayMusic: Bool = true {
-        didSet {
-            resetMusicPlayer()
-        }
-    }
+    private var shouldPlayMusic: Bool = true
     
-    private var musicVolume: Float = 1.0 {
-        didSet {
-            resetMusicPlayer()
-        }
-    }
+    private var musicVolume: Float = 1.0
     
-    private var music: MusicAudio = .test {
-        didSet {
-            resetMusicPlayer()
-        }
-    }
+    private var music: MusicAudio = .test
     
     public static let shared = AudioHelper()
     
@@ -74,10 +67,17 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func setIsOnMusicSwitch(_ shouldSound: Bool) {
         self.shouldPlayMusic = shouldSound
+        resetMusicPlayer()
     }
     
     public func setMusicVolume(_ volume: Float) {
         self.musicVolume = volume
+        resetMusicPlayer()
+    }
+    
+    public func setMusic(_ music: MusicAudio) {
+        self.music = music
+        resetMusicPlayer()
     }
     
     public func isOnMeowSwitch() -> Bool {
