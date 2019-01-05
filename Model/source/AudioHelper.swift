@@ -19,8 +19,6 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     private var musicPlayer: AVAudioPlayer?
     
-    private var music: MusicAudio = .test
-    
     public static let shared = AudioHelper()
     
     public func nekoPlay(_ audio: NekoAudio) {
@@ -70,7 +68,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     public func setMusic(_ music: MusicAudio) {
-        self.music = music
+        UserDefaults.standard.set(music.rawValue, forKey: musicKey)
         resetMusicPlayer()
     }
     
@@ -84,6 +82,11 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func musicVolumeValue() -> Float {
         return UserDefaults.standard.float(forKey: musicVolumeKey)
+    }
+    
+    public func currentMusic() -> MusicAudio {
+        let rawValue = UserDefaults.standard.string(forKey: musicKey)
+        return rawValue.flatMap(MusicAudio.init) ?? .test
     }
     
     private func resetMusicPlayer() {
