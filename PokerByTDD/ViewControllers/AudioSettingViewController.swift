@@ -24,6 +24,9 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        meowSwitch.onTintColor = colorSet.tabBarColor()
+        musicSwitch.onTintColor = colorSet.tabBarColor()
+        musicSlider.tintColor = colorSet.tabBarColor()
     }
     
     @IBAction private func tapMeowSwitch(sender: UISwitch) {

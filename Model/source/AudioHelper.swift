@@ -10,29 +10,20 @@ import AVFoundation
 
 public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
+    private let shouldMeowKey = "shouldMeowKey"
+    private let shouldPlayMusicKey = "shouldPlayMusicKey"
+    private let musicVolumeKey = "musicVolumeKey"
+    private let musicKey = "musicKey"
+    
     private var nekoAudioPlayer: AVAudioPlayer?
     
     private var musicPlayer: AVAudioPlayer?
-    
-    private var shouldMeow: Bool = true
-    
-    private var shouldPlayMusic: Bool = true {
-        didSet {
-            resetMusicPlayer()
-        }
-    }
-    
-    private var musicVolume: Float = 1.0 {
-        didSet {
-            resetMusicPlayer()
-        }
-    }
     
     public static let shared = AudioHelper()
     
     public func nekoPlay(_ audio: NekoAudio) {
         
-        guard shouldMeow else { return }
+        guard isOnMeowSwitch() else { return }
         
         guard let path = Bundle.main.path(forResource: audio.rawValue, ofType: NekoAudio.type()) else {
             fatalError("音声リソースを用意しておくれ")
@@ -46,7 +37,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func musicPlay(_ audio: MusicAudio) {
         
-        guard shouldPlayMusic else {
+        guard isOnMusicSwitch() else {
             return
         }
         
@@ -58,44 +49,56 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         
         musicPlayer?.delegate = self
         musicPlayer?.numberOfLoops = -1
-        musicPlayer?.volume = musicVolume
+        musicPlayer?.volume = musicVolumeValue()
         musicPlayer?.play()
     }
     
     public func setIsOnMeowSwitch(_ shouldSound: Bool) {
-        self.shouldMeow = shouldSound
+        UserDefaults.standard.set(shouldSound, forKey: shouldMeowKey)
     }
     
     public func setIsOnMusicSwitch(_ shouldSound: Bool) {
-        self.shouldPlayMusic = shouldSound
+        UserDefaults.standard.set(shouldSound, forKey: shouldPlayMusicKey)
+        resetMusicPlayer()
     }
     
     public func setMusicVolume(_ volume: Float) {
-        self.musicVolume = volume
+        UserDefaults.standard.set(volume, forKey: musicVolumeKey)
+        resetMusicPlayer()
+    }
+    
+    public func setMusic(_ music: MusicAudio) {
+        UserDefaults.standard.set(music.rawValue, forKey: musicKey)
+        resetMusicPlayer()
     }
     
     public func isOnMeowSwitch() -> Bool {
-        return shouldMeow
+        return UserDefaults.standard.value(forKey: shouldMeowKey) as? Bool ?? true
     }
     
     public func isOnMusicSwitch() -> Bool {
-        return shouldPlayMusic
+        return UserDefaults.standard.value(forKey: shouldPlayMusicKey) as? Bool ?? true
     }
     
     public func musicVolumeValue() -> Float {
-        return musicVolume
+        return UserDefaults.standard.value(forKey: musicVolumeKey) as? Float ?? 1.0
+    }
+    
+    public func currentMusic() -> MusicAudio {
+        let rawValue = UserDefaults.standard.string(forKey: musicKey)
+        return rawValue.flatMap(MusicAudio.init) ?? .test
     }
     
     private func resetMusicPlayer() {
-        guard let musicPlayer = musicPlayer, musicPlayer.isPlaying else { return }
+        guard let musicPlayer = musicPlayer else { return }
         
         musicPlayer.stop()
         
-        guard shouldPlayMusic else {
+        guard isOnMusicSwitch() else {
             return
         }
         
-        musicPlayer.volume = musicVolume
+        musicPlayer.volume = musicVolumeValue()
         musicPlayer.play()
     }
 }
