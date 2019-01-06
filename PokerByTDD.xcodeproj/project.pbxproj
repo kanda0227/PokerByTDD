@@ -110,7 +110,7 @@
 		F2C70FE621DCF12600A1038D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE521DCF12600A1038D /* Alert.swift */; };
 		F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */; };
 		F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */; };
-		F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FEB21DFA89300A1038D /* test.mp3 */; };
+		F2C70FEC21DFA89300A1038D /* aquarium.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FEB21DFA89300A1038D /* aquarium.mp3 */; };
 		F2C70FEE21E2440700A1038D /* hidamari.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FED21E2440700A1038D /* hidamari.mp3 */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
@@ -330,7 +330,7 @@
 		F2C70FE521DCF12600A1038D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioSettingView.storyboard; sourceTree = "<group>"; };
 		F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingViewController.swift; sourceTree = "<group>"; };
-		F2C70FEB21DFA89300A1038D /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../Downloads/test.mp3; sourceTree = "<group>"; };
+		F2C70FEB21DFA89300A1038D /* aquarium.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = aquarium.mp3; path = ../../../../Downloads/aquarium.mp3; sourceTree = "<group>"; };
 		F2C70FED21E2440700A1038D /* hidamari.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = hidamari.mp3; path = ../../../../Downloads/hidamari.mp3; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
@@ -645,7 +645,7 @@
 			children = (
 				F2C70FED21E2440700A1038D /* hidamari.mp3 */,
 				F2C70FE321DBA4F000A1038D /* meow.mp3 */,
-				F2C70FEB21DFA89300A1038D /* test.mp3 */,
+				F2C70FEB21DFA89300A1038D /* aquarium.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -1103,7 +1103,7 @@
 				F2C70FEE21E2440700A1038D /* hidamari.mp3 in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
-				F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */,
+				F2C70FEC21DFA89300A1038D /* aquarium.mp3 in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
