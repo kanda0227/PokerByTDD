@@ -90,16 +90,14 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     private func resetMusicPlayer() {
-        guard let musicPlayer = musicPlayer else { return }
         
-        musicPlayer.stop()
+        musicPlayer?.stop()
         
         guard isOnMusicSwitch() else {
             return
         }
         
-        musicPlayer.volume = musicVolumeValue()
-        musicPlayer.play()
+        musicPlay(currentMusic())
     }
 }
 
