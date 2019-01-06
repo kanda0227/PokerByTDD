@@ -86,7 +86,7 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     public func currentMusic() -> MusicAudio {
         let rawValue = UserDefaults.standard.string(forKey: musicKey)
-        return rawValue.flatMap(MusicAudio.init) ?? .test
+        return rawValue.flatMap(MusicAudio.init) ?? ._default
     }
     
     private func resetMusicPlayer() {
@@ -112,9 +112,18 @@ public enum NekoAudio: String {
 }
 
 public enum MusicAudio: String {
-    case test
+    case aquarium
+    
+    public static let _default: MusicAudio = .aquarium
     
     fileprivate static func type() -> String? {
         return "mp3"
+    }
+    
+    public func musicName() -> String {
+        switch self {
+        case .aquarium:
+            return "水族館"
+        }
     }
 }
