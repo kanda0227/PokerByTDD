@@ -113,6 +113,7 @@ public enum NekoAudio: String {
 
 public enum MusicAudio: String {
     case aquarium
+    case hidamari
     
     public static let _default: MusicAudio = .aquarium
     
@@ -124,6 +125,8 @@ public enum MusicAudio: String {
         switch self {
         case .aquarium:
             return "水族館"
+        case .hidamari:
+            return "ひだまり"
         }
     }
 }
