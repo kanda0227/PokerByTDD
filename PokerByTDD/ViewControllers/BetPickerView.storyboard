@@ -29,16 +29,16 @@
                                         <rect key="frame" x="40" y="104" width="200" height="216"/>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYs-AP-yKO" customClass="CustomLabel" customModule="Design">
-                                        <rect key="frame" x="134.5" y="56" width="11" height="21"/>
+                                        <rect key="frame" x="134.5" y="51" width="11" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfO-Mi-xbQ">
-                                        <rect key="frame" x="20" y="8" width="172" height="30"/>
+                                        <rect key="frame" x="0.0" y="20" width="216" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おいくら賭けます？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFU-Tj-b3s" customClass="CustomLabel" customModule="Design">
-                                                <rect key="frame" x="41.5" y="52.5" width="156" height="21"/>
+                                                <rect key="frame" x="30" y="0.0" width="156" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -52,15 +52,15 @@
                                             <constraint firstAttribute="bottom" secondItem="ZFU-Tj-b3s" secondAttribute="bottom" id="d4o-Ls-omh"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-rI-AMy" customClass="CustomButton" customModule="Design">
-                                        <rect key="frame" x="121.5" y="87" width="37" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-rI-AMy" customClass="CommonDesignButton" customModule="Design">
+                                        <rect key="frame" x="121.5" y="82" width="37" height="34"/>
                                         <state key="normal" title="決定"/>
                                         <connections>
                                             <action selector="tapDoneButton:" destination="B12-ud-f5U" eventType="touchUpInside" id="Sgl-SU-sKA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX4-sf-jgD">
-                                        <rect key="frame" x="227" y="8" width="46" height="30"/>
+                                        <rect key="frame" x="216" y="15.5" width="46" height="30"/>
                                         <state key="normal" title="やめる"/>
                                         <connections>
                                             <action selector="tapCancelButton:" destination="B12-ud-f5U" eventType="touchUpInside" id="kae-lV-BPK"/>

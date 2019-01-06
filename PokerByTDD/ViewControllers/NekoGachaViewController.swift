@@ -20,8 +20,8 @@ final class NekoGachaViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var nekoImageView: UIImageView!
     @IBOutlet private weak var nekoLabel: CustomLabel!
     @IBOutlet private weak var walletView: WalletView!
-    @IBOutlet private weak var gachaButton: CustomButton!
-    @IBOutlet private weak var nekoLibraryButton: CustomButton!
+    @IBOutlet private weak var gachaButton: CommonDesignButton!
+    @IBOutlet private weak var nekoLibraryButton: CommonDesignButton!
     @IBOutlet private weak var newImage: UIImageView!
     
     private let bag = DisposeBag()

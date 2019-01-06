@@ -54,15 +54,15 @@
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65G-Ch-4vi" customClass="CustomButton" customModule="Design">
-                                <rect key="frame" x="141.5" y="473" width="92" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65G-Ch-4vi" customClass="CommonDesignButton" customModule="Design">
+                                <rect key="frame" x="132" y="477" width="111" height="34"/>
                                 <state key="normal" title="所持ねこ一覧"/>
                                 <connections>
                                     <segue destination="pEY-Eb-S2N" kind="show" id="1Gl-QW-2Y8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-uM-l0N" customClass="CustomButton" customModule="Design">
-                                <rect key="frame" x="122" y="303" width="131" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-uM-l0N" customClass="CommonDesignButton" customModule="Design">
+                                <rect key="frame" x="109.5" y="303" width="156" height="34"/>
                                 <state key="normal" title="ガチャを回す(200)"/>
                                 <connections>
                                     <action selector="tapGachaButtonWithSender:" destination="VeR-hc-yWW" eventType="touchUpInside" id="AFu-d5-d69"/>
