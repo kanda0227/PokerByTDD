@@ -37,13 +37,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VSi-5p-QjQ">
-                                <rect key="frame" x="38" y="197" width="299" height="31"/>
+                                <rect key="frame" x="38" y="196.5" width="230" height="31"/>
                                 <connections>
                                     <action selector="slideMusicSlide:" destination="2Z0-Lz-oOf" eventType="valueChanged" id="hkx-mF-59r"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-R3-YmF" customClass="SelectButton" customModule="Design">
+                                <rect key="frame" x="115" y="146.5" width="220" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapMusicSelectButton:" destination="2Z0-Lz-oOf" eventType="touchUpInside" id="91N-1b-pFS"/>
+                                </connections>
+                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5Y-9q-V8k">
-                                <rect key="frame" x="286" y="146" width="51" height="31"/>
+                                <rect key="frame" x="286" y="196" width="51" height="31"/>
                                 <connections>
                                     <action selector="tapMusicSwitch:" destination="2Z0-Lz-oOf" eventType="valueChanged" id="LAw-dX-CIm"/>
                                 </connections>
@@ -52,21 +59,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WMV-ng-bFj" firstAttribute="leading" secondItem="6lC-Sl-GqB" secondAttribute="leading" id="4D9-1h-Stp"/>
+                            <constraint firstItem="VSi-5p-QjQ" firstAttribute="top" secondItem="j2I-R3-YmF" secondAttribute="bottom" constant="20" id="4se-sN-su4"/>
                             <constraint firstItem="6lC-Sl-GqB" firstAttribute="top" secondItem="H71-go-H2I" secondAttribute="top" constant="40" id="61Q-cO-RNf"/>
-                            <constraint firstItem="v5Y-9q-V8k" firstAttribute="centerY" secondItem="WMV-ng-bFj" secondAttribute="centerY" id="B5D-xq-t6d"/>
+                            <constraint firstItem="v5Y-9q-V8k" firstAttribute="centerY" secondItem="VSi-5p-QjQ" secondAttribute="centerY" id="9BB-bL-ChI"/>
                             <constraint firstItem="VSi-5p-QjQ" firstAttribute="leading" secondItem="WMV-ng-bFj" secondAttribute="leading" id="HJn-I3-gRY"/>
-                            <constraint firstItem="VSi-5p-QjQ" firstAttribute="top" secondItem="v5Y-9q-V8k" secondAttribute="bottom" constant="20" id="Ni6-Ob-toO"/>
+                            <constraint firstItem="j2I-R3-YmF" firstAttribute="leading" secondItem="WMV-ng-bFj" secondAttribute="trailing" constant="40" id="Tlw-a2-0zw"/>
+                            <constraint firstItem="H71-go-H2I" firstAttribute="trailing" secondItem="j2I-R3-YmF" secondAttribute="trailing" constant="40" id="Vfi-Qd-51i"/>
                             <constraint firstItem="v5Y-9q-V8k" firstAttribute="trailing" secondItem="HGs-tX-Ocp" secondAttribute="trailing" id="cHf-uT-fkG"/>
+                            <constraint firstItem="v5Y-9q-V8k" firstAttribute="leading" secondItem="VSi-5p-QjQ" secondAttribute="trailing" constant="20" id="hgT-F4-oyk"/>
+                            <constraint firstItem="j2I-R3-YmF" firstAttribute="centerY" secondItem="WMV-ng-bFj" secondAttribute="centerY" id="iju-Mu-gg6"/>
                             <constraint firstItem="WMV-ng-bFj" firstAttribute="top" secondItem="6lC-Sl-GqB" secondAttribute="bottom" constant="70" id="l08-xH-TOD"/>
                             <constraint firstItem="H71-go-H2I" firstAttribute="trailing" secondItem="HGs-tX-Ocp" secondAttribute="trailing" constant="40" id="lW8-m9-v4K"/>
                             <constraint firstItem="6lC-Sl-GqB" firstAttribute="leading" secondItem="H71-go-H2I" secondAttribute="leading" constant="40" id="q5E-1J-VaL"/>
                             <constraint firstItem="HGs-tX-Ocp" firstAttribute="centerY" secondItem="6lC-Sl-GqB" secondAttribute="centerY" id="wDP-nI-r4L"/>
-                            <constraint firstItem="VSi-5p-QjQ" firstAttribute="trailing" secondItem="HGs-tX-Ocp" secondAttribute="trailing" id="wfP-6j-oiv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H71-go-H2I"/>
                     </view>
                     <connections>
                         <outlet property="meowSwitch" destination="HGs-tX-Ocp" id="bdF-0N-R5J"/>
+                        <outlet property="musicSelectButton" destination="j2I-R3-YmF" id="qbq-CF-r1v"/>
                         <outlet property="musicSlider" destination="VSi-5p-QjQ" id="rGD-Ir-N1r"/>
                         <outlet property="musicSwitch" destination="v5Y-9q-V8k" id="bXE-HJ-nXR"/>
                     </connections>
