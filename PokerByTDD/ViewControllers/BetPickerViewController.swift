@@ -42,7 +42,7 @@ final class BetPickerViewController: UIViewController, ColorSetViewProtocol {
         }
     }
     /// 完了ボタン
-    @IBOutlet private weak var doneButton: CustomButton!
+    @IBOutlet private weak var doneButton: CommonDesignButton!
     
     /// ファクトリーメソッド
     ///

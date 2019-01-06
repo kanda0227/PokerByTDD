@@ -110,7 +110,10 @@
 		F2C70FE621DCF12600A1038D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE521DCF12600A1038D /* Alert.swift */; };
 		F2C70FE821DE468D00A1038D /* AudioSettingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */; };
 		F2C70FEA21DE49EB00A1038D /* AudioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */; };
-		F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FEB21DFA89300A1038D /* test.mp3 */; };
+		F2C70FEC21DFA89300A1038D /* aquarium.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FEB21DFA89300A1038D /* aquarium.mp3 */; };
+		F2C70FEE21E2440700A1038D /* hidamari.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FED21E2440700A1038D /* hidamari.mp3 */; };
+		F2C70FF021E2474B00A1038D /* CommonDesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FEF21E2474B00A1038D /* CommonDesignButton.swift */; };
+		F2C70FF221E2497800A1038D /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FF121E2497800A1038D /* SelectButton.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -329,7 +332,10 @@
 		F2C70FE521DCF12600A1038D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F2C70FE721DE468D00A1038D /* AudioSettingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioSettingView.storyboard; sourceTree = "<group>"; };
 		F2C70FE921DE49EB00A1038D /* AudioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingViewController.swift; sourceTree = "<group>"; };
-		F2C70FEB21DFA89300A1038D /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../Downloads/test.mp3; sourceTree = "<group>"; };
+		F2C70FEB21DFA89300A1038D /* aquarium.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = aquarium.mp3; path = ../../../../Downloads/aquarium.mp3; sourceTree = "<group>"; };
+		F2C70FED21E2440700A1038D /* hidamari.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = hidamari.mp3; path = ../../../../Downloads/hidamari.mp3; sourceTree = "<group>"; };
+		F2C70FEF21E2474B00A1038D /* CommonDesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDesignButton.swift; sourceTree = "<group>"; };
+		F2C70FF121E2497800A1038D /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
 		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -592,6 +598,8 @@
 				F2C70FDC21DA585C00A1038D /* ShopCell.xib */,
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
+				F2C70FEF21E2474B00A1038D /* CommonDesignButton.swift */,
+				F2C70FF121E2497800A1038D /* SelectButton.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -641,8 +649,9 @@
 		F2C70FE221DBA4DE00A1038D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				F2C70FED21E2440700A1038D /* hidamari.mp3 */,
 				F2C70FE321DBA4F000A1038D /* meow.mp3 */,
-				F2C70FEB21DFA89300A1038D /* test.mp3 */,
+				F2C70FEB21DFA89300A1038D /* aquarium.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -1097,9 +1106,10 @@
 				F2319B6D21BCC1BF001AD8CF /* NekoLibraryView.storyboard in Resources */,
 				F2A9F2D521C6164A009278D6 /* NekoRoomView.storyboard in Resources */,
 				F2D79B5C219CE57000962D26 /* Poker.storyboard in Resources */,
+				F2C70FEE21E2440700A1038D /* hidamari.mp3 in Resources */,
 				F254FB4F21B3AA9B00A77302 /* Setting.storyboard in Resources */,
 				F241172E21D90C9E002114ED /* ShopView.storyboard in Resources */,
-				F2C70FEC21DFA89300A1038D /* test.mp3 in Resources */,
+				F2C70FEC21DFA89300A1038D /* aquarium.mp3 in Resources */,
 				F254FB4D21B39FDC00A77302 /* TopView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1223,8 +1233,10 @@
 				F2004A3921D275CA00E1D1E1 /* CustomButton.swift in Sources */,
 				F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */,
 				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
+				F2C70FF021E2474B00A1038D /* CommonDesignButton.swift in Sources */,
 				F2A9F2C521C32028009278D6 /* NekoAnimateView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
+				F2C70FF221E2497800A1038D /* SelectButton.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
 				F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */,
 				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,

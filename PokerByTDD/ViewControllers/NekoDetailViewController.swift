@@ -38,7 +38,7 @@ final class NekoDetailViewController: UIViewController, ColorSetViewProtocol {
     }
     
     @IBOutlet private weak var mainView: CustomView!
-    @IBOutlet private weak var chooseButton: CustomButton! {
+    @IBOutlet private weak var chooseButton: CommonDesignButton! {
         didSet {
             chooseButton.isEnabled = neko != .unknown
         }

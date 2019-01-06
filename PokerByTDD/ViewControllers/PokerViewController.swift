@@ -27,8 +27,8 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var opponentHandLabel: CustomLabel!
     /// 対戦結果を表示するラベル
     @IBOutlet private weak var resultLabel: CustomLabel!
-    @IBOutlet private weak var startButton: CustomButton!
-    @IBOutlet private weak var tradeButton: CustomButton!
+    @IBOutlet private weak var startButton: CommonDesignButton!
+    @IBOutlet private weak var tradeButton: CommonDesignButton!
     /// 所持金を表示するラベル
     @IBOutlet private weak var walletView: WalletView!
     
