@@ -109,7 +109,7 @@ public enum NekoAudio: String {
     }
 }
 
-public enum MusicAudio: String {
+public enum MusicAudio: String, CaseIterable {
     case aquarium
     case hidamari
     
