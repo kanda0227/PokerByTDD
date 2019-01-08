@@ -35,13 +35,15 @@ public final class AudioHelper: NSObject, AVAudioPlayerDelegate {
         nekoAudioPlayer?.play()
     }
     
-    public func musicPlay(_ audio: MusicAudio) {
+    public func musicPlay(_ audio: MusicAudio? = nil) {
+        
+        let music = audio ?? currentMusic()
         
         guard isOnMusicSwitch() else {
             return
         }
         
-        guard let path = Bundle.main.path(forResource: audio.rawValue, ofType: MusicAudio.type()) else {
+        guard let path = Bundle.main.path(forResource: music.rawValue, ofType: MusicAudio.type()) else {
             fatalError("音楽リソースを用意しておくれ")
         }
         
@@ -109,7 +111,7 @@ public enum NekoAudio: String {
     }
 }
 
-public enum MusicAudio: String {
+public enum MusicAudio: String, CaseIterable {
     case aquarium
     case hidamari
     

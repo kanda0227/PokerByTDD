@@ -19,7 +19,7 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
         super.viewDidLoad()
         eventDisposable().disposed(by: bag)
         delegate = self
-        AudioHelper.shared.musicPlay(._default)
+        AudioHelper.shared.musicPlay()
     }
     
     override func viewDidLayoutSubviews() {
