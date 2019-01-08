@@ -16,7 +16,7 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var meowSwitch: UISwitch!
     @IBOutlet private weak var musicSwitch: UISwitch!
     @IBOutlet private weak var musicSlider: UISlider!
-    @IBOutlet private weak var musicSelectButton: SelectButton!
+    @IBOutlet private weak var musicSelectTextField: UITextField!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -29,9 +29,8 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
         meowSwitch.onTintColor = colorSet.tabBarColor()
         musicSwitch.onTintColor = colorSet.tabBarColor()
         musicSlider.tintColor = colorSet.tabBarColor()
-        musicSelectButton.layer.borderColor = colorSet.navigationBarColor().cgColor
-        musicSelectButton.layer.borderWidth = 2
-        musicSelectButton.colorSet = colorSet
+        musicSelectTextField.tintColor = colorSet.navigationBarColor()
+        musicSelectTextField.backgroundColor = colorSet.backgroundColor()
     }
     
     @IBAction private func tapMeowSwitch(sender: UISwitch) {
@@ -45,14 +44,10 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     @IBAction private func slideMusicSlide(_ sender: UISlider) { AudioHelper.shared.setMusicVolume(sender.value)
     }
     
-    @IBAction private func tapMusicSelectButton(_ sender: UIButton) {
-        
-    }
-    
     private func setup() {
         meowSwitch.isOn = AudioHelper.shared.isOnMeowSwitch()
         musicSwitch.isOn = AudioHelper.shared.isOnMusicSwitch()
         musicSlider.value = AudioHelper.shared.musicVolumeValue()
-        musicSelectButton.titleLabel?.text = AudioHelper.shared.currentMusic().musicName()
+        musicSelectTextField.text = AudioHelper.shared.currentMusic().musicName()
     }
 }
