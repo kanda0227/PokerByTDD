@@ -10,6 +10,7 @@ import UIKit
 import Utility
 import Model
 import Design
+import Presenter
 
 final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     
@@ -18,6 +19,7 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var musicSlider: UISlider!
     @IBOutlet private weak var musicSelectTextField: UITextField!
     private var picker: UIPickerView?
+    private lazy var presenter = AudioSettingPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,14 +92,14 @@ extension AudioSettingViewController: UIPickerViewDelegate {}
 extension AudioSettingViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return presenter.numberOfComponents()
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return MusicAudio.allCases.count
+        return presenter.numberOfRowsInComponent(component)
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return MusicAudio.allCases[row].musicName()
+        return presenter.title(row: row, component: component)
     }
 }
