@@ -26,4 +26,9 @@ public final class AudioSettingPresenter {
     public func title(row: Int, component: Int) -> String? {
         return items[row].musicName()
     }
+    
+    public func selected() -> (row: Int, component: Int) {
+        let row = items.firstIndex(of: AudioHelper.shared.currentMusic()) ?? 0
+        return (row, 0)
+    }
 }

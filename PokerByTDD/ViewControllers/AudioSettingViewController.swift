@@ -53,6 +53,11 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     @IBAction private func slideMusicSlide(_ sender: UISlider) { AudioHelper.shared.setMusicVolume(sender.value)
     }
     
+    @IBAction private func tapSelectMusicTextField(_ sender: Any) {
+        let (row, component) = presenter.selected()
+        picker?.selectRow(row, inComponent: component, animated: true)
+    }
+    
     private func setup() {
         meowSwitch.isOn = AudioHelper.shared.isOnMeowSwitch()
         musicSwitch.isOn = AudioHelper.shared.isOnMusicSwitch()
@@ -87,7 +92,12 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     }
 }
 
-extension AudioSettingViewController: UIPickerViewDelegate {}
+extension AudioSettingViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return presenter.title(row: row, component: component)
+    }
+}
 
 extension AudioSettingViewController: UIPickerViewDataSource {
     
@@ -97,9 +107,5 @@ extension AudioSettingViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return presenter.numberOfRowsInComponent(component)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return presenter.title(row: row, component: component)
     }
 }
