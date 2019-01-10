@@ -71,13 +71,12 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
         picker?.dataSource = self
         picker?.showsSelectionIndicator = true
         
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(AudioSettingViewController.doneSelectMusic))
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(AudioSettingViewController.cancelSelectMusic))
-        toolbar.setItems([cancelButton, doneButton], animated: true)
+        inputPickerAccessoryView = InputPickerAccessoryView()
+        inputPickerAccessoryView?.cancelButton.addTarget(self, action: #selector(AudioSettingViewController.cancelSelectMusic), for: .touchUpInside)
+        inputPickerAccessoryView?.doneButton.addTarget(self, action: #selector(AudioSettingViewController.doneSelectMusic), for: .touchUpInside)
         
         self.musicSelectTextField.inputView = picker
-        self.musicSelectTextField.inputAccessoryView = toolbar
+        self.musicSelectTextField.inputAccessoryView = inputPickerAccessoryView
     }
     
     @objc private func doneSelectMusic() {
