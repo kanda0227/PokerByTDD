@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputPickerAccessoryView" customModule="Design" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="CfC-Ed-djh" id="bgr-uX-YWd"/>
+                <outlet property="doneButton" destination="Ie0-9C-Ayr" id="tf4-xl-DJO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ji6-m7-qFD">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfC-Ed-djh" customClass="CustomButton" customModule="Design" customModuleProvider="target">
+                    <rect key="frame" x="10" y="7" width="77" height="30"/>
+                    <state key="normal" title="キャンセル"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie0-9C-Ayr" customClass="CustomButton" customModule="Design" customModuleProvider="target">
+                    <rect key="frame" x="334" y="7" width="31" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="決定"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7B7-xY-biZ" firstAttribute="trailing" secondItem="Ie0-9C-Ayr" secondAttribute="trailing" constant="10" id="2lD-BK-INQ"/>
+                <constraint firstItem="Ie0-9C-Ayr" firstAttribute="centerY" secondItem="CfC-Ed-djh" secondAttribute="centerY" id="68m-Dl-ScI"/>
+                <constraint firstItem="CfC-Ed-djh" firstAttribute="leading" secondItem="7B7-xY-biZ" secondAttribute="leading" constant="10" id="P34-Rm-HPU"/>
+                <constraint firstItem="CfC-Ed-djh" firstAttribute="centerY" secondItem="7B7-xY-biZ" secondAttribute="centerY" id="ufi-ek-jVn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="7B7-xY-biZ"/>
+            <point key="canvasLocation" x="-101" y="-118"/>
+        </view>
+    </objects>
+</document>
