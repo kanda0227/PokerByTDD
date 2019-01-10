@@ -19,6 +19,11 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var musicSlider: UISlider!
     @IBOutlet private weak var musicSelectTextField: UITextField!
     private var picker: UIPickerView?
+    private var inputPickerAccessoryView: InputPickerAccessoryView? {
+        didSet {
+            setupColor()
+        }
+    }
     private lazy var presenter = AudioSettingPresenter()
     
     override func viewDidLoad() {
