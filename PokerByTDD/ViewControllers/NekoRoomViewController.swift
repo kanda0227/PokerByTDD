@@ -40,6 +40,7 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        selectedNeko = Neko.selectedNeko()
         nekoImage.action(.sit)
     }
     
