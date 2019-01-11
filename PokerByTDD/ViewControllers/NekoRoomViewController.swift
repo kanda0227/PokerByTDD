@@ -15,6 +15,17 @@ import Utility
 final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImage: NekoAnimateView!
+    @IBOutlet private weak var notSelectedNekoView: CustomView!
+    @IBOutlet private weak var selectButton: CommonDesignButton!
+    
+    private var selectedNeko: Neko? {
+        didSet {
+            selectedNeko.map(nekoImage.set)
+            let isSelectedNeko = (selectedNeko != .unknown && selectedNeko != nil)
+            notSelectedNekoView.isHidden = isSelectedNeko
+            nekoImage.isHidden = !isSelectedNeko
+        }
+    }
     
     private let bag = DisposeBag()
     
@@ -34,19 +45,25 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        Neko.selectedNeko().map(nekoImage.set)
+        selectedNeko = Neko.selectedNeko()
         nekoImage.action(.sit)
     }
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        notSelectedNekoView.reloadColor(colorSet: colorSet)
+        selectButton.colorSet = colorSet
     }
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {
+        // ねこを選択していない場合はタップ無効
+        guard let selectedNeko = selectedNeko, selectedNeko != .unknown else { return }
         nekoImage.action(.meow)
     }
     
     @objc private func longPressNeko(_ sender: UILongPressGestureRecognizer) {
+        // ねこを選択していない場合はロングタップ無効
+        guard let selectedNeko = selectedNeko, selectedNeko != .unknown else { return }
         if sender.state == .began {
             nekoImage.action(.frolic)
         }
@@ -56,6 +73,9 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // ねこを選択していない場合はタップでの移動無効
+        guard let selectedNeko = selectedNeko, selectedNeko != .unknown else { return }
+        
         guard event?.touches(for: nekoImage) == nil else { return }
         
         guard let goalPoint = event?.allTouches?.first?.location(in: self.view) else { return }
