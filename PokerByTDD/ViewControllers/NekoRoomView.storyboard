@@ -47,7 +47,7 @@
                                 <rect key="frame" x="137.5" y="291" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2s-xW-hy9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2s-xW-hy9" customClass="CustomView" customModule="Design">
                                 <rect key="frame" x="67" y="269" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ねこを選んでいません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-KB-Fnw">
@@ -83,6 +83,7 @@
                     <connections>
                         <outlet property="nekoImage" destination="oUv-zX-toX" id="eC2-Ua-Qq7"/>
                         <outlet property="notSelectedNekoView" destination="G2s-xW-hy9" id="l4s-cB-Whi"/>
+                        <outlet property="selectButton" destination="AUS-eZ-Wrb" id="MhA-T6-ovL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcL-wy-aMd" userLabel="First Responder" sceneMemberID="firstResponder"/>

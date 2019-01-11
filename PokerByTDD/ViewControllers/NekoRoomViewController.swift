@@ -15,7 +15,8 @@ import Utility
 final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImage: NekoAnimateView!
-    @IBOutlet private weak var notSelectedNekoView: UIView!
+    @IBOutlet private weak var notSelectedNekoView: CustomView!
+    @IBOutlet private weak var selectButton: CommonDesignButton!
     
     private var selectedNeko: Neko? {
         didSet {
@@ -50,6 +51,8 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        notSelectedNekoView.reloadColor(colorSet: colorSet)
+        selectButton.colorSet = colorSet
     }
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {
