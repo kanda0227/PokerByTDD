@@ -16,6 +16,12 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImage: NekoAnimateView!
     
+    private var selectedNeko: Neko? {
+        didSet {
+            selectedNeko.map(nekoImage.set)
+        }
+    }
+    
     private let bag = DisposeBag()
     
     private var nekoWalkDisposable: Disposable?
@@ -34,7 +40,6 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        Neko.selectedNeko().map(nekoImage.set)
         nekoImage.action(.sit)
     }
     
