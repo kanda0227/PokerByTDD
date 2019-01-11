@@ -15,10 +15,14 @@ import Utility
 final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     
     @IBOutlet private weak var nekoImage: NekoAnimateView!
+    @IBOutlet private weak var notSelectedNekoView: UIView!
     
     private var selectedNeko: Neko? {
         didSet {
             selectedNeko.map(nekoImage.set)
+            let isSelectedNeko = (selectedNeko != .unknown && selectedNeko != nil)
+            notSelectedNekoView.isHidden = isSelectedNeko
+            nekoImage.isHidden = !isSelectedNeko
         }
     }
     
