@@ -48,10 +48,14 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     @objc private func tapNeko(_ sender: UITapGestureRecognizer) {
+        // ねこを選択していない場合はタップ無効
+        guard let selectedNeko = selectedNeko, selectedNeko != .unknown else { return }
         nekoImage.action(.meow)
     }
     
     @objc private func longPressNeko(_ sender: UILongPressGestureRecognizer) {
+        // ねこを選択していない場合はロングタップ無効
+        guard let selectedNeko = selectedNeko, selectedNeko != .unknown else { return }
         if sender.state == .began {
             nekoImage.action(.frolic)
         }
@@ -61,6 +65,9 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // ねこを選択していない場合はタップでの移動無効
+        guard let selectedNeko = selectedNeko, selectedNeko != .unknown else { return }
+        
         guard event?.touches(for: nekoImage) == nil else { return }
         
         guard let goalPoint = event?.allTouches?.first?.location(in: self.view) else { return }
