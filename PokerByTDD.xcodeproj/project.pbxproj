@@ -117,6 +117,8 @@
 		F2C70FF421E63D7200A1038D /* AudioSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FF321E63D7100A1038D /* AudioSettingPresenter.swift */; };
 		F2C70FF621E7869700A1038D /* InputPickerAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C70FF521E7869700A1038D /* InputPickerAccessoryView.xib */; };
 		F2C70FFA21E787DE00A1038D /* InputPickerAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FF921E787DE00A1038D /* InputPickerAccessoryView.swift */; };
+		F2C70FFC21EA2CB200A1038D /* AutomaticTransitionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FFB21EA2CB200A1038D /* AutomaticTransitionHelper.swift */; };
+		F2C70FFE21EA342A00A1038D /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C70FFD21EA342A00A1038D /* ViewControllersFactory.swift */; };
 		F2D0127121C07D0100AB5D2A /* NekoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */; };
 		F2D0127321C07FE900AB5D2A /* NekoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */; };
 		F2D79B57219CE57000962D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D79B56219CE57000962D26 /* AppDelegate.swift */; };
@@ -342,6 +344,8 @@
 		F2C70FF321E63D7100A1038D /* AudioSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingPresenter.swift; sourceTree = "<group>"; };
 		F2C70FF521E7869700A1038D /* InputPickerAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPickerAccessoryView.xib; sourceTree = "<group>"; };
 		F2C70FF921E787DE00A1038D /* InputPickerAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPickerAccessoryView.swift; sourceTree = "<group>"; };
+		F2C70FFB21EA2CB200A1038D /* AutomaticTransitionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticTransitionHelper.swift; sourceTree = "<group>"; };
+		F2C70FFD21EA342A00A1038D /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		F2D0127021C07D0100AB5D2A /* NekoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NekoDetailView.storyboard; sourceTree = "<group>"; };
 		F2D0127221C07FE900AB5D2A /* NekoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoDetailViewController.swift; sourceTree = "<group>"; };
 		F2D79B53219CE57000962D26 /* PokerByTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerByTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -481,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C70FE021DBA07600A1038D /* AudioHelper.swift */,
+				F2C70FFB21EA2CB200A1038D /* AutomaticTransitionHelper.swift */,
 				F2D79B77219CEC8200962D26 /* Card.swift */,
 				F2A9F2CE21C5340A009278D6 /* ColorSet.swift */,
 				F26A01F321A389CF008897A1 /* Dealer.swift */,
@@ -597,6 +602,8 @@
 				F2004A3821D275CA00E1D1E1 /* CustomButton.swift */,
 				F2004A2921CBC94D00E1D1E1 /* CustomLabel.swift */,
 				F2004A2C21CBD23200E1D1E1 /* CustomView.swift */,
+				F2C70FF921E787DE00A1038D /* InputPickerAccessoryView.swift */,
+				F2C70FF521E7869700A1038D /* InputPickerAccessoryView.xib */,
 				F2A9F2C421C32028009278D6 /* NekoAnimateView.swift */,
 				F2319B7421BCC443001AD8CF /* NekoLibraryCell.swift */,
 				F2319B6E21BCC247001AD8CF /* NekoLibraryCell.xib */,
@@ -607,8 +614,6 @@
 				F2C70FDC21DA585C00A1038D /* ShopCell.xib */,
 				F216D77621C1C5C8003F54BB /* WalletView.swift */,
 				F216D77421C1C4B0003F54BB /* WalletView.xib */,
-				F2C70FF521E7869700A1038D /* InputPickerAccessoryView.xib */,
-				F2C70FF921E787DE00A1038D /* InputPickerAccessoryView.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 			children = (
 				F2C70FE521DCF12600A1038D /* Alert.swift */,
 				F2B2E57B21C7136200FA3ACC /* CommonNavigationController.swift */,
+				F2C70FFD21EA342A00A1038D /* ViewControllersFactory.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1084,11 +1090,11 @@
 			files = (
 				F254FCA621B73DA200A77302 /* CardView.xib in Resources */,
 				F2A9F2C921C530FE009278D6 /* ColorSettingCell.xib in Resources */,
+				F2C70FF621E7869700A1038D /* InputPickerAccessoryView.xib in Resources */,
 				F2319B6F21BCC247001AD8CF /* NekoLibraryCell.xib in Resources */,
 				F254FCA821B73DA200A77302 /* SettingItemCell.xib in Resources */,
 				F2C70FDD21DA585C00A1038D /* ShopCell.xib in Resources */,
 				F216D77521C1C4B0003F54BB /* WalletView.xib in Resources */,
-				F2C70FF621E7869700A1038D /* InputPickerAccessoryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1163,6 +1169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C70FE121DBA07600A1038D /* AudioHelper.swift in Sources */,
+				F2C70FFC21EA2CB200A1038D /* AutomaticTransitionHelper.swift in Sources */,
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
 				F2A9F2CF21C5340A009278D6 /* ColorSet.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
@@ -1245,12 +1252,12 @@
 				F2004A3921D275CA00E1D1E1 /* CustomButton.swift in Sources */,
 				F2004A2A21CBC94D00E1D1E1 /* CustomLabel.swift in Sources */,
 				F2004A2D21CBD23200E1D1E1 /* CustomView.swift in Sources */,
+				F2C70FFA21E787DE00A1038D /* InputPickerAccessoryView.swift in Sources */,
 				F2A9F2C521C32028009278D6 /* NekoAnimateView.swift in Sources */,
 				F2319B7521BCC443001AD8CF /* NekoLibraryCell.swift in Sources */,
 				F2C70FF221E2497800A1038D /* SelectButton.swift in Sources */,
 				F254FCA721B73DA200A77302 /* SettingItemCell.swift in Sources */,
 				F2C70FDF21DA58F200A1038D /* ShopCell.swift in Sources */,
-				F2C70FFA21E787DE00A1038D /* InputPickerAccessoryView.swift in Sources */,
 				F216D77721C1C5C8003F54BB /* WalletView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1283,6 +1290,7 @@
 				F254FB5121B3B23F00A77302 /* SettingViewController.swift in Sources */,
 				F241173021D90CC5002114ED /* ShopViewController.swift in Sources */,
 				F2B2E57E21C718B700FA3ACC /* TopTabBarController.swift in Sources */,
+				F2C70FFE21EA342A00A1038D /* ViewControllersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
