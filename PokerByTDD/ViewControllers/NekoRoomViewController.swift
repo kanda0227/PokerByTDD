@@ -104,6 +104,10 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
     }
     
     @IBAction private func tapSelectNekoButton(_ sender: Any) {
-        AutomaticTransitionHelper.shared.post(.nekoGacha)
+        if Neko.libraryNekos.isEmpty {
+            AutomaticTransitionHelper.shared.post(.nekoGacha)
+        } else {
+            AutomaticTransitionHelper.shared.post(.nekoLibrary)
+        }
     }
 }
