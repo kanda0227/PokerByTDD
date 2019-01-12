@@ -48,17 +48,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2s-xW-hy9" customClass="CustomView" customModule="Design">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="277" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ねこを選んでいません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-KB-Fnw">
-                                        <rect key="frame" x="99" y="53" width="174" height="21"/>
+                                        <rect key="frame" x="33" y="40" width="174" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUS-eZ-Wrb" customClass="CommonDesignButton" customModule="Design">
-                                        <rect key="frame" x="99" y="78" width="31" height="30"/>
+                                        <rect key="frame" x="101.5" y="71" width="37" height="34"/>
                                         <state key="normal" title="選ぶ"/>
+                                        <connections>
+                                            <action selector="tapSelectNekoButton:" destination="uvx-F0-ttm" eventType="touchUpInside" id="Bt5-aA-VbC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -102,4 +102,8 @@ final class NekoRoomViewController: UIViewController, ColorSetViewProtocol {
             self?.nekoImage.center = point
         }, completion: nil)
     }
+    
+    @IBAction private func tapSelectNekoButton(_ sender: Any) {
+        AutomaticTransitionHelper.shared.post(.nekoGacha)
+    }
 }
