@@ -20,6 +20,9 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
         eventDisposable().disposed(by: bag)
         delegate = self
         AudioHelper.shared.musicPlay()
+        AutomaticTransitionHelper.shared.observable().bind(onNext: { [weak self] tab in
+            self?.selectTab(tab)
+        }).disposed(by: bag)
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,6 +33,10 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet) {
         tabBar.barTintColor = colorSet.tabBarColor()
         tabBar.tintColor = colorSet.tabBarItemColor()
+    }
+    
+    private func selectTab(_ tab: TopTab) {
+        selectedIndex = tab.rawValue
     }
 }
 
