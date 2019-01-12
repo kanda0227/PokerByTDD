@@ -20,8 +20,8 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
         eventDisposable().disposed(by: bag)
         delegate = self
         AudioHelper.shared.musicPlay()
-        AutomaticTransitionHelper.shared.observable().bind(onNext: { [weak self] tab in
-            self?.selectTab(tab)
+        AutomaticTransitionHelper.shared.observable().bind(onNext: { [weak self] screen in
+            self?.transition(screen)
         }).disposed(by: bag)
     }
     
@@ -35,8 +35,11 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
         tabBar.tintColor = colorSet.tabBarItemColor()
     }
     
-    private func selectTab(_ tab: TopTab) {
-        selectedIndex = tab.rawValue
+    private func transition(_ screen: Screen) {
+        selectedIndex = screen.tab.rawValue
+        if let vc = ViewControllersFactory.shared.vc(screen) {
+            present(vc, animated: true, completion: nil)
+        }
     }
 }
 
