@@ -20,7 +20,7 @@ final class ViewControllersFactory {
     }
     
     func vc(_ screen: Screen) -> UIViewController? {
-        return screen.presentIdentifier().map(vc)
+        return screen.pushIdentifier().map(vc)
     }
 }
 
@@ -41,8 +41,8 @@ enum VCIdentifier {
 
 private extension Screen {
     
-    func presentIdentifier() -> VCIdentifier? {
-        switch presentVC {
+    func pushIdentifier() -> VCIdentifier? {
+        switch pushVC {
         case .some(let vc) where vc == .nekoLibrary:
             return .nekoLibrary
         default:

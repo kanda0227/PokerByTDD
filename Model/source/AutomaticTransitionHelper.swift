@@ -32,6 +32,31 @@ public enum TopTab: Int {
     case nekoRoom
     case shop
     case setting
+    
+    public var title: String {
+        switch self {
+        case .poker:
+            return "ポーカー"
+        case .nekoGacha:
+            return "ねこガチャ"
+        case .nekoRoom:
+            return "ねこ部屋"
+        case .shop:
+            return "ショップ"
+        case .setting:
+            return "設定"
+        }
+    }
+    
+    public var isNaviBarHidden: Bool {
+        switch self {
+        case .poker:
+            return true
+        default:
+            return false
+            
+        }
+    }
 }
 
 public enum Screen {
@@ -57,7 +82,7 @@ public enum Screen {
         }
     }
     
-    public var presentVC: Screen? {
+    public var pushVC: Screen? {
         switch self {
         case .nekoLibrary:
             return self

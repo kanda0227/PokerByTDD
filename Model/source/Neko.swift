@@ -28,6 +28,10 @@ public enum Neko: String, CaseIterable {
         return Neko.allCases.filter { $0 != .unknown }
     }
     
+    static public var allHasNekos: [Neko] {
+        return allCases.filter { $0.hasNeko }
+    }
+    
     static public var libraryNekos: [Neko] {
         return allNekos.map { $0.hasNeko ? $0 : .unknown }
     }
