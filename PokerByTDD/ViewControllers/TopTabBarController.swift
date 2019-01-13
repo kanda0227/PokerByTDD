@@ -38,7 +38,7 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     private func transition(_ screen: Screen) {
         selectedIndex = screen.tab.rawValue
         if let vc = ViewControllersFactory.shared.vc(screen) {
-            present(vc, animated: true, completion: nil)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

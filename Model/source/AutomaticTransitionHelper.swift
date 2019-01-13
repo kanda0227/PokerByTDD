@@ -57,7 +57,7 @@ public enum Screen {
         }
     }
     
-    public var presentVC: Screen? {
+    public var pushVC: Screen? {
         switch self {
         case .nekoLibrary:
             return self
