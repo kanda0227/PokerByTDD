@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4nZ-yZ-FU4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wly-Va-nsd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,27 +10,9 @@
     </dependencies>
     <scenes>
         <!--ショップ-->
-        <scene sceneID="nuw-4q-Q2W">
-            <objects>
-                <navigationController title="ショップ" id="4nZ-yZ-FU4" customClass="CommonNavigationController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ショップ" image="ic_shop" landscapeImage="ic_shop" largeContentSizeImage="ic_shop" selectedImage="ic_shop" id="Pgj-46-mFi"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WVp-vN-kku">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Wly-Va-nsd" kind="relationship" relationship="rootViewController" id="cVG-7y-XNq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i92-rR-Jjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-982" y="168"/>
-        </scene>
-        <!--ショップ-->
         <scene sceneID="CXL-DF-ebK">
             <objects>
-                <collectionViewController id="Wly-Va-nsd" customClass="ShopViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="ショップ" id="Wly-Va-nsd" customClass="ShopViewController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6y8-Mr-yPz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +29,9 @@
                             <outlet property="delegate" destination="Wly-Va-nsd" id="PbI-c5-rBN"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="ショップ" image="ic_shop" landscapeImage="ic_shop" largeContentSizeImage="ic_shop" selectedImage="ic_shop" id="X9e-IT-nsP"/>
                     <navigationItem key="navigationItem" title="ショップ" id="yQn-BH-zAF"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lh-ay-wmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_shop" width="0.0" height="0.0"/>
+        <image name="ic_shop" width="50" height="50"/>
     </resources>
 </document>
