@@ -52,6 +52,7 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     private func setNavi() {
         guard let tab = TopTab(rawValue: selectedIndex) else { return }
         title = tab.title
+        navigationController?.isNavigationBarHidden = tab.isNaviBarHidden
     }
 }
 

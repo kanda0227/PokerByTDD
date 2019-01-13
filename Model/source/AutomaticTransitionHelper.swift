@@ -47,6 +47,16 @@ public enum TopTab: Int {
             return "設定"
         }
     }
+    
+    public var isNaviBarHidden: Bool {
+        switch self {
+        case .poker:
+            return true
+        default:
+            return false
+            
+        }
+    }
 }
 
 public enum Screen {
