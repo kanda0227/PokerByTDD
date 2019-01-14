@@ -38,7 +38,9 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     private func transition(_ screen: Screen) {
         selectedIndex = screen.tab.rawValue
         if let vc = ViewControllersFactory.shared.vc(screen) {
-            navigationController?.pushViewController(vc, animated: true)
+            viewControllers?[selectedIndex].push(vc)
+        } else {
+            viewControllers?[selectedIndex].popToRoot()
         }
     }
 }
