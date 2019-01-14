@@ -14,4 +14,12 @@ extension UIViewController {
         let storyboard = UIStoryboard(name: storyboardID, bundle: nil)
         return storyboard.instantiateInitialViewController()
     }
+    
+    public func push(_ vc: UIViewController) {
+        (self as? UINavigationController)?.pushViewController(vc, animated: true)
+    }
+    
+    public func popToRoot() {
+        (self as? UINavigationController)?.popToRootViewController(animated: true)
+    }
 }
