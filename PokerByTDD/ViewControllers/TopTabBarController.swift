@@ -28,7 +28,6 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupColor()
-        setNavi()
     }
     
     func reloadColor(colorSet: ColorSet) {
@@ -39,20 +38,10 @@ final class TopTabBarController: UITabBarController, ColorSetViewProtocol {
     private func transition(_ screen: Screen) {
         selectedIndex = screen.tab.rawValue
         if let vc = ViewControllersFactory.shared.vc(screen) {
-            navigationController?.pushViewController(vc, animated: true)
+            viewControllers?[selectedIndex].push(vc)
+        } else {
+            viewControllers?[selectedIndex].popToRoot()
         }
-    }
-    
-    override var selectedIndex: Int {
-        didSet {
-            setNavi()
-        }
-    }
-    
-    private func setNavi() {
-        guard let tab = TopTab(rawValue: selectedIndex) else { return }
-        title = tab.title
-        navigationController?.isNavigationBarHidden = tab.isNaviBarHidden
     }
 }
 
@@ -64,9 +53,5 @@ extension TopTabBarController: UITabBarControllerDelegate {
             self.present(UIAlertController.alert(title: "ポーカーゲームが終わるまで\nタブの切り替えは出来ません"), animated: true, completion: nil)
         }
         return selectable
-    }
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        setNavi()
     }
 }
