@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wly-Va-nsd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mv9-pn-D5j">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--ショップ-->
+        <scene sceneID="GfK-Vo-3es">
+            <objects>
+                <navigationController id="mv9-pn-D5j" customClass="CommonNavigationController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ショップ" image="ic_shop" landscapeImage="ic_shop" largeContentSizeImage="ic_shop" selectedImage="ic_shop" id="X9e-IT-nsP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HGw-iV-uio">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wly-Va-nsd" kind="relationship" relationship="rootViewController" id="QRa-jk-DS7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSM-uJ-fHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946" y="168"/>
+        </scene>
         <!--ショップ-->
         <scene sceneID="CXL-DF-ebK">
             <objects>
@@ -29,7 +47,6 @@
                             <outlet property="delegate" destination="Wly-Va-nsd" id="PbI-c5-rBN"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="ショップ" image="ic_shop" landscapeImage="ic_shop" largeContentSizeImage="ic_shop" selectedImage="ic_shop" id="X9e-IT-nsP"/>
                     <navigationItem key="navigationItem" title="ショップ" id="yQn-BH-zAF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>

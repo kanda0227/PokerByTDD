@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uvx-F0-ttm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bml-TE-eLc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--ねこ部屋-->
+        <scene sceneID="3DK-KC-Y5U">
+            <objects>
+                <navigationController id="bml-TE-eLc" customClass="CommonNavigationController" customModule="PokerByTDD" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ねこ部屋" image="ic_home" landscapeImage="ic_home" largeContentSizeImage="ic_home" selectedImage="ic_home" id="9Bc-F4-jxw"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="agz-hp-c9V">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uvx-F0-ttm" kind="relationship" relationship="rootViewController" id="0Gl-Mh-VdL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23W-WK-osG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="152"/>
+        </scene>
         <!--ねこ部屋-->
         <scene sceneID="aXO-QK-RtT">
             <objects>
@@ -24,7 +42,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2s-xW-hy9" customClass="CustomView" customModule="Design">
-                                <rect key="frame" x="67.5" y="277" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="255" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ねこを選んでいません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-KB-Fnw">
                                         <rect key="frame" x="33" y="40" width="174" height="21"/>
@@ -58,7 +76,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bhc-Sh-fnj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ねこ部屋" image="ic_home" landscapeImage="ic_home" largeContentSizeImage="ic_home" selectedImage="ic_home" id="9Bc-F4-jxw"/>
                     <navigationItem key="navigationItem" title="ねこ部屋" id="JxO-Ir-cZE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
