@@ -26,24 +26,24 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVx-8V-dpx">
-                                <rect key="frame" x="62" y="494.5" width="251" height="30"/>
+                                <rect key="frame" x="39.5" y="494.5" width="296" height="34"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-YY-Ugy" customClass="CustomButton" customModule="Design">
-                                        <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-YY-Ugy" customClass="CommonDesignButton" customModule="Design">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
                                         <state key="normal" title="アルバムから選ぶ"/>
                                         <connections>
                                             <action selector="tapSelectFromAlbumButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="OVX-Rh-bkZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSU-s9-ogr" customClass="CustomButton" customModule="Design">
-                                        <rect key="frame" x="133" y="0.0" width="77" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSU-s9-ogr" customClass="CommonDesignButton" customModule="Design">
+                                        <rect key="frame" x="157" y="0.0" width="92" height="34"/>
                                         <state key="normal" title="写真を撮る"/>
                                         <connections>
                                             <action selector="tapTakePictureButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="hrb-yr-pLT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-r3-Tcx" customClass="CustomButton" customModule="Design">
-                                        <rect key="frame" x="220" y="0.0" width="31" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-r3-Tcx" customClass="CommonDesignButton" customModule="Design">
+                                        <rect key="frame" x="259" y="0.0" width="37" height="34"/>
                                         <state key="normal" title="決定"/>
                                         <connections>
                                             <action selector="tapDoneButton:" destination="8at-Iu-TFd" eventType="touchUpInside" id="41P-Rh-Cf2"/>
