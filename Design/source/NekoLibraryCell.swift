@@ -30,6 +30,7 @@ public final class NekoLibraryCell: UICollectionViewCell, ColorSetViewProtocol {
     
     public func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        nekoLabel.reloadColor(colorSet: colorSet)
         setBorderColoer(colorSet: colorSet)
     }
 }
