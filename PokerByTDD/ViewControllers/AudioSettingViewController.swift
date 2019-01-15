@@ -43,6 +43,7 @@ final class AudioSettingViewController: UIViewController, ColorSetViewProtocol {
         meowSwitch.onTintColor = colorSet.tabBarColor()
         musicSwitch.onTintColor = colorSet.tabBarColor()
         musicSlider.tintColor = colorSet.tabBarColor()
+        musicSelectTextField.textColor = colorSet.textColor()
         musicSelectTextField.tintColor = colorSet.navigationBarColor()
         musicSelectTextField.backgroundColor = colorSet.backgroundColor()
         inputPickerAccessoryView?.reloadColor(colorSet: colorSet)
