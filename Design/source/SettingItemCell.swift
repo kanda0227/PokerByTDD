@@ -16,9 +16,11 @@ public final class SettingItemCell: UITableViewCell, ColorSetViewProtocol {
     
     public func set(itemName: String) {
         itemLabel.text = itemName
+        setupColor()
     }
     
     public func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        itemLabel.reloadColor(colorSet: colorSet)
     }
 }
