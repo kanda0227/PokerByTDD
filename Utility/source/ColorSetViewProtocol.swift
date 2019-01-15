@@ -14,16 +14,18 @@ public protocol ColorSetViewProtocol {
     func reloadColor(colorSet: ColorSet)
 }
 
+public extension ColorSetViewProtocol {
+    func setupColor() {
+        reloadColor(colorSet: ColorSet.restore())
+    }
+}
+
 public extension ColorSetViewProtocol where Self: UIViewController {
     
     func eventDisposable() -> Disposable {
         return ColorSetNotification.shared.observable().subscribe(onNext: { [weak self] colorSet in
             self?.reloadColor(colorSet: colorSet)
         })
-    }
-    
-    func setupColor() {
-        reloadColor(colorSet: ColorSet.restore())
     }
     
     func commonSetupColor(colorSet: ColorSet) {
