@@ -18,9 +18,11 @@ public final class ShopCell: UICollectionViewCell, ColorSetViewProtocol {
     public func set(itemName: String, image: UIImage) {
         label.text = itemName
         imageView.image = image
+        setupColor()
     }
     
     public func reloadColor(colorSet: ColorSet) {
         commonSetupColor(colorSet: colorSet)
+        label.reloadColor(colorSet: colorSet)
     }
 }
