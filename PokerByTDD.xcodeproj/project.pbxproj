@@ -494,6 +494,7 @@
 				F2361974219F85F100C91A8C /* Hand.swift */,
 				F2B2E57621C6194E00FA3ACC /* Neko.swift */,
 				F2004A3421CD2B1F00E1D1E1 /* NekoAction.swift */,
+				F2C7100121EF72C700A1038D /* NekoFace.swift */,
 				F2319B6621BBDDB4001AD8CF /* NekoGacha.swift */,
 				F2004A3A21D5163D00E1D1E1 /* NekoWalkCalculation.swift */,
 				F2361976219FFCF700C91A8C /* PokerHand.swift */,
@@ -501,7 +502,6 @@
 				F236197821A1286500C91A8C /* Table.swift */,
 				F2004A3621CFAA1600E1D1E1 /* TopTabSelectableNotification.swift */,
 				F254FB4A21B0B39C00A77302 /* Wallet.swift */,
-				F2C7100121EF72C700A1038D /* NekoFace.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -1176,10 +1176,10 @@
 				F254FBA621B6025200A77302 /* Card.swift in Sources */,
 				F2A9F2CF21C5340A009278D6 /* ColorSet.swift in Sources */,
 				F254FBA721B6025200A77302 /* Dealer.swift in Sources */,
-				F2C7100221EF72C700A1038D /* NekoFace.swift in Sources */,
 				F254FBA121B6025200A77302 /* Hand.swift in Sources */,
 				F2B2E57721C6194E00FA3ACC /* Neko.swift in Sources */,
 				F2004A3521CD2B1F00E1D1E1 /* NekoAction.swift in Sources */,
+				F2C7100221EF72C700A1038D /* NekoFace.swift in Sources */,
 				F2319B6721BBDDB4001AD8CF /* NekoGacha.swift in Sources */,
 				F2004A3C21D51F4600E1D1E1 /* NekoWalkCalculation.swift in Sources */,
 				F254FBA221B6025200A77302 /* PokerHand.swift in Sources */,
