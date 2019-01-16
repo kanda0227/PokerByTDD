@@ -45,6 +45,8 @@ public final class PokerViewPresenter {
     private let switchIsStartButtonEnabled: Binder<Bool>
     /// トレードボタンの有効・無効を切り替えます
     private let switchIsTradeButtonEnabled: Binder<Bool>
+    /// 対戦相手の表情を切り替えます
+    private let opponentFace: Binder<NekoFace>
     
     public init(updateCards: Binder<(cards: [Card], opponentCards: [Card])>,
          handText: Binder<(hand: String?, opponentHand: String?, result: String?)>,
@@ -53,7 +55,8 @@ public final class PokerViewPresenter {
          turnOverOpponentCards: Binder<Bool>,
          switchSelectableCards: Binder<Bool>,
          switchIsStartButtonEnabled: Binder<Bool>,
-         switchIsTradeButtonEnabled: Binder<Bool>) {
+         switchIsTradeButtonEnabled: Binder<Bool>,
+         opponentFace: Binder<NekoFace>) {
         self.updateCards = updateCards
         self.handText = handText
         self.wallet = wallet
@@ -62,6 +65,7 @@ public final class PokerViewPresenter {
         self.switchSelectableCards = switchSelectableCards
         self.switchIsStartButtonEnabled = switchIsStartButtonEnabled
         self.switchIsTradeButtonEnabled = switchIsTradeButtonEnabled
+        self.opponentFace = opponentFace
         
         setupEvent()
     }
@@ -103,6 +107,8 @@ extension PokerViewPresenter {
         switchIsStartButtonEnabled.onNext(false)
         switchIsTradeButtonEnabled.onNext(true)
         TopTabSelectableNotification.shared.post(selectable: false)
+        
+        opponentFace.onNext(.pokerFace)
     }
     
     /// カードの選択状態が変わるときに呼んでください
@@ -119,6 +125,7 @@ extension PokerViewPresenter {
         Wallet.shared.receipt(Result.receive(user: cards, opponent: opponentCards, bet: bet))
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
         handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
+        opponentFace.onNext(Result.opponentFace(user: cards, opponent: opponentCards, bet: bet))
         
         turnOverOpponentCards.onNext(false)
         switchSelectableCards.onNext(false)
@@ -143,6 +150,17 @@ extension PokerViewPresenter {
         
         static fileprivate func receive(user: [Card], opponent: [Card], bet: Int) -> Int {
             return results(userCards: user, opponentCards: opponent, bet: bet).receive
+        }
+        
+        static fileprivate func opponentFace(user: [Card], opponent: [Card], bet: Int) -> NekoFace {
+            switch results(userCards: user, opponentCards: opponent, bet: bet).result {
+            case .win:
+                return .tearful
+            case .lose:
+                return .smile
+            case .draw:
+                return .pokerFace
+            }
         }
         
         fileprivate func text(receive: Int) -> String {
