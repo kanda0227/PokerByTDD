@@ -31,6 +31,8 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     @IBOutlet private weak var tradeButton: CommonDesignButton!
     /// 所持金を表示するラベル
     @IBOutlet private weak var walletView: WalletView!
+    /// 対戦相手の表情を表示するラベル TODO: 最終的には画像にしたい
+    @IBOutlet weak var opponentFaceLabel: UILabel!
     
     private let bag = DisposeBag()
     
@@ -45,7 +47,8 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
                                        turnOverOpponentCards: turnOverOpponentCards,
                                        switchSelectableCards: switchSelectableCards,
                                        switchIsStartButtonEnabled: switchIsStartButtonEnabled,
-                                       switchIsTradeButtonEnabled: switchIsTradeButtonEnabled)
+                                       switchIsTradeButtonEnabled: switchIsTradeButtonEnabled,
+                                       opponentFace: opponentFace)
         userCardViews.forEach { $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PokerViewController.selectCard))) }
         setSelectable(false)
         eventDisposable().disposed(by: bag)
@@ -122,6 +125,12 @@ final class PokerViewController: UIViewController, ColorSetViewProtocol {
     private var switchIsTradeButtonEnabled: Binder<Bool> {
         return Binder(self) { _self, isEnabled in
             _self.tradeButton.isEnabled = isEnabled
+        }
+    }
+    
+    private var opponentFace: Binder<NekoFace> {
+        return Binder(opponentFaceLabel) { opponentFaceLabel, face in
+            opponentFaceLabel.text = face.face()
         }
     }
     
