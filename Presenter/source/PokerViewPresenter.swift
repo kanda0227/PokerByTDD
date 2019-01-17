@@ -108,7 +108,7 @@ extension PokerViewPresenter {
         switchIsTradeButtonEnabled.onNext(true)
         TopTabSelectableNotification.shared.post(selectable: false)
         
-        opponentFace.onNext(.pokerFace)
+        opponentFace.onNext(opponentFace(opponentCards))
     }
     
     /// カードの選択状態が変わるときに呼んでください
@@ -184,6 +184,17 @@ extension PokerViewPresenter {
             } else {
                 return (.lose, receive, handTexts)
             }
+        }
+    }
+    
+    fileprivate func opponentFace(_ opponentCards: [Card]) -> NekoFace {
+        switch Hand(cards: opponentCards).hand() {
+        case .highCard:
+            return .tearful
+        case .onePair, .twoPair:
+            return .pokerFace
+        default:
+            return .smile
         }
     }
 }
