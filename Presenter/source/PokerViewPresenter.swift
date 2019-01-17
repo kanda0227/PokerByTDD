@@ -144,8 +144,10 @@ extension PokerViewPresenter {
         case draw = "引き分け(･_･)"
         
         static fileprivate func resultText(user: [Card], opponent: [Card], bet: Int) -> (hand: String?, opponentHand: String?, result: String?) {
-            let (result, receive, handTexts) = results(userCards: user, opponentCards: opponent, bet: bet)
-            return (handTexts.user, handTexts.opponent, result.text(receive: receive))
+            let (result, receive) = results(userCards: user, opponentCards: opponent, bet: bet)
+            return (handText(user),
+                    handText(opponent),
+                    result.text(receive: receive))
         }
         
         static fileprivate func receive(user: [Card], opponent: [Card], bet: Int) -> Int {
@@ -167,23 +169,25 @@ extension PokerViewPresenter {
             return rawValue + " + \(receive)"
         }
         
-        static private func results(userCards: [Card], opponentCards: [Card], bet: Int) -> (result: Result, receive: Int, handTexts: (user: String, opponent: String)) {
+        static private func results(userCards: [Card], opponentCards: [Card], bet: Int) -> (result: Result, receive: Int) {
             let table = Table()
             let userHand = Hand(cards: userCards, name: "user")
             let opponentHand = Hand(cards: opponentCards, name: "opponent")
             table.bet(hand: userHand, bet)
             table.bet(hand: opponentHand, 0)
-            let ranking = table.ranking(hand: userHand)
-            let opponentRanking = table.ranking(hand: opponentHand)
             let receive = table.receive(hand: userHand)
-            let handTexts = (userHand.hand().text, opponentHand.hand().text)
-            if ranking == opponentRanking {
-                return (.draw, receive, handTexts)
-            } else if ranking == 1 {
-                return (.win, receive, handTexts)
-            } else {
-                return (.lose, receive, handTexts)
-            }
+            return (resultFromRanking(user: table.ranking(hand: userHand),
+                                      opponent: table.ranking(hand: opponentHand)),
+                    receive)
+        }
+        
+        static private func handText(_ cards: [Card]) -> String {
+            return Hand(cards: cards).hand().text
+        }
+        
+        static private func resultFromRanking(user userRanking: Int, opponent opponentRanking: Int) -> Result {
+            guard userRanking != opponentRanking else { return .draw }
+            return (userRanking > opponentRanking) ? .win : .lose
         }
     }
     
