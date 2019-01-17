@@ -175,20 +175,19 @@ extension PokerViewPresenter {
             let opponentHand = Hand(cards: opponentCards, name: "opponent")
             table.bet(hand: userHand, bet)
             table.bet(hand: opponentHand, 0)
-            let ranking = table.ranking(hand: userHand)
-            let opponentRanking = table.ranking(hand: opponentHand)
             let receive = table.receive(hand: userHand)
-            if ranking == opponentRanking {
-                return (.draw, receive)
-            } else if ranking == 1 {
-                return (.win, receive)
-            } else {
-                return (.lose, receive)
-            }
+            return (resultFromRanking(user: table.ranking(hand: userHand),
+                                      opponent: table.ranking(hand: opponentHand)),
+                    receive)
         }
         
         static private func handText(_ cards: [Card]) -> String {
             return Hand(cards: cards).hand().text
+        }
+        
+        static private func resultFromRanking(user userRanking: Int, opponent opponentRanking: Int) -> Result {
+            guard userRanking != opponentRanking else { return .draw }
+            return (userRanking > opponentRanking) ? .win : .lose
         }
     }
     
