@@ -138,7 +138,7 @@ extension PokerViewPresenter {
 // MARK: - 表示する勝敗結果の計算ロジック
 extension PokerViewPresenter {
     
-    private enum Result: String {
+    fileprivate enum Result: String {
         case win = "勝ち(`･ω･´)"
         case lose = "負け(´･ω･`)"
         case draw = "引き分け(･_･)"
@@ -199,6 +199,20 @@ extension PokerViewPresenter {
             return .pokerFace
         default:
             return .smile
+        }
+    }
+}
+
+private extension PokerResult {
+    
+    func result() -> PokerViewPresenter.Result {
+        switch self {
+        case .win:
+            return .win
+        case .draw:
+            return .draw
+        case .lose:
+            return .lose
         }
     }
 }
