@@ -52,3 +52,18 @@ public final class Table {
         betCollection.removeAll()
     }
 }
+
+public enum PokerResult {
+    case win
+    case lose
+    case draw
+    
+    fileprivate var returnRate: Int {
+        switch self {
+        case .win:
+            return 1
+        default:
+            return 0
+        }
+    }
+}
