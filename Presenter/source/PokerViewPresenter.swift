@@ -122,10 +122,11 @@ extension PokerViewPresenter {
         let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
         userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }
         let cards = userCards.map { $0.card }
-        Wallet.shared.receipt(Result.receive(user: cards, opponent: opponentCards, bet: bet))
+        Result.setHands(user: cards, opponent: opponentCards)
+        Wallet.shared.receipt(Result.receive(bet: bet))
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
-        handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
-        opponentFace.onNext(Result.opponentFace(user: cards, opponent: opponentCards, bet: bet))
+        handText.onNext(Result.resultText(bet: bet))
+        opponentFace.onNext(Result.opponentFace())
         
         turnOverOpponentCards.onNext(false)
         switchSelectableCards.onNext(false)
@@ -138,24 +139,44 @@ extension PokerViewPresenter {
 // MARK: - 表示する勝敗結果の計算ロジック
 extension PokerViewPresenter {
     
-    private enum Result: String {
+    fileprivate enum Result: String {
         case win = "勝ち(`･ω･´)"
         case lose = "負け(´･ω･`)"
         case draw = "引き分け(･_･)"
         
-        static fileprivate func resultText(user: [Card], opponent: [Card], bet: Int) -> (hand: String?, opponentHand: String?, result: String?) {
-            let (result, receive) = results(userCards: user, opponentCards: opponent, bet: bet)
-            return (handText(user),
-                    handText(opponent),
-                    result.text(receive: receive))
+        static private var hands: [Hand] = []
+        
+        static fileprivate func setHands(user: [Card], opponent: [Card]) {
+            hands = [Hand(cards: user, name: "user"),
+                     Hand(cards: opponent, name: "opponent")]
         }
         
-        static fileprivate func receive(user: [Card], opponent: [Card], bet: Int) -> Int {
-            return results(userCards: user, opponentCards: opponent, bet: bet).receive
+        static private var userHand: Hand {
+            guard let hand = hands.first else {
+                fatalError("setHands を先に呼んでください")
+            }
+            return hand
         }
         
-        static fileprivate func opponentFace(user: [Card], opponent: [Card], bet: Int) -> NekoFace {
-            switch results(userCards: user, opponentCards: opponent, bet: bet).result {
+        static private var opponentHand: Hand {
+            guard let hand = hands.last else {
+                fatalError("setHands を先に呼んでください")
+            }
+            return hand
+        }
+        
+        static fileprivate func resultText(bet: Int) -> (hand: String?, opponentHand: String?, result: String?) {
+            return (handText(userHand),
+                    handText(opponentHand),
+                    hands.result(userHand).text(receive: bet))
+        }
+        
+        static fileprivate func receive(bet: Int) -> Int {
+            return hands.receive(bet, hand: userHand)
+        }
+        
+        static fileprivate func opponentFace() -> NekoFace {
+            switch hands.result(userHand) {
             case .win:
                 return .tearful
             case .lose:
@@ -169,25 +190,8 @@ extension PokerViewPresenter {
             return rawValue + " + \(receive)"
         }
         
-        static private func results(userCards: [Card], opponentCards: [Card], bet: Int) -> (result: Result, receive: Int) {
-            let table = Table()
-            let userHand = Hand(cards: userCards, name: "user")
-            let opponentHand = Hand(cards: opponentCards, name: "opponent")
-            table.bet(hand: userHand, bet)
-            table.bet(hand: opponentHand, 0)
-            let receive = table.receive(hand: userHand)
-            return (resultFromRanking(user: table.ranking(hand: userHand),
-                                      opponent: table.ranking(hand: opponentHand)),
-                    receive)
-        }
-        
-        static private func handText(_ cards: [Card]) -> String {
-            return Hand(cards: cards).hand().text
-        }
-        
-        static private func resultFromRanking(user userRanking: Int, opponent opponentRanking: Int) -> Result {
-            guard userRanking != opponentRanking else { return .draw }
-            return (userRanking > opponentRanking) ? .win : .lose
+        static private func handText(_ hand: Hand) -> String {
+            return hand.hand().text
         }
     }
     
@@ -200,5 +204,36 @@ extension PokerViewPresenter {
         default:
             return .smile
         }
+    }
+}
+
+private extension PokerResult {
+    
+    func result() -> PokerViewPresenter.Result {
+        switch self {
+        case .win:
+            return .win
+        case .draw:
+            return .draw
+        case .lose:
+            return .lose
+        }
+    }
+}
+
+private extension Array where Element==Hand {
+    
+    private func table() -> Table {
+        let table = Table()
+        self.forEach { table.bet(hand: $0) }
+        return table
+    }
+    
+    func result(_ hand: Element) -> PokerViewPresenter.Result {
+        return table().result(hand: hand).result()
+    }
+    
+    func receive(_ bet: Int, hand: Element) -> Int {
+        return table().receive(bet: bet, hand: hand)
     }
 }
