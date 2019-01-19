@@ -122,10 +122,11 @@ extension PokerViewPresenter {
         let notSelected = userCards.filter { !$0.isSelected }.map { $0.card }
         userCards = (dealer.tradeCards(selected) + notSelected).sorted().map { ($0, false) }
         let cards = userCards.map { $0.card }
-        Wallet.shared.receipt(Result.receive(user: cards, opponent: opponentCards, bet: bet))
+        Result.setHands(user: cards, opponent: opponentCards)
+        Wallet.shared.receipt(Result.receive(bet: bet))
         updateCards.onNext((cards: userCards.map { $0.card }, opponentCards: opponentCards))
-        handText.onNext(Result.resultText(user: cards, opponent: opponentCards, bet: bet))
-        opponentFace.onNext(Result.opponentFace(user: cards, opponent: opponentCards, bet: bet))
+        handText.onNext(Result.resultText(bet: bet))
+        opponentFace.onNext(Result.opponentFace())
         
         turnOverOpponentCards.onNext(false)
         switchSelectableCards.onNext(false)
