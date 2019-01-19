@@ -209,3 +209,20 @@ private extension PokerResult {
         }
     }
 }
+
+private extension Array where Element==Hand {
+    
+    private func table() -> Table {
+        let table = Table()
+        self.forEach { table.bet(hand: $0) }
+        return table
+    }
+    
+    func result(_ hand: Element) -> PokerViewPresenter.Result {
+        return table().result(hand: hand).result()
+    }
+    
+    func receive(_ bet: Int, hand: Element) -> Int {
+        return table().receive(bet: bet, hand: hand)
+    }
+}
