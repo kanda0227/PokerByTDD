@@ -143,19 +143,39 @@ extension PokerViewPresenter {
         case lose = "負け(´･ω･`)"
         case draw = "引き分け(･_･)"
         
-        static fileprivate func resultText(user: [Card], opponent: [Card], bet: Int) -> (hand: String?, opponentHand: String?, result: String?) {
-            let (result, receive) = results(userCards: user, opponentCards: opponent, bet: bet)
-            return (handText(user),
-                    handText(opponent),
-                    result.text(receive: receive))
+        static private var hands: [Hand] = []
+        
+        static fileprivate func setHands(user: [Card], opponent: [Card]) {
+            hands = [Hand(cards: user, name: "user"),
+                     Hand(cards: opponent, name: "opponent")]
         }
         
-        static fileprivate func receive(user: [Card], opponent: [Card], bet: Int) -> Int {
-            return results(userCards: user, opponentCards: opponent, bet: bet).receive
+        static private var userHand: Hand {
+            guard let hand = hands.first else {
+                fatalError("setHands を先に呼んでください")
+            }
+            return hand
         }
         
-        static fileprivate func opponentFace(user: [Card], opponent: [Card], bet: Int) -> NekoFace {
-            switch results(userCards: user, opponentCards: opponent, bet: bet).result {
+        static private var opponentHand: Hand {
+            guard let hand = hands.last else {
+                fatalError("setHands を先に呼んでください")
+            }
+            return hand
+        }
+        
+        static fileprivate func resultText(bet: Int) -> (hand: String?, opponentHand: String?, result: String?) {
+            return (handText(userHand),
+                    handText(opponentHand),
+                    hands.result(userHand).text(receive: bet))
+        }
+        
+        static fileprivate func receive(bet: Int) -> Int {
+            return hands.receive(bet, hand: userHand)
+        }
+        
+        static fileprivate func opponentFace() -> NekoFace {
+            switch hands.result(userHand) {
             case .win:
                 return .tearful
             case .lose:
@@ -169,18 +189,8 @@ extension PokerViewPresenter {
             return rawValue + " + \(receive)"
         }
         
-        static private func results(userCards: [Card], opponentCards: [Card], bet: Int) -> (result: Result, receive: Int) {
-            let table = Table()
-            let userHand = Hand(cards: userCards, name: "user")
-            table.bet(hand: userHand)
-            table.bet(hand: Hand(cards: opponentCards, name: "opponent"))
-            let receive = table.receive(bet: bet, hand: userHand)
-            return (table.result(hand: userHand).result(),
-                    receive)
-        }
-        
-        static private func handText(_ cards: [Card]) -> String {
-            return Hand(cards: cards).hand().text
+        static private func handText(_ hand: Hand) -> String {
+            return hand.hand().text
         }
     }
     
