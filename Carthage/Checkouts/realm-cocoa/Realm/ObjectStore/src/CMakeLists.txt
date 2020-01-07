@@ -28,6 +28,7 @@ set(HEADERS
     execution_context_id.hpp
     feature_checks.hpp
     index_set.hpp
+    keypath_helpers.hpp
     list.hpp
     object.hpp
     object_accessor.hpp
@@ -64,6 +65,7 @@ set(HEADERS
 
     util/aligned_union.hpp
     util/atomic_shared_ptr.hpp
+    util/event_loop_dispatcher.hpp
     util/event_loop_signal.hpp
     util/tagged_bool.hpp
     util/uuid.hpp)
@@ -83,12 +85,12 @@ if(NOT APPLE AND NOT REALM_PLATFORM STREQUAL "Android")
 endif()
 
 set(INCLUDE_DIRS
-    ${PEGTL_INCLUDE_DIR}
     ${UV_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR})
 
 if(REALM_ENABLE_SYNC)
     list(APPEND HEADERS
+        sync/async_open_task.hpp
         sync/partial_sync.hpp
         sync/subscription_state.hpp
         sync/sync_config.hpp
@@ -101,6 +103,7 @@ if(REALM_ENABLE_SYNC)
         sync/impl/sync_metadata.hpp
         sync/impl/work_queue.hpp)
     list(APPEND SOURCES
+        sync/async_open_task.cpp
         sync/partial_sync.cpp
         sync/sync_config.cpp
         sync/sync_manager.cpp
@@ -117,6 +120,18 @@ if(REALM_ENABLE_SYNC)
     endif()
     find_package(ZLIB REQUIRED)
     list(APPEND INCLUDE_DIRS ${ZLIB_INCLUDE_DIRS})
+endif()
+
+if(REALM_ENABLE_SERVER)
+    list(APPEND HEADERS
+        server/adapter.hpp
+        server/admin_realm.hpp
+        server/global_notifier.hpp)
+    list(APPEND SOURCES
+        server/adapter.cpp
+        server/admin_realm.cpp
+        server/global_notifier.cpp)
+    list(APPEND INCLUDE_DIRS ../external/json)
 endif()
 
 add_library(realm-object-store STATIC ${SOURCES} ${HEADERS})

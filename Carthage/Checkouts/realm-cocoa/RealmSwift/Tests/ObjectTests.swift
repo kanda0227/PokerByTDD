@@ -25,7 +25,7 @@ private func nextDynamicDefaultSeed() -> Int {
     dynamicDefaultSeed += 1
     return dynamicDefaultSeed
 }
-class DynamicDefaultObject: Object {
+class SwiftDynamicDefaultObject: Object {
     @objc dynamic var intCol = nextDynamicDefaultSeed()
     @objc dynamic var floatCol = Float(nextDynamicDefaultSeed())
     @objc dynamic var doubleCol = Double(nextDynamicDefaultSeed())
@@ -72,7 +72,7 @@ class ObjectTests: TestCase {
         XCTAssert(schema.properties as AnyObject is [Property])
         XCTAssertEqual(schema.className, "SwiftObject")
         XCTAssertEqual(schema.properties.map { $0.name },
-            ["boolCol", "intCol", "floatCol", "doubleCol", "stringCol", "binaryCol", "dateCol", "objectCol", "arrayCol"]
+            ["boolCol", "intCol", "intEnumCol", "floatCol", "doubleCol", "stringCol", "binaryCol", "dateCol", "objectCol", "arrayCol"]
         )
     }
 
@@ -115,21 +115,21 @@ class ObjectTests: TestCase {
     func testDescription() {
         let object = SwiftObject()
         // swiftlint:disable line_length
-        assertMatches(object.description, "SwiftObject \\{\n\tboolCol = 0;\n\tintCol = 123;\n\tfloatCol = 1\\.23;\n\tdoubleCol = 12\\.3;\n\tstringCol = a;\n\tbinaryCol = <61 — 1 total bytes>;\n\tdateCol = 1970-01-01 00:00:01 \\+0000;\n\tobjectCol = SwiftBoolObject \\{\n\t\tboolCol = 0;\n\t\\};\n\tarrayCol = List<SwiftBoolObject> <0x[0-9a-f]+> \\(\n\t\n\t\\);\n\\}")
+        assertMatches(object.description, "SwiftObject \\{\n\tboolCol = 0;\n\tintCol = 123;\n\tintEnumCol = 1;\n\tfloatCol = 1\\.23;\n\tdoubleCol = 12\\.3;\n\tstringCol = a;\n\tbinaryCol = <.*61.*>;\n\tdateCol = 1970-01-01 00:00:01 \\+0000;\n\tobjectCol = SwiftBoolObject \\{\n\t\tboolCol = 0;\n\t\\};\n\tarrayCol = List<SwiftBoolObject> <0x[0-9a-f]+> \\(\n\t\n\t\\);\n\\}")
 
         let recursiveObject = SwiftRecursiveObject()
         recursiveObject.objects.append(recursiveObject)
         assertMatches(recursiveObject.description, "SwiftRecursiveObject \\{\n\tobjects = List<SwiftRecursiveObject> <0x[0-9a-f]+> \\(\n\t\t\\[0\\] SwiftRecursiveObject \\{\n\t\t\tobjects = List<SwiftRecursiveObject> <0x[0-9a-f]+> \\(\n\t\t\t\t\\[0\\] SwiftRecursiveObject \\{\n\t\t\t\t\tobjects = <Maximum depth exceeded>;\n\t\t\t\t\\}\n\t\t\t\\);\n\t\t\\}\n\t\\);\n\\}")
 
-        let renamedObject = LinkToRenamedProperties1()
-        renamedObject.linkA = RenamedProperties1()
-        assertMatches(renamedObject.description, "LinkToRenamedProperties1 \\{\n\tlinkA = RenamedProperties1 \\{\n\t\tpropA = 0;\n\t\tpropB = ;\n\t\\};\n\tlinkB = \\(null\\);\n\tarray1 = List<RenamedProperties1> <0x[0-9a-f]+> \\(\n\t\n\t\\);\n\\}")
-        assertMatches(renamedObject.linkA!.linking1.description, "LinkingObjects<LinkToRenamedProperties1> <0x[0-9a-f]+> \\(\n\n\\)")
+        let renamedObject = LinkToSwiftRenamedProperties1()
+        renamedObject.linkA = SwiftRenamedProperties1()
+        assertMatches(renamedObject.description, "LinkToSwiftRenamedProperties1 \\{\n\tlinkA = SwiftRenamedProperties1 \\{\n\t\tpropA = 0;\n\t\tpropB = ;\n\t\\};\n\tlinkB = \\(null\\);\n\tarray1 = List<SwiftRenamedProperties1> <0x[0-9a-f]+> \\(\n\t\n\t\\);\n\\}")
+        assertMatches(renamedObject.linkA!.linking1.description, "LinkingObjects<LinkToSwiftRenamedProperties1> <0x[0-9a-f]+> \\(\n\n\\)")
 
         let realm = try! Realm()
         try! realm.write { realm.add(renamedObject) }
-        assertMatches(renamedObject.description, "LinkToRenamedProperties1 \\{\n\tlinkA = RenamedProperties1 \\{\n\t\tpropA = 0;\n\t\tpropB = ;\n\t\\};\n\tlinkB = \\(null\\);\n\tarray1 = List<RenamedProperties1> <0x[0-9a-f]+> \\(\n\t\n\t\\);\n\\}")
-        assertMatches(renamedObject.linkA!.linking1.description, "LinkingObjects<LinkToRenamedProperties1> <0x[0-9a-f]+> \\(\n\t\\[0\\] LinkToRenamedProperties1 \\{\n\t\tlinkA = RenamedProperties1 \\{\n\t\t\tpropA = 0;\n\t\t\tpropB = ;\n\t\t\\};\n\t\tlinkB = \\(null\\);\n\t\tarray1 = List<RenamedProperties1> <0x[0-9a-f]+> \\(\n\t\t\n\t\t\\);\n\t\\}\n\\)")
+        assertMatches(renamedObject.description, "LinkToSwiftRenamedProperties1 \\{\n\tlinkA = SwiftRenamedProperties1 \\{\n\t\tpropA = 0;\n\t\tpropB = ;\n\t\\};\n\tlinkB = \\(null\\);\n\tarray1 = List<SwiftRenamedProperties1> <0x[0-9a-f]+> \\(\n\t\n\t\\);\n\\}")
+        assertMatches(renamedObject.linkA!.linking1.description, "LinkingObjects<LinkToSwiftRenamedProperties1> <0x[0-9a-f]+> \\(\n\t\\[0\\] LinkToSwiftRenamedProperties1 \\{\n\t\tlinkA = SwiftRenamedProperties1 \\{\n\t\t\tpropA = 0;\n\t\t\tpropB = ;\n\t\t\\};\n\t\tlinkB = \\(null\\);\n\t\tarray1 = List<SwiftRenamedProperties1> <0x[0-9a-f]+> \\(\n\t\t\n\t\t\\);\n\t\\}\n\\)")
         // swiftlint:enable line_length
     }
 
@@ -221,7 +221,7 @@ class ObjectTests: TestCase {
     }
 
     func testDynamicDefaultPropertyValues() {
-        func assertDifferentPropertyValues(_ obj1: DynamicDefaultObject, _ obj2: DynamicDefaultObject) {
+        func assertDifferentPropertyValues(_ obj1: SwiftDynamicDefaultObject, _ obj2: SwiftDynamicDefaultObject) {
             XCTAssertNotEqual(obj1.intCol, obj2.intCol)
             XCTAssertNotEqual(obj1.floatCol, obj2.floatCol)
             XCTAssertNotEqual(obj1.doubleCol, obj2.doubleCol)
@@ -230,11 +230,11 @@ class ObjectTests: TestCase {
             XCTAssertNotEqual(obj1.stringCol, obj2.stringCol)
             XCTAssertNotEqual(obj1.binaryCol, obj2.binaryCol)
         }
-        assertDifferentPropertyValues(DynamicDefaultObject(), DynamicDefaultObject())
+        assertDifferentPropertyValues(SwiftDynamicDefaultObject(), SwiftDynamicDefaultObject())
         let realm = try! Realm()
         try! realm.write {
-            assertDifferentPropertyValues(realm.create(DynamicDefaultObject.self),
-                                          realm.create(DynamicDefaultObject.self))
+            assertDifferentPropertyValues(realm.create(SwiftDynamicDefaultObject.self),
+                                          realm.create(SwiftDynamicDefaultObject.self))
         }
     }
 
@@ -248,7 +248,7 @@ class ObjectTests: TestCase {
 
             let expected = object.value(forKey: "binaryCol") as! Data
             let actual = "a".data(using: String.Encoding.utf8)!
-            XCTAssertTrue(expected == actual)
+            XCTAssertEqual(expected, actual)
 
             XCTAssertEqual(object.value(forKey: "dateCol") as! Date?, Date(timeIntervalSince1970: 1))
             XCTAssertEqual((object.value(forKey: "objectCol")! as! SwiftBoolObject).boolCol, false)
@@ -256,9 +256,95 @@ class ObjectTests: TestCase {
         }
 
         test(SwiftObject())
-        try! Realm().write {
-            let persistedObject = try! Realm().create(SwiftObject.self, value: [:])
-            test(persistedObject)
+        let realm = try! Realm()
+        try! realm.write {
+            test(realm.create(SwiftObject.self, value: [:]))
+            let addedObj = SwiftObject()
+            realm.add(addedObj)
+            test(addedObj)
+        }
+    }
+
+    func testValueForKeyOptionals() {
+        let test: (SwiftOptionalObject) -> Void = { object in
+            XCTAssertNil(object.value(forKey: "optNSStringCol"))
+            XCTAssertNil(object.value(forKey: "optStringCol"))
+            XCTAssertNil(object.value(forKey: "optBinaryCol"))
+            XCTAssertNil(object.value(forKey: "optDateCol"))
+            XCTAssertNil(object.value(forKey: "optIntCol"))
+            XCTAssertNil(object.value(forKey: "optInt8Col"))
+            XCTAssertNil(object.value(forKey: "optInt16Col"))
+            XCTAssertNil(object.value(forKey: "optInt32Col"))
+            XCTAssertNil(object.value(forKey: "optInt64Col"))
+            XCTAssertNil(object.value(forKey: "optFloatCol"))
+            XCTAssertNil(object.value(forKey: "optDoubleCol"))
+            XCTAssertNil(object.value(forKey: "optBoolCol"))
+            XCTAssertNil(object.value(forKey: "optEnumCol"))
+        }
+
+        test(SwiftOptionalObject())
+        let realm = try! Realm()
+        try! realm.write {
+            test(realm.create(SwiftOptionalObject.self, value: [:]))
+            let addedObj = SwiftOptionalObject()
+            realm.add(addedObj)
+            test(addedObj)
+        }
+    }
+
+    func testValueForKeyList() {
+        let test: (SwiftListObject) -> Void = { object in
+            XCTAssertNil((object.value(forKey: "int") as! List<Int>).first)
+            XCTAssertNil((object.value(forKey: "int8") as! List<Int8>).first)
+            XCTAssertNil((object.value(forKey: "int16") as! List<Int16>).first)
+            XCTAssertNil((object.value(forKey: "int32") as! List<Int32>).first)
+            XCTAssertNil((object.value(forKey: "int64") as! List<Int64>).first)
+            XCTAssertNil((object.value(forKey: "float") as! List<Float>).first)
+            XCTAssertNil((object.value(forKey: "double") as! List<Double>).first)
+            XCTAssertNil((object.value(forKey: "string") as! List<String>).first)
+            XCTAssertNil((object.value(forKey: "data") as! List<Data>).first)
+            XCTAssertNil((object.value(forKey: "date") as! List<Date>).first)
+
+            // The `as Any?` casts below are only to silence the warning about it
+            // happening implicitly and are not functionally required
+            XCTAssertNil((object.value(forKey: "intOpt") as! List<Int?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "int8Opt") as! List<Int8?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "int16Opt") as! List<Int16?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "int32Opt") as! List<Int32?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "int64Opt") as! List<Int64?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "floatOpt") as! List<Float?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "doubleOpt") as! List<Double?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "stringOpt") as! List<String?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "dataOpt") as! List<Data?>).first as Any?)
+            XCTAssertNil((object.value(forKey: "dateOpt") as! List<Date?>).first as Any?)
+        }
+
+        test(SwiftListObject())
+        let realm = try! Realm()
+        try! realm.write {
+            test(realm.create(SwiftListObject.self, value: [:]))
+            let addedObj = SwiftListObject()
+            realm.add(addedObj)
+            test(addedObj)
+        }
+    }
+
+    func testValueForKeyLinkingObjects() {
+        let test: (SwiftDogObject) -> Void = { object in
+            let owners = object.value(forKey: "owners") as! LinkingObjects<SwiftOwnerObject>
+            if object.realm != nil {
+                XCTAssertEqual(owners.first!.name, "owner name")
+            }
+        }
+
+        let dog = SwiftDogObject()
+        let owner = SwiftOwnerObject(value: ["owner name", dog])
+        test(dog)
+        let realm = try! Realm()
+        try! realm.write {
+            test(realm.create(SwiftOwnerObject.self, value: owner).dog!)
+            realm.add(owner)
+            test(dog)
         }
     }
 
@@ -469,12 +555,10 @@ class ObjectTests: TestCase {
             object.stringCol = "Hello world!"
             object.dateCol = now
             object.dataCol = data
-            object.numCol = 42
         }
         XCTAssertEqual("Hello world!", object.stringCol)
         XCTAssertEqual(now, object.dateCol)
         XCTAssertEqual(data, object.dataCol)
-        XCTAssertEqual(42, object.numCol)
     }
 
     func testDeleteObservedObject() {

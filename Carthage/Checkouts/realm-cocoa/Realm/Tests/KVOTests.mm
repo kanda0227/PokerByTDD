@@ -296,7 +296,7 @@ public:
 // remove it, and verify that there are no more notifications
 #define AssertIndexChange(kind, indexes) do { \
     if (NSDictionary *note = AssertNotification(r)) { \
-        XCTAssertEqual([note[NSKeyValueChangeKindKey] intValue], kind); \
+        XCTAssertEqual([note[NSKeyValueChangeKindKey] intValue], static_cast<int>(kind)); \
         XCTAssertEqualObjects(note[NSKeyValueChangeIndexesKey], indexes); \
     } \
     XCTAssertTrue(r.empty()); \
@@ -1474,7 +1474,7 @@ public:
 @implementation KVOMultipleAccessorsTests
 - (id)observableForObject:(id)value {
     if (RLMObject *obj = RLMDynamicCast<RLMObject>(value)) {
-        RLMObject *copy = RLMCreateManagedAccessor(obj.objectSchema.accessorClass, obj.realm, obj->_info);
+        RLMObject *copy = RLMCreateManagedAccessor(obj.objectSchema.accessorClass, obj->_info);
         copy->_row = obj->_row;
         return copy;
     }
@@ -1823,7 +1823,7 @@ public:
     [self.secondaryRealm refresh];
 
     if (RLMObject *obj = RLMDynamicCast<RLMObject>(value)) {
-        RLMObject *copy = RLMCreateManagedAccessor(obj.objectSchema.accessorClass, self.secondaryRealm,
+        RLMObject *copy = RLMCreateManagedAccessor(obj.objectSchema.accessorClass,
                                                    &self.secondaryRealm->_info[obj.objectSchema.className]);
         copy->_row = (*copy->_info->table())[obj->_row.get_index()];
         return copy;

@@ -30,6 +30,7 @@
 #import <thread>
 
 #import <realm/util/file.hpp>
+#import <realm/group_shared_options.hpp>
 
 @interface RLMRealm ()
 + (BOOL)isCoreDebug;
@@ -204,6 +205,7 @@
         XCTAssertEqualObjects(oldData, newData); \
 } while (0)
 
+#ifndef REALM_SPM
 - (void)testFileFormatUpgradeRequiredDeleteRealmIfNeeded {
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
     config.deleteRealmIfMigrationNeeded = YES;
@@ -263,6 +265,7 @@
     XCTAssertEqualObjects([NSData dataWithContentsOfURL:bundledRealmURL],
                           [NSData dataWithContentsOfURL:config.fileURL]);
 }
+#endif // REALM_SPM
 
 #if TARGET_OS_IPHONE && (!TARGET_IPHONE_SIMULATOR || !TARGET_RT_64_BIT)
 - (void)testExceedingVirtualAddressSpace {
@@ -1690,6 +1693,7 @@
 
 #pragma mark - Assorted tests
 
+#ifndef REALM_SPM
 - (void)testCoreDebug {
 #if DEBUG
     XCTAssertTrue([RLMRealm isCoreDebug], @"Debug version of Realm should use librealm{-ios}-dbg");
@@ -1697,6 +1701,7 @@
     XCTAssertFalse([RLMRealm isCoreDebug], @"Release version of Realm should use librealm{-ios}");
 #endif
 }
+#endif
 
 - (void)testIsEmpty {
     RLMRealm *realm = [RLMRealm defaultRealm];
@@ -1779,10 +1784,16 @@
     assert(![manager fileExistsAtPath:fifoURL.path]);
     [manager createDirectoryAtPath:fifoURL.path withIntermediateDirectories:YES attributes:nil error:nil];
 
+    // Ensure that it doesn't try to fall back to putting it in the temp directory
+    auto oldTempDir = realm::SharedGroupOptions::get_sys_tmp_dir();
+    realm::SharedGroupOptions::set_sys_tmp_dir("");
+
     NSError *error;
     XCTAssertNil([RLMRealm realmWithConfiguration:configuration error:&error], @"Should not have been able to open FIFO");
     XCTAssertNotNil(error);
     RLMValidateRealmError(error, RLMErrorFileAccess, @"Is a directory", nil);
+
+    realm::SharedGroupOptions::set_sys_tmp_dir(std::move(oldTempDir));
 }
 #endif
 
@@ -1914,15 +1925,82 @@
         @autoreleasepool { [RLMRealm defaultRealm]; }
     }];
 
-//    NSURL *fileURL = RLMRealmConfiguration.defaultConfiguration.fileURL;
-//    for (NSString *pathExtension in @[@"management", @"lock", @"note"]) {
-//        NSNumber *attribute = nil;
-//        NSError *error = nil;
-//        BOOL success = [[fileURL URLByAppendingPathExtension:pathExtension] getResourceValue:&attribute forKey:NSURLIsExcludedFromBackupKey error:&error];
-//        XCTAssertTrue(success);
-//        XCTAssertNil(error);
-//        XCTAssertTrue(attribute.boolValue);
-//    }
+    NSURL *fileURL = RLMRealmConfiguration.defaultConfiguration.fileURL;
+#if !TARGET_OS_TV
+    for (NSString *pathExtension in @[@"management", @"lock", @"note"]) {
+#else
+    for (NSString *pathExtension in @[@"management", @"lock"]) {
+#endif
+        NSNumber *attribute = nil;
+        NSError *error = nil;
+        BOOL success = [[fileURL URLByAppendingPathExtension:pathExtension] getResourceValue:&attribute forKey:NSURLIsExcludedFromBackupKey error:&error];
+        XCTAssertTrue(success);
+        XCTAssertNil(error);
+        XCTAssertTrue(attribute.boolValue);
+    }
+}
+
+- (void)testRealmExists {
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    XCTAssertFalse([RLMRealm fileExistsForConfiguration:config]);
+    @autoreleasepool { [RLMRealm realmWithConfiguration:config error:nil]; }
+    XCTAssertTrue([RLMRealm fileExistsForConfiguration:config]);
+    [RLMRealm deleteFilesForConfiguration:config error:nil];
+    XCTAssertFalse([RLMRealm fileExistsForConfiguration:config]);
+}
+
+- (void)testDeleteNonexistentRealmFile {
+    NSError *error;
+    XCTAssertFalse([RLMRealm deleteFilesForConfiguration:RLMRealmConfiguration.defaultConfiguration error:&error]);
+    XCTAssertNil(error);
+}
+
+- (void)testDeleteClosedRealmFile {
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    @autoreleasepool { [RLMRealm realmWithConfiguration:config error:nil]; }
+
+    NSError *error;
+    XCTAssertTrue([RLMRealm deleteFilesForConfiguration:config error:&error]);
+    XCTAssertNil(error);
+
+    NSFileManager *fm = NSFileManager.defaultManager;
+    XCTAssertTrue([fm fileExistsAtPath:[config.fileURL.path stringByAppendingPathExtension:@"lock"]]);
+    XCTAssertFalse([fm fileExistsAtPath:[config.fileURL.path stringByAppendingPathExtension:@"management"]]);
+#if !TARGET_OS_TV
+    XCTAssertFalse([fm fileExistsAtPath:[config.fileURL.path stringByAppendingPathExtension:@"note"]]);
+#endif
+}
+
+- (void)testDeleteRealmFileWithMissingManagementFiles {
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    [NSFileManager.defaultManager createFileAtPath:config.fileURL.path contents:nil attributes:nil];
+
+    NSError *error;
+    XCTAssertTrue([RLMRealm deleteFilesForConfiguration:config error:&error]);
+    XCTAssertNil(error);
+}
+
+- (void)testDeleteRealmFileWithReadOnlyManagementFiles {
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    NSFileManager *fm = NSFileManager.defaultManager;
+    [fm createFileAtPath:config.fileURL.path contents:nil attributes:nil];
+    NSString *notificationPipe = [config.fileURL.path stringByAppendingPathExtension:@"note"];
+    [fm createFileAtPath:notificationPipe contents:nil attributes:@{NSFileImmutable: @YES}];
+
+    NSError *error;
+    XCTAssertTrue([RLMRealm deleteFilesForConfiguration:config error:&error]);
+    XCTAssertEqual(error.code, NSFileWriteNoPermissionError);
+    [fm setAttributes:@{NSFileImmutable: @NO} ofItemAtPath:notificationPipe error:nil];
+}
+
+- (void)testDeleteOpenRealmFile {
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    __attribute__((objc_precise_lifetime)) RLMRealm *realm = [RLMRealm realmWithConfiguration:config error:nil];
+
+    NSError *error;
+    XCTAssertFalse([RLMRealm deleteFilesForConfiguration:config error:&error]);
+    XCTAssertEqual(error.code, RLMErrorAlreadyOpen);
+    XCTAssertTrue([NSFileManager.defaultManager fileExistsAtPath:config.fileURL.path]);
 }
 
 @end

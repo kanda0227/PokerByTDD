@@ -64,9 +64,14 @@ class ObjectAccessorTests: TestCase {
 
         object.objectCol = SwiftBoolObject(value: [true])
         XCTAssertEqual(object.objectCol!.boolCol, true)
+
+        object.intEnumCol = .value1
+        XCTAssertEqual(object.intEnumCol, .value1)
+        object.intEnumCol = .value2
+        XCTAssertEqual(object.intEnumCol, .value2)
     }
 
-    func testStandaloneAccessors() {
+    func testUnmanagedAccessors() {
         let object = SwiftObject()
         setAndTestAllProperties(object)
 
@@ -74,7 +79,7 @@ class ObjectAccessorTests: TestCase {
         setAndTestAllOptionalProperties(optionalObject)
     }
 
-    func testPersistedAccessors() {
+    func testManagedAccessors() {
         let realm = try! Realm()
         realm.beginWrite()
         let object = realm.create(SwiftObject.self)
@@ -328,6 +333,13 @@ class ObjectAccessorTests: TestCase {
         XCTAssertEqual(object.optObjectCol!.boolCol, true)
         object.optObjectCol = nil
         XCTAssertNil(object.optObjectCol)
+
+        object.optEnumCol.value = .value1
+        XCTAssertEqual(object.optEnumCol.value, .value1)
+        object.optEnumCol.value = .value2
+        XCTAssertEqual(object.optEnumCol.value, .value2)
+        object.optEnumCol.value = nil
+        XCTAssertNil(object.optEnumCol.value)
     }
 
     func testLinkingObjectsDynamicGet() {
@@ -356,11 +368,11 @@ class ObjectAccessorTests: TestCase {
     }
 
     func testRenamedProperties() {
-        let obj = RenamedProperties1()
+        let obj = SwiftRenamedProperties1()
         obj.propA = 5
         obj.propB = "a"
 
-        let link = LinkToRenamedProperties1()
+        let link = LinkToSwiftRenamedProperties1()
         link.linkA = obj
         link.array1.append(obj)
 
@@ -377,14 +389,14 @@ class ObjectAccessorTests: TestCase {
 
         XCTAssertEqual(obj["propA"]! as! Int, 5)
         XCTAssertEqual(obj["propB"]! as! String, "a")
-        XCTAssertTrue((link["linkA"]! as! RenamedProperties1).isSameObject(as: obj))
-        XCTAssertTrue((link["array1"]! as! List<RenamedProperties1>)[0].isSameObject(as: obj))
-        XCTAssertTrue((obj["linking1"]! as! LinkingObjects<LinkToRenamedProperties1>)[0].isSameObject(as: link))
+        XCTAssertTrue((link["linkA"]! as! SwiftRenamedProperties1).isSameObject(as: obj))
+        XCTAssertTrue((link["array1"]! as! List<SwiftRenamedProperties1>)[0].isSameObject(as: obj))
+        XCTAssertTrue((obj["linking1"]! as! LinkingObjects<LinkToSwiftRenamedProperties1>)[0].isSameObject(as: link))
 
         XCTAssertTrue(link.dynamicList("array1")[0].isSameObject(as: obj))
 
-        let obj2 = realm.objects(RenamedProperties2.self).first!
-        let link2 = realm.objects(LinkToRenamedProperties2.self).first!
+        let obj2 = realm.objects(SwiftRenamedProperties2.self).first!
+        let link2 = realm.objects(LinkToSwiftRenamedProperties2.self).first!
 
         XCTAssertEqual(obj2.propC, 5)
         XCTAssertEqual(obj2.propD, "a")
@@ -394,9 +406,9 @@ class ObjectAccessorTests: TestCase {
 
         XCTAssertEqual(obj2["propC"]! as! Int, 5)
         XCTAssertEqual(obj2["propD"]! as! String, "a")
-        XCTAssertTrue((link2["linkC"]! as! RenamedProperties1).isSameObject(as: obj))
-        XCTAssertTrue((link2["array2"]! as! List<RenamedProperties2>)[0].isSameObject(as: obj))
-        XCTAssertTrue((obj2["linking1"]! as! LinkingObjects<LinkToRenamedProperties1>)[0].isSameObject(as: link))
+        XCTAssertTrue((link2["linkC"]! as! SwiftRenamedProperties1).isSameObject(as: obj))
+        XCTAssertTrue((link2["array2"]! as! List<SwiftRenamedProperties2>)[0].isSameObject(as: obj))
+        XCTAssertTrue((obj2["linking1"]! as! LinkingObjects<LinkToSwiftRenamedProperties1>)[0].isSameObject(as: link))
 
         XCTAssertTrue(link2.dynamicList("array2")[0].isSameObject(as: obj))
     }

@@ -18,6 +18,8 @@
 
 #include "util/test_file.hpp"
 
+#include "test_utils.hpp"
+
 #include "impl/realm_coordinator.hpp"
 
 #if REALM_ENABLE_SYNC
@@ -121,7 +123,10 @@ SyncTestFile::SyncTestFile(SyncServer& server, std::string name, bool is_partial
     schema_mode = SchemaMode::Additive;
 }
 
-sync::Server::Config TestLogger::server_config() {
+SyncServer::SyncServer(StartImmediately start_immediately)
+: m_server(util::make_temp_dir(), util::none, ([&] {
+    using namespace std::literals::chrono_literals;
+
     sync::Server::Config config;
 #if TEST_ENABLE_SYNC_LOGGING
     auto logger = new util::StderrLogger;
@@ -130,11 +135,18 @@ sync::Server::Config TestLogger::server_config() {
 #else
     config.logger = new TestLogger;
 #endif
-    return config;
-}
+    config.log_compaction_clock = this;
+#if REALM_SYNC_VER_MAJOR > 4 || (REALM_SYNC_VER_MAJOR == 4 && REALM_SYNC_VER_MINOR >= 7)
+    config.disable_history_compaction = false;
+#else
+    config.enable_log_compaction = true;
+#endif
+    config.history_ttl = 1s;
+    config.history_compaction_interval = 1s;
+    config.state_realm_dir = util::make_temp_dir();
 
-SyncServer::SyncServer(StartImmediately start_immediately)
-: m_server(util::make_temp_dir(), util::none, TestLogger::server_config())
+    return config;
+})())
 {
 #if TEST_ENABLE_SYNC_LOGGING
     SyncManager::shared().set_log_level(util::Logger::Level::all);
@@ -184,7 +196,7 @@ std::string SyncServer::url_for_realm(StringData realm_name) const
     return util::format("%1/%2", m_url, realm_name);
 }
 
-static void wait_for_session(Realm& realm, bool (SyncSession::*fn)(std::function<void(std::error_code)>))
+static void wait_for_session(Realm& realm, void (SyncSession::*fn)(std::function<void(std::error_code)>))
 {
     std::condition_variable cv;
     std::mutex wait_mutex;
@@ -209,6 +221,28 @@ void wait_for_download(Realm& realm)
     wait_for_session(realm, &SyncSession::wait_for_download_completion);
 }
 
+TestSyncManager::TestSyncManager(std::string const& base_path, SyncManager::MetadataMode mode)
+{
+    configure(base_path, mode);
+}
+
+TestSyncManager::~TestSyncManager()
+{
+    SyncManager::shared().reset_for_testing();
+}
+
+void TestSyncManager::configure(std::string const& base_path, SyncManager::MetadataMode mode)
+{
+    SyncClientConfig config;
+    config.base_file_path = base_path.empty() ? tmp_dir() : base_path;
+    config.metadata_mode = mode;
+#if TEST_ENABLE_SYNC_LOGGING
+    config.log_level = util::Logger::Level::all;
+#else
+    config.log_level = util::Logger::Level::off;
+#endif
+    SyncManager::shared().configure(config);
+}
 
 #endif // REALM_ENABLE_SYNC
 
